@@ -566,3 +566,25 @@ button.cat.is-manual::after { content: " \270E"; font-size: 9px; opacity: .7; }
   border-top: 1px solid var(--border); margin-top: 4px; padding-top: 9px;
   color: var(--text-secondary); font-size: 12px;
 }
+
+/* ------------------------------------------------------------- 상단 알림 */
+.toast {
+  position: fixed;
+  top: 18px; left: 50%;
+  transform: translate(-50%, -12px);
+  z-index: 300;
+  max-width: min(680px, calc(100vw - 32px));
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #202124;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, .3);
+  opacity: 0;
+  transition: opacity .22s ease, transform .22s ease;
+}
+.toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+.toast.is-ok { background: var(--status-good); }
+.toast.is-bad { background: var(--status-bad); }

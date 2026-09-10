@@ -585,6 +585,22 @@ function refreshBodyJson() {
   }
 }
 
+let toastTimer = null;
+
+/** 화면 위쪽에 잠깐 뜨는 알림. 팝업이 닫혀도 보입니다. */
+function showToast(text, kind) {
+  const el = document.getElementById("toast");
+  el.textContent = text;
+  el.className = "toast" + (kind ? " is-" + kind : "");
+  el.hidden = false;
+  requestAnimationFrame(() => el.classList.add("is-on"));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    el.classList.remove("is-on");
+    setTimeout(() => { el.hidden = true; }, 250);
+  }, 5000);
+}
+
 function setBodyStatus(text, kind) {
   const status = document.getElementById("bodyStatus");
   status.className = "body-status" + (kind ? " is-" + kind : " muted");
@@ -725,15 +741,16 @@ async function confirmRegister() {
 
     const hits = countAppliedAirings(item);
     const prev = json.previous && json.previous !== item.keyword ? json.previous : "";
-    setBodyStatus(
+    const message =
       "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다." +
-      (prev ? " (이전 편성은 '" + prev + "' 유지)" : ""),
-      "ok"
-    );
+      (prev ? " (이전 편성은 '" + prev + "' 유지)" : "");
+    setBodyStatus(message, "ok");
+    showToast(message, "ok");
     // 등록 결과를 읽을 시간을 준 뒤 창을 닫습니다.
     setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 3000);
   } catch (err) {
     setBodyStatus("등록 실패: " + err.message, "bad");
+    showToast("등록 실패: " + err.message, "bad");
   }
 }
 
