@@ -549,12 +549,22 @@ def load_registrations():
 
 
 def save_registration(item):
+    """매뉴얼 키워드는 프로그램당 한 개만 살아 있습니다. 새로 넣으면 기존 것은 빠집니다."""
     with _store_lock:
         store = load_registrations()
-        store["items"] = [x for x in store["items"] if x.get("id") != item.get("id")]
+        name = item.get("programName")
+        removed = [
+            x for x in store["items"]
+            if x.get("id") != item.get("id") and name and x.get("programName") == name
+        ]
+        store["items"] = [
+            x for x in store["items"]
+            if x.get("id") != item.get("id")
+            and not (name and x.get("programName") == name)
+        ]
         store["items"].append(item)
         _write_json(REGISTRATION_STORE, store)
-        return store
+        return store, removed
 
 
 def delete_registration(reg_id):
@@ -757,8 +767,12 @@ class Handler(BaseHTTPRequestHandler):
                 if not item.get("id"):
                     item["id"] = "reg_%d" % int(time.time() * 1000)
                 item.setdefault("createdAt", int(time.time()))
-                store = save_registration(item)
-                return self._json({"ok": True, "item": item, **store})
+                store, removed = save_registration(item)
+                return self._json({
+                    "ok": True, "item": item,
+                    "replaced": [x.get("keyword") for x in removed],
+                    **store,
+                })
             return self._error("없는 API 입니다: " + parsed.path, 404)
         except Exception as exc:
             return self._error(str(exc))

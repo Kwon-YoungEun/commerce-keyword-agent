@@ -104,7 +104,8 @@ async function loadRegistrations() {
   }
 }
 
-/** 이 회차에 적용되는 등록 키워드 — 등록한 회차부터 그 이후 편성 전체에 붙습니다. */
+/** 이 회차에 적용되는 등록 키워드.
+ *  매뉴얼 키워드는 프로그램당 한 개라서, 등록한 회차부터 이후 편성에만 붙습니다. */
 function registrationsFor(program) {
   const list = state.registrationsByProgram.get(program.programName || program.title) || [];
   return list.filter((r) => !r.fromTs || (program.startTs || 0) >= r.fromTs);
@@ -674,9 +675,15 @@ async function confirmRegister() {
     body: body,
   };
 
-  const already = (state.registrationsByProgram.get(item.programName) || [])
-    .find((r) => r.keyword === item.keyword);
-  if (already && !confirm(`'${item.keyword}' 는 이미 이 프로그램에 등록돼 있어요. 다시 등록할까요?`)) {
+  // 매뉴얼 키워드는 프로그램당 한 개입니다. 기존 것이 있으면 바뀐다는 걸 먼저 알립니다.
+  const current = (state.registrationsByProgram.get(item.programName) || [])[0];
+  if (current && current.keyword !== item.keyword) {
+    const ok = confirm(
+      `${item.programName} 에는 지금 '${current.keyword}' 가 등록돼 있어요.\n` +
+      `'${item.keyword}' 로 바꾸면 기존 키워드는 캘린더에서 사라집니다. 바꿀까요?`
+    );
+    if (!ok) return;
+  } else if (current && !confirm(`'${item.keyword}' 는 이미 등록돼 있어요. 다시 등록할까요?`)) {
     return;
   }
 
@@ -689,8 +696,10 @@ async function confirmRegister() {
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
     const hits = countAppliedAirings(item);
+    const gone = (json.replaced || []).filter((k) => k && k !== item.keyword);
     setBodyStatus(
-      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다.",
+      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다." +
+      (gone.length ? " (기존 '" + gone.join("', '") + "' 해제)" : ""),
       "ok"
     );
     await loadRegistrations();
@@ -979,9 +988,10 @@ function renderRegistered(program) {
 
   box.innerHTML =
     "<h4>" + escapeHtml(program.programName || program.title) +
-    " 에 등록된 키워드 (" + items.length + "건)</h4>" +
+    " 의 현재 매뉴얼 키워드</h4>" +
     '<p class="muted" style="margin:0 0 8px;font-size:11.5px">' +
-    "등록한 회차부터 이후 편성 전체에 함께 표시됩니다.</p><ul>" +
+    "프로그램당 한 개만 등록됩니다. 등록한 회차부터 이후 편성에 표시되고, " +
+    "새로 등록하면 이 키워드는 해제됩니다.</p><ul>" +
     items
       .map((it) => {
         const when = new Date((it.createdAt || 0) * 1000);
