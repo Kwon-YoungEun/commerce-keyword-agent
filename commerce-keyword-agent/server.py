@@ -26,6 +26,7 @@ SCHEDULE_STORE = os.path.join(DATA_DIR, "schedule_store.json")
 REGISTRATION_STORE = os.path.join(DATA_DIR, "registrations.json")
 KEYWORD_CACHE = os.path.join(DATA_DIR, "keyword_cache.json")
 CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
+PROGRAM_ID_STORE = os.path.join(DATA_DIR, "program_ids.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
 USER_AGENT = (
@@ -205,6 +206,8 @@ def refresh_schedule(force=False):
 DEFAULT_CONFIG = {
     # 팀에서 쓰는 링크 형태가 다르면 이 주소만 바꾸면 됩니다.
     "storeSearchUrl": "https://search.shopping.naver.com/ns/search?query={keyword}",
+    # 키워드 등록 API 주소 — Postman 요청과 curl 명령을 만들 때 씁니다.
+    "registerApiUrl": "",
 }
 
 
@@ -225,7 +228,31 @@ def save_config(patch):
 
 
 def public_config(cfg):
-    return {"storeSearchUrl": cfg["storeSearchUrl"]}
+    return {"storeSearchUrl": cfg["storeSearchUrl"], "registerApiUrl": cfg["registerApiUrl"]}
+
+
+# ------------------------------------------------------------- 프로그램 ID 표
+
+
+def load_program_ids():
+    return _read_json(PROGRAM_ID_STORE, {})
+
+
+def save_program_ids(mapping):
+    """{프로그램명: programId} 를 병합 저장합니다."""
+    with _store_lock:
+        store = load_program_ids()
+        for name, pid in (mapping or {}).items():
+            name = (name or "").strip()
+            pid = (pid or "").strip()
+            if not name:
+                continue
+            if pid:
+                store[name] = pid
+            else:
+                store.pop(name, None)
+        _write_json(PROGRAM_ID_STORE, store)
+        return store
 
 
 # ------------------------------------------------- 네이버플러스스토어 미리보기
@@ -416,6 +443,9 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/config":
                 return self._json({"ok": True, **public_config(load_config())})
 
+            if path == "/api/program-ids":
+                return self._json({"ok": True, "map": load_program_ids()})
+
             if path == "/api/registrations":
                 return self._json({"ok": True, **load_registrations()})
 
@@ -430,6 +460,14 @@ class Handler(BaseHTTPRequestHandler):
             if parsed.path == "/api/config":
                 cfg = save_config(self._body_json())
                 return self._json({"ok": True, **public_config(cfg)})
+
+            if parsed.path == "/api/program-ids":
+                body = self._body_json()
+                mapping = body.get("map")
+                if mapping is None and body.get("name"):
+                    mapping = {body["name"]: body.get("id", "")}
+                store = save_program_ids(mapping or {})
+                return self._json({"ok": True, "map": store})
 
             if parsed.path == "/api/registrations":
                 item = self._body_json()

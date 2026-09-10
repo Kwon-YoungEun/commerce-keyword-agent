@@ -15,6 +15,9 @@ const state = {
   currentProgram: null,
   analysis: null,
   selectedKeyword: null,
+  programIds: {},
+  tray: [],
+  bodyDraft: null,
 };
 
 /* ------------------------------------------------------------- 날짜 유틸 */
@@ -253,6 +256,9 @@ function openProgram(p) {
 
   document.getElementById("previewPanel").innerHTML =
     '<div class="placeholder">왼쪽에서 키워드를 클릭하면 검색 결과를 미리 봅니다.</div>';
+  state.tray = [];
+  renderTray();
+  renderRegistered(p);
   document.getElementById("modalBackdrop").hidden = false;
   loadKeywords(p, false);
 }
@@ -377,10 +383,279 @@ async function renderPreview(k) {
   document.getElementById("btnRegister").addEventListener("click", () => registerKeyword(k));
 }
 
+/* ------------------------------------------------- 등록 대상 트레이 (4단계) */
+
 function registerKeyword(k) {
-  // 4단계에서 JSON body 생성으로 이어집니다.
-  alert("4단계에서 이 키워드로 JSON body 를 만듭니다: " + k.keyword);
+  if (!state.tray.some((x) => x.keyword === k.keyword)) {
+    state.tray.push({ keyword: k.keyword, score: k.score, category: k.category });
+  }
+  renderTray();
+  document.getElementById("tray").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+
+function renderTray() {
+  const tray = document.getElementById("tray");
+  tray.hidden = state.tray.length === 0;
+  document.getElementById("trayCount").textContent = state.tray.length + "개";
+
+  const chips = document.getElementById("trayChips");
+  chips.innerHTML = "";
+  state.tray.forEach((item, idx) => {
+    const chip = document.createElement("span");
+    chip.className = "chip";
+    chip.innerHTML = escapeHtml(item.keyword) + '<button type="button" aria-label="빼기">×</button>';
+    chip.querySelector("button").addEventListener("click", () => {
+      state.tray.splice(idx, 1);
+      renderTray();
+    });
+    chips.appendChild(chip);
+  });
+}
+
+/* ------------------------------------------------- JSON body 만들기 (4단계) */
+
+function newRequestId() {
+  if (crypto.randomUUID) return crypto.randomUUID();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
+function buildBody({ programName, programId, keywords, requestId, timestamp }) {
+  return {
+    requestId: requestId || newRequestId(),
+    timestamp: timestamp || Date.now(),
+    programName: programName,
+    programId: programId,
+    productInfo: keywords.map((k, i) => ({
+      productIndex: i,
+      productKeyword: "[" + k.keyword + "]",
+      productMethod: ["MANUAL"],
+      productScore: Number(Number(k.score || 0).toFixed(1)),
+      isProductCropImg: false,
+      productCropImg: "",
+      pplInfo: [],
+    })),
+    productCategory: [],
+  };
+}
+
+function openBodyModal() {
+  if (!state.tray.length || !state.currentProgram) return;
+  const p = state.currentProgram;
+  const mapped = state.programIds[p.title] || "";
+
+  document.getElementById("fldProgramName").value = p.title;
+  document.getElementById("fldProgramId").value = mapped;
+  document.getElementById("programIdHint").textContent = mapped
+    ? "저장된 표에서 가져왔어요."
+    : "등록된 ID가 없어요. 직접 넣으면 표에 저장됩니다.";
+  document.getElementById("bodyMeta").textContent =
+    prettyDate(p.date) + " " + p.start + "~" + p.end +
+    (p.episode ? " · " + p.episode : "") +
+    " · 키워드 " + state.tray.length + "개";
+
+  state.bodyDraft = { requestId: newRequestId(), timestamp: Date.now() };
+  refreshBodyJson();
+  document.getElementById("bodyBackdrop").hidden = false;
+}
+
+function refreshBodyJson() {
+  const body = buildBody({
+    programName: document.getElementById("fldProgramName").value.trim(),
+    programId: document.getElementById("fldProgramId").value.trim(),
+    keywords: state.tray,
+    requestId: state.bodyDraft.requestId,
+    timestamp: state.bodyDraft.timestamp,
+  });
+  document.getElementById("bodyJson").value = JSON.stringify(body, null, 2);
+  validateBodyJson();
+}
+
+function currentBody() {
+  const el = document.getElementById("bodyJson");
+  const err = document.getElementById("bodyError");
+  try {
+    const parsed = JSON.parse(el.value);
+    err.hidden = true;
+    return parsed;
+  } catch (e) {
+    err.hidden = false;
+    err.textContent = "JSON 형식이 맞지 않아요: " + e.message;
+    return null;
+  }
+}
+
+function validateBodyJson() {
+  const body = currentBody();
+  if (!body) return;
+  if (!body.programId) {
+    setBodyStatus("programId 가 비어 있어요. 프로그램 ID 를 넣어 주세요.", "bad");
+  } else {
+    setBodyStatus("");
+  }
+}
+
+function setBodyStatus(text, kind) {
+  const status = document.getElementById("bodyStatus");
+  status.className = "body-status" + (kind ? " is-" + kind : " muted");
+  status.textContent = text;
+}
+
+async function copyText(text, okMessage) {
+  try {
+    await navigator.clipboard.writeText(text);
+    setBodyStatus(okMessage, "ok");
+  } catch (err) {
+    setBodyStatus("복사가 막혀 있어요. 아래 상자에서 직접 선택해 복사해 주세요.", "bad");
+  }
+}
+
+function downloadFile(filename, text, mime) {
+  const blob = new Blob([text], { type: mime || "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function buildCurl(body) {
+  const url = (state.config && state.config.registerApiUrl) || "<등록 API 주소를 설정에 넣어 주세요>";
+  const json = JSON.stringify(body).split("'").join("'\\''");
+  return (
+    "curl -X POST '" + url + "' \\\n" +
+    "  -H 'Content-Type: application/json' \\\n" +
+    "  -d '" + json + "'"
+  );
+}
+
+function buildPostmanCollection(body, program) {
+  const url = (state.config && state.config.registerApiUrl) || "";
+  let urlNode;
+  if (url) {
+    const withoutScheme = url.replace(/^https?:\/\//, "");
+    const host = withoutScheme.split("/")[0];
+    const path = withoutScheme.split("/").slice(1).filter(Boolean);
+    urlNode = { raw: url, protocol: url.split("://")[0], host: [host], path: path };
+  } else {
+    urlNode = { raw: "{{baseUrl}}/keyword/manual", host: ["{{baseUrl}}"], path: ["keyword", "manual"] };
+  }
+  return {
+    info: {
+      name: "커머스광고 키워드 등록 - " + program.title,
+      schema: "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    },
+    item: [
+      {
+        name: (program.title + " " + (program.episode || "") + " 키워드 등록").trim(),
+        request: {
+          method: "POST",
+          header: [{ key: "Content-Type", value: "application/json" }],
+          body: {
+            mode: "raw",
+            raw: JSON.stringify(body, null, 2),
+            options: { raw: { language: "json" } },
+          },
+          url: urlNode,
+        },
+      },
+    ],
+    variable: url ? [] : [{ key: "baseUrl", value: "https://example.com" }],
+  };
+}
+
+async function confirmRegister() {
+  const body = currentBody();
+  if (!body) return;
+  if (!body.programId) {
+    setBodyStatus("programId 가 비어 있어요. 먼저 채워 주세요.", "bad");
+    return;
+  }
+  const p = state.currentProgram;
+
+  if (state.programIds[body.programName] !== body.programId) {
+    try {
+      const res = await fetch("/api/program-ids", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: body.programName, id: body.programId }),
+      });
+      state.programIds = (await res.json()).map || state.programIds;
+    } catch (err) {
+      /* 표 저장에 실패해도 등록은 계속합니다. */
+    }
+  }
+
+  const item = {
+    id: body.requestId,
+    programId: p.id,               // tvN 편성 ID (캘린더 표시용)
+    programCode: body.programId,   // 전송 body 의 programId
+    programName: body.programName,
+    date: p.date,
+    episode: p.episode,
+    keywords: (body.productInfo || []).map((x) => x.productKeyword),
+    body: body,
+  };
+
+  try {
+    const res = await fetch("/api/registrations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(item),
+    });
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
+    setBodyStatus("캘린더에 등록했어요 (키워드 " + item.keywords.length + "개).", "ok");
+    state.tray = [];
+    renderTray();
+    await loadRegistrations();
+    render();
+    renderRegistered(p);
+    setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 900);
+  } catch (err) {
+    setBodyStatus("등록 실패: " + err.message, "bad");
+  }
+}
+
+/* --------------------------------------------- 등록된 키워드 보기 (6단계) */
+
+function renderRegistered(program) {
+  const box = document.getElementById("registeredBox");
+  const items = state.registrationsByProgram.get(program.id) || [];
+  box.hidden = items.length === 0;
+  if (!items.length) return;
+
+  box.innerHTML =
+    "<h4>이 회차에 등록된 키워드 (" + items.length + "건)</h4><ul>" +
+    items
+      .map((it) => {
+        const when = new Date((it.createdAt || 0) * 1000);
+        const stamp =
+          when.getMonth() + 1 + "/" + when.getDate() + " " +
+          String(when.getHours()).padStart(2, "0") + ":" +
+          String(when.getMinutes()).padStart(2, "0");
+        return "<li>" + escapeHtml((it.keywords || []).join(", ")) +
+          ' <span class="muted">· ' + escapeHtml(it.programCode || "") + " · " + stamp + "</span>" +
+          '<button type="button" data-reg="' + escapeHtml(it.id) + '">삭제</button></li>';
+      })
+      .join("") +
+    "</ul>";
+
+  box.querySelectorAll("button[data-reg]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      await fetch("/api/registrations?id=" + encodeURIComponent(btn.dataset.reg), { method: "DELETE" });
+      await loadRegistrations();
+      render();
+      renderRegistered(program);
+    });
+  });
+}
+
 
 /* --------------------------------------------------------------- 설정 팝업 */
 
@@ -396,9 +671,27 @@ async function loadConfig() {
 function openSettings() {
   const c = state.config || {};
   document.getElementById("cfgStoreUrl").value = c.storeSearchUrl || "";
+  document.getElementById("cfgRegisterUrl").value = c.registerApiUrl || "";
+  document.getElementById("cfgProgramIds").value = Object.entries(state.programIds)
+    .map(([name, id]) => name + "," + id)
+    .join("\n");
   document.getElementById("cfgStatus").textContent = "";
   document.getElementById("cfgStatus").className = "muted cfg-status";
   document.getElementById("settingsBackdrop").hidden = false;
+}
+
+function parseProgramIdText(text) {
+  const map = {};
+  for (const line of (text || "").split(/\r?\n/)) {
+    const row = line.trim();
+    if (!row) continue;
+    const cut = row.lastIndexOf(",");
+    if (cut < 1) continue;
+    const name = row.slice(0, cut).trim();
+    const id = row.slice(cut + 1).trim();
+    if (name) map[name] = id;
+  }
+  return map;
 }
 
 async function saveSettings() {
@@ -406,17 +699,38 @@ async function saveSettings() {
   status.className = "cfg-status";
   status.textContent = "저장 중…";
   try {
-    const res = await fetch("/api/config", {
+    const cfgRes = await fetch("/api/config", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim() }),
+      body: JSON.stringify({
+        storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim(),
+        registerApiUrl: document.getElementById("cfgRegisterUrl").value.trim(),
+      }),
     });
-    state.config = await res.json();
+    state.config = await cfgRes.json();
+
+    const map = parseProgramIdText(document.getElementById("cfgProgramIds").value);
+    const idRes = await fetch("/api/program-ids", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ map: map }),
+    });
+    state.programIds = (await idRes.json()).map || {};
+
     status.className = "cfg-status is-ok";
-    status.textContent = "저장했어요.";
+    status.textContent = "저장했어요. 프로그램 ID " + Object.keys(state.programIds).length + "개 등록됨.";
   } catch (err) {
     status.className = "cfg-status is-bad";
     status.textContent = "저장 실패: " + err.message;
+  }
+}
+
+async function loadProgramIds() {
+  try {
+    const res = await fetch("/api/program-ids");
+    state.programIds = (await res.json()).map || {};
+  } catch (err) {
+    state.programIds = {};
   }
 }
 
@@ -458,21 +772,73 @@ function bindEvents() {
     if (e.target.id === "settingsBackdrop") e.target.hidden = true;
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
+
+  document.getElementById("btnClearTray").addEventListener("click", () => {
+    state.tray = [];
+    renderTray();
+  });
+  document.getElementById("btnBuildBody").addEventListener("click", openBodyModal);
+
+  document.getElementById("bodyClose").addEventListener("click", () => {
+    document.getElementById("bodyBackdrop").hidden = true;
+  });
+  document.getElementById("bodyBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "bodyBackdrop") e.target.hidden = true;
+  });
+  document.getElementById("fldProgramName").addEventListener("input", refreshBodyJson);
+  document.getElementById("fldProgramId").addEventListener("input", refreshBodyJson);
+  document.getElementById("bodyJson").addEventListener("input", validateBodyJson);
+  document.getElementById("btnRegenIds").addEventListener("click", () => {
+    state.bodyDraft = { requestId: newRequestId(), timestamp: Date.now() };
+    refreshBodyJson();
+    setBodyStatus("requestId 와 timestamp 를 새로 만들었어요.", "ok");
+  });
+  document.getElementById("btnCopyBody").addEventListener("click", () => {
+    const body = currentBody();
+    if (body) copyText(JSON.stringify(body, null, 2), "JSON 을 복사했어요. Postman Body(raw)에 붙여 넣으세요.");
+  });
+  document.getElementById("btnDownloadBody").addEventListener("click", () => {
+    const body = currentBody();
+    if (!body) return;
+    downloadFile("keyword-body-" + body.requestId.slice(0, 8) + ".json", JSON.stringify(body, null, 2));
+    setBodyStatus("JSON 파일을 저장했어요.", "ok");
+  });
+  document.getElementById("btnCopyCurl").addEventListener("click", () => {
+    const body = currentBody();
+    if (!body) return;
+    if (!(state.config && state.config.registerApiUrl)) {
+      setBodyStatus("설정에 등록 API 주소를 넣으면 주소까지 채워집니다.", "bad");
+    }
+    copyText(buildCurl(body), "curl 명령을 복사했어요.");
+  });
+  document.getElementById("btnPostman").addEventListener("click", () => {
+    const body = currentBody();
+    if (!body) return;
+    const collection = buildPostmanCollection(body, state.currentProgram);
+    downloadFile("postman-" + body.requestId.slice(0, 8) + ".json", JSON.stringify(collection, null, 2));
+    setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
+  });
+  document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
   document.getElementById("modalClose").addEventListener("click", closeModal);
   document.getElementById("modalBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "modalBackdrop") closeModal();
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
-    const settings = document.getElementById("settingsBackdrop");
-    if (!settings.hidden) settings.hidden = true;
-    else closeModal();
+    for (const id of ["settingsBackdrop", "bodyBackdrop"]) {
+      const el = document.getElementById(id);
+      if (!el.hidden) {
+        el.hidden = true;
+        return;
+      }
+    }
+    closeModal();
   });
 }
 
 (async function main() {
   bindEvents();
-  await Promise.all([loadSchedule(), loadRegistrations(), loadConfig()]);
+  await Promise.all([loadSchedule(), loadRegistrations(), loadConfig(), loadProgramIds()]);
   render();
   // 오늘 시간대가 화면에 보이도록 스크롤합니다.
   const nowMin = new Date().getHours() * 60 + new Date().getMinutes() - DAY_START_MIN;

@@ -90,6 +90,58 @@
           </div>
         </aside>
       </div>
+      <div id="tray" class="tray" hidden>
+        <div class="tray-head">
+          <strong>등록 대상</strong>
+          <span id="trayCount" class="muted"></span>
+        </div>
+        <div id="trayChips" class="chips"></div>
+        <div class="tray-actions">
+          <button id="btnClearTray" class="btn btn-sm" type="button">비우기</button>
+          <button id="btnBuildBody" class="btn btn-line" type="button">JSON body 만들기</button>
+        </div>
+      </div>
+      <div id="registeredBox" class="registered-box" hidden></div>
+    </div>
+  </div>
+</div>
+
+<!-- JSON body 팝업 (4·5단계) -->
+<div id="bodyBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="bodyTitle">
+    <button id="bodyClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <h2 id="bodyTitle">키워드 등록 JSON body</h2>
+      <p id="bodyMeta" class="muted"></p>
+    </div>
+    <div class="modal-body">
+      <div class="body-fields">
+        <label class="field">
+          <span>programName</span>
+          <input id="fldProgramName" type="text">
+        </label>
+        <label class="field">
+          <span>programId <small class="muted">프로그램별 ID</small></span>
+          <input id="fldProgramId" type="text" placeholder="예: CS02070316">
+          <small id="programIdHint" class="muted"></small>
+        </label>
+      </div>
+      <div class="body-opts">
+        <span class="muted" style="font-size:12px">productKeyword 는 <code>[키워드]</code> 형태로 넣습니다.</span>
+        <button id="btnRegenIds" class="btn btn-sm" type="button">requestId · timestamp 새로 만들기</button>
+      </div>
+
+      <textarea id="bodyJson" class="json-box" spellcheck="false"></textarea>
+      <p id="bodyError" class="json-error" hidden></p>
+
+      <div class="body-actions">
+        <button id="btnCopyBody" class="btn" type="button">JSON 복사</button>
+        <button id="btnDownloadBody" class="btn" type="button">.json 저장</button>
+        <button id="btnCopyCurl" class="btn" type="button">curl 복사</button>
+        <button id="btnPostman" class="btn" type="button">Postman 컬렉션 저장</button>
+        <button id="btnConfirmRegister" class="btn btn-line" type="button">캘린더에 등록</button>
+      </div>
+      <p id="bodyStatus" class="muted body-status"></p>
     </div>
   </div>
 </div>
@@ -107,6 +159,14 @@
         <span>스토어 검색 링크 형식</span>
         <input id="cfgStoreUrl" type="text" placeholder="https://…?query={keyword}">
         <small class="muted">키워드가 들어갈 자리에 <code>{keyword}</code> 를 적어 주세요.</small>
+      </label>
+      <label class="field">
+        <span>키워드 등록 API 주소 <small class="muted">curl · Postman 만들 때 사용</small></span>
+        <input id="cfgRegisterUrl" type="text" placeholder="https://…/keyword/manual">
+      </label>
+      <label class="field">
+        <span>프로그램 ID 표 <small class="muted">프로그램명,ID 를 한 줄에 하나씩</small></span>
+        <textarea id="cfgProgramIds" class="id-box" spellcheck="false" placeholder="전지적 참견 시점,CS02070316&#10;언니네 산지직송3,CS0207xxxx"></textarea>
       </label>
       <div class="field-actions">
         <span id="cfgStatus" class="muted cfg-status"></span>
