@@ -1,3 +1,70 @@
 {
- "items": []
+ "items": [
+  {
+   "id": "6b3d5575-6178-44eb-b0d5-25f02473a7d4",
+   "programName": "언니네 산지직송3",
+   "programCode": "CS0207DEMO",
+   "scheduleId": "EA202609080340",
+   "fromTs": 1788806400,
+   "date": "20260907",
+   "startLabel": "03:40",
+   "episode": "5회",
+   "keyword": "염정아 모자",
+   "bodyText": "{\n  \"requestId\": \"6b3d5575-6178-44eb-b0d5-25f02473a7d4\",\n  \"timestamp\": 1789035999370,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"염정아 모자\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "6b3d5575-6178-44eb-b0d5-25f02473a7d4",
+    "timestamp": 1789035999370,
+    "programName": "언니네 산지직송3",
+    "programId": "CS0207DEMO",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "염정아 모자",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789036002
+  },
+  {
+   "id": "e0c106f9-5140-46e7-85e0-b81dc9e1758c",
+   "programName": "언니네 산지직송3",
+   "programCode": "CS0207DEMO",
+   "scheduleId": "EA202609081605",
+   "fromTs": 1788851100,
+   "date": "20260908",
+   "startLabel": "16:05",
+   "episode": "6회",
+   "keyword": "노윤서 모자",
+   "bodyText": "{\n  \"requestId\": \"e0c106f9-5140-46e7-85e0-b81dc9e1758c\",\n  \"timestamp\": 1789036046179,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"노윤서 모자\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "e0c106f9-5140-46e7-85e0-b81dc9e1758c",
+    "timestamp": 1789036046179,
+    "programName": "언니네 산지직송3",
+    "programId": "CS0207DEMO",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "노윤서 모자",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789036048
+  }
+ ]
 }

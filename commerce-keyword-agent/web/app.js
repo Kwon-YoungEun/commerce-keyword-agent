@@ -730,7 +730,8 @@ async function confirmRegister() {
       (prev ? " (이전 편성은 '" + prev + "' 유지)" : ""),
       "ok"
     );
-    setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 900);
+    // 등록 결과를 읽을 시간을 준 뒤 창을 닫습니다.
+    setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 4000);
   } catch (err) {
     setBodyStatus("등록 실패: " + err.message, "bad");
   }
