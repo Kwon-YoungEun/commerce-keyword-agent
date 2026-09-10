@@ -90,17 +90,6 @@
           </div>
         </aside>
       </div>
-      <div id="tray" class="tray" hidden>
-        <div class="tray-head">
-          <strong>등록 대상</strong>
-          <span id="trayCount" class="muted"></span>
-        </div>
-        <div id="trayChips" class="chips"></div>
-        <div class="tray-actions">
-          <button id="btnClearTray" class="btn btn-sm" type="button">비우기</button>
-          <button id="btnBuildBody" class="btn btn-line" type="button">JSON body 만들기</button>
-        </div>
-      </div>
       <div id="registeredBox" class="registered-box" hidden></div>
     </div>
   </div>
@@ -127,11 +116,16 @@
         </label>
       </div>
       <div class="body-opts">
-        <span class="muted" style="font-size:12px">productKeyword 는 <code>[키워드]</code> 형태로 넣습니다.</span>
+        <span class="muted" style="font-size:12px">
+          <code>productKeyword</code> 는 <code>[키워드]</code> 형태로 넣습니다.
+          나머지 값(<code>productIndex</code>, <code>productMethod</code>, <code>productScore</code>,
+          <code>isProductCropImg</code>, <code>productCropImg</code>, <code>pplInfo</code>,
+          <code>productCategory</code>)은 고정입니다.
+        </span>
         <button id="btnRegenIds" class="btn btn-sm" type="button">requestId · timestamp 새로 만들기</button>
       </div>
 
-      <textarea id="bodyJson" class="json-box" spellcheck="false"></textarea>
+      <textarea id="bodyJson" class="json-box" spellcheck="false" readonly></textarea>
       <p id="bodyError" class="json-error" hidden></p>
 
       <div class="body-actions">

@@ -16,7 +16,6 @@ const state = {
   analysis: null,
   selectedKeyword: null,
   programIds: {},
-  tray: [],
   bodyDraft: null,
 };
 
@@ -256,8 +255,6 @@ function openProgram(p) {
 
   document.getElementById("previewPanel").innerHTML =
     '<div class="placeholder">왼쪽에서 키워드를 클릭하면 검색 결과를 미리 봅니다.</div>';
-  state.tray = [];
-  renderTray();
   renderRegistered(p);
   document.getElementById("modalBackdrop").hidden = false;
   loadKeywords(p, false);
@@ -383,36 +380,24 @@ async function renderPreview(k) {
   document.getElementById("btnRegister").addEventListener("click", () => registerKeyword(k));
 }
 
-/* ------------------------------------------------- 등록 대상 트레이 (4단계) */
+/* ------------------------------------------------- JSON body 만들기 (4단계) */
+//
+// 바뀌는 값은 requestId / timestamp / programName / programId / productKeyword 다섯 개뿐입니다.
+// 나머지는 아래 FIXED 값 그대로 나갑니다. 키워드는 한 번에 하나만 등록합니다.
+
+const FIXED = {
+  productIndex: 0,
+  productMethod: ["MANUAL"],
+  productScore: 27.0,
+  isProductCropImg: false,
+  productCropImg: "",
+  pplInfo: [],
+  productCategory: [],
+};
 
 function registerKeyword(k) {
-  if (!state.tray.some((x) => x.keyword === k.keyword)) {
-    state.tray.push({ keyword: k.keyword, score: k.score, category: k.category });
-  }
-  renderTray();
-  document.getElementById("tray").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  openBodyModal(k);
 }
-
-function renderTray() {
-  const tray = document.getElementById("tray");
-  tray.hidden = state.tray.length === 0;
-  document.getElementById("trayCount").textContent = state.tray.length + "개";
-
-  const chips = document.getElementById("trayChips");
-  chips.innerHTML = "";
-  state.tray.forEach((item, idx) => {
-    const chip = document.createElement("span");
-    chip.className = "chip";
-    chip.innerHTML = escapeHtml(item.keyword) + '<button type="button" aria-label="빼기">×</button>';
-    chip.querySelector("button").addEventListener("click", () => {
-      state.tray.splice(idx, 1);
-      renderTray();
-    });
-    chips.appendChild(chip);
-  });
-}
-
-/* ------------------------------------------------- JSON body 만들기 (4단계) */
 
 function newRequestId() {
   if (crypto.randomUUID) return crypto.randomUUID();
@@ -422,74 +407,74 @@ function newRequestId() {
   });
 }
 
-function buildBody({ programName, programId, keywords, requestId, timestamp }) {
+function buildBody({ programName, programId, keyword, requestId, timestamp }) {
   return {
-    requestId: requestId || newRequestId(),
-    timestamp: timestamp || Date.now(),
+    requestId: requestId,
+    timestamp: timestamp,
     programName: programName,
     programId: programId,
-    productInfo: keywords.map((k, i) => ({
-      productIndex: i,
-      productKeyword: "[" + k.keyword + "]",
-      productMethod: ["MANUAL"],
-      productScore: Number(Number(k.score || 0).toFixed(1)),
-      isProductCropImg: false,
-      productCropImg: "",
-      pplInfo: [],
-    })),
-    productCategory: [],
+    productInfo: [
+      {
+        productIndex: FIXED.productIndex,
+        productKeyword: "[" + keyword + "]",
+        productMethod: FIXED.productMethod.slice(),
+        productScore: FIXED.productScore,
+        isProductCropImg: FIXED.isProductCropImg,
+        productCropImg: FIXED.productCropImg,
+        pplInfo: FIXED.pplInfo.slice(),
+      },
+    ],
+    productCategory: FIXED.productCategory.slice(),
   };
 }
 
-function openBodyModal() {
-  if (!state.tray.length || !state.currentProgram) return;
-  const p = state.currentProgram;
-  const mapped = state.programIds[p.title] || "";
+// JSON.stringify 는 27.0 을 27 로 적습니다. 받은 예시와 똑같이 27.0 으로 내보냅니다.
+function bodyToText(body, pretty) {
+  const text = pretty ? JSON.stringify(body, null, 2) : JSON.stringify(body);
+  return text.replace(/("productScore":\s*)27(?!\.)/g, "$1" + "27.0");
+}
 
-  document.getElementById("fldProgramName").value = p.title;
+function openBodyModal(k) {
+  if (!state.currentProgram) return;
+  const p = state.currentProgram;
+  const name = p.programName || p.title;
+  const mapped = state.programIds[name] || "";
+
+  state.bodyDraft = {
+    keyword: k.keyword,
+    requestId: newRequestId(),
+    timestamp: Date.now(),
+  };
+
+  document.getElementById("fldProgramName").value = name;
   document.getElementById("fldProgramId").value = mapped;
   document.getElementById("programIdHint").textContent = mapped
     ? "저장된 표에서 가져왔어요."
     : "등록된 ID가 없어요. 직접 넣으면 표에 저장됩니다.";
   document.getElementById("bodyMeta").textContent =
     prettyDate(p.date) + " " + p.start + "~" + p.end +
-    (p.episode ? " · " + p.episode : "") +
-    " · 키워드 " + state.tray.length + "개";
+    (p.episode ? " · " + p.episode : "") + " · 키워드 " + k.keyword;
 
-  state.bodyDraft = { requestId: newRequestId(), timestamp: Date.now() };
   refreshBodyJson();
   document.getElementById("bodyBackdrop").hidden = false;
 }
 
-function refreshBodyJson() {
-  const body = buildBody({
+function currentBody() {
+  const d = state.bodyDraft;
+  if (!d) return null;
+  return buildBody({
     programName: document.getElementById("fldProgramName").value.trim(),
     programId: document.getElementById("fldProgramId").value.trim(),
-    keywords: state.tray,
-    requestId: state.bodyDraft.requestId,
-    timestamp: state.bodyDraft.timestamp,
+    keyword: d.keyword,
+    requestId: d.requestId,
+    timestamp: d.timestamp,
   });
-  document.getElementById("bodyJson").value = JSON.stringify(body, null, 2);
-  validateBodyJson();
 }
 
-function currentBody() {
-  const el = document.getElementById("bodyJson");
-  const err = document.getElementById("bodyError");
-  try {
-    const parsed = JSON.parse(el.value);
-    err.hidden = true;
-    return parsed;
-  } catch (e) {
-    err.hidden = false;
-    err.textContent = "JSON 형식이 맞지 않아요: " + e.message;
-    return null;
-  }
-}
-
-function validateBodyJson() {
+function refreshBodyJson() {
   const body = currentBody();
   if (!body) return;
+  document.getElementById("bodyJson").value = bodyToText(body, true);
   if (!body.programId) {
     setBodyStatus("programId 가 비어 있어요. 프로그램 ID 를 넣어 주세요.", "bad");
   } else {
@@ -526,7 +511,7 @@ function downloadFile(filename, text, mime) {
 
 function buildCurl(body) {
   const url = (state.config && state.config.registerApiUrl) || "<등록 API 주소를 설정에 넣어 주세요>";
-  const json = JSON.stringify(body).split("'").join("'\\''");
+  const json = bodyToText(body, false).split("'").join("'\\''");
   return (
     "curl -X POST '" + url + "' \\\n" +
     "  -H 'Content-Type: application/json' \\\n" +
@@ -552,13 +537,13 @@ function buildPostmanCollection(body, program) {
     },
     item: [
       {
-        name: (program.title + " " + (program.episode || "") + " 키워드 등록").trim(),
+        name: (program.title + " " + (program.episode || "") + " " + state.bodyDraft.keyword).trim(),
         request: {
           method: "POST",
           header: [{ key: "Content-Type", value: "application/json" }],
           body: {
             mode: "raw",
-            raw: JSON.stringify(body, null, 2),
+            raw: bodyToText(body, true),
             options: { raw: { language: "json" } },
           },
           url: urlNode,
@@ -598,7 +583,8 @@ async function confirmRegister() {
     programName: body.programName,
     date: p.date,
     episode: p.episode,
-    keywords: (body.productInfo || []).map((x) => x.productKeyword),
+    keyword: body.productInfo[0].productKeyword,
+    bodyText: bodyToText(body, true),
     body: body,
   };
 
@@ -610,9 +596,7 @@ async function confirmRegister() {
     });
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
-    setBodyStatus("캘린더에 등록했어요 (키워드 " + item.keywords.length + "개).", "ok");
-    state.tray = [];
-    renderTray();
+    setBodyStatus("캘린더에 등록했어요 — " + item.keyword, "ok");
     await loadRegistrations();
     render();
     renderRegistered(p);
@@ -639,7 +623,8 @@ function renderRegistered(program) {
           when.getMonth() + 1 + "/" + when.getDate() + " " +
           String(when.getHours()).padStart(2, "0") + ":" +
           String(when.getMinutes()).padStart(2, "0");
-        return "<li>" + escapeHtml((it.keywords || []).join(", ")) +
+        const shown = it.keyword || (it.keywords || []).join(", ");
+        return "<li>" + escapeHtml(shown) +
           ' <span class="muted">· ' + escapeHtml(it.programCode || "") + " · " + stamp + "</span>" +
           '<button type="button" data-reg="' + escapeHtml(it.id) + '">삭제</button></li>';
       })
@@ -773,12 +758,6 @@ function bindEvents() {
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
 
-  document.getElementById("btnClearTray").addEventListener("click", () => {
-    state.tray = [];
-    renderTray();
-  });
-  document.getElementById("btnBuildBody").addEventListener("click", openBodyModal);
-
   document.getElementById("bodyClose").addEventListener("click", () => {
     document.getElementById("bodyBackdrop").hidden = true;
   });
@@ -787,20 +766,20 @@ function bindEvents() {
   });
   document.getElementById("fldProgramName").addEventListener("input", refreshBodyJson);
   document.getElementById("fldProgramId").addEventListener("input", refreshBodyJson);
-  document.getElementById("bodyJson").addEventListener("input", validateBodyJson);
   document.getElementById("btnRegenIds").addEventListener("click", () => {
-    state.bodyDraft = { requestId: newRequestId(), timestamp: Date.now() };
+    state.bodyDraft.requestId = newRequestId();
+    state.bodyDraft.timestamp = Date.now();
     refreshBodyJson();
     setBodyStatus("requestId 와 timestamp 를 새로 만들었어요.", "ok");
   });
   document.getElementById("btnCopyBody").addEventListener("click", () => {
     const body = currentBody();
-    if (body) copyText(JSON.stringify(body, null, 2), "JSON 을 복사했어요. Postman Body(raw)에 붙여 넣으세요.");
+    if (body) copyText(bodyToText(body, true), "JSON 을 복사했어요. Postman Body(raw)에 붙여 넣으세요.");
   });
   document.getElementById("btnDownloadBody").addEventListener("click", () => {
     const body = currentBody();
     if (!body) return;
-    downloadFile("keyword-body-" + body.requestId.slice(0, 8) + ".json", JSON.stringify(body, null, 2));
+    downloadFile("keyword-body-" + body.requestId.slice(0, 8) + ".json", bodyToText(body, true));
     setBodyStatus("JSON 파일을 저장했어요.", "ok");
   });
   document.getElementById("btnCopyCurl").addEventListener("click", () => {

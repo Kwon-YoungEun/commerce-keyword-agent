@@ -97,6 +97,14 @@ def detect_genre(raw_title):
     return "기타"
 
 
+SUBTITLE_SPLIT_RE = re.compile(r"\s+[-–—:]\s+")
+
+
+def program_name_only(title):
+    """'언니네 산지직송3 - 네 식구 산지 라이프' → '언니네 산지직송3' (시즌 숫자는 남김)."""
+    return SUBTITLE_SPLIT_RE.split((title or "").strip())[0].strip() or (title or "").strip()
+
+
 EPISODE_RE = re.compile(r"(\d+)\s*(회|화)")
 
 
@@ -169,6 +177,7 @@ def fetch_tvn_schedule():
             "durationMin": max(5, int(round((end_ts - start_ts) / 60.0))),
             "rawTitle": raw_title,
             "title": clean_title(raw_title),
+            "programName": program_name_only(clean_title(raw_title)),
             "episodeName": epi_name,
             "episode": parse_episode(epi_name, raw_title),
             "subtitle": episode_subtitle(epi_name),
