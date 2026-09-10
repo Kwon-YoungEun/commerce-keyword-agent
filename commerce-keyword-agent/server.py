@@ -28,6 +28,7 @@ KEYWORD_CACHE = os.path.join(DATA_DIR, "keyword_cache.json")
 CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
 PROGRAM_ID_STORE = os.path.join(DATA_DIR, "program_ids.json")
 PROGRAM_CATALOG = os.path.join(DATA_DIR, "program_catalog.json")
+PROGRAM_SEED = os.path.join(DATA_DIR, "tvn_programs.txt")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
 TVN_PROGRAM_URL = "https://tvn.cjenm.com/ko/program/"
@@ -232,8 +233,39 @@ def fetch_program_catalog():
     return out
 
 
+def load_seed_catalog():
+    """data/tvn_programs.txt (pgmId|이름|대표장르|세부장르) 를 읽습니다.
+
+    tvN 목록 API 는 브라우저에서만 2페이지 이상을 내려주기 때문에,
+    전체 목록을 한 번 받아 이 파일로 보관해 두고 기본값으로 씁니다.
+    """
+    out = {}
+    try:
+        with open(PROGRAM_SEED, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split("|")
+                if len(parts) < 3:
+                    continue
+                out[parts[0].strip()] = {
+                    "name": parts[1].strip(),
+                    "genre": parts[2].strip(),
+                    "subGenre": parts[3].strip() if len(parts) > 3 else "",
+                    "channel": "",
+                }
+    except OSError:
+        pass
+    return out
+
+
 def load_program_catalog():
-    return _read_json(PROGRAM_CATALOG, {"fetchedAt": 0, "items": {}})
+    store = _read_json(PROGRAM_CATALOG, {"fetchedAt": 0, "items": {}})
+    merged = load_seed_catalog()
+    merged.update(store.get("items", {}))   # 새로 받아 온 값이 우선입니다.
+    store["items"] = merged
+    return store
 
 
 def refresh_program_catalog(force=False):
@@ -320,6 +352,10 @@ def apply_catalog(store):
         canonical.setdefault(norm_name(entry["name"]), entry["name"])
 
     for p in programs.values():
+        # 카탈로그에 자기 항목이 있으면 그 자체로 독립 프로그램입니다.
+        # ('식스센스: B사이드' 를 '식스센스' 로 합치지 않기 위한 조건)
+        if p["catalogName"]:
+            continue
         for candidate in base_name_candidates(p["programName"]):
             key = norm_name(candidate)
             if key and key != norm_name(p["programName"]) and key in canonical:
@@ -521,6 +557,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
+        self._cors_headers()
         self.end_headers()
         self.wfile.write(body)
 
@@ -534,7 +571,13 @@ class Handler(BaseHTTPRequestHandler):
         length = int(self.headers.get("Content-Length") or 0)
         if not length:
             return {}
-        return json.loads(self.rfile.read(length).decode("utf-8"))
+        raw = self.rfile.read(length).decode("utf-8")
+        ctype = (self.headers.get("Content-Type") or "").split(";")[0].strip()
+        if ctype == "application/x-www-form-urlencoded":
+            # 다른 사이트에서 폼 전송으로 넘겨줄 때 쓰는 경로입니다.
+            form = urllib.parse.parse_qs(raw)
+            return json.loads(form.get("payload", ["{}"])[0])
+        return json.loads(raw)
 
     # -- GET -------------------------------------------------------------
     def do_GET(self):
@@ -606,6 +649,11 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/program-ids":
                 return self._json({"ok": True, "map": load_program_ids()})
 
+            if path == "/api/program-catalog":
+                store = load_program_catalog()
+                return self._json({"ok": True, "count": len(store.get("items", {})),
+                                   "fetchedAt": store.get("fetchedAt", 0)})
+
             if path == "/api/registrations":
                 return self._json({"ok": True, **load_registrations()})
 
@@ -614,12 +662,41 @@ class Handler(BaseHTTPRequestHandler):
             return self._error(str(exc))
 
     # -- POST / DELETE ----------------------------------------------------
+    def do_OPTIONS(self):
+        """브라우저에서 카탈로그를 직접 넣을 때 필요한 예비 요청입니다."""
+        self.send_response(204)
+        self._cors_headers()
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+
+    def _cors_headers(self):
+        if self.path.startswith("/api/program-catalog"):
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.send_header("Access-Control-Allow-Private-Network", "true")
+
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
         try:
             if parsed.path == "/api/config":
                 cfg = save_config(self._body_json())
                 return self._json({"ok": True, **public_config(cfg)})
+
+            if parsed.path == "/api/program-catalog":
+                body = self._body_json()
+                items = body.get("items") or {}
+                with _store_lock:
+                    store = load_program_catalog()
+                    store.setdefault("items", {}).update(items)
+                    store["fetchedAt"] = int(time.time())
+                    _write_json(PROGRAM_CATALOG, store)
+                sched = load_schedule_store()
+                if sched.get("programs"):
+                    apply_catalog(sched)
+                    _write_json(SCHEDULE_STORE, sched)
+                return self._json({"ok": True, "added": len(items),
+                                   "count": len(store.get("items", {}))})
 
             if parsed.path == "/api/program-ids":
                 body = self._body_json()

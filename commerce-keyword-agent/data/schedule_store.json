@@ -1,5 +1,5 @@
 {
- "fetchedAt": 1789033223,
+ "fetchedAt": 1789034572,
  "days": {
   "20260907": "월",
   "20260908": "화",
@@ -98,9 +98,9 @@
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609071045": {
    "id": "EA202609071045",
@@ -161,15 +161,15 @@
    "durationMin": 110,
    "rawTitle": "[예능]스트릿레스토랑파이터",
    "title": "스트릿레스토랑파이터",
-   "programName": "스트릿레스토랑파이터",
+   "programName": "스트릿 레스토랑 파이터",
    "episodeName": "스트릿레스토랑파이터 12회(최종회)",
    "episode": "12회",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "스트릿 레스토랑 파이터",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609071630": {
    "id": "EA202609071630",
@@ -253,7 +253,7 @@
    "durationMin": 40,
    "rawTitle": "스트릿레스토랑파이터 - 장사의 기술",
    "title": "스트릿레스토랑파이터 - 장사의 기술",
-   "programName": "스트릿레스토랑파이터",
+   "programName": "스트릿 레스토랑 파이터",
    "episodeName": "장사의 기술 12회",
    "episode": "12회",
    "subtitle": "",
@@ -261,7 +261,7 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609072050": {
    "id": "EA202609072050",
@@ -345,15 +345,15 @@
    "durationMin": 120,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 11화",
    "episode": "11화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609080340": {
    "id": "EA202609080340",
@@ -466,9 +466,9 @@
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609081015": {
    "id": "EA202609081015",
@@ -690,15 +690,15 @@
    "durationMin": 115,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 12화",
    "episode": "12화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609090255": {
    "id": "EA202609090255",
@@ -713,15 +713,15 @@
    "durationMin": 120,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 13화",
    "episode": "13화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609090455": {
    "id": "EA202609090455",
@@ -834,9 +834,9 @@
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609091120": {
    "id": "EA202609091120",
@@ -1081,15 +1081,15 @@
    "durationMin": 110,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 14화",
    "episode": "14화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609100455": {
    "id": "EA202609100455",
@@ -1150,15 +1150,15 @@
    "durationMin": 60,
    "rawTitle": "프리한 닥터M",
    "title": "프리한 닥터M",
-   "programName": "프리한 닥터M",
+   "programName": "프리한 닥터",
    "episodeName": "[프리한 닥터 M] 5회ㅣ시험관 시술 두 번 실패한 박동빈 X 이상이 부부",
    "episode": "5회",
    "subtitle": "시험관 시술 두 번 실패한 박동빈 X 이상이 부부",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "프리한 닥터",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609100800": {
    "id": "EA202609100800",
@@ -1426,15 +1426,15 @@
    "durationMin": 110,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 15화",
    "episode": "15화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609110440": {
    "id": "EA202609110440",
@@ -1610,15 +1610,15 @@
    "durationMin": 120,
    "rawTitle": "[예능]스트릿레스토랑파이터",
    "title": "스트릿레스토랑파이터",
-   "programName": "스트릿레스토랑파이터",
+   "programName": "스트릿 레스토랑 파이터",
    "episodeName": "스트릿레스토랑파이터 12회(최종회)",
    "episode": "12회",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "스트릿 레스토랑 파이터",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609111430": {
    "id": "EA202609111430",
@@ -1771,15 +1771,15 @@
    "durationMin": 115,
    "rawTitle": "응답하라1988",
    "title": "응답하라1988",
-   "programName": "응답하라1988",
+   "programName": "응답하라 1988",
    "episodeName": "응답하라1988 16화",
    "episode": "16화",
    "subtitle": "",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
-   "genre": "",
-   "subGenre": ""
+   "catalogName": "응답하라 1988",
+   "genre": "드라마",
+   "subGenre": "가족,로맨스,드라마"
   },
   "EA202609120425": {
    "id": "EA202609120425",
@@ -2214,9 +2214,9 @@
    "subtitle": "고물가 시대를 구원하러 왔다 19",
    "liveFlag": "재",
    "grade": "15세 이상",
-   "catalogName": "",
+   "catalogName": "프리한19",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "버라이어티"
   },
   "EA202609130710": {
    "id": "EA202609130710",

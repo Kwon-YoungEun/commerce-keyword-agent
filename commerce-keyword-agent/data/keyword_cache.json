@@ -2567,7 +2567,7 @@
     "url": ""
    }
   ],
-  "analyzedAt": 1789031168,
+  "analyzedAt": 1789033805,
   "programId": "EA202609100800",
   "cached": false
  },
@@ -4689,6 +4689,2666 @@
   ],
   "analyzedAt": 1789032444,
   "programId": "EA202609131620",
+  "cached": false
+ },
+ "EA202609100600": {
+  "keywords": [
+   {
+    "keyword": "나만 시크릿",
+    "score": 18.35,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "duckduckgo",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 24화 다시보기 - 티비위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftvwiki48.net%2Fent%2F3514%2F406779159&rut=fb65d8699dfa141c09945bcda8aecc7f8ed096b2bf38fbcc5ef8cbdf51205efb",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나만 시크릿 나비효",
+    "score": 18.13,
+    "confidence": 99,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "duckduckgo",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 24화 다시보기 - 티비위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftvwiki48.net%2Fent%2F3514%2F406779159&rut=fb65d8699dfa141c09945bcda8aecc7f8ed096b2bf38fbcc5ef8cbdf51205efb",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "박하선",
+    "score": 15.6,
+    "confidence": 85,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "박하선",
+     "박하선 류수영",
+     "박하선 나무위키",
+     "박하선 명품",
+     "박하선 자녀",
+     "박하선 고영욱"
+    ]
+   },
+   {
+    "keyword": "웰니스",
+    "score": 14.0,
+    "confidence": 76,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 예능 | 누누티비 Noonoo Tv",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnoonoo10.tv%2Fcontent%2Fent%2D3514&rut=f7c3c41963ce40346b1f5439b28348f8b11bcb949d9d3600120fcd5480e49edf",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "웰니스 뜻",
+     "웰니스센터",
+     "웰니스병원",
+     "웰니스",
+     "웰니스스파찜질방",
+     "웰니스어린이병원"
+    ]
+   },
+   {
+    "keyword": "나만의 시크릿 나비효과 가디건",
+    "score": 13.4,
+    "confidence": 73,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나만의 시크릿 나비효과 반지",
+    "score": 12.6,
+    "confidence": 69,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "몸의 놀라운 나비효과",
+    "score": 11.5,
+    "confidence": 63,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 1화 | Tving",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.tving.com%2Fcontents%2FP001781020&rut=5dd1d8373f522f0d07232bf68b86783c6b5154d5ce24d90c15b8d0c3bdeab8d5",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 나비효과 전한다",
+    "score": 11.5,
+    "confidence": 63,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 1화 | Tving",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.tving.com%2Fcontents%2FP001781020&rut=5dd1d8373f522f0d07232bf68b86783c6b5154d5ce24d90c15b8d0c3bdeab8d5",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀럽 박하선",
+    "score": 10.1,
+    "confidence": 55,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "의학 어우러진 웰니스",
+    "score": 10.0,
+    "confidence": 54,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 예능 | 누누티비 Noonoo Tv",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnoonoo10.tv%2Fcontent%2Fent%2D3514&rut=f7c3c41963ce40346b1f5439b28348f8b11bcb949d9d3600120fcd5480e49edf",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "어우러진 웰니스 지식",
+    "score": 10.0,
+    "confidence": 54,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 예능 | 누누티비 Noonoo Tv",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnoonoo10.tv%2Fcontent%2Fent%2D3514&rut=f7c3c41963ce40346b1f5439b28348f8b11bcb949d9d3600120fcd5480e49edf",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "다이아몬드",
+    "score": 9.6,
+    "confidence": 52,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나비 반지",
+    "score": 9.5,
+    "confidence": 52,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나비효과 공식 굿즈샵 | 마플샵",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmarpple.shop%2Fkr%2Fthe_buttfly_effect&rut=166bd20bc991f4bff34bee6cd1a875cf96f7006ec639f7bbe96f1165af215d96",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나비효과 공식 굿즈샵 | 마플샵",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmarpple.shop%2Fkr%2Fthe_buttfly_effect&rut=166bd20bc991f4bff34bee6cd1a875cf96f7006ec639f7bbe96f1165af215d96",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "채정안 가디건",
+    "score": 9.5,
+    "confidence": 52,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 6화 채정안 가디건 아우터 옷 패션 ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fblog.naver.com%2Falldaycom%2F224206737825&rut=66af80280a70ba0cce3b8741ad8129db773dac511b1f425ee52dd3a41ff08323",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "러브플라워",
+    "score": 9.2,
+    "confidence": 50,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "다이아몬드 귀걸 가격",
+    "score": 8.6,
+    "confidence": 47,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나비효 나비 반지",
+    "score": 8.5,
+    "confidence": 46,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나비효과 공식 굿즈샵 | 마플샵",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmarpple.shop%2Fkr%2Fthe_buttfly_effect&rut=166bd20bc991f4bff34bee6cd1a875cf96f7006ec639f7bbe96f1165af215d96",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "과학",
+    "score": 8.0,
+    "confidence": 44,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "duckduckgo"
+    ],
+    "evidence": [
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 나무위키",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46",
+      "source": "duckduckgo"
+     },
+     {
+      "text": "나만의 시크릿 나비효과 - 예능 | 누누티비 Noonoo Tv",
+      "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnoonoo10.tv%2Fcontent%2Fent%2D3514&rut=f7c3c41963ce40346b1f5439b28348f8b11bcb949d9d3600120fcd5480e49edf",
+      "source": "duckduckgo"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 38,
+  "queries": [
+   "나만의 시크릿 나비효과 24화 협찬 제품",
+   "나만의 시크릿 나비효과 협찬 제품 어디",
+   "나만의 시크릿 나비효과 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 24화 다시보기 - 티비위키",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftvwiki48.net%2Fent%2F3514%2F406779159&rut=fb65d8699dfa141c09945bcda8aecc7f8ed096b2bf38fbcc5ef8cbdf51205efb"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "TVING",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.tving.com%2Fplayer%2FE004611647&rut=ac15e3722e12f7fde50d4a1a81bed95f67083ba85563a9e54d681eb3cf519284"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 - 나무위키",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 1화 | Tving",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.tving.com%2Fcontents%2FP001781020&rut=5dd1d8373f522f0d07232bf68b86783c6b5154d5ce24d90c15b8d0c3bdeab8d5"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 - 예능 | 누누티비 Noonoo Tv",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnoonoo10.tv%2Fcontent%2Fent%2D3514&rut=f7c3c41963ce40346b1f5439b28348f8b11bcb949d9d3600120fcd5480e49edf"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "‎나만의 시크릿, 나비효과 - Apple TV",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftv.apple.com%2Fkr%2Fshow%2F%25E1%2584%2582%25E1%2585%25A1%25E1%2584%2586%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25B4%2D%25E1%2584%2589%25E1%2585%25B5%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25BA%2D%25E1%2584%2582%25E1%2585%25A1%25E1%2584%2587%25E1%2585%25B5%25E1%2584%2592%25E1%2585%25AD%25E1%2584%2580%25E1%2585%25AA%2Fumc.cmc.yicgcs2q8pm5iu5jpxqlr6dg&rut=109b6dc070eb28c9dc409626987f7b48d3f22630e4e2fce49a88be03adbace39"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "tvN 채정안 건강 예능 프로그램 | 나만의 시크릿 나비효과",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.waybcom.kr%2Fpost%2Ftvn%2D%25EC%25B1%2584%25EC%25A0%2595%25EC%2595%2588%2D%25EA%25B1%25B4%25EA%25B0%2595%2D%25EC%2598%2588%25EB%258A%25A5%2D%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%25A8%2D%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2D%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2D%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=2cd3499cd8ea0fcc0c2def7d63677974e7bc91ad11c137d1485752cb5f188b8c"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "#나만의시크릿나비효과 - YouTube",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.youtube.com%2Fhashtag%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=83d1c8bbc92faa27114abb41b62e1823485b9c5f77689d075cb54b6400de2981"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "‎나만의 시크릿, 나비효과 - Apple TV",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Ftv.apple.com%2Fkr%2Fshow%2F%25E1%2584%2582%25E1%2585%25A1%25E1%2584%2586%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25B4%2D%25E1%2584%2589%25E1%2585%25B5%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25BA%2D%25E1%2584%2582%25E1%2585%25A1%25E1%2584%2587%25E1%2585%25B5%25E1%2584%2592%25E1%2585%25AD%25E1%2584%2580%25E1%2585%25AA%2Fumc.cmc.yicgcs2q8pm5iu5jpxqlr6dg%3Fl%3Den&rut=2e03e4fa47ace99eac5f72d9b5b61dc721dd8ec50bd0d64abb10622924fd8a12"
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🌿 tvN 웰니스 라이프 예능 <나만의 시크릿 나비효과>",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "플라워링 하트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "사이키 쿠스오의 재난/미디어 믹스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "5월 514챌린지 10일차 + 가치미션클리어 나비효과",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "시크릿가든 등 될 성 부른 드라마 정책성 홍보 봇물 - 현빈과 하지원이 애 셋 낳은 이유",
+    "url": ""
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나비효과 공식 굿즈샵 | 마플샵",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fmarpple.shop%2Fkr%2Fthe_buttfly_effect&rut=166bd20bc991f4bff34bee6cd1a875cf96f7006ec639f7bbe96f1165af215d96"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 - 나무위키",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2520%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2520%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=6c257d0fc4b8f40831f1d975f18852f792501d28d8f14f8f9d9fdf4bad7b3f46"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 6화 채정안 가디건 아우터 옷 패션 ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fblog.naver.com%2Falldaycom%2F224206737825&rut=66af80280a70ba0cce3b8741ad8129db773dac511b1f425ee52dd3a41ff08323"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 1화 | Tving - 티빙",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.tving.com%2Fcontents%2FP001781020&rut=5dd1d8373f522f0d07232bf68b86783c6b5154d5ce24d90c15b8d0c3bdeab8d5"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "채정안 나만의 시크릿 나비효과 6화 옷 아우터 패션 / 포르테 ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fblog.naver.com%2Fmath3377%2F224206726704&rut=bfa5af8dbe738186d679e4d7f4f419696d7a8c76374f3549e7c2ff5040f89570"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "style mag (스타일 매그) | ⠀ 셀럽 : 박하선 노출 : tvN ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.instagram.com%2Fp%2FDcc_tGoAfD%2D%2F&rut=a066dceaa0d19665d413561b509a443c7f4ebc59a4776b9a0d681b6b03dee82e"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "tvN 채정안 건강 예능 프로그램 | 나만의 시크릿 나비효과",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.waybcom.kr%2Fpost%2Ftvn%2D%25EC%25B1%2584%25EC%25A0%2595%25EC%2595%2588%2D%25EA%25B1%25B4%25EA%25B0%2595%2D%25EC%2598%2588%25EB%258A%25A5%2D%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%25A8%2D%25EB%2582%2598%25EB%25A7%258C%25EC%259D%2598%2D%25EC%258B%259C%25ED%2581%25AC%25EB%25A6%25BF%2D%25EB%2582%2598%25EB%25B9%2584%25ED%259A%25A8%25EA%25B3%25BC&rut=2cd3499cd8ea0fcc0c2def7d63677974e7bc91ad11c137d1485752cb5f188b8c"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "[Tf프리즘] '뷰티'부터 '건강'까지…여성 '웰니스' 예능 - 연예 ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fnews.tf.co.kr%2Fread%2Fentertain%2F2364167.htm&rut=417052e0f78cd1d16c8778b5219fe1278d5cc1a8a175bd36355153d8cfafbb17"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "황금 나비 스티커 Diy 선물 포장 자기 접착 스티커 축제 인사말 ...",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fko.aliexpress.com%2Fitem%2F1005010552831798.html&rut=d87bb41faa07232f07d76efbd5bb8c855a97de137420f1c3453fc990fc611450"
+   },
+   {
+    "source": "duckduckgo",
+    "kind": "web",
+    "title": "01화 '나만의 시크릿 나비효과' - 브런치",
+    "url": "//duckduckgo.com/l/?uddg=https%3A%2F%2Fbrunch.co.kr%2F%40d64f7ca994684c5%2F358&rut=5e8de7dd8dada83fd077209c7f228ed586bd8aadb141cee482ed02bc0362c919"
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "간접광고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "동원전통차 - 팔공산 전통차 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🌿 tvN 웰니스 라이프 예능 <나만의 시크릿 나비효과>",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "12월 새친구 가입인사 이벤트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "tvN 나만의 시크릿 나비효과 다시보기 티빙 애플TV",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2025년 9월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "나만의 시크릿 나비효과 다시보기. 쿠팡플레이 최신 OTT 할인 정보 및 환불 정책",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "빅토리아 시크릿 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "상점패키지기록용글] 8월13일~9월10일",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "투썸플레이스 마포노고산점 - 신촌 카페, 케이크 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "팝마트 안국점 방문 후기｜트윙클 트윙클 인형 키링 & 피규어 구매 랜덤깡",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "국경을 넘어온 나몰빼미들. (타오바오 직배송 구매)",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "나만의 시크릿 나비효과",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789033370,
+  "programId": "EA202609100600",
+  "cached": false
+ },
+ "EA202609112035": {
+  "keywords": [
+   {
+    "keyword": "우주떡집 원피스",
+    "score": 14.84,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 티셔츠",
+    "score": 14.6,
+    "confidence": 98,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "우주떡집 티셔츠"
+    ]
+   },
+   {
+    "keyword": "우주떡집 데님",
+    "score": 13.24,
+    "confidence": 89,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀린느 데님 원피스",
+    "score": 12.8,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "셀린느 데님 원피스"
+    ]
+   },
+   {
+    "keyword": "우주떡집 가디건",
+    "score": 12.6,
+    "confidence": 85,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "가디건 이은지 멜빵바지",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "멜빵바지 이영지 티셔츠",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 미미 원피스",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건",
+    "score": 9.5,
+    "confidence": 64,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "강릉유천점 강릉 닭칼국수",
+    "score": 8.2,
+    "confidence": 55,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "데님 원피스 가격",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 가격 확인해보니",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 팝업",
+    "score": 7.25,
+    "confidence": 49,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "우주떡집 팝업",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건 이은지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이은지 멜빵바지 이영지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이영지 티셔츠 미미",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "현풍닭칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "삼계칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 29,
+  "queries": [
+   "우주떡집 7화 협찬 제품",
+   "우주떡집 협찬 제품 어디",
+   "우주떡집 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "찰떡아이스 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "초신성(동음이의어) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "원조공주떡집 IFC몰점 - 여의도 떡집, 흑임자인절미 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "컹 심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "피자설기 하나에 2030이 시장으로…전통시장 ‘뜻밖의 특수’",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 안유진 첫영업 만능 활약 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "\"먹고 싶어서 편의점 싹 털었다\"…SNS 인증 쏟아진 '디저트' [셀럽픽]",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 만물상 굿즈 구매방법, 토롱이 떡메모지부터 팝업 현장예약까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 위치",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 예약방법",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 지구2호점",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 팝업",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789033761,
+  "programId": "EA202609112035",
+  "cached": false
+ },
+ "EA202609090910": {
+  "keywords": [
+   {
+    "keyword": "식스센스: 시티투어 밀키트",
+    "score": 15.48,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 가방",
+    "score": 13.24,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 코트",
+    "score": 12.6,
+    "confidence": 81,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 니트",
+    "score": 12.6,
+    "confidence": 81,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나왔던 폐방화복 가방",
+    "score": 10.8,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "추어파스타 밀키트",
+    "score": 10.3,
+    "confidence": 67,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "고경표 미미 코트",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "미미 코트 니트",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "코트 니트 가디건",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "니트 가디건 자켓",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "장원영 자라 청바지",
+    "score": 8.2,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "폐방화복 가방 배터리",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "가방 배터리 방화팩",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추어파스타 밀키트 후기",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "밀키트 구매",
+    "score": 7.3,
+    "confidence": 47,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스 시티투어",
+    "score": 7.11,
+    "confidence": 46,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[식스센스 시티투어 2 x 119REO] 복권 1등의 불티나는 트렌드 OON : 119REO - Rescue Each Other",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "식스센스 시티투어2 성수 19 어른 디저트 바 초코 타르트 시가 휘낭시에",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "가디건 자켓 패션",
+    "score": 7.0,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "자라 청바지 mlb",
+    "score": 5.2,
+    "confidence": 34,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 19,
+  "queries": [
+   "식스센스: 시티투어 7회 협찬 제품",
+   "식스센스: 시티투어 협찬 제품 어디",
+   "식스센스: 시티투어 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "송도 센트럴파크 베이커리 카페 빵쌤, 전망 보며 아이와 쉬어가기 좋은 곳",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 옷 화제 이유, 폐방화복 업사이클링 의류 직접 보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "보던 사람 다 놀란 워터밤 비비 '탈의 퍼포먼스', 어땠길래?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[식스센스 시티투어 2 x 119REO] 복권 1등의 불티나는 트렌드 OON : 119REO - Rescue Each Other",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 성수 19 어른 디저트 바 초코 타르트 시가 휘낭시에",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "가습기살균제 피해지원종합포탈 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "목욕탕실내포차 - 전농동 포차, 술집 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "스트리트 파이터 6/월드 투어 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안동시티투어 예약 50%할인 만휴정&봉정사 코스후기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "‘식스센스’ 이선빈X강태오 티격태격 케미",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "식스센스: 시티투어",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789034132,
+  "programId": "EA202609090910",
+  "cached": false
+ },
+ "EA202609081150": {
+  "keywords": [
+   {
+    "keyword": "우주떡집 원피스",
+    "score": 14.84,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 티셔츠",
+    "score": 14.6,
+    "confidence": 98,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "우주떡집 티셔츠"
+    ]
+   },
+   {
+    "keyword": "우주떡집 데님",
+    "score": 13.24,
+    "confidence": 89,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀린느 데님 원피스",
+    "score": 12.8,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "셀린느 데님 원피스"
+    ]
+   },
+   {
+    "keyword": "우주떡집 가디건",
+    "score": 12.6,
+    "confidence": 85,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "가디건 이은지 멜빵바지",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "멜빵바지 이영지 티셔츠",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 미미 원피스",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건",
+    "score": 9.5,
+    "confidence": 64,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "강릉유천점 강릉 닭칼국수",
+    "score": 8.2,
+    "confidence": 55,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "데님 원피스 가격",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 가격 확인해보니",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 팝업",
+    "score": 7.25,
+    "confidence": 49,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "우주떡집 팝업",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건 이은지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이은지 멜빵바지 이영지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이영지 티셔츠 미미",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "현풍닭칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "삼계칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 29,
+  "queries": [
+   "우주떡집 6화 협찬 제품",
+   "우주떡집 협찬 제품 어디",
+   "우주떡집 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "찰떡아이스 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "초신성(동음이의어) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "원조공주떡집 IFC몰점 - 여의도 떡집, 흑임자인절미 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "컹 심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "피자설기 하나에 2030이 시장으로…전통시장 ‘뜻밖의 특수’",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 안유진 첫영업 만능 활약 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "\"먹고 싶어서 편의점 싹 털었다\"…SNS 인증 쏟아진 '디저트' [셀럽픽]",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 만물상 굿즈 구매방법, 토롱이 떡메모지부터 팝업 현장예약까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 위치",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 예약방법",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 지구2호점",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 팝업",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789034132,
+  "programId": "EA202609081150",
+  "cached": false
+ },
+ "EA202609110550": {
+  "keywords": [
+   {
+    "keyword": "놀라운 토요일 선물세트",
+    "score": 12.28,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "민니 입은 후드집업",
+    "score": 9.0,
+    "confidence": 73,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "빅마우스",
+     "빅마우스 드라마",
+     "빅마우스 결말",
+     "빅마우스 정체",
+     "빅마우스 뜻",
+     "빅마우스 ott"
+    ]
+   },
+   {
+    "keyword": "추천",
+    "score": 8.0,
+    "confidence": 65,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "책 추천",
+     "넷플릭스 추천",
+     "저녁메뉴 추천",
+     "영화 추천",
+     "돈키호테 추천템",
+     "성심당 빵 추천"
+    ]
+   },
+   {
+    "keyword": "입은 후드집업 어디꺼야",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트 추천",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스 라방 검색하니까",
+    "score": 5.2,
+    "confidence": 42,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 나온",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "토요일 나온 예당떡마",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나온 예당떡마 다녀왔어요",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "양산떡집 추천",
+    "score": 4.3,
+    "confidence": 35,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "켑트베이커스 놀라운토요일 신매시장",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운토요일 신매시장 애견동반",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "thetis 시즌오프 더티스",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "시즌오프 더티스 로맨틱",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "더티스 로맨틱 트위드",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "미니 드레스 구매",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 12,
+  "queries": [
+   "놀라운 토요일 협찬 제품 어디",
+   "놀라운 토요일 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "KEY(SHINee) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 4월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구맛집 - 대구 아이랑 외식은 우리동네한우맛집 고기꿉자 범어점에서👍",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "놀라운 토요일/역대 변천사 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "힐러 평가는 긍정적! 월드 경쟁 시작된 GENESIS 업데이트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "오데마 피게 x 스와치 ‘로열 펍’을 사려면 며칠 전에 줄을 서야 할까? 6일",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789034460,
+  "programId": "EA202609110550",
   "cached": false
  }
 }
