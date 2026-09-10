@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "keyword-agent",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["commerce-keyword-agent/server.py"],
+      "port": 8765
+    }
+  ]
+}
