@@ -2,7 +2,7 @@
 """방송 회차 → 화제 상품 키워드 추출 엔진 (표준 라이브러리만 사용).
 
 수집처
-  1) Bing 웹검색 (키 없이) — 기사·커뮤니티 글 제목/요약
+  1) DuckDuckGo 웹검색 (키 없이) — 기사·커뮤니티 글 제목/요약
   2) Daum 통합검색 (키 없이) — 검색광고 키워드( 실제 커머스 수요 신호 )
   3) 네이버 자동완성 (키 없이) — 사람들이 실제로 치는 검색어
 추출
@@ -67,7 +67,9 @@ STOPWORDS = set(
     인스타 인스타그램 네이버 다음 구글 쿠팡 검색 무료 배송 로켓배송 와우회원 리뷰 이벤트 할인 광고
     노출 기준 입찰가 도움말 신청 바로가기 더보기 전체 선택 옵션 페이지 사이트 홈페이지 다시보기
     티빙 넷플릭스 웨이브 무엇 누구 언제 어떻게 정말 진짜 완전 너무 매우 아주 가장 함께 모두 각각
-    등장 공식 최초 역대 이후 이전 동안 사이 결국 다시 계속 아직 벌써 심지어 특히 바로 직접""".split()
+    등장 공식 최초 역대 이후 이전 동안 사이 결국 다시 계속 아직 벌써 심지어 특히 바로 직접
+    안내 서비스 신청 총정리 편집 기획의도 목차 개요 내용 방법 이유 경우 문제 해결 확인 사용 이용
+    평균 최고 최저 기준 경신 기록 순위 목록 정리 소개 설명 참고 관계자 측은 밝혔다 전했다 말했다""".split()
 )
 
 JOSA = [
@@ -99,33 +101,27 @@ def _strip_tags(s):
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
 
 
-def search_bing(query, limit=12):
-    """Bing 웹검색 결과의 제목/요약을 가져옵니다."""
-    url = "https://www.bing.com/search?q=%s&setlang=ko&count=%d" % (
-        urllib.parse.quote(query),
-        limit,
-    )
+def search_ddg(query, limit=12):
+    """DuckDuckGo(HTML판) 웹검색 — 한국어 결과가 안정적으로 나옵니다."""
+    url = "https://html.duckduckgo.com/html/?q=%s&kl=kr-kr" % urllib.parse.quote(query)
     body = _fetch(url)
+    titles = re.findall(r'class="result__a"[^>]*href="([^"]*)"[^>]*>(.*?)</a>', body, re.S)
+    snippets = re.findall(r'class="result__snippet"[^>]*>(.*?)</a>', body, re.S)
     docs = []
-    for block in re.findall(r'<li class="b_algo".*?</li>', body, re.S)[:limit]:
-        title = _strip_tags((re.search(r"<h2[^>]*>(.*?)</h2>", block, re.S) or [None, ""])[1])
-        link = (re.search(r'<h2[^>]*>\s*<a[^>]+href="([^"]+)"', block, re.S) or [None, ""])[1]
-        snippet = ""
-        for pat in (r'<p class="b_lineclamp[^"]*"[^>]*>(.*?)</p>', r"<p[^>]*>(.*?)</p>"):
-            m = re.search(pat, block, re.S)
-            if m:
-                snippet = _strip_tags(m.group(1))
-                break
-        if title:
-            docs.append(
-                {"source": "bing", "kind": "web", "title": title, "snippet": snippet,
-                 "url": html.unescape(link), "query": query}
-            )
+    for idx, (link, raw_title) in enumerate(titles[:limit]):
+        title = _strip_tags(raw_title)
+        if not title:
+            continue
+        snippet = _strip_tags(snippets[idx]) if idx < len(snippets) else ""
+        docs.append(
+            {"source": "duckduckgo", "kind": "web", "title": title, "snippet": snippet,
+             "url": html.unescape(link), "query": query}
+        )
     return docs
 
 
 def search_daum(query, limit=10):
-    """Daum 통합검색 — 검색광고 키워드와 웹문서 제목을 함께 가져옵니다."""
+    """Daum 통합검색 — 검색광고 키워드( 커머스 수요 신호 )와 웹문서를 함께 가져옵니다."""
     url = "https://search.daum.net/search?w=tot&q=" + urllib.parse.quote(query)
     body = _fetch(url)
     docs = []
@@ -136,13 +132,26 @@ def search_daum(query, limit=10):
                 {"source": "daum-ad", "kind": "ad", "title": text, "snippet": "",
                  "url": "", "query": query}
             )
-    for m in re.findall(r'<a[^>]+class="[^"]*tit_main[^"]*"[^>]*>(.*?)</a>', body, re.S)[:limit]:
-        text = _strip_tags(m)
-        if text:
+    # 웹문서 결과는 <script slot="data"> 안의 JSON 에 들어 있습니다.
+    count = 0
+    for blob in re.findall(r'<script slot="data" type="application/json">(.*?)</script>', body, re.S):
+        try:
+            node = json.loads(blob)
+        except ValueError:
+            continue
+        data = node.get("data") or {}
+        title = _strip_tags(data.get("TITLE") or "")
+        desc = _strip_tags(data.get("CONTENTS") or data.get("DESCRIPTION") or "")
+        if not title or desc == "웹문서":
+            desc = "" if desc == "웹문서" else desc
+        if title:
             docs.append(
-                {"source": "daum", "kind": "web", "title": text, "snippet": "",
-                 "url": "", "query": query}
+                {"source": "daum", "kind": "web", "title": title, "snippet": desc,
+                 "url": data.get("DOCUMENT_URL") or "", "query": query}
             )
+            count += 1
+        if count >= limit:
+            break
     return docs
 
 
@@ -235,7 +244,7 @@ def collect_documents(program, log=None):
     """검색처를 돌며 문서를 모읍니다. 한 곳이 실패해도 나머지는 계속합니다."""
     docs, errors = [], []
     for query in build_queries(program):
-        for fn, name in ((search_bing, "Bing"), (search_daum, "Daum")):
+        for fn, name in ((search_ddg, "DuckDuckGo"), (search_daum, "Daum")):
             try:
                 docs.extend(fn(query))
             except Exception as exc:
@@ -283,6 +292,8 @@ def extract_keywords(program, docs, top_n=18):
                         phrase = " ".join(gram)
                         if len(phrase) < 2 or len(phrase) > 24:
                             continue
+                        if not HANGUL_RE.search(phrase):
+                            continue  # 영문만 있는 후보는 잡음이 많아 제외합니다.
                         if phrase in title.lower() or phrase == title:
                             continue
                         gain = weight * (1.0 + 0.25 * (n - 1))
