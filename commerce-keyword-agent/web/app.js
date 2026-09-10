@@ -104,11 +104,32 @@ async function loadRegistrations() {
   }
 }
 
-/** 이 회차에 적용되는 등록 키워드.
- *  매뉴얼 키워드는 프로그램당 한 개라서, 등록한 회차부터 이후 편성에만 붙습니다. */
+/** 이 프로그램에 등록된 이력 전체 (최근 등록이 앞). */
+function programRegistrations(program) {
+  const list = (state.registrationsByProgram.get(program.programName || program.title) || []).slice();
+  list.sort((a, b) => (b.fromTs || 0) - (a.fromTs || 0) || (b.createdAt || 0) - (a.createdAt || 0));
+  return list;
+}
+
+/** 이 회차 방송 시각에 유효했던 키워드 하나.
+ *  매뉴얼 키워드는 한 시점에 한 개뿐이라, 바꾸기 전 편성에는 예전 키워드가 남습니다. */
+function activeRegistration(program) {
+  const ts = program.startTs || 0;
+  let best = null;
+  for (const r of state.registrationsByProgram.get(program.programName || program.title) || []) {
+    const from = r.fromTs || 0;
+    if (from > ts) continue;
+    const bf = best ? best.fromTs || 0 : -1;
+    if (!best || from > bf || (from === bf && (r.createdAt || 0) > (best.createdAt || 0))) {
+      best = r;
+    }
+  }
+  return best;
+}
+
 function registrationsFor(program) {
-  const list = state.registrationsByProgram.get(program.programName || program.title) || [];
-  return list.filter((r) => !r.fromTs || (program.startTs || 0) >= r.fromTs);
+  const active = activeRegistration(program);
+  return active ? [active] : [];
 }
 
 function showNotice(message) {
@@ -667,23 +688,26 @@ async function confirmRegister() {
     programName: body.programName,   // 이 이름의 프로그램 전체에 적용됩니다.
     programCode: body.programId,     // 전송 body 의 programId
     scheduleId: p.id,                // 등록을 누른 회차(참고용)
-    fromTs: p.startTs || 0,          // 이 회차부터 이후 편성에 붙습니다.
+    fromTs: p.startTs || 0,          // 이 회차부터 다음 등록 전까지 적용됩니다.
     date: p.date,
+    startLabel: p.start,
     episode: p.episode,
     keyword: body.productInfo[0].productKeyword,
     bodyText: bodyToText(body, true),
     body: body,
   };
 
-  // 매뉴얼 키워드는 프로그램당 한 개입니다. 기존 것이 있으면 바뀐다는 걸 먼저 알립니다.
-  const current = (state.registrationsByProgram.get(item.programName) || [])[0];
+  // 매뉴얼 키워드는 한 시점에 한 개입니다. 바꾸면 이 회차부터 적용되고,
+  // 그 전 편성에는 예전 키워드가 기록으로 남습니다.
+  const current = activeRegistration(p);
   if (current && current.keyword !== item.keyword) {
     const ok = confirm(
-      `${item.programName} 에는 지금 '${current.keyword}' 가 등록돼 있어요.\n` +
-      `'${item.keyword}' 로 바꾸면 기존 키워드는 캘린더에서 사라집니다. 바꿀까요?`
+      `${item.programName} 은 지금 '${current.keyword}' 가 적용 중이에요.\n` +
+      `이 회차(${prettyDate(p.date)} ${p.start})부터 '${item.keyword}' 로 바뀝니다.\n` +
+      `그 전 편성에는 '${current.keyword}' 가 그대로 남습니다. 진행할까요?`
     );
     if (!ok) return;
-  } else if (current && !confirm(`'${item.keyword}' 는 이미 등록돼 있어요. 다시 등록할까요?`)) {
+  } else if (current && !confirm(`'${item.keyword}' 는 이미 적용 중이에요. 다시 등록할까요?`)) {
     return;
   }
 
@@ -695,16 +719,17 @@ async function confirmRegister() {
     });
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
-    const hits = countAppliedAirings(item);
-    const gone = (json.replaced || []).filter((k) => k && k !== item.keyword);
-    setBodyStatus(
-      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다." +
-      (gone.length ? " (기존 '" + gone.join("', '") + "' 해제)" : ""),
-      "ok"
-    );
-    await loadRegistrations();
+    await loadRegistrations();          // 개수를 세기 전에 먼저 갱신합니다.
     render();
     renderRegistered(p);
+
+    const hits = countAppliedAirings(item);
+    const prev = json.previous && json.previous !== item.keyword ? json.previous : "";
+    setBodyStatus(
+      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다." +
+      (prev ? " (이전 편성은 '" + prev + "' 유지)" : ""),
+      "ok"
+    );
     setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 900);
   } catch (err) {
     setBodyStatus("등록 실패: " + err.message, "bad");
@@ -715,7 +740,9 @@ function countAppliedAirings(item) {
   let n = 0;
   for (const list of state.programsByDate.values()) {
     for (const p of list) {
-      if ((p.programName || p.title) === item.programName && (p.startTs || 0) >= item.fromTs) n++;
+      if ((p.programName || p.title) !== item.programName) continue;
+      const active = activeRegistration(p);
+      if (active && active.id === item.id) n++;
     }
   }
   return n;
@@ -982,27 +1009,35 @@ async function saveAllProgramIds() {
 
 function renderRegistered(program) {
   const box = document.getElementById("registeredBox");
-  const items = registrationsFor(program);
-  box.hidden = items.length === 0;
-  if (!items.length) return;
+  const history = programRegistrations(program);
+  box.hidden = history.length === 0;
+  if (!history.length) return;
+
+  const active = activeRegistration(program);
+  const fmt = (ts) => {
+    const d = new Date((ts || 0) * 1000);
+    return (d.getMonth() + 1) + "/" + d.getDate() + " " +
+      String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  };
 
   box.innerHTML =
-    "<h4>" + escapeHtml(program.programName || program.title) +
-    " 의 현재 매뉴얼 키워드</h4>" +
+    "<h4>" + escapeHtml(program.programName || program.title) + " 의 매뉴얼 키워드</h4>" +
     '<p class="muted" style="margin:0 0 8px;font-size:11.5px">' +
-    "프로그램당 한 개만 등록됩니다. 등록한 회차부터 이후 편성에 표시되고, " +
-    "새로 등록하면 이 키워드는 해제됩니다.</p><ul>" +
-    items
+    "한 시점에 한 개만 적용됩니다. 새로 등록하면 그 회차부터 바뀌고, " +
+    "그 전 편성에는 예전 키워드가 기록으로 남습니다.</p>" +
+    '<p style="margin:0 0 8px;font-size:12.5px">이 회차 적용: ' +
+    (active
+      ? '<strong style="color:var(--skb-red)">' + escapeHtml(active.keyword) + "</strong>"
+      : '<span class="muted">없음</span>') +
+    "</p><ul>" +
+    history
       .map((it) => {
-        const when = new Date((it.createdAt || 0) * 1000);
-        const stamp =
-          when.getMonth() + 1 + "/" + when.getDate() + " " +
-          String(when.getHours()).padStart(2, "0") + ":" +
-          String(when.getMinutes()).padStart(2, "0");
-        const shown = it.keyword || (it.keywords || []).join(", ");
-        return "<li>" + escapeHtml(shown) +
-          ' <span class="muted">· ' + escapeHtml(it.programCode || "") + " · " +
-          escapeHtml(prettyDate(it.date || "")) + " 회차부터 · " + stamp + " 등록</span>" +
+        const isActive = active && it.id === active.id;
+        return "<li>" + (isActive ? "<strong>" : "") + escapeHtml(it.keyword) +
+          (isActive ? "</strong>" : "") +
+          ' <span class="muted">· ' + escapeHtml(prettyDate(it.date || "")) + " " +
+          escapeHtml(it.startLabel || "") + " 회차부터 · " +
+          escapeHtml(it.programCode || "") + " · " + fmt(it.createdAt) + " 등록</span>" +
           '<button type="button" data-reg="' + escapeHtml(it.id) + '">삭제</button></li>';
       })
       .join("") +

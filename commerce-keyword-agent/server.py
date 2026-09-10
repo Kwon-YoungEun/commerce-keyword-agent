@@ -549,22 +549,22 @@ def load_registrations():
 
 
 def save_registration(item):
-    """매뉴얼 키워드는 프로그램당 한 개만 살아 있습니다. 새로 넣으면 기존 것은 빠집니다."""
+    """매뉴얼 키워드는 한 시점에 한 개만 유효합니다.
+
+    이전 등록은 지우지 않고 남겨 둡니다. 회차마다 '그 방송 시각에 유효했던
+    가장 최근 등록' 하나만 보이므로, 지난 편성에는 예전 키워드가 그대로 남습니다.
+    """
     with _store_lock:
         store = load_registrations()
         name = item.get("programName")
-        removed = [
-            x for x in store["items"]
-            if x.get("id") != item.get("id") and name and x.get("programName") == name
-        ]
-        store["items"] = [
-            x for x in store["items"]
-            if x.get("id") != item.get("id")
-            and not (name and x.get("programName") == name)
-        ]
+        same = [x for x in store["items"] if name and x.get("programName") == name]
+        previous = max(
+            same, key=lambda x: (x.get("fromTs", 0), x.get("createdAt", 0)), default=None
+        )
+        store["items"] = [x for x in store["items"] if x.get("id") != item.get("id")]
         store["items"].append(item)
         _write_json(REGISTRATION_STORE, store)
-        return store, removed
+        return store, previous
 
 
 def delete_registration(reg_id):
@@ -767,10 +767,10 @@ class Handler(BaseHTTPRequestHandler):
                 if not item.get("id"):
                     item["id"] = "reg_%d" % int(time.time() * 1000)
                 item.setdefault("createdAt", int(time.time()))
-                store, removed = save_registration(item)
+                store, previous = save_registration(item)
                 return self._json({
                     "ok": True, "item": item,
-                    "replaced": [x.get("keyword") for x in removed],
+                    "previous": (previous or {}).get("keyword", ""),
                     **store,
                 })
             return self._error("없는 API 입니다: " + parsed.path, 404)
