@@ -29,6 +29,7 @@ CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
 PROGRAM_ID_STORE = os.path.join(DATA_DIR, "program_ids.json")
 PROGRAM_CATALOG = os.path.join(DATA_DIR, "program_catalog.json")
 PROGRAM_SEED = os.path.join(DATA_DIR, "tvn_programs.txt")
+PROGRAM_GENRE_STORE = os.path.join(DATA_DIR, "program_genres.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
 TVN_PROGRAM_URL = "https://tvn.cjenm.com/ko/program/"
@@ -284,6 +285,29 @@ def refresh_program_catalog(force=False):
     return store
 
 
+GENRE_CHOICES = ["드라마", "예능", "교양", "브랜디드", "영화", "스포츠", "기타"]
+
+
+def load_program_genres():
+    """사용자가 직접 지정한 장르 {프로그램명: 장르}."""
+    return _read_json(PROGRAM_GENRE_STORE, {})
+
+
+def save_program_genre(name, genre):
+    name = (name or "").strip()
+    genre = (genre or "").strip()
+    with _store_lock:
+        store = load_program_genres()
+        if not name:
+            return store
+        if genre:
+            store[name] = genre
+        else:
+            store.pop(name, None)
+        _write_json(PROGRAM_GENRE_STORE, store)
+        return store
+
+
 BRANDED_TAGS = ("브랜디드", "건강IP")
 VARIANT_SUFFIXES = ("특별판", "스페셜", "하이라이트", "스핀오프", "무삭제판", "확장판")
 VARIANT_SPLIT_RE = re.compile(r"\s*[-–—:]\s+")
@@ -372,6 +396,15 @@ def apply_catalog(store):
             found = genre_by_name.get(norm_name(p["programName"]))
             if found:
                 p["genre"], p["subGenre"] = found
+
+    # 4단계 — 사용자가 직접 지정한 장르가 있으면 그 값을 씁니다.
+    manual = load_program_genres()
+    for p in programs.values():
+        chosen = manual.get(p["programName"])
+        p["genreManual"] = bool(chosen)
+        if chosen:
+            p["genre"] = chosen
+            p["subGenre"] = ""
     return store
 
 
@@ -649,6 +682,10 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/program-ids":
                 return self._json({"ok": True, "map": load_program_ids()})
 
+            if path == "/api/program-genres":
+                return self._json({"ok": True, "map": load_program_genres(),
+                                   "choices": GENRE_CHOICES})
+
             if path == "/api/program-catalog":
                 store = load_program_catalog()
                 return self._json({"ok": True, "count": len(store.get("items", {})),
@@ -697,6 +734,15 @@ class Handler(BaseHTTPRequestHandler):
                     _write_json(SCHEDULE_STORE, sched)
                 return self._json({"ok": True, "added": len(items),
                                    "count": len(store.get("items", {}))})
+
+            if parsed.path == "/api/program-genres":
+                body = self._body_json()
+                store = save_program_genre(body.get("name"), body.get("genre"))
+                sched = load_schedule_store()
+                if sched.get("programs"):
+                    apply_catalog(sched)
+                    _write_json(SCHEDULE_STORE, sched)
+                return self._json({"ok": True, "map": store})
 
             if parsed.path == "/api/program-ids":
                 body = self._body_json()

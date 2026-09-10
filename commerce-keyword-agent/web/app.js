@@ -16,6 +16,8 @@ const state = {
   analysis: null,
   selectedKeyword: null,
   programIds: {},
+  programGenres: {},
+  genreChoices: [],
   bodyDraft: null,
 };
 
@@ -720,6 +722,90 @@ function weekProgramNames() {
   );
 }
 
+/** 장르 칩 — 누르면 직접 고를 수 있습니다. */
+function genreChipHtml(row) {
+  const manual = Boolean(state.programGenres[row.name]);
+  const title = manual
+    ? "직접 지정한 장르예요. 누르면 바꿉니다."
+    : row.genre
+    ? (row.subGenre || "tvN 프로그램 목록 기준") + " · 누르면 바꿉니다"
+    : "tvN 프로그램 목록에 아직 없는 프로그램이에요. 눌러서 골라 주세요";
+  const cls = row.genre ? "cat cat-" + row.genre : "cat cat-none";
+  const label = row.genre || "장르 미상";
+  return ' <button type="button" class="' + cls + (manual ? " is-manual" : "") +
+         '" title="' + escapeHtml(title) + '">' + escapeHtml(label) + "</button>";
+}
+
+function closeGenrePicker() {
+  const old = document.getElementById("genrePicker");
+  if (old) old.remove();
+}
+
+function openGenrePicker(chip, row, rows) {
+  closeGenrePicker();
+  const box = document.createElement("div");
+  box.id = "genrePicker";
+  box.className = "genre-picker";
+
+  const current = state.programGenres[row.name] || row.genre || "";
+  const choices = state.genreChoices.length
+    ? state.genreChoices
+    : ["드라마", "예능", "교양", "브랜디드", "영화", "스포츠", "기타"];
+
+  for (const g of choices) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "genre-opt" + (g === current ? " is-current" : "");
+    b.textContent = g;
+    b.addEventListener("click", () => setProgramGenre(row.name, g, rows));
+    box.appendChild(b);
+  }
+  if (state.programGenres[row.name]) {
+    const reset = document.createElement("button");
+    reset.type = "button";
+    reset.className = "genre-opt is-reset";
+    reset.textContent = "직접 지정 지우기";
+    reset.addEventListener("click", () => setProgramGenre(row.name, "", rows));
+    box.appendChild(reset);
+  }
+
+  document.body.appendChild(box);
+  // 팝업 안에서 눌러도 제자리에 뜨도록 화면 기준(fixed)으로 붙입니다.
+  const r = chip.getBoundingClientRect();
+  const w = box.offsetWidth, h = box.offsetHeight;
+  const below = r.bottom + 6 + h <= window.innerHeight;
+  box.style.top = (below ? r.bottom + 6 : Math.max(8, r.top - h - 6)) + "px";
+  box.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 12)) + "px";
+  setTimeout(() => document.addEventListener("click", onceCloseGenre, { once: true }), 0);
+}
+
+function onceCloseGenre(e) {
+  if (e.target.closest("#genrePicker")) {
+    document.addEventListener("click", onceCloseGenre, { once: true });
+    return;
+  }
+  closeGenrePicker();
+}
+
+async function setProgramGenre(name, genre, rows) {
+  closeGenrePicker();
+  setPidStatus("저장 중…");
+  try {
+    const res = await fetch("/api/program-genres", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name, genre: genre }),
+    });
+    state.programGenres = (await res.json()).map || {};
+    await loadSchedule();          // 편성표에도 장르가 반영됩니다.
+    render();
+    openProgramList();
+    setPidStatus(genre ? name + " → " + genre + " 로 지정했어요." : name + " 의 지정을 지웠어요.", "ok");
+  } catch (err) {
+    setPidStatus("저장 실패: " + err.message, "bad");
+  }
+}
+
 function updatePidMeta(total) {
   const missing = document.querySelectorAll("#pidBody tr.is-missing").length;
   const noGenre = document.querySelectorAll("#pidBody .cat-none").length;
@@ -736,13 +822,8 @@ function openProgramList() {
   for (const row of rows) {
     const tr = document.createElement("tr");
     tr.innerHTML =
-      "<td>" + escapeHtml(row.name) +
-      (row.genre
-        ? ' <span class="cat cat-' + escapeHtml(row.genre) + '"' +
-          (row.subGenre ? ' title="' + escapeHtml(row.subGenre) + '"' : "") +
-          ">" + escapeHtml(row.genre) + "</span>"
-        : ' <span class="cat cat-none" title="tvN 프로그램 목록에서 아직 못 찾은 프로그램이에요">장르 미상</span>') +
-      "</td>" +
+      '<td><span class="name-cell">' + escapeHtml(row.name) +
+      genreChipHtml(row) + "</span></td>" +
       '<td class="col-num">' + row.count + "회</td>" +
       '<td><span class="input-row">' +
       '<input type="text" placeholder="예: CS02070316">' +
@@ -750,7 +831,7 @@ function openProgramList() {
       "</span></td>";
 
     const input = tr.querySelector("input");
-    const btn = tr.querySelector("button");
+    const btn = tr.querySelector(".input-row button");   // 장르 칩이 아니라 ID 버튼
     input.dataset.name = row.name;
     input.value = state.programIds[row.name] || "";
     let editing = false;
@@ -798,6 +879,9 @@ function openProgramList() {
       if (e.key === "Enter" && !input.readOnly) saveOne();
     });
     input.addEventListener("input", paint);
+
+    const chip = tr.querySelector(".cat");
+    if (chip) chip.addEventListener("click", (e) => openGenrePicker(e.currentTarget, row, rows));
 
     paint();
     body.appendChild(tr);
@@ -944,6 +1028,17 @@ async function saveSettings() {
   }
 }
 
+async function loadProgramGenres() {
+  try {
+    const res = await fetch("/api/program-genres");
+    const json = await res.json();
+    state.programGenres = json.map || {};
+    state.genreChoices = json.choices || [];
+  } catch (err) {
+    state.programGenres = {};
+  }
+}
+
 async function loadProgramIds() {
   try {
     const res = await fetch("/api/program-ids");
@@ -1065,7 +1160,8 @@ function bindEvents() {
 
 (async function main() {
   bindEvents();
-  await Promise.all([loadSchedule(), loadRegistrations(), loadConfig(), loadProgramIds()]);
+  await Promise.all([loadSchedule(), loadRegistrations(), loadConfig(),
+                     loadProgramIds(), loadProgramGenres()]);
   render();
   // 오늘 시간대가 화면에 보이도록 스크롤합니다.
   const nowMin = new Date().getHours() * 60 + new Date().getMinutes() - DAY_START_MIN;

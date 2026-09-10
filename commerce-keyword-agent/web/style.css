@@ -532,3 +532,28 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .cat-교양 { background: #EEF2F6; color: #40566D; }
 .cat-브랜디드 { background: #FDE7EB; color: var(--skb-red); }
 .cat-none { background: transparent; color: #9AA0A6; border: 1px dashed var(--border); font-weight: 400; }
+
+/* ----------------------------------------------------- 장르 직접 지정 */
+.name-cell { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+button.cat { border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+button.cat:hover { filter: brightness(0.96); border-color: currentColor; }
+button.cat.cat-none { border-style: dashed; border-color: var(--border); }
+button.cat.is-manual::after { content: " \270E"; font-size: 9px; opacity: .7; }
+
+.genre-picker {
+  position: fixed; z-index: 200;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, .16);
+  padding: 6px; display: flex; flex-direction: column; min-width: 138px;
+}
+.genre-opt {
+  border: none; background: none; text-align: left; cursor: pointer;
+  padding: 7px 10px; border-radius: 7px; font-size: 12.5px; font-family: inherit;
+  color: var(--text-primary);
+}
+.genre-opt:hover { background: #F1F2F4; }
+.genre-opt.is-current { color: var(--skb-red); font-weight: 700; }
+.genre-opt.is-reset {
+  border-top: 1px solid var(--border); margin-top: 4px; padding-top: 9px;
+  color: var(--text-secondary); font-size: 12px;
+}

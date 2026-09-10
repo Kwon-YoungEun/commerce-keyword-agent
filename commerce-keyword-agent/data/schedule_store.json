@@ -31,7 +31,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609070700": {
    "id": "EA202609070700",
@@ -54,7 +55,8 @@
    "grade": "15세 이상",
    "catalogName": "웰컴투불로촌",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609070800": {
    "id": "EA202609070800",
@@ -77,7 +79,8 @@
    "grade": "전체관람가",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609070835": {
    "id": "EA202609070835",
@@ -100,7 +103,8 @@
    "grade": "15세 이상",
    "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609071045": {
    "id": "EA202609071045",
@@ -123,7 +127,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609071220": {
    "id": "EA202609071220",
@@ -146,7 +151,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609071440": {
    "id": "EA202609071440",
@@ -169,7 +175,8 @@
    "grade": "15세 이상",
    "catalogName": "스트릿 레스토랑 파이터",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609071630": {
    "id": "EA202609071630",
@@ -192,7 +199,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609071755": {
    "id": "EA202609071755",
@@ -215,7 +223,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609071910": {
    "id": "EA202609071910",
@@ -238,7 +247,8 @@
    "grade": "12세 이상",
    "catalogName": "히든에이지",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609072010": {
    "id": "EA202609072010",
@@ -261,7 +271,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609072050": {
    "id": "EA202609072050",
@@ -284,7 +295,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609072210": {
    "id": "EA202609072210",
@@ -307,7 +319,8 @@
    "grade": "12세 이상",
    "catalogName": "벌거벗은 세계사",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609080000": {
    "id": "EA202609080000",
@@ -330,7 +343,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609080140": {
    "id": "EA202609080140",
@@ -353,7 +367,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609080340": {
    "id": "EA202609080340",
@@ -376,7 +391,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609080450": {
    "id": "EA202609080450",
@@ -399,7 +415,8 @@
    "grade": "15세 이상",
    "catalogName": "잡학자들",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609080600": {
    "id": "EA202609080600",
@@ -422,7 +439,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609080700": {
    "id": "EA202609080700",
@@ -445,7 +463,8 @@
    "grade": "12세 이상",
    "catalogName": "슈퍼푸드의 힘",
    "genre": "교양",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609080810": {
    "id": "EA202609080810",
@@ -468,7 +487,8 @@
    "grade": "15세 이상",
    "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609081015": {
    "id": "EA202609081015",
@@ -491,7 +511,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609081150": {
    "id": "EA202609081150",
@@ -514,7 +535,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609081325": {
    "id": "EA202609081325",
@@ -537,7 +559,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609081440": {
    "id": "EA202609081440",
@@ -560,7 +583,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609081605": {
    "id": "EA202609081605",
@@ -583,7 +607,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609081815": {
    "id": "EA202609081815",
@@ -606,7 +631,8 @@
    "grade": "12세 이상",
    "catalogName": "히든에이지",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609081925": {
    "id": "EA202609081925",
@@ -629,7 +655,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609082045": {
    "id": "EA202609082045",
@@ -652,7 +679,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609082205": {
    "id": "EA202609082205",
@@ -675,7 +703,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609090100": {
    "id": "EA202609090100",
@@ -698,7 +727,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609090255": {
    "id": "EA202609090255",
@@ -721,7 +751,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609090455": {
    "id": "EA202609090455",
@@ -744,7 +775,8 @@
    "grade": "15세 이상",
    "catalogName": "너의 몸소리가 들려",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609090555": {
    "id": "EA202609090555",
@@ -767,7 +799,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609090655": {
    "id": "EA202609090655",
@@ -790,7 +823,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609090800": {
    "id": "EA202609090800",
@@ -813,7 +847,8 @@
    "grade": "12세 이상",
    "catalogName": "히든에이지",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609090910": {
    "id": "EA202609090910",
@@ -836,7 +871,8 @@
    "grade": "15세 이상",
    "catalogName": "식스센스: 시티투어",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609091120": {
    "id": "EA202609091120",
@@ -859,7 +895,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609091240": {
    "id": "EA202609091240",
@@ -882,7 +919,8 @@
    "grade": "12세 이상",
    "catalogName": "벌거벗은 세계사",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609091435": {
    "id": "EA202609091435",
@@ -905,7 +943,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609091610": {
    "id": "EA202609091610",
@@ -928,7 +967,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609091735": {
    "id": "EA202609091735",
@@ -951,7 +991,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609091910": {
    "id": "EA202609091910",
@@ -974,7 +1015,8 @@
    "grade": "15세 이상",
    "catalogName": "잡학자들",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609092015": {
    "id": "EA202609092015",
@@ -997,7 +1039,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609092045": {
    "id": "EA202609092045",
@@ -1020,7 +1063,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609092300": {
    "id": "EA202609092300",
@@ -1043,7 +1087,8 @@
    "grade": "15세 이상",
    "catalogName": "남겨서 뭐하게",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609100105": {
    "id": "EA202609100105",
@@ -1066,7 +1111,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609100305": {
    "id": "EA202609100305",
@@ -1089,7 +1135,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609100455": {
    "id": "EA202609100455",
@@ -1112,7 +1159,8 @@
    "grade": "15세 이상",
    "catalogName": "너의 몸소리가 들려",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609100600": {
    "id": "EA202609100600",
@@ -1135,7 +1183,8 @@
    "grade": "12세 이상",
    "catalogName": "나만의 시크릿 나비효과",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609100700": {
    "id": "EA202609100700",
@@ -1158,7 +1207,8 @@
    "grade": "15세 이상",
    "catalogName": "프리한 닥터",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609100800": {
    "id": "EA202609100800",
@@ -1181,7 +1231,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609101020": {
    "id": "EA202609101020",
@@ -1204,7 +1255,8 @@
    "grade": "15세 이상",
    "catalogName": "놀라운 토요일",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609101215": {
    "id": "EA202609101215",
@@ -1227,7 +1279,8 @@
    "grade": "15세 이상",
    "catalogName": "이호선 상담소",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609101355": {
    "id": "EA202609101355",
@@ -1250,7 +1303,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609101510": {
    "id": "EA202609101510",
@@ -1273,7 +1327,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609101640": {
    "id": "EA202609101640",
@@ -1296,7 +1351,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609101855": {
    "id": "EA202609101855",
@@ -1319,7 +1375,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609102000": {
    "id": "EA202609102000",
@@ -1342,7 +1399,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609102045": {
    "id": "EA202609102045",
@@ -1365,7 +1423,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609102255": {
    "id": "EA202609102255",
@@ -1388,7 +1447,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609110110": {
    "id": "EA202609110110",
@@ -1411,7 +1471,8 @@
    "grade": "15세 이상",
    "catalogName": "놀라운 토요일",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609110250": {
    "id": "EA202609110250",
@@ -1434,7 +1495,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609110440": {
    "id": "EA202609110440",
@@ -1457,7 +1519,8 @@
    "grade": "전체관람가",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609110455": {
    "id": "EA202609110455",
@@ -1480,7 +1543,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609110550": {
    "id": "EA202609110550",
@@ -1503,7 +1567,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609110650": {
    "id": "EA202609110650",
@@ -1526,7 +1591,8 @@
    "grade": "12세 이상",
    "catalogName": "히든에이지",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609110750": {
    "id": "EA202609110750",
@@ -1549,7 +1615,8 @@
    "grade": "전체관람가",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609110825": {
    "id": "EA202609110825",
@@ -1572,7 +1639,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609111035": {
    "id": "EA202609111035",
@@ -1595,7 +1663,8 @@
    "grade": "12세 이상",
    "catalogName": "벌거벗은 세계사",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609111230": {
    "id": "EA202609111230",
@@ -1618,7 +1687,8 @@
    "grade": "15세 이상",
    "catalogName": "스트릿 레스토랑 파이터",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609111430": {
    "id": "EA202609111430",
@@ -1641,7 +1711,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609111650": {
    "id": "EA202609111650",
@@ -1664,7 +1735,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609111900": {
    "id": "EA202609111900",
@@ -1687,7 +1759,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609112035": {
    "id": "EA202609112035",
@@ -1710,7 +1783,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609112205": {
    "id": "EA202609112205",
@@ -1733,7 +1807,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609120010": {
    "id": "EA202609120010",
@@ -1756,7 +1831,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609120230": {
    "id": "EA202609120230",
@@ -1779,7 +1855,8 @@
    "grade": "15세 이상",
    "catalogName": "응답하라 1988",
    "genre": "드라마",
-   "subGenre": "가족,로맨스,드라마"
+   "subGenre": "가족,로맨스,드라마",
+   "genreManual": false
   },
   "EA202609120425": {
    "id": "EA202609120425",
@@ -1802,7 +1879,8 @@
    "grade": "전체관람가",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609120450": {
    "id": "EA202609120450",
@@ -1825,7 +1903,8 @@
    "grade": "15세 이상",
    "catalogName": "잡학자들",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609120600": {
    "id": "EA202609120600",
@@ -1848,7 +1927,8 @@
    "grade": "15세 이상",
    "catalogName": "너의 몸소리가 들려",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609120700": {
    "id": "EA202609120700",
@@ -1871,7 +1951,8 @@
    "grade": "15세 이상",
    "catalogName": "웰컴투불로촌",
    "genre": "예능",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609120800": {
    "id": "EA202609120800",
@@ -1894,7 +1975,8 @@
    "grade": "전체관람가",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609120830": {
    "id": "EA202609120830",
@@ -1917,7 +1999,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609120950": {
    "id": "EA202609120950",
@@ -1940,7 +2023,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609121130": {
    "id": "EA202609121130",
@@ -1963,7 +2047,8 @@
    "grade": "15세 이상",
    "catalogName": "이호선 상담소",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609121310": {
    "id": "EA202609121310",
@@ -1986,7 +2071,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609121520": {
    "id": "EA202609121520",
@@ -2009,7 +2095,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609121750": {
    "id": "EA202609121750",
@@ -2032,7 +2119,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609121930": {
    "id": "EA202609121930",
@@ -2055,7 +2143,8 @@
    "grade": "15세 이상",
    "catalogName": "놀라운 토요일",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609122110": {
    "id": "EA202609122110",
@@ -2078,7 +2167,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609122230": {
    "id": "EA202609122230",
@@ -2101,7 +2191,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609130010": {
    "id": "EA202609130010",
@@ -2124,7 +2215,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609130220": {
    "id": "EA202609130220",
@@ -2147,7 +2239,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609130400": {
    "id": "EA202609130400",
@@ -2170,7 +2263,8 @@
    "grade": "15세 이상",
    "catalogName": "최애의 사원",
    "genre": "드라마",
-   "subGenre": "로맨스,코미디"
+   "subGenre": "로맨스,코미디",
+   "genreManual": false
   },
   "EA202609130530": {
    "id": "EA202609130530",
@@ -2193,7 +2287,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609130600": {
    "id": "EA202609130600",
@@ -2216,7 +2311,8 @@
    "grade": "15세 이상",
    "catalogName": "프리한19",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609130710": {
    "id": "EA202609130710",
@@ -2239,7 +2335,8 @@
    "grade": "12세 이상",
    "catalogName": "슈퍼푸드의 힘",
    "genre": "교양",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609130820": {
    "id": "EA202609130820",
@@ -2262,7 +2359,8 @@
    "grade": "15세 이상",
    "catalogName": "너의 몸소리가 들려",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609130930": {
    "id": "EA202609130930",
@@ -2285,7 +2383,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   },
   "EA202609131030": {
    "id": "EA202609131030",
@@ -2308,7 +2407,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609131050": {
    "id": "EA202609131050",
@@ -2331,7 +2431,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609131210": {
    "id": "EA202609131210",
@@ -2354,7 +2455,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609131440": {
    "id": "EA202609131440",
@@ -2377,7 +2479,8 @@
    "grade": "15세 이상",
    "catalogName": "우주떡집",
    "genre": "예능",
-   "subGenre": "리얼리티"
+   "subGenre": "리얼리티",
+   "genreManual": false
   },
   "EA202609131620": {
    "id": "EA202609131620",
@@ -2400,7 +2503,8 @@
    "grade": "15세 이상",
    "catalogName": "언니네 산지직송3",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609131830": {
    "id": "EA202609131830",
@@ -2423,7 +2527,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609131950": {
    "id": "EA202609131950",
@@ -2446,7 +2551,8 @@
    "grade": "15세 이상",
    "catalogName": "식스센스: B사이드",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609132110": {
    "id": "EA202609132110",
@@ -2469,7 +2575,8 @@
    "grade": "15세 이상",
    "catalogName": "포핸즈",
    "genre": "드라마",
-   "subGenre": "로맨스,기타"
+   "subGenre": "로맨스,기타",
+   "genreManual": false
   },
   "EA202609132230": {
    "id": "EA202609132230",
@@ -2492,7 +2599,8 @@
    "grade": "전체관람가",
    "catalogName": "유 퀴즈 온 더 블럭",
    "genre": "예능",
-   "subGenre": "리얼리티,게임"
+   "subGenre": "리얼리티,게임",
+   "genreManual": false
   },
   "EA202609140050": {
    "id": "EA202609140050",
@@ -2515,7 +2623,8 @@
    "grade": "15세 이상",
    "catalogName": "놀라운 토요일",
    "genre": "예능",
-   "subGenre": "음악,푸드,스튜디오"
+   "subGenre": "음악,푸드,스튜디오",
+   "genreManual": false
   },
   "EA202609140245": {
    "id": "EA202609140245",
@@ -2538,7 +2647,8 @@
    "grade": "12세 이상",
    "catalogName": "벌거벗은 세계사",
    "genre": "예능",
-   "subGenre": "인포테인먼트"
+   "subGenre": "인포테인먼트",
+   "genreManual": false
   },
   "EA202609140435": {
    "id": "EA202609140435",
@@ -2561,7 +2671,8 @@
    "grade": "15세 이상",
    "catalogName": "",
    "genre": "예능",
-   "subGenre": "버라이어티"
+   "subGenre": "버라이어티",
+   "genreManual": false
   },
   "EA202609140455": {
    "id": "EA202609140455",
@@ -2584,7 +2695,8 @@
    "grade": "12세 이상",
    "catalogName": "",
    "genre": "브랜디드",
-   "subGenre": ""
+   "subGenre": "",
+   "genreManual": false
   }
  }
 }
