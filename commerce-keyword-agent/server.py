@@ -203,8 +203,6 @@ def refresh_schedule(force=False):
 # --------------------------------------------------------------------- 설정
 
 DEFAULT_CONFIG = {
-    "naverClientId": "",
-    "naverClientSecret": "",
     # 팀에서 쓰는 링크 형태가 다르면 이 주소만 바꾸면 됩니다.
     "storeSearchUrl": "https://search.shopping.naver.com/ns/search?query={keyword}",
 }
@@ -227,18 +225,14 @@ def save_config(patch):
 
 
 def public_config(cfg):
-    """비밀키는 그대로 돌려주지 않고 등록 여부만 알려 줍니다."""
-    return {
-        "naverClientId": cfg["naverClientId"],
-        "naverSecretSet": bool(cfg["naverClientSecret"]),
-        "storeSearchUrl": cfg["storeSearchUrl"],
-        "naverReady": bool(cfg["naverClientId"] and cfg["naverClientSecret"]),
-    }
+    return {"storeSearchUrl": cfg["storeSearchUrl"]}
 
 
 # ------------------------------------------------- 네이버플러스스토어 미리보기
-
-B_TAG_RE = re.compile(r"</?b>", re.I)
+#
+# 네이버 쇼핑 검색 API(openapi.naver.com/v1/search/shop)는 2026-07-31 로 종료되어
+# 상품 카드를 직접 받아올 수 없습니다. 없는 상품 정보를 만들어 내지 않고,
+# 판단 재료(연관 검색어·근거 문서)와 실제 스토어 링크를 제공합니다.
 
 
 def store_search_url(cfg, keyword):
@@ -246,77 +240,17 @@ def store_search_url(cfg, keyword):
     return template.replace("{keyword}", urllib.parse.quote(keyword))
 
 
-def naver_error_message(exc):
-    """네이버가 보낸 오류 본문을 그대로 보여 줍니다(원인 파악이 쉬워집니다)."""
-    body = ""
-    try:
-        body = exc.read().decode("utf-8", errors="replace")[:300]
-    except Exception:
-        pass
-    detail = "네이버 API 오류 HTTP %s" % exc.code
-    try:
-        parsed = json.loads(body)
-        code = parsed.get("errorCode") or parsed.get("errorcode") or ""
-        message = parsed.get("errorMessage") or parsed.get("message") or ""
-        if code or message:
-            detail += " — [%s] %s" % (code, message)
-    except ValueError:
-        if body:
-            detail += " — " + body
-    if exc.code in (401, 403):
-        detail += " (Client ID/Secret 을 다시 확인해 주세요)"
-    return detail
-
-
-def store_preview(keyword, display=9):
-    """네이버 쇼핑 검색 API 로 상품 카드를 만들어 옵니다. 키가 없으면 링크만 돌려줍니다."""
+def store_preview(keyword):
     cfg = load_config()
-    url = store_search_url(cfg, keyword)
-    if not (cfg["naverClientId"] and cfg["naverClientSecret"]):
-        return {
-            "mode": "link",
-            "items": [],
-            "total": 0,
-            "searchUrl": url,
-            "message": "네이버 검색 API 키를 등록하면 상품 카드를 바로 볼 수 있어요.",
-        }
-
-    api = "https://openapi.naver.com/v1/search/shop.json?query=%s&display=%d&sort=sim" % (
-        urllib.parse.quote(keyword),
-        display,
-    )
-    req = urllib.request.Request(
-        api,
-        headers={
-            "X-Naver-Client-Id": cfg["naverClientId"],
-            "X-Naver-Client-Secret": cfg["naverClientSecret"],
-            "User-Agent": USER_AGENT,
-        },
-    )
-    with urllib.request.urlopen(req, timeout=12) as res:
-        payload = json.loads(res.read().decode("utf-8"))
-
-    items = []
-    for it in payload.get("items", []):
-        items.append(
-            {
-                "title": B_TAG_RE.sub("", it.get("title", "")),
-                "link": it.get("link", ""),
-                "image": it.get("image", ""),
-                "price": int(it.get("lprice") or 0),
-                "mall": it.get("mallName", ""),
-                "brand": it.get("brand") or it.get("maker") or "",
-                "category": " > ".join(
-                    x for x in (it.get("category1"), it.get("category2"), it.get("category3")) if x
-                ),
-            }
-        )
+    related, error = [], ""
+    try:
+        related = keyword_engine.naver_autocomplete(keyword, limit=8)
+    except Exception as exc:
+        error = "연관 검색어를 못 읽었습니다: %s" % exc
     return {
-        "mode": "api",
-        "items": items,
-        "total": payload.get("total", 0),
-        "searchUrl": url,
-        "message": "",
+        "searchUrl": store_search_url(cfg, keyword),
+        "related": related,
+        "warning": error,
     }
 
 
@@ -477,29 +411,10 @@ class Handler(BaseHTTPRequestHandler):
                 keyword = query.get("keyword", [""])[0].strip()
                 if not keyword:
                     return self._error("키워드가 비어 있습니다.", 400)
-                try:
-                    return self._json({"ok": True, "keyword": keyword, **store_preview(keyword)})
-                except urllib.error.HTTPError as exc:
-                    return self._error(naver_error_message(exc), 502)
+                return self._json({"ok": True, "keyword": keyword, **store_preview(keyword)})
 
             if path == "/api/config":
                 return self._json({"ok": True, **public_config(load_config())})
-
-            if path == "/api/config/test":
-                cfg = load_config()
-                if not (cfg["naverClientId"] and cfg["naverClientSecret"]):
-                    return self._json({"ok": False, "error": "Client ID / Secret 을 먼저 저장해 주세요."})
-                try:
-                    result = store_preview("참기름", display=1)
-                    return self._json({
-                        "ok": True,
-                        "message": "연결 성공 — 네이버 검색 API 가 응답했어요 (상품 %s건 조회)"
-                                   % format(result.get("total", 0), ","),
-                    })
-                except urllib.error.HTTPError as exc:
-                    return self._json({"ok": False, "error": naver_error_message(exc)})
-                except Exception as exc:
-                    return self._json({"ok": False, "error": str(exc)})
 
             if path == "/api/registrations":
                 return self._json({"ok": True, **load_registrations()})

@@ -415,3 +415,16 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .cfg-status.is-ok { color: var(--status-good); font-weight: 600; }
 .cfg-status.is-bad { color: var(--status-bad); }
 .field-actions { align-items: flex-start; }
+
+/* ------------------------------------------------------- 키워드 점검 패널 */
+.check-block { margin-bottom: 16px; }
+.check-block h4 { margin: 0 0 7px; font-size: 12.5px; letter-spacing: -.01em; }
+.check-block h4 small { font-weight: 400; color: var(--text-secondary); margin-left: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 11.5px; padding: 3px 9px; border-radius: 999px;
+  background: #F3F4F6; color: var(--text-secondary); border: 1px solid var(--border);
+}
+.evidence { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.7; color: var(--text-secondary); }
+.evidence a { color: var(--text-primary); }
+.evidence a:hover { color: var(--skb-red); }

@@ -324,59 +324,55 @@ function selectKeyword(k, el) {
 
 async function renderPreview(k) {
   const panel = document.getElementById("previewPanel");
-  panel.innerHTML = '<div class="loading"><span class="spinner"></span>스토어 검색 결과를 불러오는 중…</div>';
+  panel.innerHTML = '<div class="loading"><span class="spinner"></span>키워드를 확인하는 중…</div>';
 
   let data;
   try {
     const res = await fetch("/api/store-preview?keyword=" + encodeURIComponent(k.keyword));
     data = await res.json();
-    if (!data.ok) throw new Error(data.error || "미리보기를 불러오지 못했습니다.");
+    if (!data.ok) throw new Error(data.error || "확인에 실패했습니다.");
   } catch (err) {
     panel.innerHTML = `<div class="notice">${escapeHtml(err.message)}</div>`;
     return;
   }
   if (state.selectedKeyword !== k) return;   // 그 사이 다른 키워드를 눌렀으면 무시합니다.
 
-  const head =
-    `<div class="preview-head">` +
-    `<span class="preview-kw">${escapeHtml(k.keyword)}</span>` +
-    (data.mode === "api"
-      ? `<span class="preview-total">상품 ${Number(data.total).toLocaleString()}건</span>`
-      : "") +
-    `<a class="preview-open" href="${data.searchUrl}" target="_blank" rel="noopener">스토어에서 열기 ↗</a>` +
-    `</div>` +
-    (k.demand && k.demand.length
-      ? `<p class="muted" style="margin:-4px 0 12px;font-size:11.5px">연관 검색어: ${k.demand.map(escapeHtml).join(", ")}</p>`
-      : "");
+  const relatedHtml = data.related.length
+    ? data.related.map((r) => `<span class="chip">${escapeHtml(r)}</span>`).join("")
+    : '<span class="muted" style="font-size:12px">네이버 자동완성에 걸리는 문구가 없어요. 검색량이 적은 키워드일 수 있습니다.</span>';
 
-  let bodyHtml;
-  if (data.mode === "api" && data.items.length) {
-    bodyHtml =
-      '<div class="product-grid">' +
-      data.items
-        .map(
-          (it) =>
-            `<a class="product" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">` +
-            `<img class="thumb" src="${escapeHtml(it.image)}" alt="" loading="lazy">` +
-            `<div class="body"><div class="nm">${escapeHtml(it.title)}</div>` +
-            `<div class="pr">${it.price ? Number(it.price).toLocaleString() + "원" : "가격 미표기"}</div>` +
-            `<div class="ml">${escapeHtml(it.mall || it.brand || "")}</div></div></a>`
+  const evidence = k.evidence || [];
+  const evidenceHtml = evidence.length
+    ? evidence
+        .map((e) =>
+          e.url
+            ? `<li><a href="${escapeHtml(e.url)}" target="_blank" rel="noopener">${escapeHtml(e.text)}</a></li>`
+            : `<li>${escapeHtml(e.text)}</li>`
         )
-        .join("") +
-      "</div>";
-  } else if (data.mode === "api") {
-    bodyHtml = '<div class="placeholder">이 키워드로는 상품이 검색되지 않았어요. 다른 키워드를 골라 보세요.</div>';
-  } else {
-    bodyHtml =
-      `<div class="placeholder">${escapeHtml(data.message)}<br>` +
-      `<button class="btn btn-line btn-sm" type="button" onclick="openSettings()" style="margin-top:10px">설정에서 키 등록</button></div>`;
-  }
+        .join("")
+    : "<li class='muted'>근거 문서가 없습니다(조합으로 만든 키워드).</li>";
 
   panel.innerHTML =
-    head + bodyHtml +
+    `<div class="preview-head">` +
+    `<span class="preview-kw">${escapeHtml(k.keyword)}</span>` +
+    `<span class="cat cat-${k.category}">${k.category}</span>` +
+    `</div>` +
+    `<section class="check-block">` +
+    `<h4>네이버 연관 검색어 <small>실제로 검색되는 문구인지</small></h4>` +
+    `<div class="chips">${relatedHtml}</div>` +
+    `</section>` +
+    `<section class="check-block">` +
+    `<h4>이 키워드가 나온 근거</h4>` +
+    `<ul class="evidence">${evidenceHtml}</ul>` +
+    `</section>` +
+    (data.warning ? `<p class="muted" style="font-size:11.5px">${escapeHtml(data.warning)}</p>` : "") +
     `<div class="preview-actions">` +
-    `<button id="btnRegister" class="btn btn-line" type="button">매뉴얼 키워드 등록</button>` +
-    `</div>`;
+    `<a class="btn btn-line" href="${data.searchUrl}" target="_blank" rel="noopener">네이버플러스스토어에서 열기 ↗</a>` +
+    `<button id="btnRegister" class="btn" type="button">매뉴얼 키워드 등록</button>` +
+    `</div>` +
+    `<p class="muted" style="font-size:11.5px;margin-top:10px">` +
+    `네이버 쇼핑 검색 API가 2026-07-31 종료되어 상품 카드를 직접 불러올 수 없습니다. ` +
+    `링크로 실제 결과를 확인해 주세요.</p>`;
 
   document.getElementById("btnRegister").addEventListener("click", () => registerKeyword(k));
 }
@@ -399,57 +395,35 @@ async function loadConfig() {
 
 function openSettings() {
   const c = state.config || {};
-  document.getElementById("cfgClientId").value = c.naverClientId || "";
-  document.getElementById("cfgClientSecret").value = "";
   document.getElementById("cfgStoreUrl").value = c.storeSearchUrl || "";
-  document.getElementById("cfgStatus").textContent = c.naverReady
-    ? "네이버 검색 API 사용 중"
-    : "네이버 키가 아직 없습니다";
+  document.getElementById("cfgStatus").textContent = "";
+  document.getElementById("cfgStatus").className = "muted cfg-status";
   document.getElementById("settingsBackdrop").hidden = false;
 }
 
 async function saveSettings() {
-  const body = {
-    naverClientId: document.getElementById("cfgClientId").value.trim(),
-    storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim(),
-  };
-  const secret = document.getElementById("cfgClientSecret").value.trim();
-  if (secret) body.naverClientSecret = secret;
-
   const status = document.getElementById("cfgStatus");
+  status.className = "cfg-status";
   status.textContent = "저장 중…";
   try {
     const res = await fetch("/api/config", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim() }),
     });
     state.config = await res.json();
-    status.textContent = state.config.naverReady
-      ? "저장했어요. 네이버 검색 API 사용 중"
-      : "저장했어요. (키가 아직 완전하지 않습니다)";
+    status.className = "cfg-status is-ok";
+    status.textContent = "저장했어요.";
   } catch (err) {
+    status.className = "cfg-status is-bad";
     status.textContent = "저장 실패: " + err.message;
   }
 }
 
+/* ------------------------------------------------------------------ 시작 */
+
 function closeModal() {
   document.getElementById("modalBackdrop").hidden = true;
-}
-
-async function testConnection() {
-  const status = document.getElementById("cfgStatus");
-  status.className = "muted cfg-status";
-  status.textContent = "확인 중…";
-  try {
-    const res = await fetch("/api/config/test");
-    const json = await res.json();
-    status.className = "cfg-status " + (json.ok ? "is-ok" : "is-bad");
-    status.textContent = json.ok ? json.message : json.error;
-  } catch (err) {
-    status.className = "cfg-status is-bad";
-    status.textContent = "확인 실패: " + err.message;
-  }
 }
 
 /* ------------------------------------------------------------------ 시작 */
@@ -484,7 +458,6 @@ function bindEvents() {
     if (e.target.id === "settingsBackdrop") e.target.hidden = true;
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
-  document.getElementById("cfgTest").addEventListener("click", testConnection);
   document.getElementById("modalClose").addEventListener("click", closeModal);
   document.getElementById("modalBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "modalBackdrop") closeModal();
