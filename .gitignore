@@ -1,0 +1,21 @@
+# 이 폴더 전용 Python 공간 — 용량이 크고 PC마다 경로가 달라 깃에 넣지 않습니다.
+.venv/
+
+# Claude Code 개인 설정 (토큰·개인 권한이 들어갈 수 있음)
+.claude/settings.local.json
+
+# 이 PC의 환경 점검 기록 — 사람마다 경로가 다릅니다.
+.skb-setup-status.md
+
+# Python 임시 파일
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Office가 파일을 열어둘 때 만드는 임시 파일
+~$*
+
+# Windows·macOS가 만드는 폴더 정보 파일
+desktop.ini
+Thumbs.db
+.DS_Store
