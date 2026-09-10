@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 커머스광고 키워드 Agent</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">SKB</span>
+      <div class="brand-text">
+        <h1>AI 커머스광고 키워드 Agent</h1>
+        <p>TV 방송 화제 상품 → 검색 키워드 → 네이버플러스스토어 연결</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span id="fetchInfo" class="fetch-info">편성표 불러오는 중…</span>
+      <button id="btnRefresh" class="btn btn-ghost" type="button">편성표 새로고침</button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="toolbar">
+    <div class="week-nav">
+      <button id="btnPrev" class="btn btn-icon" type="button" aria-label="이전 주">‹</button>
+      <div class="week-label">
+        <strong id="weekRange">—</strong>
+        <span id="weekSub" class="muted">tvN 편성표</span>
+      </div>
+      <button id="btnNext" class="btn btn-icon" type="button" aria-label="다음 주">›</button>
+      <button id="btnToday" class="btn btn-line" type="button">이번 주</button>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><i class="swatch swatch-live"></i>본방송</span>
+      <span class="legend-item"><i class="swatch swatch-rerun"></i>재방송</span>
+      <span class="legend-item"><i class="swatch swatch-registered"></i>키워드 등록됨</span>
+    </div>
+  </section>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <section class="calendar-card">
+    <div class="calendar-head">
+      <div class="time-gutter-head"></div>
+      <div id="dayHead" class="day-head-row"></div>
+    </div>
+    <div id="calendarBody" class="calendar-body">
+      <div id="timeGutter" class="time-gutter"></div>
+      <div id="dayGrid" class="day-grid"></div>
+    </div>
+  </section>
+
+  <p class="foot-note">
+    편성 데이터 출처: tvN 공식 편성표(<code>tvn.cjenm.com</code>). 방송사 사정으로 편성은 변경될 수 있습니다.
+  </p>
+</main>
+
+<!-- 프로그램 상세 팝업 (2단계에서 키워드 추천이 들어갑니다) -->
+<div id="modalBackdrop" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="modalClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <span id="modalBadge" class="badge">본방송</span>
+      <h2 id="modalTitle">프로그램</h2>
+      <p id="modalMeta" class="muted"></p>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
