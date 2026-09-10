@@ -89,15 +89,25 @@ async function loadRegistrations() {
   try {
     const res = await fetch("/api/registrations");
     const json = await res.json();
+    // 키워드는 회차가 아니라 프로그램에 붙습니다.
     state.registrationsByProgram = new Map();
     for (const item of json.items || []) {
-      const key = item.programId;
+      const key = item.programName || item.programId;
       if (!state.registrationsByProgram.has(key)) state.registrationsByProgram.set(key, []);
       state.registrationsByProgram.get(key).push(item);
+    }
+    for (const list of state.registrationsByProgram.values()) {
+      list.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
     }
   } catch (err) {
     /* 등록 이력이 없어도 캘린더는 그립니다. */
   }
+}
+
+/** 이 회차에 적용되는 등록 키워드 — 등록한 회차부터 그 이후 편성 전체에 붙습니다. */
+function registrationsFor(program) {
+  const list = state.registrationsByProgram.get(program.programName || program.title) || [];
+  return list.filter((r) => !r.fromTs || (program.startTs || 0) >= r.fromTs);
 }
 
 function showNotice(message) {
@@ -183,7 +193,7 @@ function renderGrid() {
 
 function programBlock(p) {
   const height = Math.max(16, p.durationMin * PX_PER_MIN - 3);
-  const regs = state.registrationsByProgram.get(p.id) || [];
+  const regs = registrationsFor(p);
 
   const el = document.createElement("button");
   el.type = "button";
@@ -193,17 +203,31 @@ function programBlock(p) {
   if (height < 46) el.classList.add("is-short");
   el.style.top = p.offsetMin * PX_PER_MIN + "px";
   el.style.height = height + "px";
-  el.title = `${p.start}~${p.end} ${p.title}` + (p.episode ? ` ${p.episode}` : "");
+  el.title = `${p.start}~${p.end} ${p.title}` + (p.episode ? ` ${p.episode}` : "") +
+    (regs.length ? `\n등록 키워드: ${regs.map((r) => r.keyword).join(", ")}` : "");
 
   const flag = p.liveFlag === "본" ? '<span class="pgm-flag">본</span>' : "";
   el.innerHTML =
     `<div class="t">${p.start}</div>` +
     `<div class="n">${flag}${escapeHtml(p.title)}</div>` +
     (p.episode ? `<div class="e">${escapeHtml(p.episode)}</div>` : "") +
-    (regs.length ? `<div class="pgm-keys">키워드 ${regs.length}건 등록</div>` : "");
+    (regs.length ? keywordChipsHtml(regs, height) : "");
 
   el.addEventListener("click", () => openProgram(p));
   return el;
+}
+
+/** 블록 높이에 맞춰 키워드를 몇 개까지 보여 줄지 정합니다. */
+function keywordChipsHtml(regs, height) {
+  const room = Math.max(1, Math.floor((height - 40) / 17));
+  const shown = regs.slice(0, Math.min(room, 3));
+  const rest = regs.length - shown.length;
+  return (
+    '<div class="pgm-keys">' +
+    shown.map((r) => `<span class="pgm-key">${escapeHtml(r.keyword)}</span>`).join("") +
+    (rest > 0 ? `<span class="pgm-key is-more">+${rest}</span>` : "") +
+    "</div>"
+  );
 }
 
 function nowLine() {
@@ -639,15 +663,22 @@ async function confirmRegister() {
 
   const item = {
     id: body.requestId,
-    programId: p.id,               // tvN 편성 ID (캘린더 표시용)
-    programCode: body.programId,   // 전송 body 의 programId
-    programName: body.programName,
+    programName: body.programName,   // 이 이름의 프로그램 전체에 적용됩니다.
+    programCode: body.programId,     // 전송 body 의 programId
+    scheduleId: p.id,                // 등록을 누른 회차(참고용)
+    fromTs: p.startTs || 0,          // 이 회차부터 이후 편성에 붙습니다.
     date: p.date,
     episode: p.episode,
     keyword: body.productInfo[0].productKeyword,
     bodyText: bodyToText(body, true),
     body: body,
   };
+
+  const already = (state.registrationsByProgram.get(item.programName) || [])
+    .find((r) => r.keyword === item.keyword);
+  if (already && !confirm(`'${item.keyword}' 는 이미 이 프로그램에 등록돼 있어요. 다시 등록할까요?`)) {
+    return;
+  }
 
   try {
     const res = await fetch("/api/registrations", {
@@ -657,7 +688,11 @@ async function confirmRegister() {
     });
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
-    setBodyStatus("캘린더에 등록했어요 — " + item.keyword, "ok");
+    const hits = countAppliedAirings(item);
+    setBodyStatus(
+      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다.",
+      "ok"
+    );
     await loadRegistrations();
     render();
     renderRegistered(p);
@@ -665,6 +700,16 @@ async function confirmRegister() {
   } catch (err) {
     setBodyStatus("등록 실패: " + err.message, "bad");
   }
+}
+
+function countAppliedAirings(item) {
+  let n = 0;
+  for (const list of state.programsByDate.values()) {
+    for (const p of list) {
+      if ((p.programName || p.title) === item.programName && (p.startTs || 0) >= item.fromTs) n++;
+    }
+  }
+  return n;
 }
 
 /* --------------------------------------------- 편성 프로그램 ID 표 관리 */
@@ -928,12 +973,15 @@ async function saveAllProgramIds() {
 
 function renderRegistered(program) {
   const box = document.getElementById("registeredBox");
-  const items = state.registrationsByProgram.get(program.id) || [];
+  const items = registrationsFor(program);
   box.hidden = items.length === 0;
   if (!items.length) return;
 
   box.innerHTML =
-    "<h4>이 회차에 등록된 키워드 (" + items.length + "건)</h4><ul>" +
+    "<h4>" + escapeHtml(program.programName || program.title) +
+    " 에 등록된 키워드 (" + items.length + "건)</h4>" +
+    '<p class="muted" style="margin:0 0 8px;font-size:11.5px">' +
+    "등록한 회차부터 이후 편성 전체에 함께 표시됩니다.</p><ul>" +
     items
       .map((it) => {
         const when = new Date((it.createdAt || 0) * 1000);
@@ -943,7 +991,8 @@ function renderRegistered(program) {
           String(when.getMinutes()).padStart(2, "0");
         const shown = it.keyword || (it.keywords || []).join(", ");
         return "<li>" + escapeHtml(shown) +
-          ' <span class="muted">· ' + escapeHtml(it.programCode || "") + " · " + stamp + "</span>" +
+          ' <span class="muted">· ' + escapeHtml(it.programCode || "") + " · " +
+          escapeHtml(prettyDate(it.date || "")) + " 회차부터 · " + stamp + " 등록</span>" +
           '<button type="button" data-reg="' + escapeHtml(it.id) + '">삭제</button></li>';
       })
       .join("") +
