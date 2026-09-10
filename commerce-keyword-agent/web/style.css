@@ -410,3 +410,8 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 @media (max-width: 860px) {
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+.cfg-status { font-size: 12px; line-height: 1.5; flex: 1; }
+.cfg-status.is-ok { color: var(--status-good); font-weight: 600; }
+.cfg-status.is-bad { color: var(--status-bad); }
+.field-actions { align-items: flex-start; }

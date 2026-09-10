@@ -437,6 +437,21 @@ function closeModal() {
   document.getElementById("modalBackdrop").hidden = true;
 }
 
+async function testConnection() {
+  const status = document.getElementById("cfgStatus");
+  status.className = "muted cfg-status";
+  status.textContent = "확인 중…";
+  try {
+    const res = await fetch("/api/config/test");
+    const json = await res.json();
+    status.className = "cfg-status " + (json.ok ? "is-ok" : "is-bad");
+    status.textContent = json.ok ? json.message : json.error;
+  } catch (err) {
+    status.className = "cfg-status is-bad";
+    status.textContent = "확인 실패: " + err.message;
+  }
+}
+
 /* ------------------------------------------------------------------ 시작 */
 
 function bindEvents() {
@@ -469,6 +484,7 @@ function bindEvents() {
     if (e.target.id === "settingsBackdrop") e.target.hidden = true;
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
+  document.getElementById("cfgTest").addEventListener("click", testConnection);
   document.getElementById("modalClose").addEventListener("click", closeModal);
   document.getElementById("modalBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "modalBackdrop") closeModal();

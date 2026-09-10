@@ -485,6 +485,22 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/config":
                 return self._json({"ok": True, **public_config(load_config())})
 
+            if path == "/api/config/test":
+                cfg = load_config()
+                if not (cfg["naverClientId"] and cfg["naverClientSecret"]):
+                    return self._json({"ok": False, "error": "Client ID / Secret 을 먼저 저장해 주세요."})
+                try:
+                    result = store_preview("참기름", display=1)
+                    return self._json({
+                        "ok": True,
+                        "message": "연결 성공 — 네이버 검색 API 가 응답했어요 (상품 %s건 조회)"
+                                   % format(result.get("total", 0), ","),
+                    })
+                except urllib.error.HTTPError as exc:
+                    return self._json({"ok": False, "error": naver_error_message(exc)})
+                except Exception as exc:
+                    return self._json({"ok": False, "error": str(exc)})
+
             if path == "/api/registrations":
                 return self._json({"ok": True, **load_registrations()})
 
