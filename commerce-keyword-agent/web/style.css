@@ -526,3 +526,9 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 }
 .pid-table tr.is-missing input.is-locked { background: #F1F2F4; }
 .pid-table input.is-locked:focus { border-color: var(--border); }
+
+.cat-드라마 { background: #FDECEF; color: #9B1B36; }
+.cat-예능 { background: #FFF1E6; color: #A4520F; }
+.cat-교양 { background: #EEF2F6; color: #40566D; }
+.cat-브랜디드 { background: #FDE7EB; color: var(--skb-red); }
+.cat-none { background: transparent; color: #9AA0A6; border: 1px dashed var(--border); font-weight: 400; }

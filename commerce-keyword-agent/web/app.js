@@ -250,7 +250,7 @@ function openProgram(p) {
   const dow = WKDAY[new Date(+p.date.slice(0, 4), +p.date.slice(4, 6) - 1, +p.date.slice(6, 8)).getDay()];
   document.getElementById("modalMeta").textContent =
     `${prettyDate(p.date)} (${dow}) ${p.start}~${p.end} · ${p.channel}` +
-    (p.episode ? ` · ${p.episode}` : "") + (p.genre && p.genre !== "기타" ? ` · ${p.genre}` : "") +
+    (p.episode ? ` · ${p.episode}` : "") + (p.genre ? ` · ${p.genre}${p.subGenre ? "(" + p.subGenre + ")" : ""}` : "") +
     (p.subtitle ? ` · ${p.subtitle}` : "");
 
   document.getElementById("previewPanel").innerHTML =
@@ -706,8 +706,13 @@ function weekProgramNames() {
     const key = ymd(addDays(state.weekStart, i));
     for (const p of state.programsByDate.get(key) || []) {
       const name = p.programName || p.title;
-      if (!map.has(name)) map.set(name, { name: name, count: 0, genre: p.genre || "" });
-      map.get(name).count += 1;
+      if (!map.has(name)) map.set(name, { name: name, count: 0, genre: "", subGenre: "" });
+      const row = map.get(name);
+      row.count += 1;
+      if (!row.genre && p.genre) {          // 장르를 아는 회차가 하나라도 있으면 씁니다.
+        row.genre = p.genre;
+        row.subGenre = p.subGenre || "";
+      }
     }
   }
   return [...map.values()].sort(
@@ -717,9 +722,11 @@ function weekProgramNames() {
 
 function updatePidMeta(total) {
   const missing = document.querySelectorAll("#pidBody tr.is-missing").length;
+  const noGenre = document.querySelectorAll("#pidBody .cat-none").length;
   document.getElementById("pidMeta").textContent =
     prettyDate(ymd(state.weekStart)) + " ~ " + prettyDate(ymd(addDays(state.weekStart, 6))) +
-    " · 프로그램 " + total + "개 · ID 없음 " + missing + "개";
+    " · 프로그램 " + total + "개 · ID 없음 " + missing + "개" +
+    (noGenre ? " · 장르 미상 " + noGenre + "개" : "");
 }
 
 function openProgramList() {
@@ -730,7 +737,11 @@ function openProgramList() {
     const tr = document.createElement("tr");
     tr.innerHTML =
       "<td>" + escapeHtml(row.name) +
-      (row.genre && row.genre !== "기타" ? ' <span class="cat">' + escapeHtml(row.genre) + "</span>" : "") +
+      (row.genre
+        ? ' <span class="cat cat-' + escapeHtml(row.genre) + '"' +
+          (row.subGenre ? ' title="' + escapeHtml(row.subGenre) + '"' : "") +
+          ">" + escapeHtml(row.genre) + "</span>"
+        : ' <span class="cat cat-none" title="tvN 프로그램 목록에서 아직 못 찾은 프로그램이에요">장르 미상</span>') +
       "</td>" +
       '<td class="col-num">' + row.count + "회</td>" +
       '<td><span class="input-row">' +

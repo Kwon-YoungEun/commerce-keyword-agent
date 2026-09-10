@@ -27,8 +27,10 @@ REGISTRATION_STORE = os.path.join(DATA_DIR, "registrations.json")
 KEYWORD_CACHE = os.path.join(DATA_DIR, "keyword_cache.json")
 CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
 PROGRAM_ID_STORE = os.path.join(DATA_DIR, "program_ids.json")
+PROGRAM_CATALOG = os.path.join(DATA_DIR, "program_catalog.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
+TVN_PROGRAM_URL = "https://tvn.cjenm.com/ko/program/"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
@@ -167,6 +169,7 @@ def fetch_tvn_schedule():
         epi_name = p.get("pgmEpinoNm") or ""
         programs[p["scheId"]] = {
             "id": p["scheId"],
+            "pgmId": p.get("pgmId") or "",
             "date": date,
             "channel": p.get("chnNm") or "tvN",
             "start": p.get("bdStrTtm") or "",
@@ -181,13 +184,159 @@ def fetch_tvn_schedule():
             "episodeName": epi_name,
             "episode": parse_episode(epi_name, raw_title),
             "subtitle": episode_subtitle(epi_name),
-            "genre": detect_genre(raw_title),
             "liveFlag": p.get("bdFgNm") or "",
             "grade": p.get("dlbrtGrdNm") or "",
         }
         days.setdefault(date, "")
 
     return {"days": days, "programs": programs}
+
+
+# ------------------------------------------------------- tvN 프로그램 카탈로그
+#
+# tvN 프로그램 목록 페이지는 한 번에 24개만 내려줍니다(2페이지부터는 tvN 쪽
+# API 가 404 라 더 받을 수 없습니다). 그래서 받을 수 있는 만큼을 로컬에 쌓아
+# 두고, 편성표의 pgmId 로 장르와 정식 프로그램명을 찾습니다.
+
+
+def _next_data(html_text):
+    m = re.search(
+        r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html_text, re.S
+    )
+    if not m:
+        raise RuntimeError("페이지 구조가 바뀌었습니다(__NEXT_DATA__ 없음).")
+    return json.loads(m.group(1))
+
+
+def fetch_program_catalog():
+    """프로그램 목록 페이지에서 {pgmId: {name, genre, subGenre}} 를 뽑습니다."""
+    data = _next_data(_http_get(TVN_PROGRAM_URL))
+    fallback = data.get("props", {}).get("pageProps", {}).get("fallback", {}) or {}
+    out = {}
+    for value in fallback.values():
+        if not isinstance(value, dict):
+            continue
+        node = value.get("data")
+        if not (isinstance(node, dict) and isinstance(node.get("dataInfo"), dict)):
+            continue
+        for item in node["dataInfo"].get("list") or []:
+            pgm_id = item.get("pgmId")
+            if not pgm_id:
+                continue
+            out[pgm_id] = {
+                "name": (item.get("pgmNm") or "").strip(),
+                "genre": (item.get("repGenreInfo") or "").strip(),
+                "subGenre": (item.get("ptclrGenreInfo") or "").strip(),
+                "channel": (item.get("repChnNm") or "").strip(),
+            }
+    return out
+
+
+def load_program_catalog():
+    return _read_json(PROGRAM_CATALOG, {"fetchedAt": 0, "items": {}})
+
+
+def refresh_program_catalog(force=False):
+    """목록을 읽어 로컬 카탈로그에 누적합니다(tvN 이 노출을 바꾸면 조금씩 늘어납니다)."""
+    store = load_program_catalog()
+    fresh = (time.time() - store.get("fetchedAt", 0)) < SCHEDULE_TTL_SEC
+    if fresh and not force and store.get("items"):
+        return store
+    try:
+        fetched = fetch_program_catalog()
+    except Exception:
+        return store       # 실패해도 이미 쌓아 둔 카탈로그로 계속 씁니다.
+    store.setdefault("items", {}).update(fetched)
+    store["fetchedAt"] = int(time.time())
+    _write_json(PROGRAM_CATALOG, store)
+    return store
+
+
+BRANDED_TAGS = ("브랜디드", "건강IP")
+VARIANT_SUFFIXES = ("특별판", "스페셜", "하이라이트", "스핀오프", "무삭제판", "확장판")
+VARIANT_SPLIT_RE = re.compile(r"\s*[-–—:]\s+")
+
+
+def tag_genre(raw_title):
+    """제목 앞 말머리에서 읽을 수 있는 장르. 카탈로그에 없을 때만 씁니다."""
+    tags = " ".join(re.findall(r"\[([^\]]{1,20})\]", raw_title or ""))
+    if any(t in tags for t in BRANDED_TAGS):
+        return "브랜디드"
+    if "예능" in tags:
+        return "예능"
+    if any(t in tags for t in ("드라마", "월화", "화수", "수목", "목금", "금토", "토일", "일월")):
+        return "드라마"
+    return ""
+
+
+def norm_name(name):
+    """띄어쓰기·대소문자를 무시하고 이름을 비교하기 위한 형태."""
+    return re.sub(r"\s+", "", (name or "")).lower()
+
+
+def base_name_candidates(name):
+    """'유 퀴즈 온 더 블럭 특별판', 'A - 부제' 처럼 붙은 변형에서 본 프로그램명 후보를 만듭니다."""
+    out = []
+    text = (name or "").strip()
+    for _ in range(3):
+        changed = False
+        for suffix in VARIANT_SUFFIXES:
+            if text.endswith(suffix) and len(text) > len(suffix) + 1:
+                text = text[: -len(suffix)].strip()
+                changed = True
+        parts = VARIANT_SPLIT_RE.split(text, 1)
+        if len(parts) == 2 and len(parts[0].strip()) >= 2:
+            text = parts[0].strip()
+            changed = True
+        if not changed:
+            break
+        if text and text not in out:
+            out.append(text)
+    return out
+
+
+def apply_catalog(store):
+    """편성 목록에 카탈로그 장르를 붙이고, 특별판·파트를 본 프로그램으로 합칩니다."""
+    catalog = load_program_catalog().get("items", {})
+    programs = store.get("programs", {})
+
+    # 1단계 — pgmId 로 정식 이름과 장르를 찾습니다.
+    for p in programs.values():
+        entry = catalog.get(p.get("pgmId") or "")
+        p["catalogName"] = entry["name"] if entry else ""
+        p["genre"] = (entry or {}).get("genre") or tag_genre(p.get("rawTitle", ""))
+        p["subGenre"] = (entry or {}).get("subGenre") or ""
+        # 카탈로그에 없으면 편성 제목을 그대로 둡니다. 잘라내는 건
+        # 2단계에서 "같은 이름의 프로그램이 실제로 있을 때"만 합니다.
+        p["programName"] = p["catalogName"] or p["title"]
+
+    # 2단계 — 실제로 존재하는 프로그램명만 통합 대상으로 인정합니다.
+    canonical = {}
+    for p in programs.values():
+        key = norm_name(p["programName"])
+        if key and (key not in canonical or p["catalogName"]):
+            canonical[key] = p["catalogName"] or p["programName"]
+    for entry in catalog.values():
+        canonical.setdefault(norm_name(entry["name"]), entry["name"])
+
+    for p in programs.values():
+        for candidate in base_name_candidates(p["programName"]):
+            key = norm_name(candidate)
+            if key and key != norm_name(p["programName"]) and key in canonical:
+                p["programName"] = canonical[key]
+                break
+
+    # 3단계 — 합쳐진 그룹 안에 장르를 아는 회차가 있으면 나눠 갖습니다.
+    genre_by_name = {}
+    for p in programs.values():
+        if p["genre"]:
+            genre_by_name.setdefault(norm_name(p["programName"]), (p["genre"], p["subGenre"]))
+    for p in programs.values():
+        if not p["genre"]:
+            found = genre_by_name.get(norm_name(p["programName"]))
+            if found:
+                p["genre"], p["subGenre"] = found
+    return store
 
 
 def load_schedule_store():
@@ -206,6 +355,8 @@ def refresh_schedule(force=False):
         store.setdefault("days", {}).update(fetched["days"])
         store.setdefault("programs", {}).update(fetched["programs"])
         store["fetchedAt"] = int(time.time())
+        refresh_program_catalog(force=force)
+        apply_catalog(store)
         _write_json(SCHEDULE_STORE, store)
         return store, True
 

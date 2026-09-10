@@ -1,5 +1,5 @@
 {
- "fetchedAt": 1789030414,
+ "fetchedAt": 1789033223,
  "days": {
   "20260907": "월",
   "20260908": "화",
@@ -12,6 +12,7 @@
  "programs": {
   "EA202609070555": {
    "id": "EA202609070555",
+   "pgmId": "B120265725",
    "date": "20260907",
    "channel": "tvN",
    "start": "05:55",
@@ -22,16 +23,19 @@
    "durationMin": 65,
    "rawTitle": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
    "title": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
-   "programName": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
+   "programName": "이호선 상담소",
    "episodeName": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 28회ㅣ위기의 가족을 위한 관계 솔루션",
    "episode": "28회",
    "subtitle": "위기의 가족을 위한 관계 솔루션",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609070700": {
    "id": "EA202609070700",
+   "pgmId": "B120230249",
    "date": "20260907",
    "channel": "tvN",
    "start": "07:00",
@@ -46,12 +50,15 @@
    "episodeName": "웰컴투불로촌 114회",
    "episode": "114회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "웰컴투불로촌",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609070800": {
    "id": "EA202609070800",
+   "pgmId": "B120195878",
    "date": "20260907",
    "channel": "tvN",
    "start": "08:00",
@@ -62,16 +69,19 @@
    "durationMin": 35,
    "rawTitle": "유 퀴즈 온 더 블럭 특별판",
    "title": "유 퀴즈 온 더 블럭 특별판",
-   "programName": "유 퀴즈 온 더 블럭 특별판",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 특별판 235회",
    "episode": "235회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609070835": {
    "id": "EA202609070835",
+   "pgmId": "B120243347",
    "date": "20260907",
    "channel": "tvN",
    "start": "08:35",
@@ -86,12 +96,15 @@
    "episodeName": "식스센스: 시티투어 2회",
    "episode": "2회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609071045": {
    "id": "EA202609071045",
+   "pgmId": "B120239150",
    "date": "20260907",
    "channel": "tvN",
    "start": "10:45",
@@ -106,12 +119,15 @@
    "episodeName": "우주떡집 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609071220": {
    "id": "EA202609071220",
+   "pgmId": "B120180515",
    "date": "20260907",
    "channel": "tvN",
    "start": "12:20",
@@ -122,16 +138,19 @@
    "durationMin": 140,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 358회",
    "episode": "358회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609071440": {
    "id": "EA202609071440",
+   "pgmId": "B120255453",
    "date": "20260907",
    "channel": "tvN",
    "start": "14:40",
@@ -146,12 +165,15 @@
    "episodeName": "스트릿레스토랑파이터 12회(최종회)",
    "episode": "12회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609071630": {
    "id": "EA202609071630",
+   "pgmId": "B120266117",
    "date": "20260907",
    "channel": "tvN",
    "start": "16:30",
@@ -166,12 +188,15 @@
    "episodeName": "포핸즈 3화",
    "episode": "3화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609071755": {
    "id": "EA202609071755",
+   "pgmId": "B120266117",
    "date": "20260907",
    "channel": "tvN",
    "start": "17:55",
@@ -186,12 +211,15 @@
    "episodeName": "포핸즈 4화",
    "episode": "4화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609071910": {
    "id": "EA202609071910",
+   "pgmId": "B120255660",
    "date": "20260907",
    "channel": "tvN",
    "start": "19:10",
@@ -206,12 +234,15 @@
    "episodeName": "히든에이지 15회",
    "episode": "15회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "히든에이지",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609072010": {
    "id": "EA202609072010",
+   "pgmId": "B120266584",
    "date": "20260907",
    "channel": "tvN",
    "start": "20:10",
@@ -226,12 +257,15 @@
    "episodeName": "장사의 기술 12회",
    "episode": "12회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609072050": {
    "id": "EA202609072050",
+   "pgmId": "B120265860",
    "date": "20260907",
    "channel": "tvN",
    "start": "20:50",
@@ -246,12 +280,15 @@
    "episodeName": "최애의 사원 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609072210": {
    "id": "EA202609072210",
+   "pgmId": "B120209766",
    "date": "20260907",
    "channel": "tvN",
    "start": "22:10",
@@ -266,12 +303,15 @@
    "episodeName": "벌거벗은 세계사 271회",
    "episode": "271회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "벌거벗은 세계사",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609080000": {
    "id": "EA202609080000",
+   "pgmId": "B120239150",
    "date": "20260907",
    "channel": "tvN",
    "start": "00:00",
@@ -286,12 +326,15 @@
    "episodeName": "우주떡집 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609080140": {
    "id": "EA202609080140",
+   "pgmId": "B120156699",
    "date": "20260907",
    "channel": "tvN",
    "start": "01:40",
@@ -306,12 +349,15 @@
    "episodeName": "응답하라1988 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609080340": {
    "id": "EA202609080340",
+   "pgmId": "B120266721",
    "date": "20260907",
    "channel": "tvN",
    "start": "03:40",
@@ -326,12 +372,15 @@
    "episodeName": "네 식구 산지 라이프 5회",
    "episode": "5회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609080450": {
    "id": "EA202609080450",
+   "pgmId": "B120254823",
    "date": "20260907",
    "channel": "tvN",
    "start": "04:50",
@@ -346,12 +395,15 @@
    "episodeName": "잡학자들 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "잡학자들",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609080600": {
    "id": "EA202609080600",
+   "pgmId": "B120266130",
    "date": "20260908",
    "channel": "tvN",
    "start": "06:00",
@@ -366,12 +418,15 @@
    "episodeName": "적과의 동거 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609080700": {
    "id": "EA202609080700",
+   "pgmId": "B120212431",
    "date": "20260908",
    "channel": "tvN",
    "start": "07:00",
@@ -386,12 +441,15 @@
    "episodeName": "슈퍼푸드의 힘 231회ㅣ살이 잘 빠지는 몸은 따로 있다!?",
    "episode": "231회",
    "subtitle": "살이 잘 빠지는 몸은 따로 있다!?",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "슈퍼푸드의 힘",
+   "genre": "교양",
+   "subGenre": ""
   },
   "EA202609080810": {
    "id": "EA202609080810",
+   "pgmId": "B120243347",
    "date": "20260908",
    "channel": "tvN",
    "start": "08:10",
@@ -406,12 +464,15 @@
    "episodeName": "식스센스: 시티투어 3회",
    "episode": "3회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609081015": {
    "id": "EA202609081015",
+   "pgmId": "B120265860",
    "date": "20260908",
    "channel": "tvN",
    "start": "10:15",
@@ -426,12 +487,15 @@
    "episodeName": "최애의 사원 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609081150": {
    "id": "EA202609081150",
+   "pgmId": "B120239150",
    "date": "20260908",
    "channel": "tvN",
    "start": "11:50",
@@ -446,12 +510,15 @@
    "episodeName": "우주떡집 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609081325": {
    "id": "EA202609081325",
+   "pgmId": "B120266117",
    "date": "20260908",
    "channel": "tvN",
    "start": "13:25",
@@ -466,12 +533,15 @@
    "episodeName": "포핸즈 3화",
    "episode": "3화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609081440": {
    "id": "EA202609081440",
+   "pgmId": "B120266117",
    "date": "20260908",
    "channel": "tvN",
    "start": "14:40",
@@ -486,12 +556,15 @@
    "episodeName": "포핸즈 4화",
    "episode": "4화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609081605": {
    "id": "EA202609081605",
+   "pgmId": "B120254820",
    "date": "20260908",
    "channel": "tvN",
    "start": "16:05",
@@ -506,12 +579,15 @@
    "episodeName": "언니네산지직송3 6회",
    "episode": "6회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609081815": {
    "id": "EA202609081815",
+   "pgmId": "B120255660",
    "date": "20260908",
    "channel": "tvN",
    "start": "18:15",
@@ -526,12 +602,15 @@
    "episodeName": "히든에이지 20회",
    "episode": "20회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "히든에이지",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609081925": {
    "id": "EA202609081925",
+   "pgmId": "B120265860",
    "date": "20260908",
    "channel": "tvN",
    "start": "19:25",
@@ -546,12 +625,15 @@
    "episodeName": "최애의 사원 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609082045": {
    "id": "EA202609082045",
+   "pgmId": "B120265860",
    "date": "20260908",
    "channel": "tvN",
    "start": "20:45",
@@ -566,12 +648,15 @@
    "episodeName": "최애의 사원 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609082205": {
    "id": "EA202609082205",
+   "pgmId": "B120265715",
    "date": "20260908",
    "channel": "tvN",
    "start": "22:05",
@@ -582,16 +667,19 @@
    "durationMin": 175,
    "rawTitle": "스트릿 월드 파이터 : 디렉터스 워",
    "title": "스트릿 월드 파이터 : 디렉터스 워",
-   "programName": "스트릿 월드 파이터",
+   "programName": "스트릿 월드 파이터 : 디렉터스 워",
    "episodeName": "스트릿 월드 파이터 : 디렉터스 워 4회",
    "episode": "4회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609090100": {
    "id": "EA202609090100",
+   "pgmId": "B120156699",
    "date": "20260908",
    "channel": "tvN",
    "start": "01:00",
@@ -606,12 +694,15 @@
    "episodeName": "응답하라1988 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609090255": {
    "id": "EA202609090255",
+   "pgmId": "B120156699",
    "date": "20260908",
    "channel": "tvN",
    "start": "02:55",
@@ -626,12 +717,15 @@
    "episodeName": "응답하라1988 13화",
    "episode": "13화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609090455": {
    "id": "EA202609090455",
+   "pgmId": "B120242966",
    "date": "20260908",
    "channel": "tvN",
    "start": "04:55",
@@ -646,12 +740,15 @@
    "episodeName": "너의 몸소리가 들려 61회",
    "episode": "61회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "너의 몸소리가 들려",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609090555": {
    "id": "EA202609090555",
+   "pgmId": "B120266139",
    "date": "20260909",
    "channel": "tvN",
    "start": "05:55",
@@ -666,12 +763,15 @@
    "episodeName": "시간관찰자, 더 시크릿 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609090655": {
    "id": "EA202609090655",
+   "pgmId": "B120266130",
    "date": "20260909",
    "channel": "tvN",
    "start": "06:55",
@@ -686,12 +786,15 @@
    "episodeName": "적과의 동거 14화",
    "episode": "14화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609090800": {
    "id": "EA202609090800",
+   "pgmId": "B120255660",
    "date": "20260909",
    "channel": "tvN",
    "start": "08:00",
@@ -706,12 +809,15 @@
    "episodeName": "히든에이지 15회",
    "episode": "15회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "히든에이지",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609090910": {
    "id": "EA202609090910",
+   "pgmId": "B120243347",
    "date": "20260909",
    "channel": "tvN",
    "start": "09:10",
@@ -726,12 +832,15 @@
    "episodeName": "식스센스: 시티투어 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609091120": {
    "id": "EA202609091120",
+   "pgmId": "B120254820",
    "date": "20260909",
    "channel": "tvN",
    "start": "11:20",
@@ -746,12 +855,15 @@
    "episodeName": "언니네산지직송3 6회",
    "episode": "6회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609091240": {
    "id": "EA202609091240",
+   "pgmId": "B120209766",
    "date": "20260909",
    "channel": "tvN",
    "start": "12:40",
@@ -766,12 +878,15 @@
    "episodeName": "벌거벗은 세계사 271회",
    "episode": "271회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "벌거벗은 세계사",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609091435": {
    "id": "EA202609091435",
+   "pgmId": "B120265860",
    "date": "20260909",
    "channel": "tvN",
    "start": "14:35",
@@ -786,12 +901,15 @@
    "episodeName": "최애의 사원 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609091610": {
    "id": "EA202609091610",
+   "pgmId": "B120265860",
    "date": "20260909",
    "channel": "tvN",
    "start": "16:10",
@@ -806,12 +924,15 @@
    "episodeName": "최애의 사원 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609091735": {
    "id": "EA202609091735",
+   "pgmId": "B120239150",
    "date": "20260909",
    "channel": "tvN",
    "start": "17:35",
@@ -826,12 +947,15 @@
    "episodeName": "우주떡집 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609091910": {
    "id": "EA202609091910",
+   "pgmId": "B120254823",
    "date": "20260909",
    "channel": "tvN",
    "start": "19:10",
@@ -846,12 +970,15 @@
    "episodeName": "잡학자들 5화",
    "episode": "5화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "잡학자들",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609092015": {
    "id": "EA202609092015",
+   "pgmId": "B120266333",
    "date": "20260909",
    "channel": "tvN",
    "start": "20:15",
@@ -866,12 +993,15 @@
    "episodeName": "4화 포핸즈",
    "episode": "4화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609092045": {
    "id": "EA202609092045",
+   "pgmId": "B120180515",
    "date": "20260909",
    "channel": "tvN",
    "start": "20:45",
@@ -882,16 +1012,19 @@
    "durationMin": 135,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609092300": {
    "id": "EA202609092300",
+   "pgmId": "B120254326",
    "date": "20260909",
    "channel": "tvN",
    "start": "23:00",
@@ -906,12 +1039,15 @@
    "episodeName": "남겨서 뭐하게 59회ㅣ이영자 X 박세리의 ‘가을 제철 한 상’",
    "episode": "59회",
    "subtitle": "이영자 X 박세리의 ‘가을 제철 한 상’",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "남겨서 뭐하게",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609100105": {
    "id": "EA202609100105",
+   "pgmId": "B120254820",
    "date": "20260909",
    "channel": "tvN",
    "start": "01:05",
@@ -926,12 +1062,15 @@
    "episodeName": "언니네산지직송3 6회",
    "episode": "6회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609100305": {
    "id": "EA202609100305",
+   "pgmId": "B120156699",
    "date": "20260909",
    "channel": "tvN",
    "start": "03:05",
@@ -946,12 +1085,15 @@
    "episodeName": "응답하라1988 14화",
    "episode": "14화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609100455": {
    "id": "EA202609100455",
+   "pgmId": "B120242966",
    "date": "20260909",
    "channel": "tvN",
    "start": "04:55",
@@ -966,12 +1108,15 @@
    "episodeName": "너의 몸소리가 들려 64회",
    "episode": "64회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "너의 몸소리가 들려",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609100600": {
    "id": "EA202609100600",
+   "pgmId": "B120255356",
    "date": "20260910",
    "channel": "tvN",
    "start": "06:00",
@@ -986,12 +1131,15 @@
    "episodeName": "나만의 시크릿, 나비효과 24화",
    "episode": "24화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "나만의 시크릿 나비효과",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609100700": {
    "id": "EA202609100700",
+   "pgmId": "B120211226",
    "date": "20260910",
    "channel": "tvN",
    "start": "07:00",
@@ -1006,12 +1154,15 @@
    "episodeName": "[프리한 닥터 M] 5회ㅣ시험관 시술 두 번 실패한 박동빈 X 이상이 부부",
    "episode": "5회",
    "subtitle": "시험관 시술 두 번 실패한 박동빈 X 이상이 부부",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609100800": {
    "id": "EA202609100800",
+   "pgmId": "B120180515",
    "date": "20260910",
    "channel": "tvN",
    "start": "08:00",
@@ -1022,16 +1173,19 @@
    "durationMin": 140,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609101020": {
    "id": "EA202609101020",
+   "pgmId": "B120188696",
    "date": "20260910",
    "channel": "tvN",
    "start": "10:20",
@@ -1046,12 +1200,15 @@
    "episodeName": "놀라운 토요일 433회",
    "episode": "433회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "놀라운 토요일",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609101215": {
    "id": "EA202609101215",
+   "pgmId": "B120254978",
    "date": "20260910",
    "channel": "tvN",
    "start": "12:15",
@@ -1066,12 +1223,15 @@
    "episodeName": "이호선 상담소 31회ㅣ이호선 상담소, 오해의 벽을 허물다",
    "episode": "31회",
    "subtitle": "이호선 상담소, 오해의 벽을 허물다",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "이호선 상담소",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609101355": {
    "id": "EA202609101355",
+   "pgmId": "B120266117",
    "date": "20260910",
    "channel": "tvN",
    "start": "13:55",
@@ -1086,12 +1246,15 @@
    "episodeName": "포핸즈 3화",
    "episode": "3화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609101510": {
    "id": "EA202609101510",
+   "pgmId": "B120266117",
    "date": "20260910",
    "channel": "tvN",
    "start": "15:10",
@@ -1106,12 +1269,15 @@
    "episodeName": "포핸즈 4화",
    "episode": "4화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609101640": {
    "id": "EA202609101640",
+   "pgmId": "B120180515",
    "date": "20260910",
    "channel": "tvN",
    "start": "16:40",
@@ -1122,16 +1288,19 @@
    "durationMin": 135,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609101855": {
    "id": "EA202609101855",
+   "pgmId": "B120266130",
    "date": "20260910",
    "channel": "tvN",
    "start": "18:55",
@@ -1146,12 +1315,15 @@
    "episodeName": "적과의 동거 15화",
    "episode": "15화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609102000": {
    "id": "EA202609102000",
+   "pgmId": "B120266721",
    "date": "20260910",
    "channel": "tvN",
    "start": "20:00",
@@ -1166,12 +1338,15 @@
    "episodeName": "네 식구 산지 라이프 6회",
    "episode": "6회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609102045": {
    "id": "EA202609102045",
+   "pgmId": "B120254820",
    "date": "20260910",
    "channel": "tvN",
    "start": "20:45",
@@ -1186,12 +1361,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609102255": {
    "id": "EA202609102255",
+   "pgmId": "B120180515",
    "date": "20260910",
    "channel": "tvN",
    "start": "22:55",
@@ -1202,16 +1380,19 @@
    "durationMin": 135,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609110110": {
    "id": "EA202609110110",
+   "pgmId": "B120188696",
    "date": "20260910",
    "channel": "tvN",
    "start": "01:10",
@@ -1226,12 +1407,15 @@
    "episodeName": "놀라운 토요일 433회",
    "episode": "433회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "놀라운 토요일",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609110250": {
    "id": "EA202609110250",
+   "pgmId": "B120156699",
    "date": "20260910",
    "channel": "tvN",
    "start": "02:50",
@@ -1246,12 +1430,15 @@
    "episodeName": "응답하라1988 15화",
    "episode": "15화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609110440": {
    "id": "EA202609110440",
+   "pgmId": "B120195878",
    "date": "20260910",
    "channel": "tvN",
    "start": "04:40",
@@ -1262,16 +1449,19 @@
    "durationMin": 15,
    "rawTitle": "유 퀴즈 온 더 블럭 특별판",
    "title": "유 퀴즈 온 더 블럭 특별판",
-   "programName": "유 퀴즈 온 더 블럭 특별판",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 특별판 234회",
    "episode": "234회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609110455": {
    "id": "EA202609110455",
+   "pgmId": "B120266139",
    "date": "20260910",
    "channel": "tvN",
    "start": "04:55",
@@ -1286,12 +1476,15 @@
    "episodeName": "시간관찰자, 더 시크릿 9화",
    "episode": "9화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609110550": {
    "id": "EA202609110550",
+   "pgmId": "B120266828",
    "date": "20260911",
    "channel": "tvN",
    "start": "05:50",
@@ -1306,12 +1499,15 @@
    "episodeName": "놀라운 토요일 - 타임어택! 팀플 받쓰",
    "episode": "",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609110650": {
    "id": "EA202609110650",
+   "pgmId": "B120255660",
    "date": "20260911",
    "channel": "tvN",
    "start": "06:50",
@@ -1326,12 +1522,15 @@
    "episodeName": "히든에이지 20회",
    "episode": "20회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "히든에이지",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609110750": {
    "id": "EA202609110750",
+   "pgmId": "B120195878",
    "date": "20260911",
    "channel": "tvN",
    "start": "07:50",
@@ -1342,16 +1541,19 @@
    "durationMin": 35,
    "rawTitle": "유 퀴즈 온 더 블럭 특별판",
    "title": "유 퀴즈 온 더 블럭 특별판",
-   "programName": "유 퀴즈 온 더 블럭 특별판",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 특별판 235회",
    "episode": "235회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609110825": {
    "id": "EA202609110825",
+   "pgmId": "B120254820",
    "date": "20260911",
    "channel": "tvN",
    "start": "08:25",
@@ -1366,12 +1568,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609111035": {
    "id": "EA202609111035",
+   "pgmId": "B120209766",
    "date": "20260911",
    "channel": "tvN",
    "start": "10:35",
@@ -1386,12 +1591,15 @@
    "episodeName": "벌거벗은 세계사 271회",
    "episode": "271회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "벌거벗은 세계사",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609111230": {
    "id": "EA202609111230",
+   "pgmId": "B120255453",
    "date": "20260911",
    "channel": "tvN",
    "start": "12:30",
@@ -1406,12 +1614,15 @@
    "episodeName": "스트릿레스토랑파이터 12회(최종회)",
    "episode": "12회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609111430": {
    "id": "EA202609111430",
+   "pgmId": "B120180515",
    "date": "20260911",
    "channel": "tvN",
    "start": "14:30",
@@ -1422,16 +1633,19 @@
    "durationMin": 140,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609111650": {
    "id": "EA202609111650",
+   "pgmId": "B120254820",
    "date": "20260911",
    "channel": "tvN",
    "start": "16:50",
@@ -1446,12 +1660,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609111900": {
    "id": "EA202609111900",
+   "pgmId": "B120239150",
    "date": "20260911",
    "channel": "tvN",
    "start": "19:00",
@@ -1466,12 +1683,15 @@
    "episodeName": "우주떡집 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609112035": {
    "id": "EA202609112035",
+   "pgmId": "B120239150",
    "date": "20260911",
    "channel": "tvN",
    "start": "20:35",
@@ -1486,12 +1706,15 @@
    "episodeName": "우주떡집 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609112205": {
    "id": "EA202609112205",
+   "pgmId": "B120254820",
    "date": "20260911",
    "channel": "tvN",
    "start": "22:05",
@@ -1506,12 +1729,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609120010": {
    "id": "EA202609120010",
+   "pgmId": "B120180515",
    "date": "20260911",
    "channel": "tvN",
    "start": "00:10",
@@ -1522,16 +1748,19 @@
    "durationMin": 140,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609120230": {
    "id": "EA202609120230",
+   "pgmId": "B120156699",
    "date": "20260911",
    "channel": "tvN",
    "start": "02:30",
@@ -1546,12 +1775,15 @@
    "episodeName": "응답하라1988 16화",
    "episode": "16화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "",
+   "subGenre": ""
   },
   "EA202609120425": {
    "id": "EA202609120425",
+   "pgmId": "B120195878",
    "date": "20260911",
    "channel": "tvN",
    "start": "04:25",
@@ -1562,16 +1794,19 @@
    "durationMin": 25,
    "rawTitle": "유 퀴즈 온 더 블럭 특별판",
    "title": "유 퀴즈 온 더 블럭 특별판",
-   "programName": "유 퀴즈 온 더 블럭 특별판",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 특별판 236회",
    "episode": "236회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609120450": {
    "id": "EA202609120450",
+   "pgmId": "B120254823",
    "date": "20260911",
    "channel": "tvN",
    "start": "04:50",
@@ -1586,12 +1821,15 @@
    "episodeName": "잡학자들 5화",
    "episode": "5화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "잡학자들",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609120600": {
    "id": "EA202609120600",
+   "pgmId": "B120242966",
    "date": "20260912",
    "channel": "tvN",
    "start": "06:00",
@@ -1606,12 +1844,15 @@
    "episodeName": "너의 몸소리가 들려 42회",
    "episode": "42회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "너의 몸소리가 들려",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609120700": {
    "id": "EA202609120700",
+   "pgmId": "B120230249",
    "date": "20260912",
    "channel": "tvN",
    "start": "07:00",
@@ -1626,12 +1867,15 @@
    "episodeName": "웰컴투불로촌 115회",
    "episode": "115회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "웰컴투불로촌",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609120800": {
    "id": "EA202609120800",
+   "pgmId": "B120195878",
    "date": "20260912",
    "channel": "tvN",
    "start": "08:00",
@@ -1642,16 +1886,19 @@
    "durationMin": 30,
    "rawTitle": "유 퀴즈 온 더 블럭 특별판",
    "title": "유 퀴즈 온 더 블럭 특별판",
-   "programName": "유 퀴즈 온 더 블럭 특별판",
-   "episodeName": "유 퀴즈 온 더 블럭 특별판 235회",
-   "episode": "235회",
+   "programName": "유 퀴즈 온 더 블럭",
+   "episodeName": "유 퀴즈 온 더 블럭 특별판 237회",
+   "episode": "237회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609120830": {
    "id": "EA202609120830",
+   "pgmId": "B120266117",
    "date": "20260912",
    "channel": "tvN",
    "start": "08:30",
@@ -1666,12 +1913,15 @@
    "episodeName": "포핸즈 4화",
    "episode": "4화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609120950": {
    "id": "EA202609120950",
+   "pgmId": "B120239150",
    "date": "20260912",
    "channel": "tvN",
    "start": "09:50",
@@ -1686,12 +1936,15 @@
    "episodeName": "우주떡집 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609121130": {
    "id": "EA202609121130",
+   "pgmId": "B120254978",
    "date": "20260912",
    "channel": "tvN",
    "start": "11:30",
@@ -1706,12 +1959,15 @@
    "episodeName": "이호선 상담소 31회ㅣ이호선 상담소, 오해의 벽을 허물다",
    "episode": "31회",
    "subtitle": "이호선 상담소, 오해의 벽을 허물다",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "이호선 상담소",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609121310": {
    "id": "EA202609121310",
+   "pgmId": "B120254820",
    "date": "20260912",
    "channel": "tvN",
    "start": "13:10",
@@ -1726,12 +1982,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609121520": {
    "id": "EA202609121520",
+   "pgmId": "B120180515",
    "date": "20260912",
    "channel": "tvN",
    "start": "15:20",
@@ -1742,16 +2001,19 @@
    "durationMin": 150,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609121750": {
    "id": "EA202609121750",
+   "pgmId": "B120239150",
    "date": "20260912",
    "channel": "tvN",
    "start": "17:50",
@@ -1766,12 +2028,15 @@
    "episodeName": "우주떡집 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609121930": {
    "id": "EA202609121930",
+   "pgmId": "B120188696",
    "date": "20260912",
    "channel": "tvN",
    "start": "19:30",
@@ -1786,12 +2051,15 @@
    "episodeName": "놀라운 토요일 434회",
    "episode": "434회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "놀라운 토요일",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609122110": {
    "id": "EA202609122110",
+   "pgmId": "B120266117",
    "date": "20260912",
    "channel": "tvN",
    "start": "21:10",
@@ -1806,12 +2074,15 @@
    "episodeName": "포핸즈 5화",
    "episode": "5화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609122230": {
    "id": "EA202609122230",
+   "pgmId": "B120239150",
    "date": "20260912",
    "channel": "tvN",
    "start": "22:30",
@@ -1826,12 +2097,15 @@
    "episodeName": "우주떡집 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609130010": {
    "id": "EA202609130010",
+   "pgmId": "B120254820",
    "date": "20260912",
    "channel": "tvN",
    "start": "00:10",
@@ -1846,12 +2120,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609130220": {
    "id": "EA202609130220",
+   "pgmId": "B120265860",
    "date": "20260912",
    "channel": "tvN",
    "start": "02:20",
@@ -1866,12 +2143,15 @@
    "episodeName": "최애의 사원 11화",
    "episode": "11화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609130400": {
    "id": "EA202609130400",
+   "pgmId": "B120265860",
    "date": "20260912",
    "channel": "tvN",
    "start": "04:00",
@@ -1886,12 +2166,15 @@
    "episodeName": "최애의 사원 12화",
    "episode": "12화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "최애의 사원",
+   "genre": "드라마",
+   "subGenre": "로맨스,코미디"
   },
   "EA202609130530": {
    "id": "EA202609130530",
+   "pgmId": "B120266828",
    "date": "20260912",
    "channel": "tvN",
    "start": "05:30",
@@ -1906,12 +2189,15 @@
    "episodeName": "놀라운 토요일 - 타임어택! 팀플 받쓰",
    "episode": "",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609130600": {
    "id": "EA202609130600",
+   "pgmId": "B120160299",
    "date": "20260913",
    "channel": "tvN",
    "start": "06:00",
@@ -1926,12 +2212,15 @@
    "episodeName": "프리한19 523회 | 고물가 시대를 구원하러 왔다 19",
    "episode": "523회",
    "subtitle": "고물가 시대를 구원하러 왔다 19",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": ""
   },
   "EA202609130710": {
    "id": "EA202609130710",
+   "pgmId": "B120212431",
    "date": "20260913",
    "channel": "tvN",
    "start": "07:10",
@@ -1946,12 +2235,15 @@
    "episodeName": "슈퍼푸드의 힘 232회ㅣ물만 마셔도 찌는 살, 소화가 원인?!",
    "episode": "232회",
    "subtitle": "물만 마셔도 찌는 살, 소화가 원인?!",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "슈퍼푸드의 힘",
+   "genre": "교양",
+   "subGenre": ""
   },
   "EA202609130820": {
    "id": "EA202609130820",
+   "pgmId": "B120242966",
    "date": "20260913",
    "channel": "tvN",
    "start": "08:20",
@@ -1966,12 +2258,15 @@
    "episodeName": "너의 몸소리가 들려 75회",
    "episode": "75회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "너의 몸소리가 들려",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609130930": {
    "id": "EA202609130930",
+   "pgmId": "B120266139",
    "date": "20260913",
    "channel": "tvN",
    "start": "09:30",
@@ -1986,12 +2281,15 @@
    "episodeName": "시간관찰자, 더 시크릿 13화",
    "episode": "13화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "본",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   },
   "EA202609131030": {
    "id": "EA202609131030",
+   "pgmId": "B120266721",
    "date": "20260913",
    "channel": "tvN",
    "start": "10:30",
@@ -2006,12 +2304,15 @@
    "episodeName": "네 식구 산지 라이프 5회",
    "episode": "5회",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609131050": {
    "id": "EA202609131050",
+   "pgmId": "B120266117",
    "date": "20260913",
    "channel": "tvN",
    "start": "10:50",
@@ -2026,12 +2327,15 @@
    "episodeName": "포핸즈 5화",
    "episode": "5화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609131210": {
    "id": "EA202609131210",
+   "pgmId": "B120180515",
    "date": "20260913",
    "channel": "tvN",
    "start": "12:10",
@@ -2042,16 +2346,19 @@
    "durationMin": 150,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609131440": {
    "id": "EA202609131440",
+   "pgmId": "B120239150",
    "date": "20260913",
    "channel": "tvN",
    "start": "14:40",
@@ -2066,12 +2373,15 @@
    "episodeName": "우주떡집 7화",
    "episode": "7화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "우주떡집",
+   "genre": "예능",
+   "subGenre": "리얼리티"
   },
   "EA202609131620": {
    "id": "EA202609131620",
+   "pgmId": "B120254820",
    "date": "20260913",
    "channel": "tvN",
    "start": "16:20",
@@ -2086,12 +2396,15 @@
    "episodeName": "언니네산지직송3 7회",
    "episode": "7회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "언니네 산지직송3",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609131830": {
    "id": "EA202609131830",
+   "pgmId": "B120266117",
    "date": "20260913",
    "channel": "tvN",
    "start": "18:30",
@@ -2106,12 +2419,15 @@
    "episodeName": "포핸즈 5화",
    "episode": "5화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609131950": {
    "id": "EA202609131950",
+   "pgmId": "B120255697",
    "date": "20260913",
    "channel": "tvN",
    "start": "19:50",
@@ -2126,12 +2442,15 @@
    "episodeName": "식스센스:B사이드 1회",
    "episode": "1회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "식스센스: B사이드",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609132110": {
    "id": "EA202609132110",
+   "pgmId": "B120266117",
    "date": "20260913",
    "channel": "tvN",
    "start": "21:10",
@@ -2146,12 +2465,15 @@
    "episodeName": "포핸즈 6화",
    "episode": "6화",
    "subtitle": "",
-   "genre": "드라마",
    "liveFlag": "본",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "포핸즈",
+   "genre": "드라마",
+   "subGenre": "로맨스,기타"
   },
   "EA202609132230": {
    "id": "EA202609132230",
+   "pgmId": "B120180515",
    "date": "20260913",
    "channel": "tvN",
    "start": "22:30",
@@ -2162,16 +2484,19 @@
    "durationMin": 140,
    "rawTitle": "[예능]유퀴즈온더블럭",
    "title": "유퀴즈온더블럭",
-   "programName": "유퀴즈온더블럭",
+   "programName": "유 퀴즈 온 더 블럭",
    "episodeName": "유 퀴즈 온 더 블럭 359회",
    "episode": "359회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "전체관람가"
+   "grade": "전체관람가",
+   "catalogName": "유 퀴즈 온 더 블럭",
+   "genre": "예능",
+   "subGenre": "리얼리티,게임"
   },
   "EA202609140050": {
    "id": "EA202609140050",
+   "pgmId": "B120188696",
    "date": "20260913",
    "channel": "tvN",
    "start": "00:50",
@@ -2186,12 +2511,15 @@
    "episodeName": "놀라운 토요일 434회",
    "episode": "434회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "놀라운 토요일",
+   "genre": "예능",
+   "subGenre": "음악,푸드,스튜디오"
   },
   "EA202609140245": {
    "id": "EA202609140245",
+   "pgmId": "B120209766",
    "date": "20260913",
    "channel": "tvN",
    "start": "02:45",
@@ -2206,12 +2534,15 @@
    "episodeName": "벌거벗은 세계사 271회",
    "episode": "271회",
    "subtitle": "",
-   "genre": "예능",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "벌거벗은 세계사",
+   "genre": "예능",
+   "subGenre": "인포테인먼트"
   },
   "EA202609140435": {
    "id": "EA202609140435",
+   "pgmId": "B120265725",
    "date": "20260913",
    "channel": "tvN",
    "start": "04:35",
@@ -2222,16 +2553,19 @@
    "durationMin": 20,
    "rawTitle": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
    "title": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
-   "programName": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션!",
+   "programName": "이호선 상담소",
    "episodeName": "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 28회ㅣ위기의 가족을 위한 관계 솔루션",
    "episode": "28회",
    "subtitle": "위기의 가족을 위한 관계 솔루션",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "15세 이상"
+   "grade": "15세 이상",
+   "catalogName": "",
+   "genre": "예능",
+   "subGenre": "버라이어티"
   },
   "EA202609140455": {
    "id": "EA202609140455",
+   "pgmId": "B120266139",
    "date": "20260913",
    "channel": "tvN",
    "start": "04:55",
@@ -2246,9 +2580,11 @@
    "episodeName": "시간관찰자, 더 시크릿 3화",
    "episode": "3화",
    "subtitle": "",
-   "genre": "기타",
    "liveFlag": "재",
-   "grade": "12세 이상"
+   "grade": "12세 이상",
+   "catalogName": "",
+   "genre": "브랜디드",
+   "subGenre": ""
   }
  }
 }
