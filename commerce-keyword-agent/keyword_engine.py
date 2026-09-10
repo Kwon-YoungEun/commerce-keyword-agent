@@ -229,13 +229,37 @@ SURNAMES = set(
 )
 
 
-def looks_like_person(token):
-    """성씨로 시작하는 2~4글자 한글 낱말을 인물 후보로 봅니다(사전 없이 쓰는 어림짐작)."""
-    if not HANGUL_RE.match(token) or not (2 <= len(token) <= 4):
+def _name_shape(token):
+    """성씨로 시작하는 2~4글자 한글 낱말인지만 봅니다(1차 거르기)."""
+    if not token or not HANGUL_RE.match(token) or not (2 <= len(token) <= 4):
         return False
     if token in STOPWORDS or token in PRODUCT_TERMS:
         return False
     return token[0] in SURNAMES
+
+
+# '염정아·김선영·강유석' 처럼 이름이 나열되는 자리, '배우 OOO' 처럼 직함이 붙는 자리를 찾습니다.
+NAME_LIST_RE = re.compile(r"([가-힣]{2,4})\s*[·ㆍ,/]\s*([가-힣]{2,4})")
+NAME_ROLE_RE = re.compile(
+    r"(?:배우|가수|모델|아나운서|셰프|코미디언|개그맨|방송인|감독)\s*([가-힣]{2,4})"
+    r"|([가-힣]{2,4})\s*(?:배우|씨|님|주연|출연|분장|의상|착용)"
+)
+
+
+def extract_person_names(docs):
+    """문서 전체에서 인물 이름을 뽑습니다. 이름 나열·직함 패턴에 걸린 것만 인정합니다."""
+    names = set()
+    for doc in docs:
+        text = (doc.get("title", "") + " " + doc.get("snippet", ""))
+        for a, b in NAME_LIST_RE.findall(text):
+            for tok in (a, b):
+                if _name_shape(tok):
+                    names.add(tok)
+        for m in NAME_ROLE_RE.findall(text):
+            for tok in m:
+                if tok and _name_shape(tok):
+                    names.add(tok)
+    return names
 
 
 # ------------------------------------------------------------------ 추출기
@@ -300,12 +324,14 @@ def extract_keywords(program, docs, top_n=18):
     evidence = defaultdict(list)
     sources = defaultdict(set)
     cooccur = defaultdict(float)   # (인물, 상품어) 같은 글에 함께 나온 횟수
+    people = extract_person_names(docs)
+    program_tokens = {t for t in TOKEN_RE.findall(title)} | people
 
     for doc in docs:
         kind = doc.get("kind")
         doc_text = (doc.get("title", "") + " " + doc.get("snippet", "")).strip()
         doc_tokens = [strip_josa(t) for t in TOKEN_RE.findall(doc_text)]
-        doc_people = {t for t in doc_tokens if looks_like_person(t)}
+        doc_people = {t for t in doc_tokens if t in people}
         doc_products = {t for t in doc_tokens if t in PRODUCT_TERMS and len(t) >= 2}
         for person in doc_people:
             for product in doc_products:
@@ -314,11 +340,14 @@ def extract_keywords(program, docs, top_n=18):
         if doc.get("snippet"):
             fields.append(("snippet", doc["snippet"]))
 
+        related = bool(program_tokens & set(doc_tokens))
         for field, text in fields:
-            weight = SOURCE_WEIGHT["ad"] if kind == "ad" else (
-                SOURCE_WEIGHT["autocomplete"] if kind == "autocomplete"
-                else SOURCE_WEIGHT[field]
-            )
+            if kind == "ad":
+                weight = SOURCE_WEIGHT["ad"] if related else 0.8
+            elif kind == "autocomplete":
+                weight = SOURCE_WEIGHT["autocomplete"]
+            else:
+                weight = SOURCE_WEIGHT[field] * (1.0 if related else 0.5)
             for toks in tokenize(text):
                 has_cue = any(t in COMMERCE_CUES for t in toks)
                 for n in (1, 2, 3):
@@ -362,7 +391,7 @@ def extract_keywords(program, docs, top_n=18):
         toks = phrase.split()
         if cat:
             score += 6.0
-        elif all(looks_like_person(t) for t in toks):
+        elif all(t in people for t in toks):
             cat = "인물"
             score *= 0.5   # 인물 이름만으로는 상품 검색이 안 되므로 낮춥니다.
         if all(t in title_tokens for t in toks):
