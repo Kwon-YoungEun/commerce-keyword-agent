@@ -621,6 +621,143 @@ async function confirmRegister() {
   }
 }
 
+/* --------------------------------------------- 편성 프로그램 ID 표 관리 */
+
+async function putProgramId(name, id) {
+  const res = await fetch("/api/program-ids", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: name, id: id }),
+  });
+  const json = await res.json();
+  state.programIds = json.map || state.programIds;
+  return json;
+}
+
+async function saveProgramIdFromBody() {
+  const name = document.getElementById("fldProgramName").value.trim();
+  const id = document.getElementById("fldProgramId").value.trim();
+  if (!name) {
+    setBodyStatus("programName 이 비어 있어요.", "bad");
+    return;
+  }
+  try {
+    await putProgramId(name, id);
+    document.getElementById("programIdHint").textContent = id
+      ? "표에 저장했어요."
+      : "표에서 지웠어요.";
+    setBodyStatus(
+      id ? "프로그램 ID 를 표에 저장했어요 — " + name + " → " + id
+         : name + " 의 ID 를 표에서 지웠어요.",
+      "ok"
+    );
+  } catch (err) {
+    setBodyStatus("저장 실패: " + err.message, "bad");
+  }
+}
+
+/** 지금 보고 있는 주에 편성된 프로그램을 이름 기준으로 모읍니다. */
+function weekProgramNames() {
+  const map = new Map();
+  for (let i = 0; i < 7; i++) {
+    const key = ymd(addDays(state.weekStart, i));
+    for (const p of state.programsByDate.get(key) || []) {
+      const name = p.programName || p.title;
+      if (!map.has(name)) map.set(name, { name: name, count: 0, genre: p.genre || "" });
+      map.get(name).count += 1;
+    }
+  }
+  return [...map.values()].sort(
+    (a, b) => b.count - a.count || a.name.localeCompare(b.name, "ko")
+  );
+}
+
+function updatePidMeta(total) {
+  const missing = document.querySelectorAll("#pidBody tr.is-missing").length;
+  document.getElementById("pidMeta").textContent =
+    prettyDate(ymd(state.weekStart)) + " ~ " + prettyDate(ymd(addDays(state.weekStart, 6))) +
+    " · 프로그램 " + total + "개 · ID 없음 " + missing + "개";
+}
+
+function openProgramList() {
+  const rows = weekProgramNames();
+  const body = document.getElementById("pidBody");
+  body.innerHTML = "";
+  for (const row of rows) {
+    const saved = state.programIds[row.name] || "";
+    const tr = document.createElement("tr");
+    if (!saved) tr.classList.add("is-missing");
+    tr.innerHTML =
+      "<td>" + escapeHtml(row.name) +
+      (row.genre && row.genre !== "기타" ? ' <span class="cat">' + escapeHtml(row.genre) + "</span>" : "") +
+      "</td>" +
+      '<td class="col-num">' + row.count + "회</td>" +
+      '<td><span class="input-row">' +
+      '<input type="text" value="' + escapeHtml(saved) + '" placeholder="예: CS02070316">' +
+      '<button type="button" class="btn btn-sm">저장</button>' +
+      "</span></td>";
+
+    const input = tr.querySelector("input");
+    const btn = tr.querySelector("button");
+    input.dataset.name = row.name;
+
+    const saveOne = async () => {
+      try {
+        await putProgramId(row.name, input.value.trim());
+        tr.classList.toggle("is-missing", !input.value.trim());
+        updatePidMeta(rows.length);
+        setPidStatus(
+          input.value.trim()
+            ? row.name + " → " + input.value.trim() + " 저장했어요."
+            : row.name + " 의 ID 를 지웠어요.",
+          "ok"
+        );
+      } catch (err) {
+        setPidStatus("저장 실패: " + err.message, "bad");
+      }
+    };
+    btn.addEventListener("click", saveOne);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") saveOne();
+    });
+    body.appendChild(tr);
+  }
+
+  updatePidMeta(rows.length);
+  setPidStatus(rows.length ? "" : "이 주에는 편성 데이터가 없어요.");
+  document.getElementById("pidBackdrop").hidden = false;
+}
+
+function setPidStatus(text, kind) {
+  const el = document.getElementById("pidStatus");
+  el.className = "body-status" + (kind ? " is-" + kind : " muted");
+  el.textContent = text;
+}
+
+async function saveAllProgramIds() {
+  const map = {};
+  document.querySelectorAll("#pidBody input").forEach((input) => {
+    map[input.dataset.name] = input.value.trim();
+  });
+  setPidStatus("저장 중…");
+  try {
+    const res = await fetch("/api/program-ids", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ map: map }),
+    });
+    state.programIds = (await res.json()).map || {};
+    const filled = Object.values(map).filter(Boolean).length;
+    document.querySelectorAll("#pidBody tr").forEach((tr) => {
+      tr.classList.toggle("is-missing", !tr.querySelector("input").value.trim());
+    });
+    updatePidMeta(document.querySelectorAll("#pidBody tr").length);
+    setPidStatus("저장했어요. 이 주 프로그램 중 " + filled + "개에 ID 가 있습니다.", "ok");
+  } catch (err) {
+    setPidStatus("저장 실패: " + err.message, "bad");
+  }
+}
+
 /* --------------------------------------------- 등록된 키워드 보기 (6단계) */
 
 function renderRegistered(program) {
@@ -814,13 +951,23 @@ function bindEvents() {
     setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
   });
   document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
+  document.getElementById("btnSaveProgramId").addEventListener("click", saveProgramIdFromBody);
+
+  document.getElementById("btnProgramList").addEventListener("click", openProgramList);
+  document.getElementById("pidClose").addEventListener("click", () => {
+    document.getElementById("pidBackdrop").hidden = true;
+  });
+  document.getElementById("pidBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "pidBackdrop") e.target.hidden = true;
+  });
+  document.getElementById("pidSaveAll").addEventListener("click", saveAllProgramIds);
   document.getElementById("modalClose").addEventListener("click", closeModal);
   document.getElementById("modalBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "modalBackdrop") closeModal();
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
-    for (const id of ["settingsBackdrop", "bodyBackdrop"]) {
+    for (const id of ["settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
       const el = document.getElementById(id);
       if (!el.hidden) {
         el.hidden = true;

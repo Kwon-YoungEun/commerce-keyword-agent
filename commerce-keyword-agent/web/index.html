@@ -36,6 +36,7 @@
       </div>
       <button id="btnNext" class="btn btn-icon" type="button" aria-label="다음 주">›</button>
       <button id="btnToday" class="btn btn-line" type="button">이번 주</button>
+      <button id="btnProgramList" class="btn" type="button">편성 프로그램 리스트</button>
     </div>
     <div class="legend">
       <span class="legend-item"><i class="swatch swatch-live"></i>본방송</span>
@@ -111,7 +112,10 @@
         </label>
         <label class="field">
           <span>programId <small class="muted">프로그램별 ID</small></span>
-          <input id="fldProgramId" type="text" placeholder="예: CS02070316">
+          <span class="input-row">
+            <input id="fldProgramId" type="text" placeholder="예: CS02070316">
+            <button id="btnSaveProgramId" class="btn btn-sm" type="button">ID 저장</button>
+          </span>
           <small id="programIdHint" class="muted"></small>
         </label>
       </div>
@@ -139,6 +143,33 @@
         <button id="btnConfirmRegister" class="btn btn-line" type="button">캘린더에 등록</button>
       </div>
       <p id="bodyStatus" class="muted body-status"></p>
+    </div>
+  </div>
+</div>
+
+<!-- 편성 프로그램 리스트 팝업 -->
+<div id="pidBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="pidTitle">
+    <button id="pidClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <h2 id="pidTitle">편성 프로그램 리스트</h2>
+      <p id="pidMeta" class="muted"></p>
+    </div>
+    <div class="modal-body">
+      <table class="pid-table">
+        <thead>
+          <tr>
+            <th>프로그램명</th>
+            <th class="col-num">편성</th>
+            <th>programId</th>
+          </tr>
+        </thead>
+        <tbody id="pidBody"></tbody>
+      </table>
+      <div class="body-actions">
+        <button id="pidSaveAll" class="btn btn-line" type="button">ID 전체 저장</button>
+      </div>
+      <p id="pidStatus" class="muted body-status"></p>
     </div>
   </div>
 </div>

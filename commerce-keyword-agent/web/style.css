@@ -486,3 +486,28 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 @media (max-width: 620px) {
   .body-fields { grid-template-columns: 1fr; }
 }
+
+
+/* ------------------------------------------------ 편성 프로그램 ID 표 */
+.input-row { display: flex; gap: 6px; align-items: center; }
+.input-row input { flex: 1; min-width: 0; }
+
+.pid-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.pid-table th, .pid-table td {
+  padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle;
+}
+.pid-table th {
+  font-size: 12px; color: var(--text-secondary); font-weight: 600;
+  border-bottom: 1px solid #D3D6DB; position: sticky; top: 0; background: var(--bg-card);
+}
+.pid-table td:first-child { letter-spacing: -.01em; }
+.pid-table .col-num { width: 64px; text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.pid-table td:last-child { width: 260px; }
+.pid-table input {
+  width: 100%; padding: 5px 9px; font-size: 12.5px; font-family: inherit;
+  border: 1px solid var(--border); border-radius: 7px; background: var(--bg-card); color: var(--text-primary);
+}
+.pid-table input:focus { outline: none; border-color: var(--skb-red); }
+.pid-table tr.is-missing td:first-child { color: var(--text-secondary); }
+.pid-table tr.is-missing input { border-color: #F2D6A9; background: #FFFCF6; }
+.pid-table .cat { margin-left: 6px; }
