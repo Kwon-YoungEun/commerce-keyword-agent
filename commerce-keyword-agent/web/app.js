@@ -727,27 +727,39 @@ function openProgramList() {
   const body = document.getElementById("pidBody");
   body.innerHTML = "";
   for (const row of rows) {
-    const saved = state.programIds[row.name] || "";
     const tr = document.createElement("tr");
-    if (!saved) tr.classList.add("is-missing");
     tr.innerHTML =
       "<td>" + escapeHtml(row.name) +
       (row.genre && row.genre !== "기타" ? ' <span class="cat">' + escapeHtml(row.genre) + "</span>" : "") +
       "</td>" +
       '<td class="col-num">' + row.count + "회</td>" +
       '<td><span class="input-row">' +
-      '<input type="text" value="' + escapeHtml(saved) + '" placeholder="예: CS02070316">' +
-      '<button type="button" class="btn btn-sm">저장</button>' +
+      '<input type="text" placeholder="예: CS02070316">' +
+      '<button type="button" class="btn btn-sm"></button>' +
       "</span></td>";
 
     const input = tr.querySelector("input");
     const btn = tr.querySelector("button");
     input.dataset.name = row.name;
+    input.value = state.programIds[row.name] || "";
+    let editing = false;
+
+    // 저장된 ID 가 있으면 잠가 두고, 'ID 수정' 을 눌러야 고칠 수 있게 합니다.
+    const paint = () => {
+      const saved = state.programIds[row.name] || "";
+      const locked = Boolean(saved) && !editing;
+      input.readOnly = locked;
+      input.classList.toggle("is-locked", locked);
+      btn.textContent = locked ? "ID 수정" : saved ? "저장" : "ID 저장";
+      tr.classList.toggle("is-missing", !input.value.trim());
+      tr.title = saved && input.value.trim() !== saved ? "저장된 값: " + saved : "";
+    };
 
     const saveOne = async () => {
       try {
         await putProgramId(row.name, input.value.trim());
-        tr.classList.toggle("is-missing", !input.value.trim());
+        editing = false;
+        paint();
         updatePidMeta(rows.length);
         setPidStatus(
           input.value.trim()
@@ -759,10 +771,24 @@ function openProgramList() {
         setPidStatus("저장 실패: " + err.message, "bad");
       }
     };
-    btn.addEventListener("click", saveOne);
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") saveOne();
+
+    btn.addEventListener("click", () => {
+      const saved = state.programIds[row.name] || "";
+      if (saved && !editing) {
+        editing = true;
+        paint();
+        input.focus();
+        input.select();
+        return;
+      }
+      saveOne();
     });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !input.readOnly) saveOne();
+    });
+    input.addEventListener("input", paint);
+
+    paint();
     body.appendChild(tr);
   }
 
@@ -780,8 +806,13 @@ function setPidStatus(text, kind) {
 async function saveAllProgramIds() {
   const map = {};
   document.querySelectorAll("#pidBody input").forEach((input) => {
+    if (input.readOnly) return;   // 잠긴 줄(이미 저장된 ID)은 건드리지 않습니다.
     map[input.dataset.name] = input.value.trim();
   });
+  if (!Object.keys(map).length) {
+    setPidStatus("새로 저장할 줄이 없어요. 고치려면 그 줄의 ID 수정을 눌러 주세요.");
+    return;
+  }
   setPidStatus("저장 중…");
   try {
     const res = await fetch("/api/program-ids", {
@@ -790,12 +821,9 @@ async function saveAllProgramIds() {
       body: JSON.stringify({ map: map }),
     });
     state.programIds = (await res.json()).map || {};
-    const filled = Object.values(map).filter(Boolean).length;
-    document.querySelectorAll("#pidBody tr").forEach((tr) => {
-      tr.classList.toggle("is-missing", !tr.querySelector("input").value.trim());
-    });
-    updatePidMeta(document.querySelectorAll("#pidBody tr").length);
-    setPidStatus("저장했어요. 이 주 프로그램 중 " + filled + "개에 ID 가 있습니다.", "ok");
+    const saved = Object.values(map).filter(Boolean).length;
+    openProgramList();   // 저장된 줄은 다시 잠긴 상태로 그립니다.
+    setPidStatus("저장했어요. 이번에 " + saved + "개를 등록했습니다.", "ok");
   } catch (err) {
     setPidStatus("저장 실패: " + err.message, "bad");
   }

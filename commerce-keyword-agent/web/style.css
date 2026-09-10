@@ -518,3 +518,11 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   cursor: default;
 }
 .field input.is-locked:focus { border-color: var(--border); }
+
+.pid-table input.is-locked {
+  background: #F1F2F4;
+  color: var(--text-secondary);
+  cursor: default;
+}
+.pid-table tr.is-missing input.is-locked { background: #F1F2F4; }
+.pid-table input.is-locked:focus { border-color: var(--border); }
