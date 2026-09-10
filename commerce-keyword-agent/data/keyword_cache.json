@@ -455,5 +455,2120 @@
   "analyzedAt": 1789030434,
   "programId": "EA202609080340",
   "cached": false
+ },
+ "EA202609110750": {
+  "keywords": [
+   {
+    "keyword": "로제도르 라온플라워 옥반지",
+    "score": 8.2,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전지적 참견 시점",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점",
+     "전지적 참견 시점 재방송",
+     "전지적 참견 시점 편성표",
+     "전지적 참견 시점 회차정보",
+     "전지적 참견 시점 ott",
+     "전지적 참견 시점 선우용녀"
+    ]
+   },
+   {
+    "keyword": "참견 시점 효연",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점 효연"
+    ]
+   },
+   {
+    "keyword": "도대체 어디 제품이야",
+    "score": 3.0,
+    "confidence": 37,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 2.8,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "시점 효연 숙소",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "평을 혼자 쓴다고",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "아인슈페너 맛집 다이닝코드",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "고퀄리티 편의점 간편식",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "편의점 간편식 best",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "정은지 운동",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "맛집 체크",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "재밌다고 난리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "임지연 패션",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "서인영 재산",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "통장 잔고",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 13,
+  "queries": [
+   "유 퀴즈 온 더 블럭 특별판 235회 협찬 제품",
+   "유 퀴즈 온 더 블럭 특별판 협찬 제품 어디",
+   "유 퀴즈 온 더 블럭 특별판 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김지윤(정치학자) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "민음사 굿즈, 빵보다 비싼 건 책갈피였다ㅣ20종·가격·구하는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전북인신문",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "“연예계 대표 짠순이의 반전”…전원주, 2억 집이 42억 된 비결",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789030698,
+  "programId": "EA202609110750",
+  "cached": false
+ },
+ "EA202609110825": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum",
+     "광고키워드"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아모자"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "데님 모자 브랜드",
+     "데님 모자 세탁"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 매트리스",
+    "score": 21.96,
+    "confidence": 95,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 매트리스"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 바지",
+    "score": 15.24,
+    "confidence": 66,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 바지락 장소"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 모자",
+    "score": 14.84,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "산지직송 접이식 매트리스",
+    "score": 14.6,
+    "confidence": 63,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 팬츠",
+    "score": 13.24,
+    "confidence": 58,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "접이식 매트리스 추천",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "매트리스 추천 숙면연구소",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스노우피크 카고 팬츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김혜윤 연보라 모자",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "연보라 모자 버킷햇",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "보라색 미니 크로스백",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "회색 재킷",
+    "score": 9.5,
+    "confidence": 41,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "노윤서 산지직송3 첫 만남, 회색 재킷보다 먼저 보인 부드러운 레이어",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김선영 가방",
+    "score": 9.5,
+    "confidence": 41,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이다영 수영복",
+    "score": 8.8,
+    "confidence": 38,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 32,
+  "queries": [
+   "언니네 산지직송3 7회 협찬 제품",
+   "언니네 산지직송 협찬 제품 어디",
+   "언니네 산지직송 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "노윤서모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "데님모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "염정아모자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "삼시세끼/산촌편 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "노윤서 산지직송3 첫 만남, 회색 재킷보다 먼저 보인 부드러운 레이어",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[7월 5주차] 신규 예능 프로그램_왕자와 거지/타임슬립 천일야사/언니네 산지직송 3/우주떡집/제비탐정 장성규/짐쌀라비움",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "26년 8월 월간 일기 : 별일 없이 산다 ft. 포천여행",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "덱스(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송2에 나온 칼하트? 커플룩 정보아시는 분??",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진제공=메리고라운드컴퍼니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "6시 내고향 완도 제철 수산물 위치 6시 내고향 완도 제철 수산물 투영이네수산 주문 택배 위치 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남해 빵집 / 빵지순례 추천 행복베이커리(언니네 산지직송 •유퀴즈에 나온 기부 천사 사장님 빵집!)",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 뱀",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 게스트",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네산지직송협찬차량",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031121,
+  "programId": "EA202609110825",
+  "cached": false
+ },
+ "EA202609120950": {
+  "keywords": [
+   {
+    "keyword": "우주떡집 원피스",
+    "score": 14.84,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 티셔츠",
+    "score": 14.6,
+    "confidence": 98,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "우주떡집 티셔츠"
+    ]
+   },
+   {
+    "keyword": "우주떡집 데님",
+    "score": 13.24,
+    "confidence": 89,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀린느 데님 원피스",
+    "score": 12.8,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "셀린느 데님 원피스"
+    ]
+   },
+   {
+    "keyword": "우주떡집 가디건",
+    "score": 12.6,
+    "confidence": 85,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "가디건 이은지 멜빵바지",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "멜빵바지 이영지 티셔츠",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 미미 원피스",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건",
+    "score": 9.5,
+    "confidence": 64,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "강릉유천점 강릉 닭칼국수",
+    "score": 8.2,
+    "confidence": 55,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "데님 원피스 가격",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 가격 확인해보니",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 팝업",
+    "score": 7.25,
+    "confidence": 49,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "우주떡집 팝업",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건 이은지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이은지 멜빵바지 이영지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이영지 티셔츠 미미",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "현풍닭칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "삼계칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 29,
+  "queries": [
+   "우주떡집 7화 협찬 제품",
+   "우주떡집 협찬 제품 어디",
+   "우주떡집 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "찰떡아이스 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "초신성(동음이의어) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "원조공주떡집 IFC몰점 - 여의도 떡집, 흑임자인절미 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 팝업 위치 현장예약 토롱이 굿즈 일정",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "컹 심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "피자설기 하나에 2030이 시장으로…전통시장 ‘뜻밖의 특수’",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 안유진 첫영업 만능 활약 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "\"먹고 싶어서 편의점 싹 털었다\"…SNS 인증 쏟아진 '디저트' [셀럽픽]",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 만물상 굿즈 구매방법, 토롱이 떡메모지부터 팝업 현장예약까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 위치",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 예약방법",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 지구2호점",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 팝업",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031123,
+  "programId": "EA202609120950",
+  "cached": false
+ },
+ "EA202609100800": {
+  "keywords": [
+   {
+    "keyword": "퀴즈",
+    "score": 33.6,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "넌센스퀴즈",
+     "퀴즈노스",
+     "유 퀴즈 온 더 블럭",
+     "쏠퀴즈",
+     "토스 행운퀴즈",
+     "유퀴즈"
+    ]
+   },
+   {
+    "keyword": "블럭",
+    "score": 33.0,
+    "confidence": 98,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "블럭",
+     "블럭장난감",
+     "유 퀴즈 온 더 블럭",
+     "블럭제빵소",
+     "디폼블럭",
+     "나인블럭"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 셋업",
+    "score": 12.28,
+    "confidence": 37,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김태희 민트색 셋업",
+    "score": 9.0,
+    "confidence": 27,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "협찬",
+    "score": 8.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 뜻",
+     "협찬 사이트",
+     "블로그 협찬",
+     "협찬",
+     "인스타 협찬",
+     "협찬플러스"
+    ]
+   },
+   {
+    "keyword": "어디꺼",
+    "score": 6.8,
+    "confidence": 20,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "챗지피티 어디꺼",
+     "공차 어디꺼",
+     "빽다방 두유 어디꺼",
+     "볼보 어디꺼",
+     "아웃백 어디꺼",
+     "스투시 어디꺼"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 협찬 가이드",
+    "score": 4.8,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 재방송",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 재방송",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 오디세",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 오디세이",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 조세호",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 조세호",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 송강",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 송강",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 ott",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 ott",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 4.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "간접광고 ppl",
+    "score": 4.3,
+    "confidence": 13,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 온더 블럭",
+    "score": 4.2,
+    "confidence": 12,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "발전 알아본 협찬",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "알아본 협찬 마케팅",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "유퀴즈온더블럭 359회 협찬 제품",
+   "유퀴즈온더블럭 협찬 제품 어디",
+   "유퀴즈온더블럭 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "핑계고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인사픽뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "패션아카이브",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이정은 “5000만원 빚 갚느라 알바”…녹즙 배달→마트 판매왕까지 [TVis] (유퀴즈)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "매일매일꿀팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "임채무 두리랜드｜입장료·위치·면적·땅값·프로필·나이·유퀴즈",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "주식 중독 자가 진단 테스트 13가지 (유퀴즈 정신과 의사 기준) - All Honey Tip",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 예고",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 오디세이",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 조세호",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 357회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 송강",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 ott",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031168,
+  "programId": "EA202609100800",
+  "cached": false
  }
 }

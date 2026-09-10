@@ -441,10 +441,12 @@ function openBodyModal(k) {
   const mapped = state.programIds[name] || "";
 
   state.bodyDraft = {
-    keyword: k.keyword,
+    keyword: k.keyword,          // 목록에서 고른 원래 키워드
     requestId: newRequestId(),
     timestamp: Date.now(),
   };
+  document.getElementById("fldProductKeyword").value = k.keyword;
+  document.getElementById("keywordHint").textContent = "";
 
   document.getElementById("fldProgramName").value = name;
   document.getElementById("fldProgramId").value = mapped;
@@ -465,7 +467,7 @@ function currentBody() {
   return buildBody({
     programName: document.getElementById("fldProgramName").value.trim(),
     programId: document.getElementById("fldProgramId").value.trim(),
-    keyword: d.keyword,
+    keyword: document.getElementById("fldProductKeyword").value.trim(),
     requestId: d.requestId,
     timestamp: d.timestamp,
   });
@@ -475,7 +477,16 @@ function refreshBodyJson() {
   const body = currentBody();
   if (!body) return;
   document.getElementById("bodyJson").value = bodyToText(body, true);
-  if (!body.programId) {
+
+  const typed = body.productInfo[0].productKeyword;
+  const hint = document.getElementById("keywordHint");
+  hint.textContent = typed && typed !== state.bodyDraft.keyword
+    ? "고른 키워드: " + state.bodyDraft.keyword + " (직접 고친 값으로 나갑니다)"
+    : "";
+
+  if (!typed) {
+    setBodyStatus("productKeyword 가 비어 있어요.", "bad");
+  } else if (!body.programId) {
     setBodyStatus("programId 가 비어 있어요. 프로그램 ID 를 넣어 주세요.", "bad");
   } else {
     setBodyStatus("");
@@ -557,6 +568,10 @@ function buildPostmanCollection(body, program) {
 async function confirmRegister() {
   const body = currentBody();
   if (!body) return;
+  if (!body.productInfo[0].productKeyword) {
+    setBodyStatus("productKeyword 가 비어 있어요. 먼저 채워 주세요.", "bad");
+    return;
+  }
   if (!body.programId) {
     setBodyStatus("programId 가 비어 있어요. 먼저 채워 주세요.", "bad");
     return;
@@ -766,6 +781,7 @@ function bindEvents() {
   });
   document.getElementById("fldProgramName").addEventListener("input", refreshBodyJson);
   document.getElementById("fldProgramId").addEventListener("input", refreshBodyJson);
+  document.getElementById("fldProductKeyword").addEventListener("input", refreshBodyJson);
   document.getElementById("btnRegenIds").addEventListener("click", () => {
     state.bodyDraft.requestId = newRequestId();
     state.bodyDraft.timestamp = Date.now();
