@@ -20,6 +20,7 @@
     <div class="topbar-actions">
       <span id="fetchInfo" class="fetch-info">편성표 불러오는 중…</span>
       <button id="btnRefresh" class="btn btn-ghost" type="button">편성표 새로고침</button>
+      <button id="btnSettings" class="btn btn-ghost" type="button">설정</button>
     </div>
   </div>
 </header>
@@ -70,7 +71,65 @@
       <h2 id="modalTitle">프로그램</h2>
       <p id="modalMeta" class="muted"></p>
     </div>
-    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-body">
+      <div class="analysis">
+        <section class="analysis-left">
+          <div class="analysis-head">
+            <h3>화제 상품 키워드</h3>
+            <button id="btnReanalyze" class="btn btn-ghost btn-sm" type="button">다시 분석</button>
+          </div>
+          <p id="analysisMeta" class="muted analysis-meta"></p>
+          <div id="keywordList" class="keyword-list"></div>
+        </section>
+        <aside class="analysis-right">
+          <div class="analysis-head">
+            <h3>네이버플러스스토어 미리보기</h3>
+          </div>
+          <div id="previewPanel" class="preview-panel">
+            <div class="placeholder">왼쪽에서 키워드를 클릭하면 검색 결과를 미리 봅니다.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 설정 팝업 -->
+<div id="settingsBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-narrow" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <button id="settingsClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <h2 id="settingsTitle">설정</h2>
+      <p class="muted">네이버 검색 API 키를 넣으면 스토어 미리보기가 상품 카드로 바뀝니다.</p>
+    </div>
+    <div class="modal-body">
+      <label class="field">
+        <span>네이버 Client ID</span>
+        <input id="cfgClientId" type="text" placeholder="예: aBcD1234efGh" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>네이버 Client Secret</span>
+        <input id="cfgClientSecret" type="password" placeholder="등록되어 있으면 비워 두세요" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>스토어 검색 링크 형식</span>
+        <input id="cfgStoreUrl" type="text" placeholder="https://…?query={keyword}">
+        <small class="muted">키워드가 들어갈 자리에 <code>{keyword}</code> 를 적어 주세요.</small>
+      </label>
+      <div class="field-actions">
+        <span id="cfgStatus" class="muted"></span>
+        <button id="cfgSave" class="btn btn-line" type="button">저장</button>
+      </div>
+      <details class="how-to">
+        <summary>네이버 API 키 발급 방법</summary>
+        <ol>
+          <li><a href="https://developers.naver.com/apps/#/register" target="_blank" rel="noopener">developers.naver.com 애플리케이션 등록</a> 으로 이동합니다.</li>
+          <li>애플리케이션 이름을 적고, 사용 API 에서 <strong>검색</strong> 을 고릅니다.</li>
+          <li>환경 추가에서 <strong>WEB 설정</strong> 을 고르고 <code>http://127.0.0.1:8765</code> 를 넣습니다.</li>
+          <li>등록하면 나오는 Client ID / Client Secret 을 위에 붙여 넣고 저장합니다.</li>
+        </ol>
+      </details>
+    </div>
   </div>
 </div>
 

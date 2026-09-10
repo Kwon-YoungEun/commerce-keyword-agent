@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
-"""방송 회차 → 화제 상품 키워드 추출 엔진 (표준 라이브러리만 사용).
+"""방송 회차 → 화제 상품 키워드 추출 엔진 (파이썬 표준 라이브러리만 사용).
 
-수집처
-  1) DuckDuckGo 웹검색 (키 없이) — 기사·커뮤니티 글 제목/요약
-  2) Daum 통합검색 (키 없이) — 검색광고 키워드( 실제 커머스 수요 신호 )
-  3) 네이버 자동완성 (키 없이) — 사람들이 실제로 치는 검색어
-추출
-  형태소 분석기 없이, 조사 제거 + n-gram + 상품어 사전 + 커머스 신호어로 점수를 냅니다.
+수집처 (모두 API 키 없이 동작)
+  1) DuckDuckGo 웹검색 — 기사·커뮤니티 글의 제목과 요약
+  2) Daum 통합검색  — 검색광고 키워드( 광고주가 실제로 사는 커머스 키워드 )와 웹문서
+  3) 네이버 자동완성 — 사람들이 실제로 치는 검색어
+
+추출 방식
+  형태소 분석기 없이 처리합니다. 조사를 떼고 n-gram 후보를 만든 뒤,
+  상품어 사전 / 커머스 신호어 / 출처 신뢰도로 점수를 매깁니다.
+  인물·브랜드 이름은 추측하지 않고, 검색광고 키워드( 예: '노윤서모자' )를
+  상품어로 쪼개서 배웁니다.
 """
 
 import html
 import json
 import re
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -31,12 +36,12 @@ CATEGORY_TERMS = {
         들기름 조청 꿀 홍삼 인삼 도라지 더덕 쌀 잡곡 현미 견과 땅콩 아몬드 호두 커피 원두 차 녹차
         보리차 과자 빵 잼 소스 육수 한우 삼겹살 닭갈비 훈제 소시지 과일 사과 배 감귤 한라봉 딸기
         포도 샤인머스캣 수박 복숭아 자두 매실 대추 밤 옥수수 감자 고구마 버섯 표고 나물 장아찌
-        젓 액젓 선물세트 세트 즙 진액 환 분말 티백 육포 어묵 만두피 두부 계란 우유 요거트 치즈""".split(),
+        액젓 선물세트 세트 즙 진액 환 분말 티백 육포 어묵 두부 계란 우유 요거트 치즈 젓갈세트""".split(),
     "패션": """원피스 니트 가디건 코트 자켓 재킷 점퍼 패딩 셔츠 블라우스 티셔츠 맨투맨 후드 팬츠
         바지 청바지 데님 슬랙스 스커트 치마 가방 백팩 크로스백 토트백 숄더백 에코백 신발 운동화
         스니커즈 부츠 샌들 슬리퍼 로퍼 구두 모자 버킷햇 캡모자 볼캡 비니 목걸이 귀걸이 반지 팔찌
         시계 선글라스 안경 스카프 머플러 장갑 벨트 지갑 양말 잠옷 수영복 등산복 레깅스 조끼 셋업
-        원단 주얼리 액세서리""".split(),
+        주얼리 액세서리 집업 트레이닝복""".split(),
     "뷰티": """립스틱 립밤 틴트 쿠션 파운데이션 컨실러 아이섀도 마스카라 아이라이너 블러셔 향수
         크림 로션 세럼 앰플 토너 에센스 마스크팩 클렌저 클렌징 샴푸 린스 트리트먼트 헤어오일
         선크림 자외선차단제 네일 바디로션 핸드크림 미스트""".split(),
@@ -53,26 +58,29 @@ for _cat, _words in CATEGORY_TERMS.items():
     for _w in _words:
         PRODUCT_TERMS.setdefault(_w, _cat)
 
+# 붙여 쓴 키워드를 쪼갤 때 쓰는 상품어 — 긴 것부터 맞춰 봅니다.
+SPLITTABLE_TERMS = sorted([w for w in PRODUCT_TERMS if len(w) >= 2], key=len, reverse=True)
+
 COMMERCE_CUES = set(
-    """구매 구입 어디 어디서 어디껀지 가격 얼마 브랜드 제품 상품 협찬 착용 입은 신은 들었던 사용한
-    판매 쇼핑 후기 추천 정보 링크 최저가 품절 완판 문의 ppl 나온 나왔던 화제 인기 대란 주문 배송
-    직송 특산물 맛집 레시피""".split()
+    """구매 구입 어디 어디서 어디껀지 어디꺼 가격 얼마 브랜드 제품 상품 협찬 착용 입은 신은 들었던
+    사용한 판매 쇼핑 후기 추천 정보 링크 최저가 품절 완판 문의 ppl 나온 나왔던 인기 대란 주문
+    직송 특산물 레시피 스타일 코디 룩""".split()
 )
 
 STOPWORDS = set(
     """tvn 티비엔 방송 방영 예능 드라마 프로그램 시즌 회차 본방 재방 편성 편성표 시청률 시청자 시청
-    출연 출연진 배우 가수 mc 게스트 멤버 기자 뉴스 기사 사진 영상 제공 공개 예고 선공개 하이라이트
+    출연 출연진 배우 가수 게스트 멤버 기자 뉴스 기사 사진 영상 제공 공개 예고 선공개 하이라이트
     화제 관심 오늘 어제 내일 이번 지난 다음 최근 현재 당시 이날 사람 사람들 이야기 모습 순간 시간
     자신 우리 그녀 그들 대한 위해 통해 관련 진행 시작 공개된 나무위키 위키 블로그 카페 웹문서 유튜브
     인스타 인스타그램 네이버 다음 구글 쿠팡 검색 무료 배송 로켓배송 와우회원 리뷰 이벤트 할인 광고
-    노출 기준 입찰가 도움말 신청 바로가기 더보기 전체 선택 옵션 페이지 사이트 홈페이지 다시보기
+    노출 입찰가 도움말 신청 바로가기 더보기 전체 선택 옵션 페이지 사이트 홈페이지 다시보기 지상파
     티빙 넷플릭스 웨이브 무엇 누구 언제 어떻게 정말 진짜 완전 너무 매우 아주 가장 함께 모두 각각
-    등장 공식 최초 역대 이후 이전 동안 사이 결국 다시 계속 아직 벌써 심지어 특히 바로 직접
-    안내 서비스 신청 총정리 편집 기획의도 목차 개요 내용 방법 이유 경우 문제 해결 확인 사용 이용
+    등장 공식 최초 역대 이후 이전 동안 사이 결국 다시 계속 아직 벌써 심지어 특히 바로 직접 위치
+    안내 서비스 총정리 편집 기획의도 목차 개요 내용 방법 이유 경우 문제 해결 확인 사용 이용 정보
     평균 최고 최저 기준 경신 기록 순위 목록 정리 소개 설명 참고 관계자 측은 밝혔다 전했다 말했다
-    촬영지 촬영장 도전 원작 몇부작 등장인물 인물관계도 결말 스포 스포일러 줄거리 명대사 ost ott
-    방영일 종영 첫방송 마지막회 최종회 시즌제 넷플 티비 채널 실시간 스트리밍 자막 더빙 무료보기
-    뉴스검색 정보검색 설정 배경 프로필 나이 키 학력 인스타주소 열애 결혼 소속사 팬미팅""".split()
+    촬영지 촬영장 도전 원작 몇부작 등장인물 인물관계도 결말 스포 스포일러 줄거리 명대사
+    방영일 종영 첫방송 마지막회 최종회 시즌제 채널 실시간 스트리밍 자막 더빙 무료보기 사장 대표
+    프로필 나이 학력 열애 결혼 소속사 팬미팅 논란 인정 종결 호불호 진화 완벽 만원 가지 부분""".split()
 )
 
 JOSA = [
@@ -84,17 +92,26 @@ JOSA = [
 
 TOKEN_RE = re.compile(r"[가-힣]+|[A-Za-z][A-Za-z0-9']*|\d+")
 HANGUL_RE = re.compile(r"[가-힣]")
+SPLIT_RE = re.compile(r"[.!?\n·ㆍ|ㅣ,\[\]()<>“”\"']+")
 
 SOURCE_WEIGHT = {"ad": 4.0, "autocomplete": 3.0, "title": 2.0, "snippet": 1.0}
+
+
+def short_title(title):
+    """'언니네 산지직송3 - 네 식구 산지 라이프' 처럼 부제가 붙은 제목을 앞부분만 남깁니다."""
+    out = re.split(r"\s+[-–—:]\s+", (title or "").strip())[0].strip()
+    out = re.sub(r"\s*\d+$", "", out).strip()
+    return out or (title or "").strip()
 
 
 # ------------------------------------------------------------------ 수집기
 
 
-def _fetch(url, headers=None, timeout=TIMEOUT):
+def _fetch(url, headers=None, data=None, timeout=TIMEOUT):
     hdr = {"User-Agent": UA, "Accept-Language": "ko-KR,ko;q=0.9", "Accept": "*/*"}
     hdr.update(headers or {})
-    req = urllib.request.Request(url, headers=hdr)
+    body = urllib.parse.urlencode(data).encode("utf-8") if data else None
+    req = urllib.request.Request(url, data=body, headers=hdr)
     with urllib.request.urlopen(req, timeout=timeout) as res:
         return res.read().decode("utf-8", errors="replace")
 
@@ -104,10 +121,7 @@ def _strip_tags(s):
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
 
 
-def search_ddg(query, limit=12):
-    """DuckDuckGo(HTML판) 웹검색 — 한국어 결과가 안정적으로 나옵니다."""
-    url = "https://html.duckduckgo.com/html/?q=%s&kl=kr-kr" % urllib.parse.quote(query)
-    body = _fetch(url)
+def _parse_ddg(body, query, limit):
     titles = re.findall(r'class="result__a"[^>]*href="([^"]*)"[^>]*>(.*?)</a>', body, re.S)
     snippets = re.findall(r'class="result__snippet"[^>]*>(.*?)</a>', body, re.S)
     docs = []
@@ -115,44 +129,55 @@ def search_ddg(query, limit=12):
         title = _strip_tags(raw_title)
         if not title:
             continue
-        snippet = _strip_tags(snippets[idx]) if idx < len(snippets) else ""
         docs.append(
-            {"source": "duckduckgo", "kind": "web", "title": title, "snippet": snippet,
+            {"source": "duckduckgo", "kind": "web", "title": title,
+             "snippet": _strip_tags(snippets[idx]) if idx < len(snippets) else "",
              "url": html.unescape(link), "query": query}
         )
     return docs
 
 
+def search_ddg(query, limit=12):
+    """DuckDuckGo(HTML판) 웹검색. GET 이 비면 폼 전송(POST)으로 한 번 더 시도합니다."""
+    url = "https://html.duckduckgo.com/html/?q=%s&kl=kr-kr" % urllib.parse.quote(query)
+    docs = _parse_ddg(_fetch(url), query, limit)
+    if not docs:
+        time.sleep(0.6)
+        docs = _parse_ddg(
+            _fetch("https://html.duckduckgo.com/html/",
+                   headers={"Content-Type": "application/x-www-form-urlencoded",
+                            "Referer": "https://html.duckduckgo.com/"},
+                   data={"q": query, "kl": "kr-kr"}),
+            query, limit,
+        )
+    return docs
+
+
 def search_daum(query, limit=10):
-    """Daum 통합검색 — 검색광고 키워드( 커머스 수요 신호 )와 웹문서를 함께 가져옵니다."""
-    url = "https://search.daum.net/search?w=tot&q=" + urllib.parse.quote(query)
-    body = _fetch(url)
+    """Daum 통합검색 — 검색광고 키워드와 웹문서를 함께 가져옵니다."""
+    body = _fetch("https://search.daum.net/search?w=tot&q=" + urllib.parse.quote(query))
     docs = []
     for kw in re.findall(r'<strong class="tit_item">(.*?)</strong>', body, re.S):
         text = _strip_tags(kw)
         if text and not any(t in STOPWORDS for t in TOKEN_RE.findall(text)):
-            docs.append(
-                {"source": "daum-ad", "kind": "ad", "title": text, "snippet": "",
-                 "url": "", "query": query}
-            )
-    # 웹문서 결과는 <script slot="data"> 안의 JSON 에 들어 있습니다.
+            docs.append({"source": "daum-ad", "kind": "ad", "title": text,
+                         "snippet": "", "url": "", "query": query})
     count = 0
-    for blob in re.findall(r'<script slot="data" type="application/json">(.*?)</script>', body, re.S):
+    for blob in re.findall(
+        r'<script slot="data" type="application/json">(.*?)</script>', body, re.S
+    ):
         try:
             node = json.loads(blob)
         except ValueError:
             continue
         data = node.get("data") or {}
         title = _strip_tags(data.get("TITLE") or "")
-        desc = _strip_tags(data.get("CONTENTS") or data.get("DESCRIPTION") or "")
-        if not title or desc == "웹문서":
-            desc = "" if desc == "웹문서" else desc
-        if title:
-            docs.append(
-                {"source": "daum", "kind": "web", "title": title, "snippet": desc,
-                 "url": data.get("DOCUMENT_URL") or "", "query": query}
-            )
-            count += 1
+        desc = _strip_tags(data.get("CONTENTS") or "")
+        if not title:
+            continue
+        docs.append({"source": "daum", "kind": "web", "title": title, "snippet": desc,
+                     "url": data.get("DOCUMENT_URL") or "", "query": query})
+        count += 1
         if count >= limit:
             break
     return docs
@@ -164,8 +189,7 @@ def naver_autocomplete(seed, limit=10):
         "https://ac.search.naver.com/nx/ac?q=%s&st=100&r_format=json&r_enc=UTF-8"
         "&r_unicode=0&t_koreng=1&ans=2" % urllib.parse.quote(seed)
     )
-    raw = _fetch(url, headers={"Referer": "https://search.naver.com/"})
-    data = json.loads(raw)
+    data = json.loads(_fetch(url, headers={"Referer": "https://search.naver.com/"}))
     out = []
     for group in data.get("items", []) or []:
         for row in group:
@@ -189,9 +213,8 @@ def strip_josa(token):
 def tokenize(text):
     """문장 단위로 나눈 뒤 토큰 목록을 돌려줍니다."""
     text = re.sub(r"https?://\S+", " ", text or "")
-    sentences = re.split(r"[.!?\n·|ㅣ,\[\]()<>“”\"']+", text)
     out = []
-    for sent in sentences:
+    for sent in SPLIT_RE.split(text):
         toks = [strip_josa(t.lower() if t.isascii() else t) for t in TOKEN_RE.findall(sent)]
         toks = [t for t in toks if t]
         if toks:
@@ -200,9 +223,7 @@ def tokenize(text):
 
 
 def is_bad_token(tok):
-    if tok in STOPWORDS:
-        return True
-    if tok.isdigit():
+    if tok in STOPWORDS or tok.isdigit():
         return True
     if HANGUL_RE.search(tok):
         return len(tok) < 2
@@ -210,67 +231,48 @@ def is_bad_token(tok):
 
 
 def categorize(phrase):
-    """어절 단위로 상품어 사전과 맞춰 봅니다. '김선영' 이 '김(식품)' 으로 잡히지 않게 합니다."""
-    for token in phrase.split():
+    """어절 단위로 상품어 사전과 맞춥니다. '김선영' 이 '김(식품)' 으로 잡히지 않게 합니다."""
+    tokens = phrase.split()
+    for token in tokens:
         cat = PRODUCT_TERMS.get(token)
         if cat:
             return cat
-        # '섬진강재첩' 처럼 붙어 있는 경우 — 두 글자 이상 상품어의 접미 일치만 인정합니다.
-        for word, wcat in PRODUCT_TERMS.items():
-            if len(word) >= 2 and len(token) > len(word) and token.endswith(word):
-                return wcat
+    for token in tokens:
+        for word in SPLITTABLE_TERMS:
+            if len(token) > len(word) and token.endswith(word):
+                return PRODUCT_TERMS[word]
     return ""
 
 
-SURNAMES = set(
-    "김 이 박 최 정 강 조 윤 장 임 한 오 서 신 권 황 안 송 류 유 홍 전 고 문 양 손 배 백 허 남 심 "
-    "노 하 곽 성 차 주 우 구 나 민 진 지 엄 채 원 천 방 공 현 함 변 염 여 추 도 소 석 선 설 마 길 "
-    "연 위 표 명 기 반 왕 금 옥 육 맹 제 모 탁 국 어 은 편 용 봉 사".split()
-)
+def ends_with_product(phrase):
+    last = phrase.split()[-1]
+    if last in PRODUCT_TERMS:
+        return True
+    return any(len(last) > len(w) and last.endswith(w) for w in SPLITTABLE_TERMS)
 
 
-def _name_shape(token):
-    """성씨로 시작하는 2~4글자 한글 낱말인지만 봅니다(1차 거르기)."""
-    if not token or not HANGUL_RE.match(token) or not (2 <= len(token) <= 4):
-        return False
-    if token in STOPWORDS or token in PRODUCT_TERMS:
-        return False
-    return token[0] in SURNAMES
-
-
-# '염정아·김선영·강유석' 처럼 이름이 나열되는 자리, '배우 OOO' 처럼 직함이 붙는 자리를 찾습니다.
-NAME_LIST_RE = re.compile(r"([가-힣]{2,4})\s*[·ㆍ,/]\s*([가-힣]{2,4})")
-NAME_ROLE_RE = re.compile(
-    r"(?:배우|가수|모델|아나운서|셰프|코미디언|개그맨|방송인|감독)\s*([가-힣]{2,4})"
-    r"|([가-힣]{2,4})\s*(?:배우|씨|님|주연|출연|분장|의상|착용)"
-)
-
-
-def extract_person_names(docs):
-    """문서 전체에서 인물 이름을 뽑습니다. 이름 나열·직함 패턴에 걸린 것만 인정합니다."""
-    names = set()
-    for doc in docs:
-        text = (doc.get("title", "") + " " + doc.get("snippet", ""))
-        for a, b in NAME_LIST_RE.findall(text):
-            for tok in (a, b):
-                if _name_shape(tok):
-                    names.add(tok)
-        for m in NAME_ROLE_RE.findall(text):
-            for tok in m:
-                if tok and _name_shape(tok):
-                    names.add(tok)
-    return names
+def split_commerce_keyword(text):
+    """'노윤서모자' 처럼 붙여 쓴 광고 키워드를 (앞말, 상품어) 로 쪼갭니다."""
+    compact = text.replace(" ", "")
+    if not HANGUL_RE.search(compact) or len(compact) > 14:
+        return None
+    for word in SPLITTABLE_TERMS:
+        if compact.endswith(word):
+            head = compact[: -len(word)]
+            if 2 <= len(head) <= 6 and HANGUL_RE.match(head) and head not in STOPWORDS:
+                return head, word
+    return None
 
 
 # ------------------------------------------------------------------ 추출기
 
 
 def build_queries(program):
-    title = program.get("title") or ""
+    title = (program.get("title") or "").strip()
     episode = program.get("episode") or ""
     subtitle = program.get("subtitle") or ""
     genre = program.get("genre") or ""
-    base = re.sub(r"\s*\d+$", "", title).strip() or title
+    base = short_title(title)
 
     queries = []
     if episode:
@@ -283,7 +285,7 @@ def build_queries(program):
         queries.append("%s 나온 상품 구매" % base)
     if subtitle:
         queries.append("%s %s" % (base, subtitle[:30]))
-    # 중복 제거(순서 유지)
+
     seen, out = set(), []
     for q in queries:
         q = re.sub(r"\s+", " ", q).strip()
@@ -293,7 +295,7 @@ def build_queries(program):
     return out[:4]
 
 
-def collect_documents(program, log=None):
+def collect_documents(program):
     """검색처를 돌며 문서를 모읍니다. 한 곳이 실패해도 나머지는 계속합니다."""
     docs, errors = [], []
     for query in build_queries(program):
@@ -303,51 +305,73 @@ def collect_documents(program, log=None):
             except Exception as exc:
                 errors.append("%s 검색 실패(%s): %s" % (name, query, exc))
 
-    title = program.get("title") or ""
-    base = re.sub(r"\s*\d+$", "", title).strip() or title
+    title = (program.get("title") or "").strip()
+    base = short_title(title)
     for seed in [title, base + " 협찬", base + " 제품"]:
         try:
             for phrase in naver_autocomplete(seed):
-                docs.append(
-                    {"source": "naver-ac", "kind": "autocomplete", "title": phrase,
-                     "snippet": "", "url": "", "query": seed}
-                )
+                docs.append({"source": "naver-ac", "kind": "autocomplete", "title": phrase,
+                             "snippet": "", "url": "", "query": seed})
         except Exception as exc:
             errors.append("네이버 자동완성 실패(%s): %s" % (seed, exc))
     return docs, errors
 
 
+def learn_entities(docs):
+    """광고·자동완성 키워드를 상품어로 쪼개어 인물·브랜드 이름을 배웁니다."""
+    entities = defaultdict(float)
+    pairs = defaultdict(float)
+    for doc in docs:
+        if doc.get("kind") not in ("ad", "autocomplete"):
+            continue
+        text = doc.get("title", "")
+        weight = 2.0 if doc.get("kind") == "ad" else 1.0
+        parsed = split_commerce_keyword(text)
+        if parsed:
+            head, product = parsed
+            entities[head] += weight
+            pairs[(head, product)] += weight
+            continue
+        toks = [strip_josa(t) for t in TOKEN_RE.findall(text)]
+        for i, tok in enumerate(toks[:-1]):
+            nxt = toks[i + 1]
+            if (nxt in PRODUCT_TERMS and len(tok) >= 2 and tok not in STOPWORDS
+                    and tok not in PRODUCT_TERMS and HANGUL_RE.match(tok)):
+                entities[tok] += weight * 0.7
+                pairs[(tok, nxt)] += weight * 0.7
+    return entities, pairs
+
+
 def extract_keywords(program, docs, top_n=18):
-    title = program.get("title") or ""
-    title_tokens = set(TOKEN_RE.findall(title))
+    title = (program.get("title") or "").strip()
+    base = short_title(title)
+    title_tokens = {strip_josa(t) for t in TOKEN_RE.findall(title)}
+
     scores = defaultdict(float)
     evidence = defaultdict(list)
     sources = defaultdict(set)
-    cooccur = defaultdict(float)   # (인물, 상품어) 같은 글에 함께 나온 횟수
-    people = extract_person_names(docs)
-    program_tokens = {t for t in TOKEN_RE.findall(title)} | people
+
+    entities, learned_pairs = learn_entities(docs)
+    anchor_tokens = title_tokens | set(entities)
 
     for doc in docs:
         kind = doc.get("kind")
         doc_text = (doc.get("title", "") + " " + doc.get("snippet", "")).strip()
-        doc_tokens = [strip_josa(t) for t in TOKEN_RE.findall(doc_text)]
-        doc_people = {t for t in doc_tokens if t in people}
-        doc_products = {t for t in doc_tokens if t in PRODUCT_TERMS and len(t) >= 2}
-        for person in doc_people:
-            for product in doc_products:
-                cooccur[(person, product)] += 1.0
+        doc_tokens = {strip_josa(t) for t in TOKEN_RE.findall(doc_text)}
+        related = bool(anchor_tokens & doc_tokens)
+
         fields = [("title", doc.get("title", ""))]
         if doc.get("snippet"):
             fields.append(("snippet", doc["snippet"]))
 
-        related = bool(program_tokens & set(doc_tokens))
         for field, text in fields:
             if kind == "ad":
-                weight = SOURCE_WEIGHT["ad"] if related else 0.8
+                weight = SOURCE_WEIGHT["ad"] if related else 0.6
             elif kind == "autocomplete":
                 weight = SOURCE_WEIGHT["autocomplete"]
             else:
-                weight = SOURCE_WEIGHT[field] * (1.0 if related else 0.5)
+                weight = SOURCE_WEIGHT[field] * (1.0 if related else 0.4)
+
             for toks in tokenize(text):
                 has_cue = any(t in COMMERCE_CUES for t in toks)
                 for n in (1, 2, 3):
@@ -356,11 +380,9 @@ def extract_keywords(program, docs, top_n=18):
                         if any(is_bad_token(t) for t in gram):
                             continue
                         phrase = " ".join(gram)
-                        if len(phrase) < 2 or len(phrase) > 24:
+                        if not (2 <= len(phrase) <= 24) or not HANGUL_RE.search(phrase):
                             continue
-                        if not HANGUL_RE.search(phrase):
-                            continue  # 영문만 있는 후보는 잡음이 많아 제외합니다.
-                        if phrase in title.lower() or phrase == title:
+                        if phrase == title or phrase == base:
                             continue
                         gain = weight * (1.0 + 0.25 * (n - 1))
                         if has_cue:
@@ -373,65 +395,61 @@ def extract_keywords(program, docs, top_n=18):
                                  "source": doc.get("source", "")}
                             )
 
-    # 인물 + 상품어 조합 키워드 만들기 ('노윤서 모자' 처럼 실제로 팔리는 형태)
-    for (person, product), hits in cooccur.items():
-        if hits < 1:
-            continue
-        combo = "%s %s" % (person, product)
-        base_score = max(scores.get(person, 0.0), scores.get(product, 0.0))
-        scores[combo] = max(scores.get(combo, 0.0), base_score * 0.7 + 4.0 * hits)
-        sources[combo].add("조합")
-        if not evidence[combo]:
-            evidence[combo] = evidence.get(person) or evidence.get(product) or []
+    # 배운 (앞말 + 상품어) 짝을 띄어쓴 형태의 키워드로 만들어 둡니다.
+    for (head, product), hits in learned_pairs.items():
+        phrase = "%s %s" % (head, product)
+        scores[phrase] = max(scores.get(phrase, 0.0), 8.0 + 3.0 * hits)
+        sources[phrase].add("광고키워드")
 
-    # 상품어 사전 가산점 + 프로그램 이름만 반복되는 후보 감점
+    # 프로그램 이름 + 상품어 조합 — 방송 연계 검색에 실제로 쓰이는 형태입니다.
+    top_products = sorted(
+        ((p, s) for p, s in scores.items() if p in PRODUCT_TERMS), key=lambda x: -x[1]
+    )[:4]
+    for product, pscore in top_products:
+        phrase = "%s %s" % (base, product)
+        scores[phrase] = max(scores.get(phrase, 0.0), pscore * 0.8 + 4.0)
+        sources[phrase].add("조합")
+
     results = []
     for phrase, score in scores.items():
-        cat = categorize(phrase)
         toks = phrase.split()
+        cat = categorize(phrase)
         if cat:
-            score += 6.0
-        elif all(t in people for t in toks):
-            cat = "인물"
-            score *= 0.5   # 인물 이름만으로는 상품 검색이 안 되므로 낮춥니다.
+            score += 6.0 if ends_with_product(phrase) else 3.0
+        if len(toks) == 1 and phrase in PRODUCT_TERMS:
+            score *= 0.45   # '모자' 처럼 너무 넓은 말은 낮춥니다.
         if all(t in title_tokens for t in toks):
-            score *= 0.35
+            score *= 0.3
         if len(toks) >= 2:
             score += 1.0
         results.append((phrase, score, cat))
 
     results.sort(key=lambda x: -x[1])
 
-    # 부분 문자열 중복 정리 — 더 구체적인(긴) 표현을 남깁니다.
     kept = []
     for phrase, score, cat in results:
-        redundant = False
-        for kphrase, kscore, _ in kept:
-            if phrase in kphrase and score <= kscore * 1.6:
-                redundant = True
-                break
-        if not redundant:
-            kept.append((phrase, score, cat))
-        if len(kept) >= top_n * 2:
+        if any(phrase in k and score <= s * 1.6 for k, s, _ in kept):
+            continue
+        kept.append((phrase, score, cat))
+        if len(kept) >= top_n:
             break
 
-    top = kept[:top_n]
-    if not top:
+    if not kept:
         return []
-    max_score = top[0][1] or 1.0
+    max_score = kept[0][1] or 1.0
     return [
         {
             "keyword": phrase,
             "score": round(score, 2),
             "confidence": round(min(100, score / max_score * 100)),
             "category": cat or "기타",
-            "shoppable": bool(cat) and cat != "인물",
-            "sources": sorted(sources[phrase]),
-            "evidence": evidence[phrase],
+            "shoppable": bool(cat),
+            "sources": sorted(s for s in sources[phrase] if s),
+            "evidence": evidence.get(phrase, []),
             "demandChecked": False,
             "demand": [],
         }
-        for phrase, score, cat in top
+        for phrase, score, cat in kept
     ]
 
 
@@ -447,6 +465,9 @@ def verify_demand(keywords, limit=8):
         if suggestions:
             item["score"] = round(item["score"] + 2.0, 2)
     keywords.sort(key=lambda k: -k["score"])
+    top = keywords[0]["score"] if keywords else 1.0
+    for item in keywords:
+        item["confidence"] = round(min(100, item["score"] / (top or 1.0) * 100))
     return keywords
 
 
@@ -461,7 +482,6 @@ def analyze_program(program, verify=True):
         "queries": build_queries(program),
         "errors": errors,
         "documents": [
-            {k: d.get(k) for k in ("source", "kind", "title", "url")}
-            for d in docs[:40]
+            {k: d.get(k) for k in ("source", "kind", "title", "url")} for d in docs[:40]
         ],
     }

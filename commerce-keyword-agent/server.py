@@ -17,11 +17,15 @@ import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
+import keyword_engine
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WEB_DIR = os.path.join(BASE_DIR, "web")
 DATA_DIR = os.path.join(BASE_DIR, "data")
 SCHEDULE_STORE = os.path.join(DATA_DIR, "schedule_store.json")
 REGISTRATION_STORE = os.path.join(DATA_DIR, "registrations.json")
+KEYWORD_CACHE = os.path.join(DATA_DIR, "keyword_cache.json")
+CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
 USER_AGENT = (
@@ -76,6 +80,20 @@ def clean_title(name):
             break
         out = stripped
     return out.strip()
+
+
+DRAMA_TAGS = ("드라마", "월화", "화수", "수목", "목금", "금토", "토일", "일월")
+
+
+def detect_genre(raw_title):
+    """'[예능]유퀴즈…', '[토일] 포핸즈' 처럼 제목 앞에 붙는 태그로 장르를 봅니다."""
+    tags = re.findall(r"\[([^\]]{1,20})\]", raw_title or "")
+    joined = " ".join(tags)
+    if "예능" in joined:
+        return "예능"
+    if any(t in joined for t in DRAMA_TAGS):
+        return "드라마"
+    return "기타"
 
 
 EPISODE_RE = re.compile(r"(\d+)\s*(회|화)")
@@ -153,6 +171,7 @@ def fetch_tvn_schedule():
             "episodeName": epi_name,
             "episode": parse_episode(epi_name, raw_title),
             "subtitle": episode_subtitle(epi_name),
+            "genre": detect_genre(raw_title),
             "liveFlag": p.get("bdFgNm") or "",
             "grade": p.get("dlbrtGrdNm") or "",
         }
@@ -179,6 +198,135 @@ def refresh_schedule(force=False):
         store["fetchedAt"] = int(time.time())
         _write_json(SCHEDULE_STORE, store)
         return store, True
+
+
+# --------------------------------------------------------------------- 설정
+
+DEFAULT_CONFIG = {
+    "naverClientId": "",
+    "naverClientSecret": "",
+    # 팀에서 쓰는 링크 형태가 다르면 이 주소만 바꾸면 됩니다.
+    "storeSearchUrl": "https://search.shopping.naver.com/ns/search?query={keyword}",
+}
+
+
+def load_config():
+    cfg = dict(DEFAULT_CONFIG)
+    cfg.update(_read_json(CONFIG_STORE, {}))
+    return cfg
+
+
+def save_config(patch):
+    with _store_lock:
+        cfg = load_config()
+        for key in DEFAULT_CONFIG:
+            if key in patch and patch[key] is not None:
+                cfg[key] = str(patch[key]).strip()
+        _write_json(CONFIG_STORE, cfg)
+        return cfg
+
+
+def public_config(cfg):
+    """비밀키는 그대로 돌려주지 않고 등록 여부만 알려 줍니다."""
+    return {
+        "naverClientId": cfg["naverClientId"],
+        "naverSecretSet": bool(cfg["naverClientSecret"]),
+        "storeSearchUrl": cfg["storeSearchUrl"],
+        "naverReady": bool(cfg["naverClientId"] and cfg["naverClientSecret"]),
+    }
+
+
+# ------------------------------------------------- 네이버플러스스토어 미리보기
+
+B_TAG_RE = re.compile(r"</?b>", re.I)
+
+
+def store_search_url(cfg, keyword):
+    template = cfg.get("storeSearchUrl") or DEFAULT_CONFIG["storeSearchUrl"]
+    return template.replace("{keyword}", urllib.parse.quote(keyword))
+
+
+def store_preview(keyword, display=9):
+    """네이버 쇼핑 검색 API 로 상품 카드를 만들어 옵니다. 키가 없으면 링크만 돌려줍니다."""
+    cfg = load_config()
+    url = store_search_url(cfg, keyword)
+    if not (cfg["naverClientId"] and cfg["naverClientSecret"]):
+        return {
+            "mode": "link",
+            "items": [],
+            "total": 0,
+            "searchUrl": url,
+            "message": "네이버 검색 API 키를 등록하면 상품 카드를 바로 볼 수 있어요.",
+        }
+
+    api = "https://openapi.naver.com/v1/search/shop.json?query=%s&display=%d&sort=sim" % (
+        urllib.parse.quote(keyword),
+        display,
+    )
+    req = urllib.request.Request(
+        api,
+        headers={
+            "X-Naver-Client-Id": cfg["naverClientId"],
+            "X-Naver-Client-Secret": cfg["naverClientSecret"],
+            "User-Agent": USER_AGENT,
+        },
+    )
+    with urllib.request.urlopen(req, timeout=12) as res:
+        payload = json.loads(res.read().decode("utf-8"))
+
+    items = []
+    for it in payload.get("items", []):
+        items.append(
+            {
+                "title": B_TAG_RE.sub("", it.get("title", "")),
+                "link": it.get("link", ""),
+                "image": it.get("image", ""),
+                "price": int(it.get("lprice") or 0),
+                "mall": it.get("mallName", ""),
+                "brand": it.get("brand") or it.get("maker") or "",
+                "category": " > ".join(
+                    x for x in (it.get("category1"), it.get("category2"), it.get("category3")) if x
+                ),
+            }
+        )
+    return {
+        "mode": "api",
+        "items": items,
+        "total": payload.get("total", 0),
+        "searchUrl": url,
+        "message": "",
+    }
+
+
+# ------------------------------------------------------------- 키워드 분석 캐시
+
+KEYWORD_TTL_SEC = 24 * 3600
+
+
+def analyze_program_keywords(program, force=False):
+    """회차별 키워드 분석 결과를 캐시와 함께 돌려줍니다."""
+    cache = _read_json(KEYWORD_CACHE, {})
+    hit = cache.get(program["id"])
+    if hit and not force and (time.time() - hit.get("analyzedAt", 0)) < KEYWORD_TTL_SEC:
+        hit["cached"] = True
+        return hit
+
+    result = keyword_engine.analyze_program(
+        {
+            "title": program.get("title", ""),
+            "episode": program.get("episode", ""),
+            "subtitle": program.get("subtitle", ""),
+            "genre": program.get("genre", ""),
+        }
+    )
+    result["analyzedAt"] = int(time.time())
+    result["programId"] = program["id"]
+    result["cached"] = False
+    with _store_lock:
+        cache = _read_json(KEYWORD_CACHE, {})
+        cache[program["id"]] = result
+        _write_json(KEYWORD_CACHE, cache)
+    return result
 
 
 # ------------------------------------------------------------------ 등록 키워드
@@ -293,6 +441,31 @@ class Handler(BaseHTTPRequestHandler):
                     }
                 )
 
+            if path == "/api/keywords":
+                program_id = query.get("programId", [""])[0]
+                store = load_schedule_store()
+                program = store.get("programs", {}).get(program_id)
+                if not program:
+                    return self._error("편성 정보를 찾지 못했습니다: " + program_id, 404)
+                force = query.get("refresh", ["0"])[0] == "1"
+                result = analyze_program_keywords(program, force=force)
+                return self._json({"ok": True, "program": program, **result})
+
+            if path == "/api/store-preview":
+                keyword = query.get("keyword", [""])[0].strip()
+                if not keyword:
+                    return self._error("키워드가 비어 있습니다.", 400)
+                try:
+                    return self._json({"ok": True, "keyword": keyword, **store_preview(keyword)})
+                except urllib.error.HTTPError as exc:
+                    detail = "네이버 API 오류 %s" % exc.code
+                    if exc.code in (401, 403):
+                        detail += " — Client ID/Secret 을 다시 확인해 주세요."
+                    return self._error(detail, 502)
+
+            if path == "/api/config":
+                return self._json({"ok": True, **public_config(load_config())})
+
             if path == "/api/registrations":
                 return self._json({"ok": True, **load_registrations()})
 
@@ -304,6 +477,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
         try:
+            if parsed.path == "/api/config":
+                cfg = save_config(self._body_json())
+                return self._json({"ok": True, **public_config(cfg)})
+
             if parsed.path == "/api/registrations":
                 item = self._body_json()
                 if not item.get("id"):

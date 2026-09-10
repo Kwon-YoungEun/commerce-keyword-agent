@@ -1,0 +1,463 @@
+{
+ "EA202609080340": {
+  "keywords": [
+   {
+    "keyword": "언니네 산지직송 매트리스",
+    "score": 17.48,
+    "confidence": 100,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 매트리스"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 바지",
+    "score": 15.24,
+    "confidence": 87,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 바지락 장소"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 모자",
+    "score": 14.84,
+    "confidence": 85,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 팬츠",
+    "score": 13.24,
+    "confidence": 76,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "스노우피크 카고 팬츠",
+    "score": 12.8,
+    "confidence": 73,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "스노우피크 카고 팬츠"
+    ]
+   },
+   {
+    "keyword": "염정아 모자",
+    "score": 12.3,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아모자"
+    ]
+   },
+   {
+    "keyword": "산지직송 접이식 매트리스",
+    "score": 10.8,
+    "confidence": 62,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지",
+    "score": 10.3,
+    "confidence": 59,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김혜윤 연보라 모자",
+    "score": 10.0,
+    "confidence": 57,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "연보라 모자 버킷햇",
+    "score": 10.0,
+    "confidence": 57,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "보라색 미니 크로스백",
+    "score": 10.0,
+    "confidence": 57,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김선영 가방",
+    "score": 9.5,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이다영 수영복",
+    "score": 8.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지 어디",
+    "score": 7.8,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "바지 어디 제품",
+    "score": 7.8,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "접이식 매트리스 추천",
+    "score": 7.8,
+    "confidence": 45,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "매트리스 추천 숙면연구소",
+    "score": 7.8,
+    "confidence": 45,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "모자 버킷햇 라벤더",
+    "score": 7.0,
+    "confidence": 40,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 19,
+  "queries": [
+   "언니네 산지직송3 - 네 식구 산지 라이프 5회 협찬 제품",
+   "언니네 산지직송 협찬 제품 어디",
+   "언니네 산지직송 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(언니네 산지직송3 - 네 식구 산지 라이프 5회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(언니네 산지직송 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(언니네 산지직송 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송/방영 목록 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[공지] (업데이트)2026.9.4(금요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 임채무 표창원",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.08.03(월) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "나혼자산다 662회, 62억 건물주가 가위를 든 이유ㅣ기안84 셀프이발·코드쿤스트 근황",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2013_good_11.pdf",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[주간일기] 기록하고자 노력하는 자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "덱스(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송2에 나온 칼하트? 커플룩 정보아시는 분??",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진제공=메리고라운드컴퍼니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "6시 내고향 완도 제철 수산물 위치 6시 내고향 완도 제철 수산물 투영이네수산 주문 택배 위치 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남해 빵집 / 빵지순례 추천 행복베이커리(언니네 산지직송 •유퀴즈에 나온 기부 천사 사장님 빵집!)",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네산지직송협찬차량",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789027018,
+  "programId": "EA202609080340",
+  "cached": false
+ }
+}
