@@ -69,7 +69,10 @@ STOPWORDS = set(
     티빙 넷플릭스 웨이브 무엇 누구 언제 어떻게 정말 진짜 완전 너무 매우 아주 가장 함께 모두 각각
     등장 공식 최초 역대 이후 이전 동안 사이 결국 다시 계속 아직 벌써 심지어 특히 바로 직접
     안내 서비스 신청 총정리 편집 기획의도 목차 개요 내용 방법 이유 경우 문제 해결 확인 사용 이용
-    평균 최고 최저 기준 경신 기록 순위 목록 정리 소개 설명 참고 관계자 측은 밝혔다 전했다 말했다""".split()
+    평균 최고 최저 기준 경신 기록 순위 목록 정리 소개 설명 참고 관계자 측은 밝혔다 전했다 말했다
+    촬영지 촬영장 도전 원작 몇부작 등장인물 인물관계도 결말 스포 스포일러 줄거리 명대사 ost ott
+    방영일 종영 첫방송 마지막회 최종회 시즌제 넷플 티비 채널 실시간 스트리밍 자막 더빙 무료보기
+    뉴스검색 정보검색 설정 배경 프로필 나이 키 학력 인스타주소 열애 결혼 소속사 팬미팅""".split()
 )
 
 JOSA = [
@@ -127,7 +130,7 @@ def search_daum(query, limit=10):
     docs = []
     for kw in re.findall(r'<strong class="tit_item">(.*?)</strong>', body, re.S):
         text = _strip_tags(kw)
-        if text:
+        if text and not any(t in STOPWORDS for t in TOKEN_RE.findall(text)):
             docs.append(
                 {"source": "daum-ad", "kind": "ad", "title": text, "snippet": "",
                  "url": "", "query": query}
@@ -207,10 +210,32 @@ def is_bad_token(tok):
 
 
 def categorize(phrase):
-    for word, cat in PRODUCT_TERMS.items():
-        if phrase.endswith(word) or (" " + word) in (" " + phrase):
+    """어절 단위로 상품어 사전과 맞춰 봅니다. '김선영' 이 '김(식품)' 으로 잡히지 않게 합니다."""
+    for token in phrase.split():
+        cat = PRODUCT_TERMS.get(token)
+        if cat:
             return cat
+        # '섬진강재첩' 처럼 붙어 있는 경우 — 두 글자 이상 상품어의 접미 일치만 인정합니다.
+        for word, wcat in PRODUCT_TERMS.items():
+            if len(word) >= 2 and len(token) > len(word) and token.endswith(word):
+                return wcat
     return ""
+
+
+SURNAMES = set(
+    "김 이 박 최 정 강 조 윤 장 임 한 오 서 신 권 황 안 송 류 유 홍 전 고 문 양 손 배 백 허 남 심 "
+    "노 하 곽 성 차 주 우 구 나 민 진 지 엄 채 원 천 방 공 현 함 변 염 여 추 도 소 석 선 설 마 길 "
+    "연 위 표 명 기 반 왕 금 옥 육 맹 제 모 탁 국 어 은 편 용 봉 사".split()
+)
+
+
+def looks_like_person(token):
+    """성씨로 시작하는 2~4글자 한글 낱말을 인물 후보로 봅니다(사전 없이 쓰는 어림짐작)."""
+    if not HANGUL_RE.match(token) or not (2 <= len(token) <= 4):
+        return False
+    if token in STOPWORDS or token in PRODUCT_TERMS:
+        return False
+    return token[0] in SURNAMES
 
 
 # ------------------------------------------------------------------ 추출기
@@ -220,14 +245,18 @@ def build_queries(program):
     title = program.get("title") or ""
     episode = program.get("episode") or ""
     subtitle = program.get("subtitle") or ""
+    genre = program.get("genre") or ""
     base = re.sub(r"\s*\d+$", "", title).strip() or title
 
     queries = []
     if episode:
         queries.append("%s %s 협찬 제품" % (title, episode))
-        queries.append("%s %s 나온 상품" % (title, episode))
-    queries.append("%s 협찬 어디" % base)
-    queries.append("%s 화제 상품 구매" % base)
+    if genre == "드라마":
+        queries.append("%s 의상 협찬 어디" % base)
+        queries.append("%s 착용 가방 주얼리" % base)
+    else:
+        queries.append("%s 협찬 제품 어디" % base)
+        queries.append("%s 나온 상품 구매" % base)
     if subtitle:
         queries.append("%s %s" % (base, subtitle[:30]))
     # 중복 제거(순서 유지)
@@ -270,9 +299,17 @@ def extract_keywords(program, docs, top_n=18):
     scores = defaultdict(float)
     evidence = defaultdict(list)
     sources = defaultdict(set)
+    cooccur = defaultdict(float)   # (인물, 상품어) 같은 글에 함께 나온 횟수
 
     for doc in docs:
         kind = doc.get("kind")
+        doc_text = (doc.get("title", "") + " " + doc.get("snippet", "")).strip()
+        doc_tokens = [strip_josa(t) for t in TOKEN_RE.findall(doc_text)]
+        doc_people = {t for t in doc_tokens if looks_like_person(t)}
+        doc_products = {t for t in doc_tokens if t in PRODUCT_TERMS and len(t) >= 2}
+        for person in doc_people:
+            for product in doc_products:
+                cooccur[(person, product)] += 1.0
         fields = [("title", doc.get("title", ""))]
         if doc.get("snippet"):
             fields.append(("snippet", doc["snippet"]))
@@ -307,13 +344,27 @@ def extract_keywords(program, docs, top_n=18):
                                  "source": doc.get("source", "")}
                             )
 
+    # 인물 + 상품어 조합 키워드 만들기 ('노윤서 모자' 처럼 실제로 팔리는 형태)
+    for (person, product), hits in cooccur.items():
+        if hits < 1:
+            continue
+        combo = "%s %s" % (person, product)
+        base_score = max(scores.get(person, 0.0), scores.get(product, 0.0))
+        scores[combo] = max(scores.get(combo, 0.0), base_score * 0.7 + 4.0 * hits)
+        sources[combo].add("조합")
+        if not evidence[combo]:
+            evidence[combo] = evidence.get(person) or evidence.get(product) or []
+
     # 상품어 사전 가산점 + 프로그램 이름만 반복되는 후보 감점
     results = []
     for phrase, score in scores.items():
         cat = categorize(phrase)
+        toks = phrase.split()
         if cat:
             score += 6.0
-        toks = phrase.split()
+        elif all(looks_like_person(t) for t in toks):
+            cat = "인물"
+            score *= 0.5   # 인물 이름만으로는 상품 검색이 안 되므로 낮춥니다.
         if all(t in title_tokens for t in toks):
             score *= 0.35
         if len(toks) >= 2:
@@ -345,7 +396,7 @@ def extract_keywords(program, docs, top_n=18):
             "score": round(score, 2),
             "confidence": round(min(100, score / max_score * 100)),
             "category": cat or "기타",
-            "shoppable": bool(cat),
+            "shoppable": bool(cat) and cat != "인물",
             "sources": sorted(sources[phrase]),
             "evidence": evidence[phrase],
             "demandChecked": False,
