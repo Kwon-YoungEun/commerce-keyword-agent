@@ -2570,5 +2570,1578 @@
   "analyzedAt": 1789031168,
   "programId": "EA202609100800",
   "cached": false
+ },
+ "EA202609090800": {
+  "keywords": [
+   {
+    "keyword": "히든에이지 앰플",
+    "score": 20.0,
+    "confidence": 100,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "naver-ac",
+     "광고키워드",
+     "조합"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 앰플",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "히든에이지 앰플"
+    ]
+   },
+   {
+    "keyword": "히든에이지 자켓",
+    "score": 15.48,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 셔츠",
+    "score": 12.6,
+    "confidence": 63,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 원피스",
+    "score": 12.6,
+    "confidence": 63,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 시간도둑 찾아라",
+    "score": 12.3,
+    "confidence": 62,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "히든에이지: 시간도둑을 찾아라",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "레드 더블버튼 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "스타일링한 플라워 셔츠",
+    "score": 10.0,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "드라마 히든에이지 19회에서 유인나 배우가 스타일링한 플라워 셔츠 칼라 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셔츠 칼라 원피스",
+    "score": 10.0,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "드라마 히든에이지 19회에서 유인나 배우가 스타일링한 플라워 셔츠 칼라 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "하이드 앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "플라워 셔츠 칼라",
+    "score": 7.0,
+    "confidence": 35,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "드라마 히든에이지 19회에서 유인나 배우가 스타일링한 플라워 셔츠 칼라 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "결벽쿠션",
+    "score": 6.8,
+    "confidence": 34,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플 단종",
+    "score": 5.2,
+    "confidence": 26,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 더블버튼",
+    "score": 4.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 피부",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 피부",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 유산균",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유산균",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 화장품",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 화장품",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "히든에이지 15회 협찬 제품",
+   "히든에이지 협찬 제품 어디",
+   "히든에이지 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "제15회 레트롤링 X 용산전자랜드 개최 공지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "철면수심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "드라마 '별에서 온 그대(별온그/별그대)' 15화 속 김수현, 전지현 / 도민준, 천송이 패션 살펴보기!! (카페그다이)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "수미산장 1회 에이핑크 정은지 패션 프리모떼 귀걸이 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "어벤져스: 에이지 오브 울트론 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[시청역 더히든게임룸] 아마겟돈 사전예약 & 워해머 뉴비 모임",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사2 속 아이템 찾아보기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이동휘 브랜드 론칭 전참시서 공개 수호 선물 반전",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "네이버 인플루언서",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[공지] 가발 후기 모음집(핑크에이지, 쿠팡)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "나가쉬/에이지 오브 시그마 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "두 언더독이 선보이는 ‘아키텍트’, 모두의 MMORPG를 꿈꾸다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인벤",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "드라마 히든에이지 19회에서 유인나 배우가 스타일링한 플라워 셔츠 칼라 원피스",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지: 시간도둑을 찾아라",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 뜻",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지57세",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 앰플",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 피부",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 유산균",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 화장품",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031802,
+  "programId": "EA202609090800",
+  "cached": false
+ },
+ "EA202609070800": {
+  "keywords": [
+   {
+    "keyword": "로제도르 라온플라워 옥반지",
+    "score": 8.2,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전지적 참견 시점",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점",
+     "전지적 참견 시점 재방송",
+     "전지적 참견 시점 편성표",
+     "전지적 참견 시점 회차정보",
+     "전지적 참견 시점 ott",
+     "전지적 참견 시점 선우용녀"
+    ]
+   },
+   {
+    "keyword": "참견 시점 효연",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점 효연"
+    ]
+   },
+   {
+    "keyword": "도대체 어디 제품이야",
+    "score": 3.0,
+    "confidence": 37,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 2.8,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "시점 효연 숙소",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "평을 혼자 쓴다고",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "아인슈페너 맛집 다이닝코드",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "고퀄리티 편의점 간편식",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "편의점 간편식 best",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "정은지 운동",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "맛집 체크",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "재밌다고 난리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "임지연 패션",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "서인영 재산",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "통장 잔고",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 13,
+  "queries": [
+   "유 퀴즈 온 더 블럭 특별판 235회 협찬 제품",
+   "유 퀴즈 온 더 블럭 특별판 협찬 제품 어디",
+   "유 퀴즈 온 더 블럭 특별판 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김지윤(정치학자) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "민음사 굿즈, 빵보다 비싼 건 책갈피였다ㅣ20종·가격·구하는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전북인신문",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "“연예계 대표 짠순이의 반전”…전원주, 2억 집이 42억 된 비결",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031965,
+  "programId": "EA202609070800",
+  "cached": false
+ },
+ "EA202609102255": {
+  "keywords": [
+   {
+    "keyword": "퀴즈",
+    "score": 33.6,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "넌센스퀴즈",
+     "퀴즈노스",
+     "유 퀴즈 온 더 블럭",
+     "쏠퀴즈",
+     "토스 행운퀴즈",
+     "유퀴즈"
+    ]
+   },
+   {
+    "keyword": "블럭",
+    "score": 33.0,
+    "confidence": 98,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "블럭",
+     "블럭장난감",
+     "유 퀴즈 온 더 블럭",
+     "블럭제빵소",
+     "디폼블럭",
+     "나인블럭"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 셋업",
+    "score": 12.28,
+    "confidence": 37,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김태희 민트색 셋업",
+    "score": 9.0,
+    "confidence": 27,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "협찬",
+    "score": 8.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 뜻",
+     "협찬 사이트",
+     "블로그 협찬",
+     "협찬",
+     "인스타 협찬",
+     "협찬플러스"
+    ]
+   },
+   {
+    "keyword": "어디꺼",
+    "score": 6.8,
+    "confidence": 20,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "챗지피티 어디꺼",
+     "공차 어디꺼",
+     "빽다방 두유 어디꺼",
+     "볼보 어디꺼",
+     "아웃백 어디꺼",
+     "스투시 어디꺼"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 협찬 가이드",
+    "score": 4.8,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 재방송",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 재방송",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 오디세",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 오디세이",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 조세호",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 조세호",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 송강",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 송강",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 ott",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 ott",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 4.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "간접광고 ppl",
+    "score": 4.3,
+    "confidence": 13,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 온더 블럭",
+    "score": 4.2,
+    "confidence": 12,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "발전 알아본 협찬",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "알아본 협찬 마케팅",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "유퀴즈온더블럭 359회 협찬 제품",
+   "유퀴즈온더블럭 협찬 제품 어디",
+   "유퀴즈온더블럭 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "핑계고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인사픽뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "패션아카이브",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이정은 “5000만원 빚 갚느라 알바”…녹즙 배달→마트 판매왕까지 [TVis] (유퀴즈)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "매일매일꿀팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "임채무 두리랜드｜입장료·위치·면적·땅값·프로필·나이·유퀴즈",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "주식 중독 자가 진단 테스트 13가지 (유퀴즈 정신과 의사 기준) - All Honey Tip",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 예고",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 오디세이",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 조세호",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 357회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 송강",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 ott",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789031984,
+  "programId": "EA202609102255",
+  "cached": false
  }
 }

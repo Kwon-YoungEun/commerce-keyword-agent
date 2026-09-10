@@ -511,3 +511,10 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .pid-table tr.is-missing td:first-child { color: var(--text-secondary); }
 .pid-table tr.is-missing input { border-color: #F2D6A9; background: #FFFCF6; }
 .pid-table .cat { margin-left: 6px; }
+
+.field input.is-locked {
+  background: #F1F2F4;
+  color: var(--text-secondary);
+  cursor: default;
+}
+.field input.is-locked:focus { border-color: var(--border); }

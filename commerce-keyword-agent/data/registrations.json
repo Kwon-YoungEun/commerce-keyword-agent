@@ -1,3 +1,35 @@
 {
- "items": []
+ "items": [
+  {
+   "id": "0f5145cb-8c87-4af7-8232-a899401eb8f3",
+   "programId": "EA202609110750",
+   "programCode": "CS11199754",
+   "programName": "유 퀴즈 온 더 블럭 특별판",
+   "date": "20260911",
+   "episode": "235회",
+   "keyword": "로제도르 라온플라워 옥반지",
+   "bodyText": "{\n  \"requestId\": \"0f5145cb-8c87-4af7-8232-a899401eb8f3\",\n  \"timestamp\": 1789031677932,\n  \"programName\": \"유 퀴즈 온 더 블럭 특별판\",\n  \"programId\": \"CS11199754\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"로제도르 라온플라워 옥반지\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "0f5145cb-8c87-4af7-8232-a899401eb8f3",
+    "timestamp": 1789031677932,
+    "programName": "유 퀴즈 온 더 블럭 특별판",
+    "programId": "CS11199754",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "로제도르 라온플라워 옥반지",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789031716
+  }
+ ]
 }

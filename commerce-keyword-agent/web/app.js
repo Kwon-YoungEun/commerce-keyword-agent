@@ -444,15 +444,13 @@ function openBodyModal(k) {
     keyword: k.keyword,          // 목록에서 고른 원래 키워드
     requestId: newRequestId(),
     timestamp: Date.now(),
+    editingId: false,
   };
   document.getElementById("fldProductKeyword").value = k.keyword;
   document.getElementById("keywordHint").textContent = "";
 
   document.getElementById("fldProgramName").value = name;
   document.getElementById("fldProgramId").value = mapped;
-  document.getElementById("programIdHint").textContent = mapped
-    ? "저장된 표에서 가져왔어요."
-    : "등록된 ID가 없어요. 직접 넣으면 표에 저장됩니다.";
   document.getElementById("bodyMeta").textContent =
     prettyDate(p.date) + " " + p.start + "~" + p.end +
     (p.episode ? " · " + p.episode : "") + " · 키워드 " + k.keyword;
@@ -473,10 +471,56 @@ function currentBody() {
   });
 }
 
+/** programId 칸 상태 — 저장된 값이 있으면 잠그고 'ID 수정' 으로 풀 수 있게 합니다. */
+function programIdState() {
+  const name = document.getElementById("fldProgramName").value.trim();
+  return {
+    name: name,
+    saved: state.programIds[name] || "",
+    editing: Boolean(state.bodyDraft && state.bodyDraft.editingId),
+  };
+}
+
+function updateProgramIdButton() {
+  const st = programIdState();
+  const input = document.getElementById("fldProgramId");
+  const btn = document.getElementById("btnSaveProgramId");
+  const hint = document.getElementById("programIdHint");
+  const locked = Boolean(st.saved) && !st.editing;
+
+  input.readOnly = locked;
+  input.classList.toggle("is-locked", locked);
+  btn.textContent = locked ? "ID 수정" : st.saved ? "저장" : "ID 저장";
+
+  if (locked) {
+    hint.textContent = "표에 저장된 ID 예요. 바꾸려면 ID 수정을 누르세요.";
+  } else if (st.saved) {
+    hint.textContent = "저장된 값은 " + st.saved + " 예요. 고친 뒤 저장을 누르세요.";
+  } else {
+    hint.textContent = input.value.trim()
+      ? "표에 없는 ID 예요. ID 저장을 누르면 기억해 둡니다."
+      : "등록된 ID가 없어요. 직접 넣고 ID 저장을 누르세요.";
+  }
+}
+
+async function onProgramIdButton() {
+  const st = programIdState();
+  if (st.saved && !st.editing) {
+    state.bodyDraft.editingId = true;
+    updateProgramIdButton();
+    const input = document.getElementById("fldProgramId");
+    input.focus();
+    input.select();
+    return;
+  }
+  await saveProgramIdFromBody();
+}
+
 function refreshBodyJson() {
   const body = currentBody();
   if (!body) return;
   document.getElementById("bodyJson").value = bodyToText(body, true);
+  updateProgramIdButton();
 
   const typed = body.productInfo[0].productKeyword;
   const hint = document.getElementById("keywordHint");
@@ -643,9 +687,8 @@ async function saveProgramIdFromBody() {
   }
   try {
     await putProgramId(name, id);
-    document.getElementById("programIdHint").textContent = id
-      ? "표에 저장했어요."
-      : "표에서 지웠어요.";
+    if (state.bodyDraft) state.bodyDraft.editingId = false;
+    updateProgramIdButton();
     setBodyStatus(
       id ? "프로그램 ID 를 표에 저장했어요 — " + name + " → " + id
          : name + " 의 ID 를 표에서 지웠어요.",
@@ -951,7 +994,10 @@ function bindEvents() {
     setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
   });
   document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
-  document.getElementById("btnSaveProgramId").addEventListener("click", saveProgramIdFromBody);
+  document.getElementById("btnSaveProgramId").addEventListener("click", onProgramIdButton);
+  document.getElementById("fldProgramId").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.target.readOnly) saveProgramIdFromBody();
+  });
 
   document.getElementById("btnProgramList").addEventListener("click", openProgramList);
   document.getElementById("pidClose").addEventListener("click", () => {
