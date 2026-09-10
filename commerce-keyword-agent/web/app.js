@@ -416,7 +416,7 @@ function buildBody({ programName, programId, keyword, requestId, timestamp }) {
     productInfo: [
       {
         productIndex: FIXED.productIndex,
-        productKeyword: "[" + keyword + "]",
+        productKeyword: keyword,
         productMethod: FIXED.productMethod.slice(),
         productScore: FIXED.productScore,
         isProductCropImg: FIXED.isProductCropImg,
