@@ -588,3 +588,8 @@ button.cat.is-manual::after { content: " \270E"; font-size: 9px; opacity: .7; }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 .toast.is-ok { background: var(--status-good); }
 .toast.is-bad { background: var(--status-bad); }
+
+.field input.is-blocked {
+  border-color: var(--status-bad);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, .14);
+}

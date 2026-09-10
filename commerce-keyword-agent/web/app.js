@@ -676,12 +676,26 @@ function buildPostmanCollection(body, program) {
 async function confirmRegister() {
   const body = currentBody();
   if (!body) return;
+  // 막힌 이유가 화면에서 바로 보이도록 알림을 띄우고 해당 칸으로 이동합니다.
+  const block = (message, fieldId) => {
+    setBodyStatus(message, "bad");
+    showToast(message, "bad");
+    const el = document.getElementById(fieldId);
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("is-blocked");
+    setTimeout(() => el.classList.remove("is-blocked"), 2000);
+    if (!el.readOnly) el.focus();
+  };
+
   if (!body.productInfo[0].productKeyword) {
-    setBodyStatus("productKeyword 가 비어 있어요. 먼저 채워 주세요.", "bad");
+    block("등록하려면 productKeyword 를 채워 주세요.", "fldProductKeyword");
     return;
   }
   if (!body.programId) {
-    setBodyStatus("programId 가 비어 있어요. 먼저 채워 주세요.", "bad");
+    block(
+      body.programName + " 의 programId 가 없어요. 프로그램 ID 를 넣고 다시 눌러 주세요.",
+      "fldProgramId"
+    );
     return;
   }
   const p = state.currentProgram;
