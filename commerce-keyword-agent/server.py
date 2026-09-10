@@ -246,6 +246,28 @@ def store_search_url(cfg, keyword):
     return template.replace("{keyword}", urllib.parse.quote(keyword))
 
 
+def naver_error_message(exc):
+    """네이버가 보낸 오류 본문을 그대로 보여 줍니다(원인 파악이 쉬워집니다)."""
+    body = ""
+    try:
+        body = exc.read().decode("utf-8", errors="replace")[:300]
+    except Exception:
+        pass
+    detail = "네이버 API 오류 HTTP %s" % exc.code
+    try:
+        parsed = json.loads(body)
+        code = parsed.get("errorCode") or parsed.get("errorcode") or ""
+        message = parsed.get("errorMessage") or parsed.get("message") or ""
+        if code or message:
+            detail += " — [%s] %s" % (code, message)
+    except ValueError:
+        if body:
+            detail += " — " + body
+    if exc.code in (401, 403):
+        detail += " (Client ID/Secret 을 다시 확인해 주세요)"
+    return detail
+
+
 def store_preview(keyword, display=9):
     """네이버 쇼핑 검색 API 로 상품 카드를 만들어 옵니다. 키가 없으면 링크만 돌려줍니다."""
     cfg = load_config()
@@ -458,10 +480,7 @@ class Handler(BaseHTTPRequestHandler):
                 try:
                     return self._json({"ok": True, "keyword": keyword, **store_preview(keyword)})
                 except urllib.error.HTTPError as exc:
-                    detail = "네이버 API 오류 %s" % exc.code
-                    if exc.code in (401, 403):
-                        detail += " — Client ID/Secret 을 다시 확인해 주세요."
-                    return self._error(detail, 502)
+                    return self._error(naver_error_message(exc), 502)
 
             if path == "/api/config":
                 return self._json({"ok": True, **public_config(load_config())})
