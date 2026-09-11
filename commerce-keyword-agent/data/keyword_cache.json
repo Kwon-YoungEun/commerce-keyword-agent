@@ -15823,5 +15823,488 @@
   "analyzedAt": 1789139575,
   "programId": "EA202609131830",
   "cached": false
+ },
+ "EA202609080810": {
+  "keywords": [
+   {
+    "keyword": "식스센스: 시티투어 밀키트",
+    "score": 15.48,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 가방",
+    "score": 13.24,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나왔던 폐방화복 가방",
+    "score": 10.8,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스 시티투어",
+    "score": 10.61,
+    "confidence": 69,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 3회 카페 핫플 PC방 타코 가게 크로플 목욕탕 포차",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "식스센스 시티투어 3회 식센이들과 이선빈 강태오가 부산에 떴다!",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "식스센스 시티투어2 대학가 목욕탕 포차 가짜? 진짜?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "식스센스 시티투어2",
+     "식스센스 시티투어3",
+     "식스센스 시티투어1",
+     "식스센스 시티투어",
+     "식스센스 시티투어 인천",
+     "식스센스 시티투어 부산"
+    ]
+   },
+   {
+    "keyword": "추어파스타 밀키트",
+    "score": 10.3,
+    "confidence": 67,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "폐방화복 가방 배터리",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "가방 배터리 방화팩",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "추어파스타 밀키트 후기",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "밀키트 구매",
+    "score": 7.3,
+    "confidence": 47,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "목욕탕 포차",
+    "score": 6.0,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 3회 카페 핫플 PC방 타코 가게 크로플 목욕탕 포차",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "식스센스 시티투어2 대학가 목욕탕 포차 가짜? 진짜?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유재석 식스센스 에도",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스 에도 나왔던",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "에도 나왔던 폐방화복",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추어탕 파스타 매장",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스 시티투어 나온",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "시티투어 나온 베이커리",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나온 베이커리 맛집",
+    "score": 4.8,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "타코 가게 크로플",
+    "score": 4.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 3회 카페 핫플 PC방 타코 가게 크로플 목욕탕 포차",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 19,
+  "queries": [
+   "식스센스: 시티투어 3회 협찬 제품",
+   "식스센스: 시티투어 협찬 제품 어디",
+   "식스센스: 시티투어 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 3회 카페 핫플 PC방 타코 가게 크로플 목욕탕 포차",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "‘식스센스’ 이선빈X강태오 티격태격 케미",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어 3회 식센이들과 이선빈 강태오가 부산에 떴다!",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2025.10.14(화) CONNECTION DAILY NEWS",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 대학가 목욕탕 포차 가짜? 진짜?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[식스센스 시티투어 2 x 119REO] 복권 1등의 불티나는 트렌드 OON : 119REO - Rescue Each Other",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 성수 19 어른 디저트 바 초코 타르트 시가 휘낭시에",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "가습기살균제 피해지원종합포탈 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "목욕탕실내포차 - 전농동 포차, 술집 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "스트리트 파이터 6/월드 투어 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "세부 시티투어 집나간햄지님도 다녀온 가이드 포함 단독차량 자유여행 코스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안동시티투어 예약 50%할인 만휴정&봉정사 코스후기",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "식스센스: 시티투어",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789139706,
+  "programId": "EA202609080810",
+  "cached": false
  }
 }

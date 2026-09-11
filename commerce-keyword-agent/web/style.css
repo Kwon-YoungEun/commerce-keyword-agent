@@ -169,6 +169,9 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   display: grid;
   grid-template-columns: var(--gutter-w) 1fr;
   position: relative;
+  /* 시각 라벨은 선 위에 가운데로 놓입니다. 위아래 여백이 없으면
+     첫 라벨(05:00)과 마지막 라벨의 절반이 잘립니다. */
+  padding: 12px 0;
 }
 
 .time-gutter { border-right: 1px solid var(--border); position: relative; background: #FCFCFD; }
