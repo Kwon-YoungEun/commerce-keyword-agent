@@ -14673,5 +14673,4220 @@
   "analyzedAt": 1789142440,
   "programId": "EA202609090455",
   "cached": false
+ },
+ "EA202609080140": {
+  "keywords": [
+   {
+    "keyword": "응답하라 원피스",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "응답하라 블라우스",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "캐럿 다이아몬드",
+    "score": 10.0,
+    "confidence": 86,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "GDM 긴자다이아몬드 1캐럿 다이아몬드 목걸이 | 기타 : 목걸이/펜던트 : th2650583359 - 필웨이 | 믿을 수 있는 중고 명품",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "캐럿 다이아몬드 뜻",
+     "캐럿 다이아몬드 가격",
+     "캐럿다이아몬드"
+    ]
+   },
+   {
+    "keyword": "portrait 미니 원피스",
+    "score": 8.2,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "셀프 포트레이트 25PF 컬렉션 캠페인 블랙핑크 지수 패션 옷 self portrait 미니 원피스 블라우스 윈드브레이커",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "미니 원피스 블라우스",
+    "score": 8.2,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "셀프 포트레이트 25PF 컬렉션 캠페인 블랙핑크 지수 패션 옷 self portrait 미니 원피스 블라우스 윈드브레이커",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "gdm 긴자다이아몬드",
+    "score": 8.0,
+    "confidence": 69,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "GDM 긴자다이아몬드 1캐럿 다이아몬드 목걸이 | 기타 : 목걸이/펜던트 : th2650583359 - 필웨이 | 믿을 수 있는 중고 명품",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 블라우스 윈드브레이커",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "셀프 포트레이트 25PF 컬렉션 캠페인 블랙핑크 지수 패션 옷 self portrait 미니 원피스 블라우스 윈드브레이커",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "캐럿 다이아몬드 목걸",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "GDM 긴자다이아몬드 1캐럿 다이아몬드 목걸이 | 기타 : 목걸이/펜던트 : th2650583359 - 필웨이 | 믿을 수 있는 중고 명품",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "b1a4 대장금 공연",
+    "score": 4.8,
+    "confidence": 41,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "B1A4 대장금 공연 + 응답하라 1994 후기",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "대장금 공연 응답하라",
+    "score": 4.8,
+    "confidence": 41,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "B1A4 대장금 공연 + 응답하라 1994 후기",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "후기",
+    "score": 4.4,
+    "confidence": 38,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🎬영화 리뷰 《악마가 이사왔다》 : 영화인가?제품광고 영상인가?뒤죽박죽하다(한줄평, 평점, 후기, 쿠키)",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "B1A4 대장금 공연 + 응답하라 1994 후기",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "보는 빈폴 레트로풍",
+    "score": 4.0,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "빈폴 레트로풍 의상",
+    "score": 4.0,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "패션",
+    "score": 3.6,
+    "confidence": 31,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "셀프 포트레이트 25PF 컬렉션 캠페인 블랙핑크 지수 패션 옷 self portrait 미니 원피스 블라우스 윈드브레이커",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.07.23(목) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "패션 소식",
+    "score": 3.5,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "노래",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "응답하라 1988 노래",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "주년",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "응답하라 1988 10주년",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "진주",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "응답하라 1988 진주",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "레트로풍",
+    "미니",
+    "이아몬드",
+    "지수"
+   ],
+   "story": [
+    {
+     "text": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+     "url": ""
+    },
+    {
+     "text": "B1A4 대장금 공연 + 응답하라 1994 후기",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 24,
+  "queries": [
+   "응답하라1988 11화 협찬 제품",
+   "응답하라 의상 협찬 어디",
+   "응답하라 착용 가방 주얼리"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(응답하라 의상 협찬 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(응답하라 착용 가방 주얼리): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "박지윤(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "박지윤프로필 최동석프로필 박지윤 최동석 지인 A씨 상간녀 소송 제기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "쓸쓸하고 찬란하神 - 도깨비 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "“체지방 5kg 감량 목표” 한혜진, 다이어트 후 달라진 얼굴선 화제.jpg",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🎬영화 리뷰 《악마가 이사왔다》 : 영화인가?제품광고 영상인가?뒤죽박죽하다(한줄평, 평점, 후기, 쿠키)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[협찬] 아늑한 공간에서 펼쳐지는 따스한 \"12월 이야기\"",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[패션 소식] 응답하라1988로 보는 빈폴의 레트로풍 의상, 매력적이에요!",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "B1A4 대장금 공연 + 응답하라 1994 후기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "토니 안 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "장원영, 분위기 반전 청순 넘어 성숙美 폭발한 촬영 대기실 근황",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "셀프 포트레이트 25PF 컬렉션 캠페인 블랙핑크 지수 패션 옷 self portrait 미니 원피스 블라우스 윈드브레이커",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "GDM 긴자다이아몬드 1캐럿 다이아몬드 목걸이 | 기타 : 목걸이/펜던트 : th2650583359 - 필웨이 | 믿을 수 있는 중고 명품",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.07.23(목) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "중고매입전문 대구 반월당 명품샵 친구랑 구경하기",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 등장인물",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 ost",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 노래",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 10주년",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 결말",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 진주",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 보라",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "응답하라 1988 재방송",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142508,
+  "programId": "EA202609080140",
+  "cached": false
+ },
+ "EA202609080000": {
+  "keywords": [
+   {
+    "keyword": "우주떡집 원피스",
+    "score": 14.84,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 티셔츠",
+    "score": 14.6,
+    "confidence": 98,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "우주떡집 티셔츠"
+    ]
+   },
+   {
+    "keyword": "우주떡집 가디건",
+    "score": 13.88,
+    "confidence": 94,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건",
+    "score": 13.3,
+    "confidence": 90,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "안유진 가디건 5만원대 구매처 상세 정보 및 가성비 스타일링 가이드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "안유진 가디건"
+    ]
+   },
+   {
+    "keyword": "우주떡집 데님",
+    "score": 13.24,
+    "confidence": 89,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀린느 데님 원피스",
+    "score": 12.8,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "셀린느 데님 원피스"
+    ]
+   },
+   {
+    "keyword": "가디건 이은지 멜빵바지",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "멜빵바지 이영지 티셔츠",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 미미 원피스",
+    "score": 10.0,
+    "confidence": 67,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "강릉유천점 강릉 닭칼국수",
+    "score": 8.2,
+    "confidence": 55,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "데님 원피스 가격",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 가격 확인해보니",
+    "score": 7.8,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 가디건 이은지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이은지 멜빵바지 이영지",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이영지 티셔츠 미미",
+    "score": 7.0,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "현풍닭칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "삼계칼국수",
+    "score": 6.8,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "안유진 우주떡집",
+    "score": 6.0,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "안유진",
+    "가성비",
+    "만원대",
+    "멜빵",
+    "미미",
+    "이영지"
+   ],
+   "story": [
+    {
+     "text": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+     "url": ""
+    },
+    {
+     "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 29,
+  "queries": [
+   "우주떡집 6화 협찬 제품",
+   "우주떡집 협찬 제품 어디",
+   "우주떡집 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(우주떡집 6화 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(우주떡집 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(우주떡집 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "찰떡아이스 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집 패션 따라가 보니, 5만원대 가디건이었다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "초신성(동음이의어) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사가 없었어도 요리 예능은 떴을 겁니다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "예능은 왜 자꾸 식당을 차릴까",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 3회 옷 어디꺼? 안유진 가디건 이은지 멜빵바지 이영지 티셔츠 미미 원피스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "에이핑크 플리마켓 아이돌이 직접 판매하는 특별한 쇼핑 기회를 만나보세요",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안유진 가디건 5만원대 구매처 상세 정보 및 가성비 스타일링 가이드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "컹 심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "피자설기 하나에 2030이 시장으로…전통시장 ‘뜻밖의 특수’",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 안유진 첫영업 만능 활약 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "\"먹고 싶어서 편의점 싹 털었다\"…SNS 인증 쏟아진 '디저트' [셀럽픽]",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "우주떡집 만물상 굿즈 구매방법, 토롱이 떡메모지부터 팝업 현장예약까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 예약방법",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 위치",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 지구2호점",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 팝업",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "우주떡집 협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142651,
+  "programId": "EA202609080000",
+  "cached": false
+ },
+ "EA202609140420": {
+  "keywords": [
+   {
+    "keyword": "물에 빠진 아들",
+    "score": 6.8,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "물에빠진 아들을 구하는 꿈"
+    ]
+   },
+   {
+    "keyword": "종합편성표 예고편 kbs1",
+    "score": 5.8,
+    "confidence": 85,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.7.16.(목요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 메시 박진영 홍석천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.5.16. 토요일 TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ Dramax 첨밀밀 등려군",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "예고편 kbs1 kbs2",
+    "score": 5.8,
+    "confidence": 85,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.7.16.(목요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 메시 박진영 홍석천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.5.16. 토요일 TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ Dramax 첨밀밀 등려군",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "조선 jtbc mbn",
+    "score": 5.8,
+    "confidence": 85,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.7.16.(목요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 메시 박진영 홍석천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.5.16. 토요일 TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ Dramax 첨밀밀 등려군",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "빠진 아들 버리고",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "아들 버리고 나온",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "버리고 나온 엄마",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나온 엄마 스튜디오",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "엄마 스튜디오 발칵",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "박살난 모녀 관계",
+    "score": 4.0,
+    "confidence": 59,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이호선 떴다, 박살난 모녀 관계 해법 제시 (이호선 상담소)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "모녀 관계 해법",
+    "score": 4.0,
+    "confidence": 59,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이호선 떴다, 박살난 모녀 관계 해법 제시 (이호선 상담소)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "관계 해법 제시",
+    "score": 4.0,
+    "confidence": 59,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이호선 떴다, 박살난 모녀 관계 해법 제시 (이호선 상담소)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이호선 특단 조언",
+    "score": 4.0,
+    "confidence": 59,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이호선 떴다",
+    "score": 3.5,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "이호선 떴다, 박살난 모녀 관계 해법 제시 (이호선 상담소)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "obs dramax 하지원",
+    "score": 2.2,
+    "confidence": 32,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "dramax 하지원 임채무",
+    "score": 2.2,
+    "confidence": 32,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "하지원 임채무 허재",
+    "score": 2.2,
+    "confidence": 32,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "obs ihq 메시",
+    "score": 2.2,
+    "confidence": 32,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026.7.16.(목요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 메시 박진영 홍석천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "위기의 가족을 위한 관계 솔루션",
+   "cast": [],
+   "story": []
+  },
+  "docCount": 9,
+  "queries": [
+   "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 28회 협찬 제품",
+   "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 협찬 제품 어디",
+   "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 나온 상품 구매",
+   "이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 위기의 가족을 위한 관계 솔루션"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 28회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 나온 상품 구매): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(이호선 상담소: 호랑이 쌤의 1:1 밀착 솔루션! 위기의 가족을 위한 관계 솔루션): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[공지] 2026.9.5(토요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax 하지원 임채무 허재",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.7.16.(목요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ 메시 박진영 홍석천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "메가랜드 땅땅 TV > 검색결과 검색",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.5.16. 토요일 TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS iHQ Dramax 첨밀밀 등려군",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이호선 떴다, 박살난 모녀 관계 해법 제시 (이호선 상담소)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.7.20.(월요일) TV종합편성표 & 예고편 ♥ KBS1 KBS2 EBS1 tvN TV조선 JTBC MBN MBC SBS 채널A OBS Dramax",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "\"애는 또 낳으면 돼\" 물에 빠진 아들 버리고 나온 엄마… 스튜디오 발칵, 이호선의 특단 조언",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2872",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "서울특별시송파구_결과19.pdf",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142659,
+  "programId": "EA202609140420",
+  "cached": false
+ },
+ "EA202609080450": {
+  "keywords": [
+   {
+    "keyword": "잡학자들 선크림",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "마녀공장 파데프리 선크림",
+    "score": 10.2,
+    "confidence": 88,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "마녀공장 파데프리 선크림",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "마녀공장 파데프리 선크림",
+     "마녀공장 파데프리 선크림 성분",
+     "마녀공장 파데프리 선크림 냄새",
+     "마녀공장 파데프리 선크림 무기자차",
+     "마녀공장 파데프리 선크림 2개",
+     "마녀공장 파데프리 선크림 후기"
+    ]
+   },
+   {
+    "keyword": "잡학자들 코엔자임 q10",
+    "score": 7.5,
+    "confidence": 64,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "잡학자들 코엔자임 Q10",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "잡학자들 코엔자임 Q10",
+     "잡학자들 코엔자임 Q10 제품"
+    ]
+   },
+   {
+    "keyword": "잡학자들 지구",
+    "score": 6.75,
+    "confidence": 58,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "잡학자들 지구",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "잡학자들 지구"
+    ]
+   },
+   {
+    "keyword": "잡학자들 ott",
+    "score": 6.75,
+    "confidence": 58,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "잡학자들 ott",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "잡학자들 ott"
+    ]
+   },
+   {
+    "keyword": "잡학자들 dem",
+    "score": 6.75,
+    "confidence": 58,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "잡학자들dem",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "잡학자들dem"
+    ]
+   },
+   {
+    "keyword": "잡학자들편성표",
+    "score": 5.0,
+    "confidence": 43,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "잡학자들편성표",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "잡학자들편성표"
+    ]
+   },
+   {
+    "keyword": "ppl 문의",
+    "score": 2.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2025년 9월 .10월 .11월 방송예정 예능 안내 & PPL 문의",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "방송예정",
+    "score": 1.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2025년 9월 .10월 .11월 방송예정 예능 안내 & PPL 문의",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [],
+   "story": []
+  },
+  "docCount": 12,
+  "queries": [
+   "잡학자들 7화 협찬 제품",
+   "잡학자들 협찬 제품 어디",
+   "잡학자들 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(잡학자들 7화 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(잡학자들 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(잡학자들 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "마녀공장 파데프리 선크림",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2025년 9월 .10월 .11월 방송예정 예능 안내 & PPL 문의",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 출연진",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 코엔자임 Q10",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 지구",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 정보",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "잡학자들dem",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142662,
+  "programId": "EA202609080450",
+  "cached": false
+ },
+ "EA202609070800": {
+  "keywords": [
+   {
+    "keyword": "로제도르 라온플라워 옥반지",
+    "score": 8.2,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전지적 참견 시점",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점",
+     "전지적 참견 시점 재방송",
+     "전지적 참견 시점 편성표",
+     "전지적 참견 시점 회차정보",
+     "전지적 참견 시점 효연",
+     "전지적 참견 시점 리센느"
+    ]
+   },
+   {
+    "keyword": "참견 시점 효연",
+    "score": 4.2,
+    "confidence": 51,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "전지적 참견 시점 효연"
+    ]
+   },
+   {
+    "keyword": "도대체 어디 제품이야",
+    "score": 3.0,
+    "confidence": 37,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 2.8,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "시점 효연 숙소",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "평을 혼자 쓴다고",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "아인슈페너 맛집 다이닝코드",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "고퀄리티 편의점 간편식",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "편의점 간편식 best",
+    "score": 2.2,
+    "confidence": 27,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "정은지 운동",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "맛집 체크",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "재밌다고 난리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "임지연 패션",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "서인영 재산",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "통장 잔고",
+    "score": 2.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "맛집",
+    "승려",
+    "운동",
+    "임지연"
+   ],
+   "story": []
+  },
+  "docCount": 13,
+  "queries": [
+   "유 퀴즈 온 더 블럭 특별판 235회 협찬 제품",
+   "유 퀴즈 온 더 블럭 특별판 협찬 제품 어디",
+   "유 퀴즈 온 더 블럭 특별판 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(유 퀴즈 온 더 블럭 특별판 235회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(유 퀴즈 온 더 블럭 특별판 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(유 퀴즈 온 더 블럭 특별판 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김지윤(정치학자) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전지적 참견 시점 효연 숙소, 50평을 혼자 쓴다고?ㅣ414회 정은지 운동·맛집 체크",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "재밌다고 난리 난 멋진신세계 속 임지연 패션 \"도대체 어디 제품이야?\" 로제도르 라온플라워 옥반지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "서인영 재산 100억 원이라고? 통장 잔고 0원 고백과 현재 수입을 알아보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/122회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/108회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "카페그냥그냥 - 정릉 카페, 아인슈페너 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "민음사 굿즈, 빵보다 비싼 건 책갈피였다ㅣ20종·가격·구하는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전북인신문",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "고퀄리티 편의점 간편식 BEST 3, 시식 리뷰 😋",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "“연예계 대표 짠순이의 반전”…전원주, 2억 집이 42억 된 비결",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142721,
+  "programId": "EA202609070800",
+  "cached": false
+ },
+ "EA202609120545": {
+  "keywords": [
+   {
+    "keyword": "너의 몸소리가 들려 스니커즈",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "몸소리 들려 풀퍼널",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "들려 풀퍼널 전략",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "풀퍼널 전략 기반",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전략 기반 ppl",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "기반 ppl 전환",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "ppl 전환 구조",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전환 구조 사례",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "하이탑 메쉬 스니커즈",
+    "score": 8.2,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "메쉬 스니커즈 신고",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스니커즈 신고 춤추",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "너의 몸소리 들려",
+    "score": 4.63,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "너의 몸소리가 들려",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우수사례",
+    "score": 4.0,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "왼손 너의",
+    "score": 3.5,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추리 팔백원",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "해커톤 광탈 기념",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "게임 만들며 혼자",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "만들며 혼자 당선",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [],
+   "story": [
+    {
+     "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 19,
+  "queries": [
+   "너의 몸소리가 들려 42회 협찬 제품",
+   "너의 몸소리가 들려 협찬 제품 어디",
+   "너의 몸소리가 들려 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(너의 몸소리가 들려 42회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(너의 몸소리가 들려 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(너의 몸소리가 들려 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2013년 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "12월 새친구 가입인사 이벤트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🧀양산 말랑이 성지 발견! 말랑이 7종 현실 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아린 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "토니피터로 이혼했는데 어느 날 둘이 제대로 사고치는 거 보고싶다 04",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2022년 가족의 무게 | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "The Exodite - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "기이한 체험(최종백업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하오드너붕붕 다에몬 레아 딸로 빙의한 너붕붕 ㅂㄱㅅㄷ 어나더",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[DUGOUT x 컴투스프로야구] 한화 이글스 문동주",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[120kg→60kg] 60kg을 감량한 제 다이어트 이야기를 들려드릴게요",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "너의 몸소리가 들려",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142736,
+  "programId": "EA202609120545",
+  "cached": false
+ },
+ "EA202609090910": {
+  "keywords": [
+   {
+    "keyword": "식스센스: 시티투어 밀키트",
+    "score": 15.48,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 가방",
+    "score": 13.24,
+    "confidence": 86,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 코트",
+    "score": 12.6,
+    "confidence": 81,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스: 시티투어 니트",
+    "score": 12.6,
+    "confidence": 81,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "나왔던 폐방화복 가방",
+    "score": 10.8,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "추어파스타 밀키트",
+    "score": 10.3,
+    "confidence": 67,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "고경표 미미 코트",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "미미 코트 니트",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "코트 니트 가디건",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "니트 가디건 자켓",
+    "score": 10.0,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "장원영 자라 청바지",
+    "score": 8.2,
+    "confidence": 53,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "폐방화복 가방 배터리",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "가방 배터리 방화팩",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추어파스타 밀키트 후기",
+    "score": 7.8,
+    "confidence": 50,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "밀키트 구매",
+    "score": 7.3,
+    "confidence": 47,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "식스센스 시티투어",
+    "score": 7.11,
+    "confidence": 46,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[식스센스 시티투어 2 x 119REO] 복권 1등의 불티나는 트렌드 OON : 119REO - Rescue Each Other",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "식스센스 시티투어2 성수 19 어른 디저트 바 초코 타르트 시가 휘낭시에",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "가디건 자켓 패션",
+    "score": 7.0,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "자라 청바지 mlb",
+    "score": 5.2,
+    "confidence": 34,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [],
+   "story": [
+    {
+     "text": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 19,
+  "queries": [
+   "식스센스: 시티투어 7회 협찬 제품",
+   "식스센스: 시티투어 협찬 제품 어디",
+   "식스센스: 시티투어 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(식스센스: 시티투어 7회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(식스센스: 시티투어 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(식스센스: 시티투어 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어 7회 옷 하윤경 강기영 유재석 송은이 고경표 미미 코트 니트 가디건 자켓 패션",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "송도 센트럴파크 베이커리 카페 빵쌤, 전망 보며 아이와 쉬어가기 좋은 곳",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 옷 화제 이유, 폐방화복 업사이클링 의류 직접 보니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "보던 사람 다 놀란 워터밤 비비 '탈의 퍼포먼스', 어땠길래?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "장원영 자라 청바지 MLB 시구, 5만 원짜리가 완판된 진짜 이유",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스(예능) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[식스센스 시티투어 2 x 119REO] 복권 1등의 불티나는 트렌드 OON : 119REO - Rescue Each Other",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 성수 19 어른 디저트 바 초코 타르트 시가 휘낭시에",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유재석 ‘식스센스’에도 나왔던 폐방화복…가방부터 배터리 방화팩까지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "가습기살균제 피해지원종합포탈 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "목욕탕실내포차 - 전농동 포차, 술집 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 추어탕 파스타 매장 위치와 밀키트 구매 방법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "스트리트 파이터 6/월드 투어 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "의정부 카페 \"달리온\" / 식스센스 시티투어 나온 베이커리 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "식스센스 시티투어2 헤이리 편, 추어파스타 밀키트 후기, 그 맛은?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "세부 시티투어 집나간햄지님도 다녀온 가이드 포함 단독차량 자유여행 코스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "안동시티투어 예약 50%할인 만휴정&봉정사 코스후기",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "식스센스: 시티투어",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142749,
+  "programId": "EA202609090910",
+  "cached": false
+ },
+ "EA202609071220": {
+  "keywords": [
+   {
+    "keyword": "퀴즈",
+    "score": 33.6,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "넌센스퀴즈",
+     "퀴즈노스",
+     "유 퀴즈 온 더 블럭",
+     "쏠퀴즈",
+     "유퀴즈",
+     "토스 행운퀴즈"
+    ]
+   },
+   {
+    "keyword": "블럭",
+    "score": 33.0,
+    "confidence": 98,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "블럭",
+     "블럭장난감",
+     "유 퀴즈 온 더 블럭",
+     "블럭제빵소",
+     "디폼블럭",
+     "넘버블럭스"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 셋업",
+    "score": 12.28,
+    "confidence": 37,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김태희 민트색 셋업",
+    "score": 9.0,
+    "confidence": 27,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "협찬",
+    "score": 8.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 사이트",
+     "블로그 협찬",
+     "협찬",
+     "협찬플러스",
+     "인스타 협찬",
+     "블로그 협찬 문구"
+    ]
+   },
+   {
+    "keyword": "어디꺼",
+    "score": 6.8,
+    "confidence": 20,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "챗지피티 어디꺼",
+     "빽다방 두유 어디꺼",
+     "공차 어디꺼",
+     "볼보 어디꺼",
+     "아웃백 어디꺼",
+     "스타필드 어디꺼"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 협찬 가이드",
+    "score": 4.8,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 오디세",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 오디세이",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 조세호",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 조세호",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 송강",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 송강",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 4.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "간접광고 ppl",
+    "score": 4.3,
+    "confidence": 13,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 온더 블럭",
+    "score": 4.2,
+    "confidence": 12,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "발전 알아본 협찬",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "알아본 협찬 마케팅",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "세계 제빵 월드컵",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "승려",
+    "땅값",
+    "면적",
+    "명품",
+    "유퀴즈",
+    "이정은"
+   ],
+   "story": [
+    {
+     "text": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+     "url": ""
+    },
+    {
+     "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 28,
+  "queries": [
+   "유퀴즈온더블럭 358회 협찬 제품",
+   "유퀴즈온더블럭 협찬 제품 어디",
+   "유퀴즈온더블럭 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 358회 협찬 제품): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 협찬 제품 어디): HTTP Error 403: Forbidden",
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 나온 상품 구매): HTTP Error 403: Forbidden"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "핑계고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인사픽뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "패션아카이브",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이정은 “5000만원 빚 갚느라 알바”…녹즙 배달→마트 판매왕까지 [TVis] (유퀴즈)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "매일매일꿀팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "임채무 두리랜드｜입장료·위치·면적·땅값·프로필·나이·유퀴즈",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "주식 중독 자가 진단 테스트 13가지 (유퀴즈 정신과 의사 기준) - All Honey Tip",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 예고",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 오디세이",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 조세호",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 357회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 359회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 송강",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142756,
+  "programId": "EA202609071220",
+  "cached": false
+ },
+ "EA202609071630": {
+  "keywords": [
+   {
+    "keyword": "포핸즈 ott",
+    "score": 6.75,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "포핸즈 ott",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "포핸즈 ott",
+     "드라마 포핸즈 ott",
+     "포핸즈 ott 시간",
+     "포핸즈 ott 몇시",
+     "포핸즈 ott 업로드",
+     "포핸즈 ott 넷플릭스"
+    ]
+   },
+   {
+    "keyword": "포핸즈협찬",
+    "score": 5.0,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "포핸즈협찬",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "포핸즈협찬"
+    ]
+   },
+   {
+    "keyword": "협찬 제품",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 제품제공 차이",
+     "협찬 제품제공"
+    ]
+   },
+   {
+    "keyword": "인기",
+    "score": 3.6,
+    "confidence": 53,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "인기가요",
+     "SBS 인기가요",
+     "인기 드라마 순위",
+     "인기가요 1위",
+     "인기통",
+     "인기차트"
+    ]
+   },
+   {
+    "keyword": "힙한 ceo 스타일",
+    "score": 3.0,
+    "confidence": 44,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "패션 홍보대행사 에이전시커넥션",
+    "score": 2.2,
+    "confidence": 33,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "홍보대행사 에이전시커넥션 데일리",
+    "score": 2.2,
+    "confidence": 33,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "한소희 디올 패션",
+    "score": 2.2,
+    "confidence": 33,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "라인업",
+    "score": 1.6,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "디올"
+   ],
+   "story": []
+  },
+  "docCount": 14,
+  "queries": [
+   "포핸즈 3화 협찬 제품",
+   "포핸즈 의상 협찬 어디",
+   "포핸즈 착용 가방 주얼리"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "드라마 포핸즈",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 bl",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 뜻",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 원작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 드라마",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142831,
+  "programId": "EA202609071630",
+  "cached": false
  }
 }

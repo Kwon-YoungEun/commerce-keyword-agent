@@ -411,7 +411,10 @@ function renderSummaryBox(tvn, analysis) {
       );
     }
     if (tvn && tvn.available) {
-      footer = "이 회차 미리보기는 tvN 에 아직 없어요.";
+      if (tvn.broadcast) lines.unshift(escapeHtml(tvn.broadcast));
+      footer = tvn.hasPreviews
+        ? "이 회차 미리보기는 tvN 에 없어요. (최근 회차만 제공됩니다)"
+        : "tvN 에 회차 미리보기가 없는 프로그램이에요.";
     } else if (lines.length) {
       footer = "검색 결과에서 모은 내용입니다.";
     }
@@ -420,7 +423,7 @@ function renderSummaryBox(tvn, analysis) {
   if (lines.length) {
     rows.push(
       '<div class="sum-row"><span class="sum-key">내용</span>' +
-      '<span class="sum-val">' + lines.join("<br>") + "</span></div>"
+      '<span class="sum-val">' + lines.slice(0, 3).join("<br>") + "</span></div>"
     );
   }
 

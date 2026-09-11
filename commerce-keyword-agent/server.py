@@ -531,13 +531,15 @@ def fetch_program_page(slug):
     data = _next_data(html_text)
     fallback = data.get("props", {}).get("pageProps", {}).get("fallback", {}) or {}
 
-    cast, previews = [], []
+    cast, previews, broadcast = [], [], ""
     for value in fallback.values():
         if not isinstance(value, dict):
             continue
         node = value.get("data")
         if not isinstance(node, dict):
             continue
+        if not broadcast and isinstance(node.get("bdTm"), str):
+            broadcast = node["bdTm"].strip()
         for person in node.get("simplePrsnInfoList") or []:
             name = (person or {}).get("prsnNm")
             if name and name not in cast:
@@ -553,7 +555,7 @@ def fetch_program_page(slug):
                 "episode": (EPISODE_NO_RE.search(title).group(1)
                             if EPISODE_NO_RE.search(title) else ""),
             })
-    return {"cast": cast, "previews": previews}
+    return {"cast": cast, "previews": previews, "broadcast": broadcast}
 
 
 def load_program_page(slug, force=False):
@@ -566,7 +568,7 @@ def load_program_page(slug, force=False):
     except Exception as exc:
         if hit:
             return hit
-        return {"cast": [], "previews": [], "error": str(exc)}
+        return {"cast": [], "previews": [], "broadcast": "", "error": str(exc)}
     fetched["fetchedAt"] = int(time.time())
     with _store_lock:
         cache = _read_json(PREVIEW_CACHE, {})
@@ -651,10 +653,12 @@ def build_program_summary(program, store):
         chosen = page["previews"][0]
 
     return {
-        "available": bool(page.get("cast") or chosen),
+        "available": bool(page.get("cast") or chosen or page.get("broadcast")),
         "slug": slug,
         "url": "https://tvn.cjenm.com/ko/%s/" % slug,
         "cast": (page.get("cast") or [])[:8],
+        "broadcast": page.get("broadcast", ""),
+        "hasPreviews": bool(page.get("previews")),
         # 회차가 일치할 때만 본문을 내보냅니다. 다른 회차 내용을 이 회차인 것처럼
         # 보여 주지 않기 위해서입니다.
         # 회차가 일치할 때만 본문을 내보냅니다. 다른 회차 내용을 이 회차인 것처럼
