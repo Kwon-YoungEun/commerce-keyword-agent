@@ -313,12 +313,12 @@ function render() {
 /* ----------------------------------------------------------------- 팝업 */
 
 const SOURCE_LABEL = {
-  "duckduckgo": "웹검색",
-  "daum": "웹문서",
-  "daum-ad": "검색광고",
-  "naver-ac": "자동완성",
-  "광고키워드": "검색광고 조합",
-  "조합": "프로그램 조합",
+  preview: "tvN 공식 미리보기",
+  clip: "tvN 공식 클립",
+  news: "뉴스",
+  ad: "검색광고",
+  autocomplete: "자동완성",
+  web: "웹문서",
 };
 
 function openProgram(p) {
@@ -458,13 +458,15 @@ function renderKeywords(analysis) {
     el.className = "kw" + (k.shoppable ? "" : " is-generic");
     el.dataset.keyword = k.keyword;
 
-    const srcText = (k.sources || []).map((s) => SOURCE_LABEL[s] || s).join(" · ");
+    const srcText = (k.kinds || k.sources || []).map((s) => SOURCE_LABEL[s] || s).join(" · ");
     el.innerHTML =
       `<div class="kw-main">` +
       `<div class="kw-name">${escapeHtml(k.keyword)}</div>` +
       `<div class="kw-sub">${escapeHtml(srcText)}${k.demand && k.demand.length ? " · 검색수요 확인" : ""}</div>` +
       `</div>` +
       `<div class="kw-side">` +
+      (k.official ? '<span class="kw-tag is-official">공식</span>' : "") +
+      (k.crossChecked ? '<span class="kw-tag is-cross">교차확인</span>' : "") +
       (k.demand && k.demand.length ? '<span class="demand-tag">수요✓</span>' : "") +
       `<span class="cat cat-${k.category}">${k.category}</span>` +
       `<span class="score-bar" title="추천도 ${k.confidence}%"><i style="width:${k.confidence}%"></i></span>` +

@@ -85,7 +85,9 @@ STOPWORDS = set(
     촬영지 촬영장 도전 원작 몇부작 등장인물 인물관계도 결말 스포 스포일러 줄거리 명대사 종합
     방영일 종영 첫방송 마지막회 최종회 시즌제 채널 실시간 스트리밍 자막 더빙 무료보기 사장 대표
     프로필 나이 학력 열애 결혼 소속사 팬미팅 논란 인정 종결 호불호 진화 완벽 만원 가지 부분
-    재방송 본방송 몇시 시청방법 편성시간 모음 정리본 유료광고포함 유료광고 highlight shorts""".split()
+    재방송 본방송 몇시 시청방법 편성시간 모음 정리본 유료광고포함 유료광고 highlight shorts
+    있는 없는 하는 되는 같은 나오는 들어간 품은 감싸 하시 거예요 이런 저런 그런 지금 여기 거기
+    지구급 극강 화려한 시끌벅적 유쾌한 부드러움 감칠맛 맛으 향긋한 폭발 매콤새콤""".split()
 )
 
 JOSA = [
@@ -119,9 +121,10 @@ KIND_WEIGHT = {
     "web": 1.2,           # 그 밖의 웹문서
 }
 CROSS_BONUS = 7.0       # 서로 다른 자료에서 또 확인될 때마다
-EMPHASIS_BONUS = 6.0    # 공식 자료에서 따옴표 등으로 강조된 말
-PRODUCT_TAIL_BONUS = 6.0
-PRODUCT_IN_BONUS = 3.0
+EMPHASIS_BONUS = 14.0   # 공식 자료에서 따옴표 등으로 강조된 말 = 사실상 정답
+PRODUCT_TAIL_BONUS = 8.0
+PRODUCT_IN_BONUS = 5.0
+NON_PRODUCT_PENALTY = 0.22   # 상품으로 볼 수 없는 말은 크게 낮춥니다.
 PPL_BONUS = 3.0
 NEWS_WINDOW_DAYS = 10   # 방송일에서 이만큼 떨어진 기사는 낮게 봅니다.
 
@@ -265,6 +268,11 @@ def is_bad_token(tok):
 
 
 def categorize(phrase):
+    """상품어 사전과 맞춰 봅니다.
+
+    '재첩전', '가브리살수육', '재첩크림수프' 처럼 상품어가 말 안쪽에 섞여 있는
+    경우가 많아, 두 글자 이상 상품어는 포함 여부까지 봅니다.
+    """
     tokens = phrase.split()
     for token in tokens:
         cat = PRODUCT_TERMS.get(token)
@@ -273,6 +281,12 @@ def categorize(phrase):
     for token in tokens:
         for word in SPLITTABLE_TERMS:
             if len(token) > len(word) and token.endswith(word):
+                return PRODUCT_TERMS[word]
+    for token in tokens:
+        if len(token) < 3:
+            continue
+        for word in SPLITTABLE_TERMS:
+            if len(word) >= 2 and word in token:
                 return PRODUCT_TERMS[word]
     return ""
 
@@ -297,6 +311,22 @@ def split_commerce_keyword(text):
     return None
 
 
+# 따옴표 안이라도 대사·감탄사는 상품이 아닙니다.
+SPEECH_TAIL_RE = re.compile(r"(요|다|야|죠|네|까|군|잖아|는데|던데|았어|었어|해요|예요|이에요)$")
+SPEECH_NOISE_RE = re.compile(r"[ㄱ-ㅎㅏ-ㅣ]|(.)\1{2,}")
+
+
+def looks_like_speech(text):
+    """'미쿡 왔어요 제니카예요', '으아아아아악' 같은 대사·감탄사인지."""
+    compact = norm_compact(text)
+    if not compact:
+        return True
+    if SPEECH_NOISE_RE.search(compact):
+        return True
+    last = text.split()[-1] if text.split() else ""
+    return bool(SPEECH_TAIL_RE.search(last))
+
+
 def extract_emphasis(lines):
     """공식 자료에서 따옴표·괄호로 강조된 말. 화제 상품이 여기 들어 있습니다."""
     found = []
@@ -310,9 +340,11 @@ def extract_emphasis(lines):
                     piece = piece.strip(" '\"‘’“”")
                     if not piece or not HANGUL_RE.search(piece):
                         continue
+                    if looks_like_speech(piece):
+                        continue
                     toks = [strip_josa(t) for t in TOKEN_RE.findall(piece)]
                     toks = [t for t in toks if not is_bad_token(t)]
-                    if toks:
+                    if toks and len(toks) <= 3:
                         found.append(" ".join(toks))
     return found
 
@@ -373,6 +405,9 @@ def extract_keywords(program, docs, official=None, top_n=18):
     name = short_title(program.get("programName") or title)
     title_tokens = {strip_josa(t) for t in TOKEN_RE.findall(title + " " + name)}
     air_ts = program.get("startTs") or 0
+    # 출연진 이름은 그 자체로는 살 수 없는 말이라 단독으로는 빼고,
+    # '염정아 모자' 처럼 상품어와 붙은 것만 남깁니다.
+    cast_names = {c.strip() for c in (official.get("cast") or []) if c and c.strip()}
 
     scores = defaultdict(float)
     kinds = defaultdict(set)
@@ -443,26 +478,54 @@ def extract_keywords(program, docs, official=None, top_n=18):
         score += CROSS_BONUS * (cross - 1)          # 여러 자료에서 확인될수록 크게 올림
 
         if cat:
-            score += PRODUCT_TAIL_BONUS if ends_with_product(phrase) else PRODUCT_IN_BONUS
-        if phrase in emphasized:
-            cat = cat or "기타"
+            if ends_with_product(phrase):
+                score += PRODUCT_TAIL_BONUS
+            elif len(toks) >= 3:
+                continue          # '통닭 변신 무죄' 같은 문장 토막은 버립니다.
+            else:
+                score = score * 0.6 + PRODUCT_IN_BONUS
         if len(toks) == 1 and phrase in PRODUCT_TERMS:
             score *= 0.55                            # '모자' 처럼 너무 넓은 말
         if all(t in title_tokens for t in toks):
             score *= 0.3
         if len(toks) >= 2:
             score += 1.0
+
+        # 출연진 이름만 있는 말, 대사로 보이는 말은 제외합니다.
+        if toks and all(t in cast_names for t in toks):
+            continue
+        if looks_like_speech(phrase):
+            continue
+        if any(t in cast_names for t in toks) and cat:
+            score += 4.0                             # '염정아 모자' 같은 조합은 우대
+
+        # 상품으로 볼 수 없는 말은 크게 낮춥니다(사람·장소·일반어).
+        if not cat:
+            if phrase in emphasized:
+                score *= 0.7
+            else:
+                score *= NON_PRODUCT_PENALTY
+
         # 공식 자료에도 없고 상품어도 아니고 한 곳에서만 나온 말은 버립니다.
         if cross <= 1 and not cat and not (kinds[phrase] & {"preview", "clip"}):
             continue
         results.append((phrase, score, cat, sorted(kinds[phrase])))
 
-    results.sort(key=lambda x: -x[1])
+    # 상품으로 볼 수 있는 것을 먼저, 그 밖의 말은 뒤에 조금만 둡니다.
+    results.sort(key=lambda x: (0 if x[2] else 1, -x[1]))
 
-    kept = []
+    kept, others = [], 0
     for phrase, score, cat, ks in results:
+        # 이미 뽑은 키워드를 감싸기만 한 긴 조각은 버립니다.
+        # ('통닭' 을 뽑았으면 '맛으 수원 통닭' 은 문장 토막으로 봅니다)
         if any(phrase in k and score <= s * 1.6 for k, s, _, _ in kept):
             continue
+        if any(k in phrase and score <= s for k, s, _, _ in kept):
+            continue
+        if not cat:
+            if others >= 3:
+                continue
+            others += 1
         kept.append((phrase, score, cat, ks))
         if len(kept) >= top_n:
             break

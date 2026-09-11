@@ -640,3 +640,9 @@ button.cat.cat-none { border-style: dashed; border-color: var(--border); }
 .sum-val a:hover { color: var(--skb-red); }
 .sum-note { margin: 8px 0 0; font-size: 11px; color: var(--text-secondary); }
 
+
+.kw-tag {
+  font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; white-space: nowrap;
+}
+.kw-tag.is-official { background: #FDE7EB; color: var(--skb-red); }
+.kw-tag.is-cross { background: #E8F3EC; color: var(--status-good); }

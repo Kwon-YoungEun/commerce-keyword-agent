@@ -868,12 +868,13 @@ def collect_official_material(program, store):
 
     회차가 맞는 것만 씁니다. 다른 회차 내용이 섞이면 엉뚱한 상품이 올라옵니다.
     """
-    out = {"preview": [], "clips": [], "ppl": False}
+    out = {"preview": [], "clips": [], "cast": [], "ppl": False}
     slug = resolve_slug(program, store)
     if not slug:
         return out
 
     page = load_program_page(slug)
+    out["cast"] = list(page.get("cast") or [])
     episode_no = ""
     m = EPISODE_NO_RE.search(program.get("episode") or "")
     if m:
