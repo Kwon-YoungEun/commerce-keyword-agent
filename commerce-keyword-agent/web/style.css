@@ -639,3 +639,4 @@ button.cat.cat-none { border-style: dashed; border-color: var(--border); }
 .sum-val a { color: var(--text-primary); }
 .sum-val a:hover { color: var(--skb-red); }
 .sum-note { margin: 8px 0 0; font-size: 11px; color: var(--text-secondary); }
+

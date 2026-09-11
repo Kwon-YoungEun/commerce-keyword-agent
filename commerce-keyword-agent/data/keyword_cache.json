@@ -11267,5 +11267,573 @@
   "analyzedAt": 1789141960,
   "programId": "EA202609070555",
   "cached": false
+ },
+ "EA202609140055": {
+  "keywords": [
+   {
+    "keyword": "놀라운 토요일 선물세트",
+    "score": 12.28,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "민니 입은 후드집업",
+    "score": 9.0,
+    "confidence": 73,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "빅마우스",
+     "빅마우스 드라마",
+     "빅마우스 정체",
+     "빅마우스 결말",
+     "빅마우스 뜻",
+     "빅마우스 ott"
+    ]
+   },
+   {
+    "keyword": "추천",
+    "score": 8.0,
+    "confidence": 65,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "책 추천",
+     "넷플릭스 추천",
+     "돈키호테 추천템",
+     "영화 추천",
+     "저녁메뉴 추천",
+     "성심당 빵 추천"
+    ]
+   },
+   {
+    "keyword": "놀라운 토요일 시아",
+    "score": 7.5,
+    "confidence": 61,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 시아",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "놀라운 토요일 시아"
+    ]
+   },
+   {
+    "keyword": "입은 후드집업 어디꺼야",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트 추천",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 햇님",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 햇님",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 회차정보",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 회차정보",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 셰프",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 셰프",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 태연",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 태연",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스 라방 검색하니까",
+    "score": 5.2,
+    "confidence": 42,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 나온",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "토요일 나온 예당떡마",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나온 예당떡마 다녀왔어요",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "양산떡집 추천",
+    "score": 4.3,
+    "confidence": 35,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "월의 영현",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 4월의 영현이🦊🐱",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026년 4월의 영현이🦊🐱",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "답례품",
+    "일산"
+   ],
+   "story": [
+    {
+     "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+     "url": ""
+    },
+    {
+     "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 28,
+  "queries": [
+   "놀라운 토요일 434회 협찬 제품",
+   "놀라운 토요일 협찬 제품 어디",
+   "놀라운 토요일 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 4월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티파니 영 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "네이버",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이효리가 방송에서 대놓고 농심 '새우깡' 집어 먹자..",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흥흥제과 가경점 - 청주 타르트, 에그타르트 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "동대문디자인플라자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "KEY(SHINee) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 4월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구맛집 - 대구 아이랑 외식은 우리동네한우맛집 고기꿉자 범어점에서👍",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "KEY(SHINee) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "힐러 평가는 긍정적! 월드 경쟁 시작된 GENESIS 업데이트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "오데마 피게 x 스와치 ‘로열 펍’을 사려면 며칠 전에 줄을 서야 할까? 6일",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 시아",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 햇님",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 회차정보",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 셰프",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 출연진",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 태연",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 게스트",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142001,
+  "programId": "EA202609140055",
+  "cached": false
  }
 }

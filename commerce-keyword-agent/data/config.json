@@ -1,0 +1,4 @@
+{
+ "storeSearchUrl": "https://search.shopping.naver.com/ns/search?query={keyword}",
+ "registerApiUrl": ""
+}
