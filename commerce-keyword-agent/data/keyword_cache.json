@@ -18888,5 +18888,1726 @@
   "analyzedAt": 1789142831,
   "programId": "EA202609071630",
   "cached": false
+ },
+ "EA202609092300": {
+  "keywords": [
+   {
+    "keyword": "남겨서",
+    "score": 15.2,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 인천 한우풀코스 정육식당",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "남겨서뭐하게",
+     "남겨서뭐하게 게장",
+     "남겨서뭐하게 파주",
+     "남겨서뭐하게 민어",
+     "남겨서뭐하게 한우",
+     "남겨서뭐하게 맛집"
+    ]
+   },
+   {
+    "keyword": "뭐하게",
+    "score": 15.2,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 인천 한우풀코스 정육식당",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "남겨서뭐하게",
+     "남겨서뭐하게 게장",
+     "남겨서뭐하게 민어",
+     "남겨서뭐하게 맛집",
+     "남겨서뭐하게 파주",
+     "남겨서뭐하게 여수"
+    ]
+   },
+   {
+    "keyword": "맛집",
+    "score": 12.2,
+    "confidence": 80,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서뭐하게 신당동 고추장꾸덕닭발 날계란볶음밥 감자전 맛집｜고추냉이 마요소스",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 민어 맛집, 인천 신포 화선 횟집 - 차화연 차재이 이영자 박세리편",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "맛집",
+     "근처 맛집",
+     "당골집2(당신의 골목 맛집)",
+     "내주변맛집",
+     "주변맛집",
+     "대전 맛집"
+    ]
+   },
+   {
+    "keyword": "마곡 된장전골 옥된장",
+    "score": 10.0,
+    "confidence": 66,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "차화연",
+    "score": 9.8,
+    "confidence": 64,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 민어 맛집, 인천 신포 화선 횟집 - 차화연 차재이 이영자 박세리편",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "'남겨서 뭐하게', 차화연·차재이 모녀 사로잡은 한 상 공개 \"인천 신포동의 명물 제철 민어\"",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "이영자·박세리 추천 '인천 신포동 민어'… 차화연 모녀 극찬한 57회 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "차화연",
+     "차화연 나무위키",
+     "차화연 차재이",
+     "차화연 배우자",
+     "차화연프로필",
+     "차화연 최대현"
+    ]
+   },
+   {
+    "keyword": "맛집 고추냉 마요소스",
+    "score": 8.2,
+    "confidence": 54,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서뭐하게 신당동 고추장꾸덕닭발 날계란볶음밥 감자전 맛집｜고추냉이 마요소스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "된장전골 옥된장 수육전골",
+    "score": 7.0,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "옥된장 수육전골 소고기삼겹",
+    "score": 7.0,
+    "confidence": 46,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "이영자",
+    "score": 6.8,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 민어 맛집, 인천 신포 화선 횟집 - 차화연 차재이 이영자 박세리편",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[tvn 남겨서 뭐하게 59회]오늘의 목적지 남양주ㅣ이영자x박세리의 '가을 제철 한 상'ㅣ월 매출 5억ㅣ간장게장, 양념게장ㅣ이종범, 이동국ㅣ낭만별식 남양주장어맛집...",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "인천",
+    "score": 6.8,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 인천 한우풀코스 정육식당",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "남겨서 뭐하게 민어 맛집, 인천 신포 화선 횟집 - 차화연 차재이 이영자 박세리편",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "'남겨서 뭐하게', 차화연·차재이 모녀 사로잡은 한 상 공개 \"인천 신포동의 명물 제철 민어\"",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "박세리",
+    "score": 6.4,
+    "confidence": 42,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[tvn 남겨서 뭐하게 59회]오늘의 목적지 남양주ㅣ이영자x박세리의 '가을 제철 한 상'ㅣ월 매출 5억ㅣ간장게장, 양념게장ㅣ이종범, 이동국ㅣ낭만별식 남양주장어맛집...",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "이영자·박세리 추천 '인천 신포동 민어'… 차화연 모녀 극찬한 57회 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "박세리 추천",
+    "score": 6.1,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "이영자·박세리 추천 '인천 신포동 민어'… 차화연 모녀 극찬한 57회 맛집",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 간장게장",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 간장게장",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 이종범",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 이종범",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 된장전골",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 된장전골",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 맛집",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 맛집",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 파주",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 파주",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "남겨서 뭐하게 우대갈비",
+    "score": 5.5,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "남겨서 뭐하게 우대갈비",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "이영자 X 박세리의 ‘가을 제철 한 상’",
+   "cast": [
+    "박세리",
+    "이영자",
+    "차재이",
+    "차화연"
+   ],
+   "story": [
+    {
+     "text": "[tvn 남겨서 뭐하게 59회]오늘의 목적지 남양주ㅣ이영자x박세리의 '가을 제철 한 상'ㅣ월 매출 5억ㅣ간장게장, 양념게장ㅣ이종범, 이동국ㅣ낭만별식 남양주장어맛집...",
+     "url": ""
+    },
+    {
+     "text": "남겨서뭐하게 신당동 고추장꾸덕닭발 날계란볶음밥 감자전 맛집｜고추냉이 마요소스",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 34,
+  "queries": [
+   "남겨서 뭐하게 59회 협찬 제품",
+   "남겨서 뭐하게 협찬 제품 어디",
+   "남겨서 뭐하게 나온 상품 구매",
+   "남겨서 뭐하게 이영자 X 박세리의 ‘가을 제철 한 상’"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(남겨서 뭐하게 협찬 제품 어디): [WinError 10054] 현재 연결은 원격 호스트에 의해 강제로 끊겼습니다",
+   "DuckDuckGo 검색 실패(남겨서 뭐하게 나온 상품 구매): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(남겨서 뭐하게 이영자 X 박세리의 ‘가을 제철 한 상’): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TNGT LF몰 라이브 키노시타 시어서커, 옴므플리세맛 요요기 플리츠 직접 입어본 것들 (스압/TMI 주의) - 패션 - 에펨코리아",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "윤대국 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[부업사기] 협찬 리뷰 댓글 알바 사기 당할뻔함",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "앱솔루트 센서티브 4월 체험단 모집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "전북일보 인터넷신문",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서뭐하게 신당동 고추장꾸덕닭발 날계란볶음밥 감자전 맛집｜고추냉이 마요소스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이녕/방송 콘텐츠/먹방 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "곽튜브 아내 공무원인데…'2500만원' 조리원 협찬 논란 : 클리앙",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[부업사기] 협찬 리뷰 댓글 알바 사기 당할뻔함",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서 뭐하게 뼈찜 어디길래? 이영자·박세리 추천 무쇠뼈찜 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "리세마라 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서 뭐하게 인천 한우풀코스 정육식당",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서 뭐하게 마곡 된장전골 옥된장 수육전골과 소고기삼겹 메뉴",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인벤",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TNGT LF몰 라이브 키노시타 시어서커, 옴므플리세맛 요요기 플리츠 직접 입어본 것들 (스압/TMI 주의) - 패션 - 에펨코리아",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서 뭐하게 민어 맛집, 인천 신포 화선 횟집 - 차화연 차재이 이영자 박세리편",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[tvn 남겨서 뭐하게 59회]오늘의 목적지 남양주ㅣ이영자x박세리의 '가을 제철 한 상'ㅣ월 매출 5억ㅣ간장게장, 양념게장ㅣ이종범, 이동국ㅣ낭만별식 남양주장어맛집...",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "남겨서뭐하게 생새우회 대맛조개탕 가을제철한상 송파구 방이동 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "'남겨서 뭐하게', 차화연·차재이 모녀 사로잡은 한 상 공개 \"인천 신포동의 명물 제철 민어\"",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이영자·박세리 추천 '인천 신포동 민어'… 차화연 모녀 극찬한 57회 맛집",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진 = tvN STORY '남겨서 뭐하게'",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "정선희 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 간장게장",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 이종범",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 된장전골",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 맛집",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 파주",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 우대갈비",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 방이동",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 차화연",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "남겨서 뭐하게 대맛조개탕",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789143165,
+  "programId": "EA202609092300",
+  "cached": false
+ },
+ "EA202609110455": {
+  "keywords": [
+   {
+    "keyword": "요금제 비교",
+    "score": 5.5,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "더 시크릿|시간관찰자| 더 시크릿 다시보기. 웨이브 요금제 비교와 무료 이용 팁",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "알뜰요금제 비교",
+     "요금제 비교",
+     "알뜰폰 요금제 비교",
+     "클로드 요금제 비교",
+     "통신사 요금제 비교",
+     "챗지피티 요금제 비교"
+    ]
+   },
+   {
+    "keyword": "신규 세계선 루트",
+    "score": 3.0,
+    "confidence": 55,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "스타인즈 게이트 리부트 스팀 출시, 신규 세계선 루트와 10퍼센트 할인 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "기내 고데기 잘하",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "기내에 고데기 잘하는 분 안 계십니까?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "기획자 바꾸 질문",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이를 시청자에서 기획자로 바꾸는 질문",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "조쉬 솔로프리너 skt",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "조쉬 솔로프리너 — SKT 출신, 저·중·고가 실험, 월 5000만의 의미",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "솔로프리너 skt 출신",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "조쉬 솔로프리너 — SKT 출신, 저·중·고가 실험, 월 5000만의 의미",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "스타인즈 게이트 리부트",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "스타인즈 게이트 리부트 스팀 출시, 신규 세계선 루트와 10퍼센트 할인 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "게이트 리부트 스팀",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "스타인즈 게이트 리부트 스팀 출시, 신규 세계선 루트와 10퍼센트 할인 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "리부트 스팀 출시",
+    "score": 2.2,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "스타인즈 게이트 리부트 스팀 출시, 신규 세계선 루트와 10퍼센트 할인 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "시크릿",
+    "score": 2.1,
+    "confidence": 38,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "더 시크릿|시간관찰자| 더 시크릿 다시보기. 웨이브 요금제 비교와 무료 이용 팁",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "더 시크릿|시간관찰자| 더 시크릿 다시보기. 웨이브 요금제 비교와 무료 이용 팁",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "시간관찰자: 더 시크릿",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "변우석 서울",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026 변우석 서울 팬미팅 관람후기, 굿즈깡, 하이바이후기 실물",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "하이바이후기 실물",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026 변우석 서울 팬미팅 관람후기, 굿즈깡, 하이바이후기 실물",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "판토텐산 효능",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "판토텐산 효능! 비타민 B5 효과·복용법·부작용·많은 음식까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "많은 음식",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "판토텐산 효능! 비타민 B5 효과·복용법·부작용·많은 음식까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "채리엇 레퀴엠",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "채리엇 레퀴엠 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "역사 바꾼",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "'AI 고전, 역사를 바꾼 100책' 유한계급론",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "국립극장 계절시장",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2025 국립극장 계절시장 <아트 인 어텀> 10월",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "고가 실험",
+    "score": 2.0,
+    "confidence": 36,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "조쉬 솔로프리너 — SKT 출신, 저·중·고가 실험, 월 5000만의 의미",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "많은",
+    "복용법",
+    "부작용",
+    "효과"
+   ],
+   "story": []
+  },
+  "docCount": 14,
+  "queries": [
+   "시간관찰자, 더 시크릿 9화 협찬 제품",
+   "시간관찰자, 더 시크릿 협찬 제품 어디",
+   "시간관찰자, 더 시크릿 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(시간관찰자, 더 시크릿 9화 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(시간관찰자, 더 시크릿 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(시간관찰자, 더 시크릿 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "HERO(일본 드라마)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유사과학 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026 변우석 서울 팬미팅 관람후기, 굿즈깡, 하이바이후기 실물",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "기내에 고데기 잘하는 분 안 계십니까?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "판토텐산 효능! 비타민 B5 효과·복용법·부작용·많은 음식까지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이를 시청자에서 기획자로 바꾸는 질문",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "05 19 00 LG생활건강",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "더 시크릿|시간관찰자| 더 시크릿 다시보기. 웨이브 요금제 비교와 무료 이용 팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "채리엇 레퀴엠 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "'AI 고전, 역사를 바꾼 100책' 유한계급론",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2025 국립극장 계절시장 <아트 인 어텀> 10월",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "조쉬 솔로프리너 — SKT 출신, 저·중·고가 실험, 월 5000만의 의미",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "스타인즈 게이트 리부트 스팀 출시, 신규 세계선 루트와 10퍼센트 할인 정보",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "시간관찰자: 더 시크릿",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789143344,
+  "programId": "EA202609110455",
+  "cached": false
+ },
+ "EA202609071910": {
+  "keywords": [
+   {
+    "keyword": "히든에이지 앰플",
+    "score": 20.0,
+    "confidence": 100,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "naver-ac",
+     "광고키워드",
+     "조합"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 앰플",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "히든에이지 앰플"
+    ]
+   },
+   {
+    "keyword": "히든에이지 자켓",
+    "score": 15.48,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 원피스",
+    "score": 15.48,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 시간도둑 찾아라",
+    "score": 12.3,
+    "confidence": 62,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "히든에이지: 시간도둑을 찾아라",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "레드 더블버튼 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 유인나 원피스",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "옐로우 딘트 원피스",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "하이드 앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 원피스 어디",
+    "score": 7.8,
+    "confidence": 39,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 어디 제품",
+    "score": 7.8,
+    "confidence": 39,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "결벽쿠션",
+    "score": 6.8,
+    "confidence": 34,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플 단종",
+    "score": 5.2,
+    "confidence": 26,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 더블버튼",
+    "score": 4.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "화사한 옐로우 딘트",
+    "score": 4.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 피부",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 피부",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 유산균",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유산균",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "더블버튼",
+    "딘트",
+    "레드",
+    "유인나",
+    "정은지",
+    "천송이"
+   ],
+   "story": [
+    {
+     "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+     "url": ""
+    },
+    {
+     "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 28,
+  "queries": [
+   "히든에이지 15회 협찬 제품",
+   "히든에이지 협찬 제품 어디",
+   "히든에이지 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(히든에이지 15회 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(히든에이지 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(히든에이지 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "제15회 레트롤링 X 용산전자랜드 개최 공지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "철면수심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "드라마 '별에서 온 그대(별온그/별그대)' 15화 속 김수현, 전지현 / 도민준, 천송이 패션 살펴보기!! (카페그다이)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "수미산장 1회 에이핑크 정은지 패션 프리모떼 귀걸이 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "어벤져스: 에이지 오브 울트론 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[시청역 더히든게임룸] 아마겟돈 사전예약 & 워해머 뉴비 모임",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사2 속 아이템 찾아보기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이동휘 브랜드 론칭 전참시서 공개 수호 선물 반전",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "네이버 인플루언서",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "나가쉬/에이지 오브 시그마 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "두 언더독이 선보이는 ‘아키텍트’, 모두의 MMORPG를 꿈꾸다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인벤",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이직로그 팝업 후기 + 팝업이랑 굿즈 사진들",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지: 시간도둑을 찾아라",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 뜻",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지57세",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 앰플",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 피부",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 유산균",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 화장품",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789143397,
+  "programId": "EA202609071910",
+  "cached": false
  }
 }

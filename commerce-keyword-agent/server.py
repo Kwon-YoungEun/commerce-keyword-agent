@@ -31,6 +31,8 @@ PROGRAM_CATALOG = os.path.join(DATA_DIR, "program_catalog.json")
 PROGRAM_SEED = os.path.join(DATA_DIR, "tvn_programs.txt")
 PROGRAM_SLUGS = os.path.join(DATA_DIR, "tvn_program_slugs.txt")
 PREVIEW_CACHE = os.path.join(DATA_DIR, "preview_cache.json")
+TVING_MAP = os.path.join(DATA_DIR, "tving_contents.txt")
+TVING_CACHE = os.path.join(DATA_DIR, "tving_cache.json")
 PROGRAM_GENRE_STORE = os.path.join(DATA_DIR, "program_genres.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
@@ -632,10 +634,89 @@ def clean_preview_text(text, boiler=(), max_lines=3, width=72):
     return out
 
 
+# ------------------------------------------------------------------ 티빙 보조
+#
+# tvN 프로그램 목록에 없는 프로그램(브랜디드·신설 등)은 tvN 페이지 자체가
+# 없습니다. 그런 프로그램만 티빙 페이지에서 출연진과 소개를 가져옵니다.
+# 표는 data/tving_contents.txt 에 "프로그램명|콘텐츠코드" 로 적습니다.
+
+
+def load_tving_map():
+    out = {}
+    try:
+        with open(TVING_MAP, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "|" not in line:
+                    continue
+                name, code = line.split("|", 1)
+                if name.strip() and code.strip():
+                    out[name.strip()] = code.strip()
+    except OSError:
+        pass
+    return out
+
+
+def fetch_tving_content(code):
+    """티빙 콘텐츠 페이지에서 출연진과 줄거리를 뽑습니다."""
+    data = _next_data(_http_get("https://www.tving.com/contents/%s" % urllib.parse.quote(code)))
+    info = data.get("props", {}).get("pageProps", {}).get("contentInfo") or {}
+    return {
+        "title": (info.get("title") or "").strip(),
+        "cast": [x.strip() for x in (info.get("actor") or []) if x and x.strip()],
+        "synopsis": (info.get("synopsis") or "").strip(),
+        "url": "https://www.tving.com/contents/%s" % code,
+    }
+
+
+def load_tving_content(code, force=False):
+    cache = _read_json(TVING_CACHE, {})
+    hit = cache.get(code)
+    if hit and not force and (time.time() - hit.get("fetchedAt", 0)) < PREVIEW_TTL_SEC:
+        return hit
+    try:
+        fetched = fetch_tving_content(code)
+    except Exception as exc:
+        return hit or {"cast": [], "synopsis": "", "error": str(exc)}
+    fetched["fetchedAt"] = int(time.time())
+    with _store_lock:
+        cache = _read_json(TVING_CACHE, {})
+        cache[code] = fetched
+        _write_json(TVING_CACHE, cache)
+    return fetched
+
+
+def tving_summary(program):
+    """tvN 자료가 없을 때 쓰는 예비 요약."""
+    code = load_tving_map().get(program.get("programName") or "")
+    if not code:
+        return None
+    info = load_tving_content(code)
+    if not (info.get("cast") or info.get("synopsis")):
+        return None
+    synopsis = info.get("synopsis", "")
+    # 소개가 프로그램 이름만 반복하는 경우는 내용으로 치지 않습니다.
+    if norm_name(synopsis) == norm_name(program.get("programName") or ""):
+        synopsis = ""
+    return {
+        "available": True,
+        "source": "tving",
+        "url": info.get("url", ""),
+        "cast": info.get("cast", [])[:8],
+        "preview": ({"title": "프로그램 소개",
+                     "lines": clean_preview_text(synopsis)} if synopsis else None),
+        "broadcast": "",
+        "hasPreviews": False,
+    }
+
+
 def build_program_summary(program, store):
     """tvN 공식 데이터 기반 방송 요약."""
     slug = resolve_slug(program, store)
     if not slug:
+        fallback = tving_summary(program)
+        if fallback:
+            return fallback
         return {"available": False, "reason": "tvN 프로그램 페이지 주소를 아직 모릅니다."}
 
     page = load_program_page(slug)
@@ -652,8 +733,14 @@ def build_program_summary(program, store):
     if chosen is None and page.get("previews"):
         chosen = page["previews"][0]
 
+    if not (page.get("cast") or chosen or page.get("broadcast")):
+        fallback = tving_summary(program)
+        if fallback:
+            return fallback
+
     return {
         "available": bool(page.get("cast") or chosen or page.get("broadcast")),
+        "source": "tvn",
         "slug": slug,
         "url": "https://tvn.cjenm.com/ko/%s/" % slug,
         "cast": (page.get("cast") or [])[:8],

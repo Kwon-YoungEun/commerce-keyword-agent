@@ -397,7 +397,8 @@ function renderSummaryBox(tvn, analysis) {
   let footer = "";
   if (tvn && tvn.preview) {
     lines = tvn.preview.lines.slice(0, 3).map(escapeHtml);
-    footer = 'tvN 공식 <a href="' + escapeHtml(tvn.url) + '" target="_blank" rel="noopener">' +
+    const label = tvn.source === "tving" ? "티빙" : "tvN 공식";
+    footer = label + ' <a href="' + escapeHtml(tvn.url) + '" target="_blank" rel="noopener">' +
              escapeHtml(tvn.preview.title) + " ↗</a>";
   } else {
     const s = (analysis && analysis.summary) || {};
