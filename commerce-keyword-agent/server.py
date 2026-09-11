@@ -534,11 +534,28 @@ def fetch_program_page(slug):
     data = _next_data(html_text)
     fallback = data.get("props", {}).get("pageProps", {}).get("fallback", {}) or {}
 
-    cast, previews, broadcast = [], [], ""
+    cast, previews, clips, broadcast = [], [], [], ""
     for value in fallback.values():
         if not isinstance(value, dict):
             continue
         node = value.get("data")
+
+        # 공식 클립 목록은 리스트로 옵니다. 제목에 그 회차에 나온 음식·물건이 적혀 있고
+        # '#유료광고포함' 이 붙으면 PPL 이 들어간 클립입니다.
+        if isinstance(node, list):
+            for item in node:
+                if not (isinstance(item, dict) and item.get("clipNm")):
+                    continue
+                title = str(item["clipNm"]).strip()
+                clips.append({
+                    "title": title,
+                    "program": (item.get("pgmNm") or "").strip(),
+                    "episode": (EPISODE_NO_RE.search(item.get("pgmNm") or "").group(1)
+                                if EPISODE_NO_RE.search(item.get("pgmNm") or "") else ""),
+                    "ppl": "유료광고" in title,
+                })
+            continue
+
         if not isinstance(node, dict):
             continue
         if not broadcast and isinstance(node.get("bdTm"), str):
@@ -558,7 +575,8 @@ def fetch_program_page(slug):
                 "episode": (EPISODE_NO_RE.search(title).group(1)
                             if EPISODE_NO_RE.search(title) else ""),
             })
-    return {"cast": cast, "previews": previews, "broadcast": broadcast}
+    return {"cast": cast, "previews": previews, "clips": clips,
+            "broadcast": broadcast}
 
 
 def load_program_page(slug, force=False):
@@ -571,7 +589,8 @@ def load_program_page(slug, force=False):
     except Exception as exc:
         if hit:
             return hit
-        return {"cast": [], "previews": [], "broadcast": "", "error": str(exc)}
+        return {"cast": [], "previews": [], "clips": [], "broadcast": "",
+                "error": str(exc)}
     fetched["fetchedAt"] = int(time.time())
     with _store_lock:
         cache = _read_json(PREVIEW_CACHE, {})
@@ -844,6 +863,36 @@ def store_preview(keyword):
     }
 
 
+def collect_official_material(program, store):
+    """이 회차의 공식 자료 — tvN 미리보기 본문과 공식 클립 제목.
+
+    회차가 맞는 것만 씁니다. 다른 회차 내용이 섞이면 엉뚱한 상품이 올라옵니다.
+    """
+    out = {"preview": [], "clips": [], "ppl": False}
+    slug = resolve_slug(program, store)
+    if not slug:
+        return out
+
+    page = load_program_page(slug)
+    episode_no = ""
+    m = EPISODE_NO_RE.search(program.get("episode") or "")
+    if m:
+        episode_no = m.group(1)
+    if not episode_no:
+        return out
+
+    for item in page.get("previews") or []:
+        if item.get("episode") == episode_no:
+            out["preview"] = [ln for ln in (item.get("text") or "").split("\n") if ln.strip()]
+            break
+    for clip in page.get("clips") or []:
+        if clip.get("episode") == episode_no:
+            out["clips"].append(clip["title"])
+            if clip.get("ppl"):
+                out["ppl"] = True
+    return out
+
+
 # ------------------------------------------------------------- 키워드 분석 캐시
 
 KEYWORD_TTL_SEC = 24 * 3600
@@ -862,10 +911,12 @@ def analyze_program_keywords(program, force=False):
     result = keyword_engine.analyze_program(
         {
             "title": program.get("title", ""),
+            "programName": program.get("programName", "") or program.get("title", ""),
             "episode": program.get("episode", ""),
             "subtitle": program.get("subtitle", ""),
             "genre": program.get("genre", ""),
-        }
+        },
+        official=collect_official_material(program, load_schedule_store()),
     )
     result["analyzedAt"] = int(time.time())
     result["programId"] = program["id"]
