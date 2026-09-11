@@ -11835,5 +11835,2843 @@
   "analyzedAt": 1789142001,
   "programId": "EA202609140055",
   "cached": false
+ },
+ "EA202609120010": {
+  "keywords": [
+   {
+    "keyword": "퀴즈",
+    "score": 33.6,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "넌센스퀴즈",
+     "퀴즈노스",
+     "유 퀴즈 온 더 블럭",
+     "쏠퀴즈",
+     "유퀴즈",
+     "토스 행운퀴즈"
+    ]
+   },
+   {
+    "keyword": "블럭",
+    "score": 33.0,
+    "confidence": 98,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "블럭",
+     "블럭장난감",
+     "유 퀴즈 온 더 블럭",
+     "블럭제빵소",
+     "디폼블럭",
+     "넘버블럭스"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 셋업",
+    "score": 12.28,
+    "confidence": 37,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김태희 민트색 셋업",
+    "score": 9.0,
+    "confidence": 27,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "협찬",
+    "score": 8.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 사이트",
+     "블로그 협찬",
+     "협찬",
+     "협찬플러스",
+     "인스타 협찬",
+     "블로그 협찬 문구"
+    ]
+   },
+   {
+    "keyword": "어디꺼",
+    "score": 6.8,
+    "confidence": 20,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "챗지피티 어디꺼",
+     "빽다방 두유 어디꺼",
+     "공차 어디꺼",
+     "볼보 어디꺼",
+     "아웃백 어디꺼",
+     "스타필드 어디꺼"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 협찬 가이드",
+    "score": 4.8,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 오디세",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 오디세이",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 조세호",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 조세호",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 송강",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 송강",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 4.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "간접광고 ppl",
+    "score": 4.3,
+    "confidence": 13,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 온더 블럭",
+    "score": 4.2,
+    "confidence": 12,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "발전 알아본 협찬",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "알아본 협찬 마케팅",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "세계 제빵 월드컵",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "승려",
+    "땅값",
+    "면적",
+    "명품",
+    "유퀴즈",
+    "이정은"
+   ],
+   "story": [
+    {
+     "text": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+     "url": ""
+    },
+    {
+     "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 28,
+  "queries": [
+   "유퀴즈온더블럭 359회 협찬 제품",
+   "유퀴즈온더블럭 협찬 제품 어디",
+   "유퀴즈온더블럭 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "핑계고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인사픽뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "패션아카이브",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이정은 “5000만원 빚 갚느라 알바”…녹즙 배달→마트 판매왕까지 [TVis] (유퀴즈)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "매일매일꿀팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "임채무 두리랜드｜입장료·위치·면적·땅값·프로필·나이·유퀴즈",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "주식 중독 자가 진단 테스트 13가지 (유퀴즈 정신과 의사 기준) - All Honey Tip",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 예고",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 오디세이",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 조세호",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 357회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 359회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 송강",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142296,
+  "programId": "EA202609120010",
+  "cached": false
+ },
+ "EA202609110825": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum",
+     "광고키워드"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아 모자"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "폴로 데님 모자",
+     "데님 모자 브랜드"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 매트리스",
+    "score": 21.96,
+    "confidence": 95,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 매트리스",
+     "언니네 산지직송 매트리스 가격",
+     "언니네산지직송 매트리스 협찬"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 가방",
+    "score": 14.84,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 모자",
+    "score": 14.84,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "산지직송 접이식 매트리스",
+    "score": 14.6,
+    "confidence": 63,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 티셔츠",
+    "score": 13.24,
+    "confidence": 58,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "접이식 매트리스 추천",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "매트리스 추천 숙면연구소",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "피그먼트 반팔 티셔츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 카고 반바지",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스노우피크 카고 팬츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 가방",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "260910 'tvN 언니네 산지직송3 7회' 염정아 가방 정보_스노우피크 어패럴 (SNOWPEAK APPAREL)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 꽃조끼",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 염정아 꽃조끼 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김혜윤 연보라 모자",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "연보라 모자 버킷햇",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "강유석",
+    "염정아",
+    "카고",
+    "김선영",
+    "노윤서",
+    "반팔"
+   ],
+   "story": [
+    {
+     "text": "260910 'tvN 언니네 산지직송3 7회' 염정아 가방 정보_스노우피크 어패럴 (SNOWPEAK APPAREL)",
+     "url": ""
+    },
+    {
+     "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 32,
+  "queries": [
+   "언니네 산지직송3 7회 협찬 제품",
+   "언니네 산지직송 협찬 제품 어디",
+   "언니네 산지직송 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "노윤서모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "데님모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "염정아모자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "삼시세끼/산촌편 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "260910 'tvN 언니네 산지직송3 7회' 염정아 가방 정보_스노우피크 어패럴 (SNOWPEAK APPAREL)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "노윤서 산지직송3 첫 만남, 회색 재킷보다 먼저 보인 부드러운 레이어",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "덱스(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송2에 나온 칼하트? 커플룩 정보아시는 분??",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 염정아 꽃조끼 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진제공=메리고라운드컴퍼니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "6시 내고향 완도 제철 수산물 위치 6시 내고향 완도 제철 수산물 투영이네수산 주문 택배 위치 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 뱀",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 6회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네산지직송협찬차량",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142333,
+  "programId": "EA202609110825",
+  "cached": false
+ },
+ "EA202609100455": {
+  "keywords": [
+   {
+    "keyword": "너의 몸소리가 들려 스니커즈",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "몸소리 들려 풀퍼널",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "들려 풀퍼널 전략",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "풀퍼널 전략 기반",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전략 기반 ppl",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "기반 ppl 전환",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "ppl 전환 구조",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전환 구조 사례",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "하이탑 메쉬 스니커즈",
+    "score": 8.2,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "메쉬 스니커즈 신고",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스니커즈 신고 춤추",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "너의 몸소리 들려",
+    "score": 4.63,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "너의 몸소리가 들려",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우수사례",
+    "score": 4.0,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "왼손 너의",
+    "score": 3.5,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추리 팔백원",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "해커톤 광탈 기념",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "게임 만들며 혼자",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "만들며 혼자 당선",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [],
+   "story": [
+    {
+     "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 19,
+  "queries": [
+   "너의 몸소리가 들려 64회 협찬 제품",
+   "너의 몸소리가 들려 협찬 제품 어디",
+   "너의 몸소리가 들려 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이시아 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "12월 새친구 가입인사 이벤트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🧀양산 말랑이 성지 발견! 말랑이 7종 현실 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아린 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "토니피터로 이혼했는데 어느 날 둘이 제대로 사고치는 거 보고싶다 04",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2022년 가족의 무게 | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "The Exodite - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "기이한 체험(최종백업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하오드너붕붕 다에몬 레아 딸로 빙의한 너붕붕 ㅂㄱㅅㄷ 어나더",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[DUGOUT x 컴투스프로야구] 한화 이글스 문동주",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[120kg→60kg] 60kg을 감량한 제 다이어트 이야기를 들려드릴게요",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "너의 몸소리가 들려",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142431,
+  "programId": "EA202609100455",
+  "cached": false
+ },
+ "EA202609100105": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum",
+     "광고키워드"
+    ],
+    "evidence": [
+     {
+      "text": "언니네산지직송3 염정아 모자 스카프 버킷햇 화이트샌즈 플로피햇",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아 모자"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "폴로 데님 모자",
+     "데님 모자 브랜드"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 매트리스",
+    "score": 21.96,
+    "confidence": 95,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 매트리스",
+     "언니네 산지직송 매트리스 가격",
+     "언니네산지직송 매트리스 협찬"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 모자",
+    "score": 16.44,
+    "confidence": 71,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 바지",
+    "score": 15.24,
+    "confidence": 66,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 바지락 장소"
+    ]
+   },
+   {
+    "keyword": "산지직송 접이식 매트리스",
+    "score": 14.6,
+    "confidence": 63,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 버킷햇",
+    "score": 14.2,
+    "confidence": 62,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "접이식 매트리스 추천",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "매트리스 추천 숙면연구소",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스노우피크 카고 팬츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 꽃조끼",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 염정아 꽃조끼 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "경남몰 콜라보 선물세트",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네산지직송3 뱀, 진짜 속은 건 제작진ㅣ6회 반전·e경남몰 콜라보 선물세트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 모자 스카프",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네산지직송3 염정아 모자 스카프 버킷햇 화이트샌즈 플로피햇",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "모자 스카프 버킷햇",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네산지직송3 염정아 모자 스카프 버킷햇 화이트샌즈 플로피햇",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김혜윤 연보라 모자",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "연보라 모자 버킷햇",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [
+    "염정아",
+    "강유석",
+    "김선영",
+    "노윤서",
+    "연보라",
+    "조정석"
+   ],
+   "story": [
+    {
+     "text": "언니네산지직송3 뱀, 진짜 속은 건 제작진ㅣ6회 반전·e경남몰 콜라보 선물세트",
+     "url": ""
+    },
+    {
+     "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 32,
+  "queries": [
+   "언니네 산지직송3 6회 협찬 제품",
+   "언니네 산지직송 협찬 제품 어디",
+   "언니네 산지직송 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "노윤서모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "데님모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "염정아모자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "삼시세끼/산촌편 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송3 뱀, 진짜 속은 건 제작진ㅣ6회 반전·e경남몰 콜라보 선물세트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 염정아 마늘족발｜잡내 없이 만든 족발 한 상, 막국수까지 🧄🍖",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송3 염정아 모자 스카프 버킷햇 화이트샌즈 플로피햇",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "덱스(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송2에 나온 칼하트? 커플룩 정보아시는 분??",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 염정아 꽃조끼 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진제공=메리고라운드컴퍼니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "6시 내고향 완도 제철 수산물 위치 6시 내고향 완도 제철 수산물 투영이네수산 주문 택배 위치 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 뱀",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 6회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네산지직송협찬차량",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142437,
+  "programId": "EA202609100105",
+  "cached": false
+ },
+ "EA202609090455": {
+  "keywords": [
+   {
+    "keyword": "너의 몸소리가 들려 스니커즈",
+    "score": 11.64,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "몸소리 들려 풀퍼널",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "들려 풀퍼널 전략",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "풀퍼널 전략 기반",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전략 기반 ppl",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "기반 ppl 전환",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "ppl 전환 구조",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "전환 구조 사례",
+    "score": 8.6,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "하이탑 메쉬 스니커즈",
+    "score": 8.2,
+    "confidence": 70,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "메쉬 스니커즈 신고",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스니커즈 신고 춤추",
+    "score": 5.2,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "너의 몸소리 들려",
+    "score": 4.63,
+    "confidence": 40,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "너의 몸소리가 들려",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "우수사례",
+    "score": 4.0,
+    "confidence": 34,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "왼손 너의",
+    "score": 3.5,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "추리 팔백원",
+    "score": 3.0,
+    "confidence": 26,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "추리는 팔백원 2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "해커톤 광탈 기념",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "게임 만들며 혼자",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "만들며 혼자 당선",
+    "score": 2.2,
+    "confidence": 19,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "summary": {
+   "episodeTitle": "",
+   "cast": [],
+   "story": [
+    {
+     "text": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+     "url": ""
+    }
+   ]
+  },
+  "docCount": 19,
+  "queries": [
+   "너의 몸소리가 들려 61회 협찬 제품",
+   "너의 몸소리가 들려 협찬 제품 어디",
+   "너의 몸소리가 들려 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "해커톤 광탈 기념, 게임 만들며 혼자 당선 소감 준비한 20일- 1/2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이시아 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "12월 새친구 가입인사 이벤트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🧀양산 말랑이 성지 발견! 말랑이 7종 현실 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[🥇우수사례] tvN 〈너의 몸소리가 들려〉풀퍼널 전략 기반 PPL 전환 구조 사례",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아린 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[팬픽] 내 왼손은 너의 것 -中- (스포)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "토니피터로 이혼했는데 어느 날 둘이 제대로 사고치는 거 보고싶다 04",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2022년 가족의 무게 | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "추리는 팔백원 2",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "The Exodite - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "기이한 체험(최종백업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하이탑 메쉬 스니커즈 신고 춤추는 즐거움",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "하오드너붕붕 다에몬 레아 딸로 빙의한 너붕붕 ㅂㄱㅅㄷ 어나더",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[DUGOUT x 컴투스프로야구] 한화 이글스 문동주",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[120kg→60kg] 60kg을 감량한 제 다이어트 이야기를 들려드릴게요",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "너의 몸소리가 들려",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789142440,
+  "programId": "EA202609090455",
+  "cached": false
  }
 }

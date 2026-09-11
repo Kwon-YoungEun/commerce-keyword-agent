@@ -533,10 +533,7 @@ async function renderPreview(k) {
     `<div class="preview-actions">` +
     `<a class="btn btn-line" href="${data.searchUrl}" target="_blank" rel="noopener">네이버플러스스토어에서 열기 ↗</a>` +
     `<button id="btnRegister" class="btn" type="button">매뉴얼 키워드 등록</button>` +
-    `</div>` +
-    `<p class="muted" style="font-size:11.5px;margin-top:10px">` +
-    `네이버 쇼핑 검색 API가 2026-07-31 종료되어 상품 카드를 직접 불러올 수 없습니다. ` +
-    `링크로 실제 결과를 확인해 주세요.</p>`;
+    `</div>`;
 
   document.getElementById("btnRegister").addEventListener("click", () => registerKeyword(k));
 }
