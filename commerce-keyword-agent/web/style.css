@@ -169,9 +169,8 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   display: grid;
   grid-template-columns: var(--gutter-w) 1fr;
   position: relative;
-  /* 시각 라벨은 선 위에 가운데로 놓입니다. 위아래 여백이 없으면
-     첫 라벨(05:00)과 마지막 라벨의 절반이 잘립니다. */
-  padding: 12px 0;
+  /* 화면 위쪽은 05:30 에서 잘리게 두고, 아래 끝 라벨만 여백을 줍니다. */
+  padding: 0 0 12px;
 }
 
 .time-gutter { border-right: 1px solid var(--border); position: relative; background: #FCFCFD; }
@@ -195,6 +194,8 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
     #EEF0F3 0, #EEF0F3 1px,
     transparent 1px, transparent calc(60 * var(--px-per-min))
   );
+  /* 화면이 05:30 부터 시작하므로 눈금선도 그만큼 끌어올립니다. */
+  background-position: 0 calc(-30 * var(--px-per-min));
 }
 .day-col:first-child { border-left: none; }
 .day-col.is-today { background-color: #FFFAFB; }

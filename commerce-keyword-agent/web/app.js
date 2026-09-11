@@ -2,6 +2,16 @@
 
 const PX_PER_MIN = 1.25;   // style.css 의 --px-per-min 과 같아야 합니다.
 const DAY_START_MIN = 5 * 60;  // 방송일은 05:00 에 시작하는 것으로 봅니다.
+const VIEW_START_MIN = 30;     // 화면은 05:30 부터 보여 줘서 위쪽이 잘린 것처럼 둡니다.
+
+/** 방송일 기준 분(05:00=0)을 화면 y 좌표로 바꿉니다. */
+function posY(offsetMin) {
+  return (offsetMin - VIEW_START_MIN) * PX_PER_MIN;
+}
+
+function gridHeight() {
+  return (state.totalMin - VIEW_START_MIN) * PX_PER_MIN;
+}
 const WKDAY = ["일", "월", "화", "수", "목", "금", "토"];
 
 const state = {
@@ -177,11 +187,11 @@ function renderDayHead() {
 function renderTimeGutter() {
   const gutter = document.getElementById("timeGutter");
   gutter.innerHTML = "";
-  gutter.style.height = state.totalMin * PX_PER_MIN + "px";
-  for (let m = 0; m <= state.totalMin; m += 60) {
+  gutter.style.height = gridHeight() + "px";
+  for (let m = 60; m <= state.totalMin; m += 60) {
     const label = document.createElement("div");
     label.className = "hour";
-    label.style.top = m * PX_PER_MIN + "px";
+    label.style.top = posY(m) + "px";
     label.textContent = hhmmLabel(DAY_START_MIN + m);
     gutter.appendChild(label);
   }
@@ -199,15 +209,13 @@ function renderGrid() {
 
     const col = document.createElement("div");
     col.className = "day-col";
-    col.style.height = state.totalMin * PX_PER_MIN + "px";
+    col.style.height = gridHeight() + "px";
     if (key === todayKey) col.classList.add("is-today");
     if (!list.length) col.classList.add("is-empty");
 
     for (const p of list) col.appendChild(programBlock(p));
-    if (key === todayKey) {
-      const line = nowLine();
-      if (line) col.appendChild(line);
-    }
+    const line = nowLine(key);
+    if (line) col.appendChild(line);
     grid.appendChild(col);
   }
 }
@@ -223,7 +231,7 @@ function programBlock(p) {
   if (p.liveFlag === "본") el.classList.add("is-live");
   if (regs.length) el.classList.add("is-registered");
   if (height < 46) el.classList.add("is-short");
-  el.style.top = p.offsetMin * PX_PER_MIN + "px";
+  el.style.top = posY(p.offsetMin) + "px";
   el.style.height = height + "px";
   el.title = `${p.start}~${p.end} ${p.title}` + (p.episode ? ` ${p.episode}` : "") +
     (regs.length ? `\n등록 키워드: ${regs.map((r) => r.keyword).join(", ")}` : "");
@@ -252,13 +260,27 @@ function keywordChipsHtml(regs, height) {
   );
 }
 
-function nowLine() {
+/** 지금 시각이 어느 방송일의 몇 분째인지.
+ *  새벽 0~5시는 아직 전날 방송일이라 하루를 되돌려 계산합니다. */
+function nowPosition() {
   const now = new Date();
-  const min = now.getHours() * 60 + now.getMinutes() - DAY_START_MIN;
-  if (min < 0 || min > state.totalMin) return null;
+  let min = now.getHours() * 60 + now.getMinutes() - DAY_START_MIN;
+  let dayKey = ymd(now);
+  if (min < 0) {
+    min += 24 * 60;
+    dayKey = ymd(addDays(now, -1));
+  }
+  return { dayKey: dayKey, min: min };
+}
+
+function nowLine(dayKey) {
+  const pos = nowPosition();
+  if (dayKey !== pos.dayKey) return null;
+  if (pos.min < VIEW_START_MIN || pos.min > state.totalMin) return null;
   const el = document.createElement("div");
   el.className = "now-line";
-  el.style.top = min * PX_PER_MIN + "px";
+  el.style.top = posY(pos.min) + "px";
+  el.title = "지금 방송 중인 시각";
   return el;
 }
 
@@ -1361,6 +1383,6 @@ function bindEvents() {
                      loadProgramIds(), loadProgramGenres()]);
   render();
   // 오늘 시간대가 화면에 보이도록 스크롤합니다.
-  const nowMin = new Date().getHours() * 60 + new Date().getMinutes() - DAY_START_MIN;
-  if (nowMin > 0) window.scrollTo({ top: Math.max(0, nowMin * PX_PER_MIN - 200) });
+  const here = posY(nowPosition().min);
+  if (here > 0) window.scrollTo({ top: Math.max(0, here - 200) });
 })();
