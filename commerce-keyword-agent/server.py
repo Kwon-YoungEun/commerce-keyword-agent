@@ -579,47 +579,54 @@ def load_program_page(slug, force=False):
 SCHEDULE_HINT_RE = re.compile(
     r"\d+월\s*\d+일|\d+년\s*\d+월|본방\s*사수|채널\s*고정|시\s*방송|방송$|재방송"
 )
-# 문장이 끝난 것으로 볼 만한 끝맺음
-SENT_END_RE = re.compile(r"[.!?…♥★☆♨~\)]\s*$|다$|요$|까\?$")
 
 
-def clean_preview_text(text, max_lines=3, width=72):
-    """문단마다 첫 문장을 한 줄씩 뽑아 3줄로 간추립니다.
+def _preview_lines(text):
+    return [ln.strip() for ln in (text or "").split("\n") if ln.strip()]
 
-    문장을 새로 쓰지 않고 원문 줄을 그대로 씁니다. 한 줄이 중간에 끊긴
-    경우에만 다음 줄을 이어 붙여 말이 되게 만듭니다.
+
+def _line_key(line):
+    """비교용 — 공백과 흔한 기호를 지운 형태."""
+    return re.sub(r"[\s~!?★☆♥♨.·…\"'\u2018\u2019\u201c\u201d]", "", line or "")
+
+
+def repeated_lines(previews, min_share=0.5):
+    """같은 프로그램의 여러 회차에 공통으로 나오는 줄 = 프로그램 소개 문구."""
+    if len(previews) < 2:
+        return set()
+    counts = {}
+    for item in previews:
+        for key in {_line_key(ln) for ln in _preview_lines(item.get("text", ""))}:
+            if key:
+                counts[key] = counts.get(key, 0) + 1
+    total = len(previews)
+    return {
+        key for key, hits in counts.items()
+        if hits >= 2 and hits / total >= min_share
+    }
+
+
+def clean_preview_text(text, boiler=(), max_lines=3, width=72):
+    """앞에서부터 3줄. 회차마다 반복되는 소개 문구와 방송 안내는 건너뜁니다.
+
+    문장을 새로 쓰지 않고 원문 줄을 그대로 씁니다.
     """
-    blocks, current = [], []
-    for raw in (text or "").split("\n"):
-        line = raw.strip()
-        if line:
-            current.append(line)
-        elif current:
-            blocks.append(current)
-            current = []
-    if current:
-        blocks.append(current)
-
-    out = []
-    for block in blocks:
-        joined = block[0]
-        idx = 1
-        # 끊긴 줄이면 말이 될 때까지 이어 붙입니다.
-        while (idx < len(block) and len(joined) < 42
-               and not SENT_END_RE.search(joined)):
-            joined = joined + " " + block[idx]
-            idx += 1
-
-        if SCHEDULE_HINT_RE.search(joined) and len(out) >= 1:
-            continue                      # 방송 안내 문단은 건너뜁니다.
-        if len(joined) < 6:
+    out, truncated = [], False
+    for line in _preview_lines(text):
+        key = _line_key(line)
+        if key in boiler:
             continue
-        if len(joined) > width:
-            joined = joined[: width - 1].rstrip() + "…"
-        if joined not in out:
-            out.append(joined)
+        if out and SCHEDULE_HINT_RE.search(line):
+            continue
         if len(out) >= max_lines:
+            truncated = True
             break
+        if len(line) > width:
+            line = line[: width - 1].rstrip() + "…"
+        out.append(line)
+
+    if truncated and out and not out[-1].endswith("…"):
+        out[-1] = out[-1] + " …"
     return out
 
 
@@ -650,8 +657,12 @@ def build_program_summary(program, store):
         "cast": (page.get("cast") or [])[:8],
         # 회차가 일치할 때만 본문을 내보냅니다. 다른 회차 내용을 이 회차인 것처럼
         # 보여 주지 않기 위해서입니다.
+        # 회차가 일치할 때만 본문을 내보냅니다. 다른 회차 내용을 이 회차인 것처럼
+        # 보여 주지 않기 위해서입니다.
         "preview": (
-            {"title": chosen["title"], "lines": clean_preview_text(chosen["text"])}
+            {"title": chosen["title"],
+             "lines": clean_preview_text(chosen["text"],
+                                         repeated_lines(page.get("previews") or []))}
             if chosen and episode_no and chosen.get("episode") == episode_no
             else None
         ),
