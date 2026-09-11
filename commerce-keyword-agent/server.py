@@ -29,6 +29,8 @@ CONFIG_STORE = os.path.join(DATA_DIR, "config.json")
 PROGRAM_ID_STORE = os.path.join(DATA_DIR, "program_ids.json")
 PROGRAM_CATALOG = os.path.join(DATA_DIR, "program_catalog.json")
 PROGRAM_SEED = os.path.join(DATA_DIR, "tvn_programs.txt")
+PROGRAM_SLUGS = os.path.join(DATA_DIR, "tvn_program_slugs.txt")
+PREVIEW_CACHE = os.path.join(DATA_DIR, "preview_cache.json")
 PROGRAM_GENRE_STORE = os.path.join(DATA_DIR, "program_genres.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
@@ -230,6 +232,7 @@ def fetch_program_catalog():
                 "genre": (item.get("repGenreInfo") or "").strip(),
                 "subGenre": (item.get("ptclrGenreInfo") or "").strip(),
                 "channel": (item.get("repChnNm") or "").strip(),
+                "slug": ((item.get("frontDetailUrlAddr") or "").rstrip("/").split("/")[-1]),
             }
     return out
 
@@ -473,6 +476,149 @@ def public_config(cfg):
     return {"storeSearchUrl": cfg["storeSearchUrl"], "registerApiUrl": cfg["registerApiUrl"]}
 
 
+# ------------------------------------------------- tvN 공식 회차 미리보기
+#
+# tvN 프로그램 페이지(https://tvn.cjenm.com/ko/<slug>/)의 __NEXT_DATA__ 에는
+# 공식 '회차 미리보기' 본문과 출연진이 들어 있습니다. 검색으로 추정하지 않고
+# 이 값을 그대로 씁니다.
+
+PREVIEW_TTL_SEC = 12 * 3600
+
+
+def load_program_slugs():
+    """{pgmId: slug}. 프로그램 상세 페이지 주소를 찾는 표입니다."""
+    out = {}
+    try:
+        with open(PROGRAM_SLUGS, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "|" not in line:
+                    continue
+                pgm_id, slug = line.split("|", 1)
+                if pgm_id.strip() and slug.strip():
+                    out[pgm_id.strip()] = slug.strip()
+    except OSError:
+        pass
+    # 카탈로그를 새로 받을 때 모인 주소도 함께 씁니다.
+    for pgm_id, entry in load_program_catalog().get("items", {}).items():
+        slug = (entry or {}).get("slug")
+        if slug:
+            out.setdefault(pgm_id, slug)
+    return out
+
+
+def resolve_slug(program, store):
+    """이 회차의 상세 페이지 주소. 특별판·부제 회차는 본 프로그램 주소를 씁니다."""
+    slugs = load_program_slugs()
+    own = slugs.get(program.get("pgmId") or "")
+    if own:
+        return own
+    name = program.get("programName")
+    for other in (store.get("programs") or {}).values():
+        if other.get("programName") == name:
+            found = slugs.get(other.get("pgmId") or "")
+            if found:
+                return found
+    return ""
+
+
+EPISODE_NO_RE = re.compile(r"(\d+)\s*(?:회|화)")
+
+
+def fetch_program_page(slug):
+    """프로그램 페이지에서 출연진과 회차 미리보기 목록을 뽑습니다."""
+    html_text = _http_get("https://tvn.cjenm.com/ko/%s/" % urllib.parse.quote(slug))
+    data = _next_data(html_text)
+    fallback = data.get("props", {}).get("pageProps", {}).get("fallback", {}) or {}
+
+    cast, previews = [], []
+    for value in fallback.values():
+        if not isinstance(value, dict):
+            continue
+        node = value.get("data")
+        if not isinstance(node, dict):
+            continue
+        for person in node.get("simplePrsnInfoList") or []:
+            name = (person or {}).get("prsnNm")
+            if name and name not in cast:
+                cast.append(name.strip())
+        for item in node.get("previewInfoList") or []:
+            text = (item or {}).get("prevewCnts") or ""
+            title = (item or {}).get("prevewTit") or ""
+            if not text.strip():
+                continue
+            previews.append({
+                "title": title.strip(),
+                "text": re.sub(r"\r\n|\r", "\n", text).strip(),
+                "episode": (EPISODE_NO_RE.search(title).group(1)
+                            if EPISODE_NO_RE.search(title) else ""),
+            })
+    return {"cast": cast, "previews": previews}
+
+
+def load_program_page(slug, force=False):
+    cache = _read_json(PREVIEW_CACHE, {})
+    hit = cache.get(slug)
+    if hit and not force and (time.time() - hit.get("fetchedAt", 0)) < PREVIEW_TTL_SEC:
+        return hit
+    try:
+        fetched = fetch_program_page(slug)
+    except Exception as exc:
+        if hit:
+            return hit
+        return {"cast": [], "previews": [], "error": str(exc)}
+    fetched["fetchedAt"] = int(time.time())
+    with _store_lock:
+        cache = _read_json(PREVIEW_CACHE, {})
+        cache[slug] = fetched
+        _write_json(PREVIEW_CACHE, cache)
+    return fetched
+
+
+def clean_preview_text(text, max_lines=4):
+    """미리보기 본문에서 앞부분 몇 줄만 간추립니다(내용을 바꾸지 않습니다)."""
+    lines = [ln.strip() for ln in (text or "").split("\n")]
+    lines = [ln for ln in lines if ln]
+    return lines[:max_lines]
+
+
+def build_program_summary(program, store):
+    """tvN 공식 데이터 기반 방송 요약."""
+    slug = resolve_slug(program, store)
+    if not slug:
+        return {"available": False, "reason": "tvN 프로그램 페이지 주소를 아직 모릅니다."}
+
+    page = load_program_page(slug)
+    episode_no = ""
+    m = EPISODE_NO_RE.search(program.get("episode") or "")
+    if m:
+        episode_no = m.group(1)
+
+    chosen = None
+    for item in page.get("previews") or []:
+        if episode_no and item.get("episode") == episode_no:
+            chosen = item
+            break
+    if chosen is None and page.get("previews"):
+        chosen = page["previews"][0]
+
+    return {
+        "available": bool(page.get("cast") or chosen),
+        "slug": slug,
+        "url": "https://tvn.cjenm.com/ko/%s/" % slug,
+        "cast": (page.get("cast") or [])[:8],
+        # 회차가 일치할 때만 본문을 내보냅니다. 다른 회차 내용을 이 회차인 것처럼
+        # 보여 주지 않기 위해서입니다.
+        "preview": (
+            {"title": chosen["title"], "lines": clean_preview_text(chosen["text"])}
+            if chosen and episode_no and chosen.get("episode") == episode_no
+            else None
+        ),
+        "latestPreviewTitle": (chosen or {}).get("title", "") if chosen else "",
+        "error": page.get("error", ""),
+    }
+
+
 # ------------------------------------------------------------- 프로그램 ID 표
 
 
@@ -532,7 +678,9 @@ def analyze_program_keywords(program, force=False):
     """회차별 키워드 분석 결과를 캐시와 함께 돌려줍니다."""
     cache = _read_json(KEYWORD_CACHE, {})
     hit = cache.get(program["id"])
-    if hit and not force and (time.time() - hit.get("analyzedAt", 0)) < KEYWORD_TTL_SEC:
+    # 저장된 결과에 요약이 없으면(이전 버전) 다시 분석합니다.
+    if (hit and not force and "summary" in hit
+            and (time.time() - hit.get("analyzedAt", 0)) < KEYWORD_TTL_SEC):
         hit["cached"] = True
         return hit
 
@@ -704,6 +852,14 @@ class Handler(BaseHTTPRequestHandler):
 
             if path == "/api/program-ids":
                 return self._json({"ok": True, "map": load_program_ids()})
+
+            if path == "/api/summary":
+                program_id = query.get("programId", [""])[0]
+                store = load_schedule_store()
+                program = store.get("programs", {}).get(program_id)
+                if not program:
+                    return self._error("편성 정보를 찾지 못했습니다: " + program_id, 404)
+                return self._json({"ok": True, **build_program_summary(program, store)})
 
             if path == "/api/program-genres":
                 return self._json({"ok": True, "map": load_program_genres(),

@@ -1,0 +1,25 @@
+# tvN 프로그램 상세 페이지 주소 (https://tvn.cjenm.com/ko/<slug>/)
+# 형식: pgmId|slug
+# 이 페이지에서 공식 '회차 미리보기' 본문과 출연진을 읽어 옵니다.
+B120156699|reply1988
+B120160299|xtvnfree19
+B120180515|youquizontheblock
+B120188696|amazingsaturday
+B120209766|history
+B120211226|tvnstoryfreedoctor
+B120212431|superfoods
+B120230249|healthy-life
+B120239150|spacericecake
+B120242966|voice_of_fitness
+B120243347|sixthsensecitytour
+B120254044|shinsproject
+B120254326|table-tales
+B120254820|Fresh-of-the-Sea3
+B120254823|miscellaneous-scholars
+B120254978|lhs-counseling-center
+B120255356|butterflyeffect
+B120255453|streetrastaurantfighter
+B120255660|hiddenage
+B120255697|sixthsensebside
+B120265860|Mybiasmyboss
+B120266117|Four-Hands-Two-Sonatas

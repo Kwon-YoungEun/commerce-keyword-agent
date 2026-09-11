@@ -30,6 +30,7 @@ const state = {
   genreChoices: [],
   genrePickerFor: null,
   bodyDraft: null,
+  summary: null,
 };
 
 /* ------------------------------------------------------------- 날짜 유틸 */
@@ -339,6 +340,7 @@ function openProgram(p) {
     '<div class="placeholder">왼쪽에서 키워드를 클릭하면 검색 결과를 미리 봅니다.</div>';
   renderRegistered(p);
   document.getElementById("modalBackdrop").hidden = false;
+  loadSummary(p);              // tvN 공식 요약은 따로 빨리 가져옵니다.
   loadKeywords(p, false);
 }
 
@@ -354,10 +356,87 @@ async function loadKeywords(program, refresh) {
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "분석에 실패했습니다.");
     state.analysis = json;
+    renderSummary(json);
     renderKeywords(json);
   } catch (err) {
     list.innerHTML = `<div class="notice">키워드를 뽑지 못했습니다: ${escapeHtml(err.message)}</div>`;
   }
+}
+
+/** 방송 요약 — tvN 공식 회차 미리보기와 출연진을 씁니다.
+ *  공식 자료가 없을 때만 검색 결과로 채웁니다. */
+async function loadSummary(program) {
+  const box = document.getElementById("summaryBox");
+  box.hidden = true;
+  state.summary = null;
+  try {
+    const res = await fetch("/api/summary?programId=" + encodeURIComponent(program.id));
+    const json = await res.json();
+    if (!json.ok || !json.available) return;
+    if (state.currentProgram !== program) return;   // 그새 다른 회차를 열었으면 무시
+    state.summary = json;
+    renderSummaryBox(json, null);
+  } catch (err) {
+    /* 요약이 없어도 키워드는 그대로 보여 줍니다. */
+  }
+}
+
+function renderSummaryBox(tvn, analysis) {
+  const box = document.getElementById("summaryBox");
+  const rows = [];
+
+  const cast = (tvn && tvn.cast) || (analysis && analysis.summary && analysis.summary.cast) || [];
+  if (cast.length) {
+    rows.push(
+      '<div class="sum-row"><span class="sum-key">출연</span>' +
+      '<span class="sum-val">' + cast.map(escapeHtml).join(" · ") + "</span></div>"
+    );
+  }
+
+  let lines = [];
+  let footer = "";
+  if (tvn && tvn.preview) {
+    lines = tvn.preview.lines.slice(0, 2).map(escapeHtml);
+    footer = 'tvN 공식 <a href="' + escapeHtml(tvn.url) + '" target="_blank" rel="noopener">' +
+             escapeHtml(tvn.preview.title) + " ↗</a>";
+  } else {
+    const s = (analysis && analysis.summary) || {};
+    if (s.episodeTitle) lines.push(escapeHtml(s.episodeTitle));
+    for (const item of (s.story || []).slice(0, 2 - lines.length)) {
+      lines.push(
+        item.url
+          ? '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' +
+            escapeHtml(item.text) + " ↗</a>"
+          : escapeHtml(item.text)
+      );
+    }
+    if (tvn && tvn.available) {
+      footer = "이 회차 미리보기는 tvN 에 아직 없어요.";
+    } else if (lines.length) {
+      footer = "검색 결과에서 모은 내용입니다.";
+    }
+  }
+
+  if (lines.length) {
+    rows.push(
+      '<div class="sum-row"><span class="sum-key">내용</span>' +
+      '<span class="sum-val">' + lines.join("<br>") + "</span></div>"
+    );
+  }
+
+  if (!rows.length) {
+    box.hidden = true;
+    return;
+  }
+  box.innerHTML = "<h3>방송 요약</h3>" + rows.join("") +
+                  (footer ? '<p class="sum-note">' + footer + "</p>" : "");
+  box.hidden = false;
+}
+
+function renderSummary(analysis) {
+  // 키워드 분석이 끝났을 때 — 공식 요약이 이미 있으면 그대로 둡니다.
+  if (state.summary && state.summary.preview) return;
+  renderSummaryBox(state.summary, analysis);
 }
 
 function renderKeywords(analysis) {
