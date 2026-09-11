@@ -593,3 +593,23 @@ button.cat.is-manual::after { content: " \270E"; font-size: 9px; opacity: .7; }
   border-color: var(--status-bad);
   box-shadow: 0 0 0 3px rgba(180, 35, 24, .14);
 }
+
+/* ------------------------------------------------------------- 확인창 */
+.ask-backdrop { z-index: 400; }
+.modal-ask { width: min(440px, 100%); }
+.modal-ask .modal-head { padding-bottom: 12px; }
+.modal-ask .modal-head h2 { font-size: 16px; margin: 0; }
+.ask-message { margin: 0 0 20px; font-size: 13.5px; line-height: 1.65; }
+.ask-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* 방금 등록한 회차를 잠깐 강조합니다. */
+.pgm.is-flash {
+  outline: 2px solid var(--skb-orange);
+  outline-offset: 1px;
+  animation: airing-flash 2.4s ease-out;
+  z-index: 9;
+}
+@keyframes airing-flash {
+  0%, 30% { box-shadow: 0 0 0 6px rgba(244, 119, 37, .28); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 119, 37, 0); }
+}

@@ -214,6 +214,22 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
+<!-- 확인창 (브라우저 confirm 이 막히는 환경이 있어 직접 만듭니다) -->
+<div id="askBackdrop" class="modal-backdrop ask-backdrop" hidden>
+  <div class="modal modal-ask" role="alertdialog" aria-modal="true" aria-labelledby="askTitle">
+    <div class="modal-head">
+      <h2 id="askTitle">확인</h2>
+    </div>
+    <div class="modal-body">
+      <p id="askMessage" class="ask-message"></p>
+      <div class="ask-actions">
+        <button id="askCancel" class="btn" type="button">취소</button>
+        <button id="askOk" class="btn btn-line" type="button">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="/app.js"></script>
 </body>
 </html>

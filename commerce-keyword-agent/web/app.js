@@ -220,6 +220,7 @@ function programBlock(p) {
   const el = document.createElement("button");
   el.type = "button";
   el.className = "pgm";
+  el.dataset.airing = p.id;
   if (p.liveFlag === "본") el.classList.add("is-live");
   if (regs.length) el.classList.add("is-registered");
   if (height < 46) el.classList.add("is-short");
@@ -585,6 +586,40 @@ function refreshBodyJson() {
   }
 }
 
+/** 페이지 안 확인창. 브라우저 confirm() 이 차단되는 환경이 있어 직접 만들었습니다. */
+function askConfirm(message, okLabel) {
+  return new Promise((resolve) => {
+    const back = document.getElementById("askBackdrop");
+    const ok = document.getElementById("askOk");
+    const cancel = document.getElementById("askCancel");
+    document.getElementById("askMessage").textContent = message;
+    ok.textContent = okLabel || "확인";
+
+    const done = (answer) => {
+      back.hidden = true;
+      ok.removeEventListener("click", onOk);
+      cancel.removeEventListener("click", onCancel);
+      back.removeEventListener("click", onBack);
+      document.removeEventListener("keydown", onKey);
+      resolve(answer);
+    };
+    const onOk = () => done(true);
+    const onCancel = () => done(false);
+    const onBack = (e) => { if (e.target === back) done(false); };
+    const onKey = (e) => {
+      if (e.key === "Escape") done(false);
+      if (e.key === "Enter") done(true);
+    };
+
+    ok.addEventListener("click", onOk);
+    cancel.addEventListener("click", onCancel);
+    back.addEventListener("click", onBack);
+    document.addEventListener("keydown", onKey);
+    back.hidden = false;
+    ok.focus();
+  });
+}
+
 let toastTimer = null;
 
 /** 화면 위쪽에 잠깐 뜨는 알림. 팝업이 닫혀도 보입니다. */
@@ -731,14 +766,24 @@ async function confirmRegister() {
   // 그 전 편성에는 예전 키워드가 기록으로 남습니다.
   const current = activeRegistration(p);
   if (current && current.keyword !== item.keyword) {
-    const ok = confirm(
-      `${item.programName} 은 지금 '${current.keyword}' 가 적용 중이에요.\n` +
-      `이 회차(${prettyDate(p.date)} ${p.start})부터 '${item.keyword}' 로 바뀝니다.\n` +
-      `그 전 편성에는 '${current.keyword}' 가 그대로 남습니다. 진행할까요?`
+    const ok = await askConfirm(
+      `${item.programName} 은 지금 '${current.keyword}' 가 적용 중이에요. ` +
+      `이 회차(${prettyDate(p.date)} ${p.start})부터 '${item.keyword}' 로 바뀝니다. ` +
+      `그 전 편성에는 '${current.keyword}' 가 그대로 남습니다.`,
+      "바꾸기"
     );
-    if (!ok) return;
-  } else if (current && !confirm(`'${item.keyword}' 는 이미 적용 중이에요. 다시 등록할까요?`)) {
-    return;
+    if (!ok) {
+      showToast("등록을 취소했어요.", "");
+      return;
+    }
+  } else if (current) {
+    const ok = await askConfirm(
+      `'${item.keyword}' 는 이미 적용 중이에요. 다시 등록할까요?`, "다시 등록"
+    );
+    if (!ok) {
+      showToast("등록을 취소했어요.", "");
+      return;
+    }
   }
 
   try {
@@ -760,12 +805,25 @@ async function confirmRegister() {
       (prev ? " (이전 편성은 '" + prev + "' 유지)" : "");
     setBodyStatus(message, "ok");
     showToast(message, "ok");
-    // 등록 결과를 읽을 시간을 준 뒤 창을 닫습니다.
-    setTimeout(() => { document.getElementById("bodyBackdrop").hidden = true; }, 3000);
+
+    // 등록이 끝나면 팝업을 모두 닫고 캘린더로 돌아갑니다.
+    // 결과 문구는 화면 위 알림으로 남아 있습니다.
+    document.getElementById("bodyBackdrop").hidden = true;
+    closeModal();
+    revealAiring(p.id);
   } catch (err) {
     setBodyStatus("등록 실패: " + err.message, "bad");
     showToast("등록 실패: " + err.message, "bad");
   }
+}
+
+/** 방금 등록한 회차를 캘린더 화면에 띄우고 잠깐 표시해 줍니다. */
+function revealAiring(airingId) {
+  const block = document.querySelector('.pgm[data-airing="' + airingId + '"]');
+  if (!block) return;
+  block.scrollIntoView({ behavior: "smooth", block: "center" });
+  block.classList.add("is-flash");
+  setTimeout(() => block.classList.remove("is-flash"), 2400);
 }
 
 function countAppliedAirings(item) {
