@@ -15435,5 +15435,393 @@
   "analyzedAt": 1789037404,
   "programId": "EA202609101215",
   "cached": false
+ },
+ "EA202609131830": {
+  "keywords": [
+   {
+    "keyword": "포핸즈 재방송",
+    "score": 6.75,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "포핸즈 재방송",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "포핸즈 재방송",
+     "드라마 포핸즈 재방송",
+     "포핸즈 재방송 편성표",
+     "드라마 포핸즈 재방송 시간",
+     "포핸즈 재방송 시간",
+     "포핸즈 재방송 ott"
+    ]
+   },
+   {
+    "keyword": "포핸즈 ott",
+    "score": 6.75,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "포핸즈 ott",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "포핸즈 ott",
+     "드라마 포핸즈 ott",
+     "포핸즈 ott 시간",
+     "포핸즈 ott 몇시",
+     "포핸즈 ott 업로드",
+     "포핸즈 ott 넷플릭스"
+    ]
+   },
+   {
+    "keyword": "포핸즈협찬",
+    "score": 5.0,
+    "confidence": 74,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "포핸즈협찬",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "포핸즈협찬"
+    ]
+   },
+   {
+    "keyword": "협찬 제품",
+    "score": 4.8,
+    "confidence": 71,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 제품제공 차이",
+     "협찬 제품제공"
+    ]
+   },
+   {
+    "keyword": "패션 홍보대행사 에이전시커넥션",
+    "score": 3.4,
+    "confidence": 50,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026.09.08(화) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "홍보대행사 에이전시커넥션 데일리",
+    "score": 3.4,
+    "confidence": 50,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026.09.08(화) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "힙한 ceo 스타일",
+    "score": 3.0,
+    "confidence": 44,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "한소희 디올 패션",
+    "score": 2.2,
+    "confidence": 33,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "송강",
+    "score": 2.0,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "송강, 이준영 드라마 '포핸즈' 등장인물·줄거리 총정리｜드라마 속 에싸",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "이준영",
+    "score": 2.0,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "송강, 이준영 드라마 '포핸즈' 등장인물·줄거리 총정리｜드라마 속 에싸",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "에싸",
+    "score": 2.0,
+    "confidence": 30,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "송강, 이준영 드라마 '포핸즈' 등장인물·줄거리 총정리｜드라마 속 에싸",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "인기",
+    "score": 1.6,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "라인업",
+    "score": 1.6,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 16,
+  "queries": [
+   "포핸즈 5화 협찬 제품",
+   "포핸즈 의상 협찬 어디",
+   "포핸즈 착용 가방 주얼리"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.09.08(화) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "송강, 이준영 드라마 '포핸즈' 등장인물·줄거리 총정리｜드라마 속 에싸",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 8월 인기 드라마 라인업 및 촬영지·협찬 제품 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026.08.28(금) 패션 홍보대행사 에이전시커넥션 데일리 뉴스",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한소희 디올 패션 호불호 종결, 460만원 룩 논란에서 힙한 CEO 스타일 인정까지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "드라마 포핸즈",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 bl",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 뜻",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 원작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 드라마",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 몇부작",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "포핸즈협찬",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789139575,
+  "programId": "EA202609131830",
+  "cached": false
  }
 }

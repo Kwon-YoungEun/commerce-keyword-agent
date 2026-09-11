@@ -268,7 +268,17 @@ function escapeHtml(s) {
   );
 }
 
+/** 상단 바 높이를 재서 캘린더 헤더가 딱 그 아래에 붙도록 합니다.
+ *  창이 좁아지면 상단 바 버튼이 줄바꿈돼 높이가 달라집니다. */
+function syncStickyOffset() {
+  const bar = document.querySelector(".topbar");
+  if (!bar) return;
+  const h = Math.round(bar.getBoundingClientRect().height);
+  document.documentElement.style.setProperty("--topbar-h", h + "px");
+}
+
 function render() {
+  syncStickyOffset();
   renderWeekLabel();
   renderDayHead();
   renderTimeGutter();
@@ -1315,6 +1325,7 @@ function bindEvents() {
   });
 
   document.getElementById("btnProgramList").addEventListener("click", openProgramList);
+  window.addEventListener("resize", syncStickyOffset);
   // 장르 메뉴는 메뉴 바깥·태그 바깥을 눌렀을 때만 닫습니다.
   document.addEventListener("click", (e) => {
     if (e.target.closest("#genrePicker") || e.target.closest("button.cat")) return;

@@ -133,7 +133,9 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  /* hidden 을 쓰면 안쪽 sticky(요일 헤더)가 동작하지 않습니다. clip 은 잘라내되
+     스크롤 컨테이너를 만들지 않아 헤더가 화면에 계속 붙어 있습니다. */
+  overflow: clip;
   box-shadow: 0 1px 3px rgba(16, 24, 40, .05);
 }
 
@@ -143,7 +145,8 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   border-bottom: 1px solid var(--border);
   background: var(--bg-card);
   position: sticky;
-  top: 63px;
+  /* 상단 바 높이는 창 너비에 따라 달라져서 JS 가 실제 값을 넣어 줍니다. */
+  top: var(--topbar-h, 63px);
   z-index: 20;
 }
 .time-gutter-head { border-right: 1px solid var(--border); }
@@ -296,7 +299,6 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 
 @media (max-width: 900px) {
   .page { padding: 16px 12px 40px; }
-  .calendar-head { top: 0; }
   .pgm .e { display: none; }
 }
 
