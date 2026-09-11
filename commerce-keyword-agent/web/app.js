@@ -401,7 +401,7 @@ function renderSummaryBox(tvn) {
     );
   }
 
-  const SOURCE_NAME = { tvn: "tvN 공식", tving: "티빙", note: "직접 적어 둔 설명" };
+  const SOURCE_NAME = { tvn: "tvN 공식", tving: "티빙", note: "" };
   let lines = [];
   let footer = "";
 
