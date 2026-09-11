@@ -547,7 +547,6 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 button.cat { border: 1px solid transparent; cursor: pointer; font-family: inherit; }
 button.cat:hover { filter: brightness(0.96); border-color: currentColor; }
 button.cat.cat-none { border-style: dashed; border-color: var(--border); }
-button.cat.is-manual::after { content: " \270E"; font-size: 9px; opacity: .7; }
 
 .genre-picker {
   position: fixed; z-index: 200;

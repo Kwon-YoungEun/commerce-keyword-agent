@@ -895,15 +895,14 @@ function weekProgramNames() {
 
 /** 장르 칩 — 누르면 직접 고를 수 있습니다. */
 function genreChipHtml(row) {
-  const manual = Boolean(state.programGenres[row.name]);
-  const title = manual
-    ? "직접 지정한 장르예요. 누르면 바꿉니다."
-    : row.genre
-    ? (row.subGenre || "tvN 프로그램 목록 기준") + " · 누르면 바꿉니다"
+  // 직접 지정한 장르도 따로 표시하지 않고 똑같이 보여 줍니다.
+  // 어떤 태그든 누르면 바꿀 수 있습니다.
+  const title = row.genre
+    ? (row.subGenre ? row.subGenre + " · " : "") + "누르면 장르를 바꿉니다"
     : "tvN 프로그램 목록에 아직 없는 프로그램이에요. 눌러서 골라 주세요";
   const cls = row.genre ? "cat cat-" + row.genre : "cat cat-none";
   const label = row.genre || "장르 미상";
-  return ' <button type="button" class="' + cls + (manual ? " is-manual" : "") +
+  return ' <button type="button" class="' + cls +
          '" title="' + escapeHtml(title) + '">' + escapeHtml(label) + "</button>";
 }
 
