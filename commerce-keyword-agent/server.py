@@ -575,11 +575,52 @@ def load_program_page(slug, force=False):
     return fetched
 
 
-def clean_preview_text(text, max_lines=4):
-    """미리보기 본문에서 앞부분 몇 줄만 간추립니다(내용을 바꾸지 않습니다)."""
-    lines = [ln.strip() for ln in (text or "").split("\n")]
-    lines = [ln for ln in lines if ln]
-    return lines[:max_lines]
+# 마지막 문단은 대개 "9월 4일 금요일 저녁 8시 35분 …" 같은 방송 안내라 뺍니다.
+SCHEDULE_HINT_RE = re.compile(
+    r"\d+월\s*\d+일|\d+년\s*\d+월|본방\s*사수|채널\s*고정|시\s*방송|방송$|재방송"
+)
+# 문장이 끝난 것으로 볼 만한 끝맺음
+SENT_END_RE = re.compile(r"[.!?…♥★☆♨~\)]\s*$|다$|요$|까\?$")
+
+
+def clean_preview_text(text, max_lines=3, width=72):
+    """문단마다 첫 문장을 한 줄씩 뽑아 3줄로 간추립니다.
+
+    문장을 새로 쓰지 않고 원문 줄을 그대로 씁니다. 한 줄이 중간에 끊긴
+    경우에만 다음 줄을 이어 붙여 말이 되게 만듭니다.
+    """
+    blocks, current = [], []
+    for raw in (text or "").split("\n"):
+        line = raw.strip()
+        if line:
+            current.append(line)
+        elif current:
+            blocks.append(current)
+            current = []
+    if current:
+        blocks.append(current)
+
+    out = []
+    for block in blocks:
+        joined = block[0]
+        idx = 1
+        # 끊긴 줄이면 말이 될 때까지 이어 붙입니다.
+        while (idx < len(block) and len(joined) < 42
+               and not SENT_END_RE.search(joined)):
+            joined = joined + " " + block[idx]
+            idx += 1
+
+        if SCHEDULE_HINT_RE.search(joined) and len(out) >= 1:
+            continue                      # 방송 안내 문단은 건너뜁니다.
+        if len(joined) < 6:
+            continue
+        if len(joined) > width:
+            joined = joined[: width - 1].rstrip() + "…"
+        if joined not in out:
+            out.append(joined)
+        if len(out) >= max_lines:
+            break
+    return out
 
 
 def build_program_summary(program, store):
