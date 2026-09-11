@@ -10394,5 +10394,619 @@
   "analyzedAt": 1789144128,
   "programId": "EA202609090800",
   "cached": false
+ },
+ "EA202609100800": {
+  "keywords": [
+   {
+    "keyword": "퀴즈",
+    "score": 33.6,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "넌센스퀴즈",
+     "퀴즈노스",
+     "유 퀴즈 온 더 블럭",
+     "쏠퀴즈",
+     "유퀴즈",
+     "토스 행운퀴즈"
+    ]
+   },
+   {
+    "keyword": "블럭",
+    "score": 33.0,
+    "confidence": 98,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "블럭",
+     "블럭장난감",
+     "유 퀴즈 온 더 블럭",
+     "블럭제빵소",
+     "디폼블럭",
+     "넘버블럭스"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 셋업",
+    "score": 12.28,
+    "confidence": 37,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "김태희 민트색 셋업",
+    "score": 9.0,
+    "confidence": 27,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "협찬",
+    "score": 8.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "협찬 사이트",
+     "블로그 협찬",
+     "협찬",
+     "협찬플러스",
+     "인스타 협찬",
+     "블로그 협찬 문구"
+    ]
+   },
+   {
+    "keyword": "어디꺼",
+    "score": 6.8,
+    "confidence": 20,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "챗지피티 어디꺼",
+     "빽다방 두유 어디꺼",
+     "공차 어디꺼",
+     "볼보 어디꺼",
+     "아웃백 어디꺼",
+     "스타필드 어디꺼"
+    ]
+   },
+   {
+    "keyword": "유퀴즈온더블럭 협찬 가이드",
+    "score": 4.8,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 오디세",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 오디세이",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 조세호",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 조세호",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "블럭 송강",
+    "score": 4.75,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "유 퀴즈 온 더 블럭 송강",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "승려룩 어디꺼",
+    "score": 4.6,
+    "confidence": 14,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "간접광고 ppl",
+    "score": 4.3,
+    "confidence": 13,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 온더 블럭",
+    "score": 4.2,
+    "confidence": 12,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "발전 알아본 협찬",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "알아본 협찬 마케팅",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유퀴즈 이효리",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "찍고 스케일링",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "세계 제빵 월드컵",
+    "score": 3.0,
+    "confidence": 9,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "유퀴즈온더블럭 359회 협찬 제품",
+   "유퀴즈온더블럭 협찬 제품 어디",
+   "유퀴즈온더블럭 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 359회 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(유퀴즈온더블럭 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "핑계고 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인사픽뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "한가인, 1900만원 귀걸이→630만원 목걸이 '명품룩' 해명 \"다 협찬..내거 아냐\" | 네이트 판",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "지상파·종편 예능 PPL의 브랜디드 콘텐츠 진화 발전으로 알아본 협찬 마케팅",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더블럭 2026 세계 제빵 월드컵 우승자 빵집 4곳 위치 인기 빵 정리 331회",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "패션아카이브",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/95회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "TVN 유퀴즈온더블럭 협찬 가이드 | 간접광고 PPL·가상광고 안내",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 온더 블럭 김태희 민트색 셋업 정보 어디꺼?",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유퀴즈 이효리, 승려룩 어디꺼? 점 찍고 스케일링까지 완벽",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이정은 “5000만원 빚 갚느라 알바”…녹즙 배달→마트 판매왕까지 [TVis] (유퀴즈)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "유 퀴즈 온 더 블럭/44회 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "매일매일꿀팁",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "임채무 두리랜드｜입장료·위치·면적·땅값·프로필·나이·유퀴즈",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티비엔 예능 / 유퀴즈 온더 블럭 / 2026년 9월 9일 / 예고 / 배우 이정은 / 73세 윙슈터 임종순/ 85세 순정만화가 민애니 / 의사 이준서 / 배우 이정은까지 / 5만원 바닥화",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "주식 중독 자가 진단 테스트 13가지 (유퀴즈 정신과 의사 기준) - All Honey Tip",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 예고",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 오디세이",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 조세호",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 357회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 359회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "유 퀴즈 온 더 블럭 송강",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789144214,
+  "programId": "EA202609100800",
+  "cached": false
  }
 }
