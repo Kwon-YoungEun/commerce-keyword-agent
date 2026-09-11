@@ -421,8 +421,21 @@ def refresh_schedule(force=False):
             return store, False
 
         fetched = fetch_tvn_schedule()
+
+        # tvN 이 편성 시각을 고치면 같은 방송이 새 scheId 로 다시 내려옵니다.
+        # 그대로 합치면 옛 편성이 남아 블록이 두 겹으로 겹쳐 보입니다.
+        # 이번에 받아 온 날짜는 통째로 갈아끼우고, 그 밖의 날짜만 남깁니다.
+        fetched_dates = set(fetched["days"]) | {
+            p["date"] for p in fetched["programs"].values()
+        }
+        kept = {
+            pid: p
+            for pid, p in (store.get("programs") or {}).items()
+            if p.get("date") not in fetched_dates
+        }
+        kept.update(fetched["programs"])
+        store["programs"] = kept
         store.setdefault("days", {}).update(fetched["days"])
-        store.setdefault("programs", {}).update(fetched["programs"])
         store["fetchedAt"] = int(time.time())
         refresh_program_catalog(force=force)
         apply_catalog(store)
