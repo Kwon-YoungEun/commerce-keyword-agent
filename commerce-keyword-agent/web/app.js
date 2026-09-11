@@ -18,6 +18,7 @@ const state = {
   programIds: {},
   programGenres: {},
   genreChoices: [],
+  genrePickerFor: null,
   bodyDraft: null,
 };
 
@@ -909,10 +910,18 @@ function genreChipHtml(row) {
 function closeGenrePicker() {
   const old = document.getElementById("genrePicker");
   if (old) old.remove();
+  state.genrePickerFor = null;
 }
 
 function openGenrePicker(chip, row, rows) {
+  // 같은 태그를 다시 누르면 닫습니다.
+  if (state.genrePickerFor === row.name && document.getElementById("genrePicker")) {
+    closeGenrePicker();
+    return;
+  }
   closeGenrePicker();
+  state.genrePickerFor = row.name;
+
   const box = document.createElement("div");
   box.id = "genrePicker";
   box.className = "genre-picker";
@@ -946,15 +955,6 @@ function openGenrePicker(chip, row, rows) {
   const below = r.bottom + 6 + h <= window.innerHeight;
   box.style.top = (below ? r.bottom + 6 : Math.max(8, r.top - h - 6)) + "px";
   box.style.left = Math.max(8, Math.min(r.left, window.innerWidth - w - 12)) + "px";
-  setTimeout(() => document.addEventListener("click", onceCloseGenre, { once: true }), 0);
-}
-
-function onceCloseGenre(e) {
-  if (e.target.closest("#genrePicker")) {
-    document.addEventListener("click", onceCloseGenre, { once: true });
-    return;
-  }
-  closeGenrePicker();
 }
 
 async function setProgramGenre(name, genre, rows) {
@@ -1317,6 +1317,11 @@ function bindEvents() {
   });
 
   document.getElementById("btnProgramList").addEventListener("click", openProgramList);
+  // 장르 메뉴는 메뉴 바깥·태그 바깥을 눌렀을 때만 닫습니다.
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#genrePicker") || e.target.closest("button.cat")) return;
+    closeGenrePicker();
+  });
   document.getElementById("pidClose").addEventListener("click", () => {
     document.getElementById("pidBackdrop").hidden = true;
   });
