@@ -477,111 +477,8 @@ def verify_demand(keywords, limit=8):
 # 요약은 지어내지 않습니다. tvN 이 준 회차 부제와, 검색 결과에 실제로 있는
 # 문장/이름만 씁니다. 근거가 없으면 그 줄은 비워 둡니다.
 
-CAST_RUN_RE = re.compile(r"(?:[가-힣]{2,4}\s*[·ㆍ]\s*){1,6}[가-힣]{2,4}")
-
-# '염정아 가방', '강유석 패션' 처럼 사람 이름 뒤에 착장·소지품 말이 붙는 자리
-WEAR_WORDS = (
-    "패션|의상|스타일|착용|코디|룩|가방|모자|버킷햇|바지|팬츠|반바지|신발|운동화|재킷|자켓|"
-    "티셔츠|셔츠|원피스|니트|가디건|목걸이|귀걸이|반지|시계|선글라스|스카프|양말|지갑"
-)
-CAST_WEAR_RE = re.compile(r"([가-힣]{2,4})\s*(?:의\s*)?(?:" + WEAR_WORDS + r")")
-CAST_ROLE_RE = re.compile(
-    r"(?:배우|가수|모델|방송인|개그맨|코미디언|셰프|게스트)\s*([가-힣]{2,4})"
-    r"|([가-힣]{2,4})\s*(?:출연|합류|등장)"
-)
-SENT_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
-
-
 def norm_compact(text):
     return re.sub(r"\s+", "", text or "")
-
-
-def _cast_candidate(name):
-    return (
-        name
-        and 2 <= len(name) <= 4
-        and name not in STOPWORDS
-        and name not in PRODUCT_TERMS
-        and not TITLE_NOISE_RE.search(name)
-    )
-
-
-TITLE_NOISE_RE = re.compile(r"^(제작|공식|영상|사진|정보|추천|리뷰|후기|가격|구매|최신|이번|지난)$")
-
-
-def extract_cast(program, docs, limit=6):
-    """검색 결과 제목에서 사람 이름을 모읍니다.
-
-    '염정아 가방', '강유석 패션' 처럼 착장 이야기에 붙은 이름과,
-    '배우 OOO' / 'OOO 출연' 자리, 그리고 이름이 나열된 자리만 인정합니다.
-    프로그램 이름에 들어 있는 말은 제외합니다.
-    """
-    title_tokens = set(TOKEN_RE.findall(program.get("title", "")))
-    counts = defaultdict(int)
-
-    for doc in docs:
-        text = (doc.get("title", "") + " " + doc.get("snippet", ""))
-        for name in CAST_WEAR_RE.findall(text):
-            if _cast_candidate(name) and name not in title_tokens:
-                counts[name] += 2
-        for group in CAST_ROLE_RE.findall(text):
-            for name in group:
-                if _cast_candidate(name) and name not in title_tokens:
-                    counts[name] += 2
-        for run in CAST_RUN_RE.findall(text):
-            names = [x.strip() for x in re.split(r"[·ㆍ]", run) if x.strip()]
-            if len(names) < 2:
-                continue
-            good = [n for n in names if _cast_candidate(n) and n not in title_tokens]
-            if len(good) >= 2:          # 이름 나열로 보일 때만 인정합니다.
-                for name in good:
-                    counts[name] += 2
-
-    ordered = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
-    return [name for name, hits in ordered if hits >= 2][:limit]
-
-
-def extract_story(program, docs, limit=2):
-    """검색 결과에 실제로 있는 문장/제목을 그대로 한두 줄 가져옵니다."""
-    base = norm_compact(short_title(program.get("title", "")))
-    episode = norm_compact(program.get("episode", ""))
-    picked, seen = [], set()
-
-    for doc in docs:
-        if doc.get("kind") != "web":
-            continue
-        candidates = []
-        for sent in SENT_SPLIT_RE.split(doc.get("snippet", "") or ""):
-            sent = re.sub(r"\s+", " ", sent).strip(" -·|")
-            if 20 <= len(sent) <= 120:
-                candidates.append((sent, 1))          # 요약문이 있으면 우선
-        title = re.sub(r"\s+", " ", doc.get("title", "")).strip()
-        if 12 <= len(title) <= 120:
-            candidates.append((title, 0))
-
-        for text, is_snippet in candidates:
-            key = norm_compact(text)[:16]
-            if key in seen:
-                continue
-            flat = norm_compact(text)
-            score = is_snippet * 4
-            if base and base in flat:
-                score += 3
-            if episode and episode in flat:
-                score += 2
-            picked.append({"text": text, "url": doc.get("url", ""), "score": score})
-            seen.add(key)
-
-    picked.sort(key=lambda x: -x["score"])
-    return [{"text": p["text"], "url": p["url"]} for p in picked[:limit] if p["score"] > 0]
-
-
-def build_summary(program, docs):
-    return {
-        "episodeTitle": program.get("subtitle", "") or "",
-        "cast": extract_cast(program, docs),
-        "story": extract_story(program, docs),
-    }
 
 
 def analyze_program(program, verify=True):
@@ -591,7 +488,6 @@ def analyze_program(program, verify=True):
         keywords = verify_demand(keywords)
     return {
         "keywords": keywords,
-        "summary": build_summary(program, docs),
         "docCount": len(docs),
         "queries": build_queries(program),
         "errors": errors,

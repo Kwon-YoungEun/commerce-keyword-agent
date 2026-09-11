@@ -33,6 +33,7 @@ PROGRAM_SLUGS = os.path.join(DATA_DIR, "tvn_program_slugs.txt")
 PREVIEW_CACHE = os.path.join(DATA_DIR, "preview_cache.json")
 TVING_MAP = os.path.join(DATA_DIR, "tving_contents.txt")
 TVING_CACHE = os.path.join(DATA_DIR, "tving_cache.json")
+PROGRAM_NOTES = os.path.join(DATA_DIR, "program_notes.txt")
 PROGRAM_GENRE_STORE = os.path.join(DATA_DIR, "program_genres.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
@@ -710,14 +711,47 @@ def tving_summary(program):
     }
 
 
+def load_program_notes():
+    """직접 적어 둔 프로그램 설명 {프로그램명: 설명}."""
+    out = {}
+    try:
+        with open(PROGRAM_NOTES, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "|" not in line:
+                    continue
+                name, note = line.split("|", 1)
+                if name.strip() and note.strip():
+                    out[name.strip()] = note.strip()
+    except OSError:
+        pass
+    return out
+
+
+def note_summary(program):
+    note = load_program_notes().get(program.get("programName") or "")
+    if not note:
+        return None
+    return {
+        "available": True,
+        "source": "note",
+        "url": "",
+        "cast": [],
+        "preview": {"title": "", "lines": clean_preview_text(note)},
+        "broadcast": "",
+        "hasPreviews": False,
+    }
+
+
 def build_program_summary(program, store):
     """tvN 공식 데이터 기반 방송 요약."""
     slug = resolve_slug(program, store)
     if not slug:
-        fallback = tving_summary(program)
+        fallback = tving_summary(program) or note_summary(program)
         if fallback:
             return fallback
-        return {"available": False, "reason": "tvN 프로그램 페이지 주소를 아직 모릅니다."}
+        return {"available": False,
+                "reason": "tvN·티빙 어디에도 이 프로그램 자료가 없습니다."}
 
     page = load_program_page(slug)
     episode_no = ""
@@ -734,7 +768,7 @@ def build_program_summary(program, store):
         chosen = page["previews"][0]
 
     if not (page.get("cast") or chosen or page.get("broadcast")):
-        fallback = tving_summary(program)
+        fallback = tving_summary(program) or note_summary(program)
         if fallback:
             return fallback
 

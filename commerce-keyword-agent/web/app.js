@@ -356,7 +356,6 @@ async function loadKeywords(program, refresh) {
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "분석에 실패했습니다.");
     state.analysis = json;
-    renderSummary(json);
     renderKeywords(json);
   } catch (err) {
     list.innerHTML = `<div class="notice">키워드를 뽑지 못했습니다: ${escapeHtml(err.message)}</div>`;
@@ -372,52 +371,55 @@ async function loadSummary(program) {
   try {
     const res = await fetch("/api/summary?programId=" + encodeURIComponent(program.id));
     const json = await res.json();
-    if (!json.ok || !json.available) return;
     if (state.currentProgram !== program) return;   // 그새 다른 회차를 열었으면 무시
     state.summary = json;
-    renderSummaryBox(json, null);
+    renderSummaryBox(json);
   } catch (err) {
-    /* 요약이 없어도 키워드는 그대로 보여 줍니다. */
+    renderSummaryBox(null);
   }
 }
 
-function renderSummaryBox(tvn, analysis) {
+/** 방송 요약 — tvN 공식, 티빙, 직접 적어 둔 설명 순서로만 씁니다.
+ *  셋 다 없으면 추측해서 채우지 않고 없다고 알립니다. */
+function renderSummaryBox(tvn) {
   const box = document.getElementById("summaryBox");
-  const rows = [];
 
-  const cast = (tvn && tvn.cast) || (analysis && analysis.summary && analysis.summary.cast) || [];
-  if (cast.length) {
+  if (!tvn || !tvn.ok || !tvn.available) {
+    box.innerHTML =
+      "<h3>방송 요약</h3>" +
+      '<p class="sum-empty">이 프로그램 정보를 찾지 못했어요. ' +
+      "tvN·티빙 어디에도 자료가 없습니다.</p>";
+    box.hidden = false;
+    return;
+  }
+
+  const rows = [];
+  if ((tvn.cast || []).length) {
     rows.push(
       '<div class="sum-row"><span class="sum-key">출연</span>' +
-      '<span class="sum-val">' + cast.map(escapeHtml).join(" · ") + "</span></div>"
+      '<span class="sum-val">' + tvn.cast.map(escapeHtml).join(" · ") + "</span></div>"
     );
   }
 
+  const SOURCE_NAME = { tvn: "tvN 공식", tving: "티빙", note: "직접 적어 둔 설명" };
   let lines = [];
   let footer = "";
-  if (tvn && tvn.preview) {
+
+  if (tvn.preview) {
     lines = tvn.preview.lines.slice(0, 3).map(escapeHtml);
-    const label = tvn.source === "tving" ? "티빙" : "tvN 공식";
-    footer = label + ' <a href="' + escapeHtml(tvn.url) + '" target="_blank" rel="noopener">' +
-             escapeHtml(tvn.preview.title) + " ↗</a>";
+    const label = SOURCE_NAME[tvn.source] || "";
+    footer = (tvn.url && tvn.preview.title)
+      ? label + ' <a href="' + escapeHtml(tvn.url) + '" target="_blank" rel="noopener">' +
+        escapeHtml(tvn.preview.title) + " ↗</a>"
+      : label;
   } else {
-    const s = (analysis && analysis.summary) || {};
-    if (s.episodeTitle) lines.push(escapeHtml(s.episodeTitle));
-    for (const item of (s.story || []).slice(0, 2 - lines.length)) {
-      lines.push(
-        item.url
-          ? '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' +
-            escapeHtml(item.text) + " ↗</a>"
-          : escapeHtml(item.text)
-      );
-    }
-    if (tvn && tvn.available) {
-      if (tvn.broadcast) lines.unshift(escapeHtml(tvn.broadcast));
-      footer = tvn.hasPreviews
-        ? "이 회차 미리보기는 tvN 에 없어요. (최근 회차만 제공됩니다)"
-        : "tvN 에 회차 미리보기가 없는 프로그램이에요.";
-    } else if (lines.length) {
-      footer = "검색 결과에서 모은 내용입니다.";
+    if (tvn.broadcast) lines.push(escapeHtml(tvn.broadcast));
+    if (tvn.source !== "tvn") {
+      footer = (SOURCE_NAME[tvn.source] || "") + " 기준 · 회차별 내용은 없어요.";
+    } else if (tvn.hasPreviews) {
+      footer = "이 회차 미리보기는 tvN 에 없어요. (최근 회차만 제공됩니다)";
+    } else {
+      footer = "tvN 에 회차 미리보기가 없는 프로그램이에요.";
     }
   }
 
@@ -428,19 +430,9 @@ function renderSummaryBox(tvn, analysis) {
     );
   }
 
-  if (!rows.length) {
-    box.hidden = true;
-    return;
-  }
   box.innerHTML = "<h3>방송 요약</h3>" + rows.join("") +
                   (footer ? '<p class="sum-note">' + footer + "</p>" : "");
   box.hidden = false;
-}
-
-function renderSummary(analysis) {
-  // 키워드 분석이 끝났을 때 — 공식 요약이 이미 있으면 그대로 둡니다.
-  if (state.summary && state.summary.preview) return;
-  renderSummaryBox(state.summary, analysis);
 }
 
 function renderKeywords(analysis) {
