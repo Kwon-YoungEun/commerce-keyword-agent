@@ -148,6 +148,9 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   /* 상단 바 높이는 창 너비에 따라 달라져서 JS 가 실제 값을 넣어 줍니다. */
   top: var(--topbar-h, 63px);
   z-index: 20;
+  /* 위쪽: 상단 바와의 1px 이음새를 카드 색으로 덮습니다.
+     아래쪽: 편성 블록이 헤더 밑으로 지나간다는 게 보이도록 옅은 그림자를 둡니다. */
+  box-shadow: 0 -10px 0 var(--bg-card), 0 5px 6px -5px rgba(16, 24, 40, .28);
 }
 .time-gutter-head { border-right: 1px solid var(--border); }
 .day-head-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }

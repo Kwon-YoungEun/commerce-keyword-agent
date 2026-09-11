@@ -295,7 +295,9 @@ function escapeHtml(s) {
 function syncStickyOffset() {
   const bar = document.querySelector(".topbar");
   if (!bar) return;
-  const h = Math.round(bar.getBoundingClientRect().height);
+  // 올림이 아니라 내림을 씁니다. 반올림하면 소수점 높이에서 1px 틈이 생겨
+  // 그 사이로 편성 블록이 비쳐 보입니다.
+  const h = Math.floor(bar.getBoundingClientRect().height);
   document.documentElement.style.setProperty("--topbar-h", h + "px");
 }
 
