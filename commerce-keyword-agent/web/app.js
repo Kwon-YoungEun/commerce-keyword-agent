@@ -160,7 +160,6 @@ function renderDayHead() {
   for (let i = 0; i < 7; i++) {
     const date = addDays(state.weekStart, i);
     const key = ymd(date);
-    const list = state.programsByDate.get(key) || [];
 
     const cell = document.createElement("div");
     cell.className = "day-head";
@@ -170,8 +169,7 @@ function renderDayHead() {
 
     cell.innerHTML =
       `<div class="wk">${WKDAY[date.getDay()]}</div>` +
-      `<div class="dd">${date.getDate()}</div>` +
-      `<div class="cnt">${list.length ? list.length + "편" : "-"}</div>`;
+      `<div class="dd">${date.getDate()}</div>`;
     wrap.appendChild(cell);
   }
 }

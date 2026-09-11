@@ -161,7 +161,6 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .day-head.is-sat .wk, .day-head.is-sat .dd { color: #1D4ED8; }
 .day-head.is-sun .wk, .day-head.is-sun .dd { color: var(--skb-red); }
 .day-head.is-today { background: #FEF1F3; box-shadow: inset 0 -2px 0 var(--skb-red); }
-.day-head .cnt { font-size: 11px; color: var(--text-secondary); }
 
 .calendar-body {
   display: grid;
