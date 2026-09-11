@@ -8755,5 +8755,1644 @@
   "analyzedAt": 1789143899,
   "programId": "EA202609140455",
   "cached": false
+ },
+ "EA202609101020": {
+  "keywords": [
+   {
+    "keyword": "놀라운 토요일 선물세트",
+    "score": 12.28,
+    "confidence": 100,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "민니 입은 후드집업",
+    "score": 9.0,
+    "confidence": 73,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스",
+    "score": 8.8,
+    "confidence": 72,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "빅마우스",
+     "빅마우스 드라마",
+     "빅마우스 정체",
+     "빅마우스 결말",
+     "빅마우스 뜻",
+     "빅마우스 ott"
+    ]
+   },
+   {
+    "keyword": "추천",
+    "score": 8.0,
+    "confidence": 65,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "책 추천",
+     "넷플릭스 추천",
+     "돈키호테 추천템",
+     "영화 추천",
+     "저녁메뉴 추천",
+     "성심당 빵 추천"
+    ]
+   },
+   {
+    "keyword": "놀라운 토요일 시아",
+    "score": 7.5,
+    "confidence": 61,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 시아",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "놀라운 토요일 시아"
+    ]
+   },
+   {
+    "keyword": "입은 후드집업 어디꺼야",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "일산 선물세트 추천",
+    "score": 6.0,
+    "confidence": 49,
+    "category": "식품",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 햇님",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 햇님",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 회차정보",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 회차정보",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 셰프",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 셰프",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 태연",
+    "score": 5.5,
+    "confidence": 45,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "놀라운 토요일 태연",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "빅마우스 라방 검색하니까",
+    "score": 5.2,
+    "confidence": 42,
+    "category": "디지털",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "놀라운 토요일 나온",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "토요일 나온 예당떡마",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "나온 예당떡마 다녀왔어요",
+    "score": 4.8,
+    "confidence": 39,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "양산떡집 추천",
+    "score": 4.3,
+    "confidence": 35,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "월의 영현",
+    "score": 3.0,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "2026년 4월의 영현이🦊🐱",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "2026년 4월의 영현이🦊🐱",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "놀라운 토요일 433회 협찬 제품",
+   "놀라운 토요일 협찬 제품 어디",
+   "놀라운 토요일 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(놀라운 토요일 433회 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(놀라운 토요일 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(놀라운 토요일 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 4월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "티파니 영 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "네이버",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이효리가 방송에서 대놓고 농심 '새우깡' 집어 먹자..",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흥흥제과 가경점 - 청주 타르트, 에그타르트 맛집 - 다이닝코드",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "동대문디자인플라자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "KEY(SHINee) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "2026년 4월의 영현이🦊🐱",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "아이들(IDLE) 민니가 입은 후드집업 어디꺼야? (에이카화이트(AECA) 후드집업)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "빅마우스 라방 검색하니까 이거 뜨네 ㅜㅜ",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "일산 답례품·일산 선물세트 추천 '햇살한톨' | 글루텐프리 쌀디저트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구맛집 - 대구 아이랑 외식은 우리동네한우맛집 고기꿉자 범어점에서👍",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "KEY(SHINee) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "대구 수성구 카페 켑트베이커스 놀라운토요일 신매시장 애견동반 카페 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "🍡 양산떡집 추천! 놀라운 토요일에도 나온 예당떡마을 다녀왔어요",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "힐러 평가는 긍정적! 월드 경쟁 시작된 GENESIS 업데이트",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "Thetis 시즌오프 - 더티스 로맨틱 트위드 샤 미니 드레스 구매 후기 - 추가 할인 받는 법",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "오데마 피게 x 스와치 ‘로열 펍’을 사려면 며칠 전에 줄을 서야 할까? 6일",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 시아",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 햇님",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 회차정보",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 셰프",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 출연진",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 태연",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "놀라운 토요일 게스트",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789144024,
+  "programId": "EA202609101020",
+  "cached": false
+ },
+ "EA202609121320": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum",
+     "광고키워드"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아 모자"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 23.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "광고키워드"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "폴로 데님 모자",
+     "데님 모자 브랜드"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 매트리스",
+    "score": 21.96,
+    "confidence": 95,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "언니네 산지직송 매트리스",
+     "언니네 산지직송 매트리스 가격",
+     "언니네산지직송 매트리스 협찬"
+    ]
+   },
+   {
+    "keyword": "언니네 산지직송 가방",
+    "score": 14.84,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 모자",
+    "score": 14.84,
+    "confidence": 65,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "산지직송 접이식 매트리스",
+    "score": 14.6,
+    "confidence": 63,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "언니네 산지직송 티셔츠",
+    "score": 13.24,
+    "confidence": 58,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "접이식 매트리스 추천",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "매트리스 추천 숙면연구소",
+    "score": 11.6,
+    "confidence": 50,
+    "category": "리빙",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "피그먼트 반팔 티셔츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "티셔츠 카고 반바지",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "스노우피크 카고 팬츠",
+    "score": 10.8,
+    "confidence": 47,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 가방",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "260910 'tvN 언니네 산지직송3 7회' 염정아 가방 정보_스노우피크 어패럴 (SNOWPEAK APPAREL)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조정석 바지",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 꽃조끼",
+    "score": 10.3,
+    "confidence": 45,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 염정아 꽃조끼 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김혜윤 연보라 모자",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "연보라 모자 버킷햇",
+    "score": 10.0,
+    "confidence": 43,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 32,
+  "queries": [
+   "언니네 산지직송3 7회 협찬 제품",
+   "언니네 산지직송 협찬 제품 어디",
+   "언니네 산지직송 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(언니네 산지직송3 7회 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(언니네 산지직송 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(언니네 산지직송 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "노윤서모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "데님모자",
+    "url": ""
+   },
+   {
+    "source": "daum-ad",
+    "kind": "ad",
+    "title": "염정아모자",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "삼시세끼/산촌편 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "260910 'tvN 언니네 산지직송3 7회' 염정아 가방 정보_스노우피크 어패럴 (SNOWPEAK APPAREL)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 강유석 패션 정보｜브라운브레스 피그먼트 반팔 티셔츠 & 카고 반바지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "노윤서 산지직송3 첫 만남, 회색 재킷보다 먼저 보인 부드러운 레이어",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "덱스(방송인) - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 조정석 바지 어디 제품? 스노우피크 카고 팬츠 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 재방송·게스트·촬영지 총정리(맥주 정보와 강유석 출연까지)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이다영 수영복 브랜드 모델명 및 가격대 정보 상세 분석",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네산지직송2에 나온 칼하트? 커플룩 정보아시는 분??",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 김혜윤 연보라 모자 버킷햇 라벤더 벙거지(in 칼라페 2회)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 염정아 꽃조끼 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3가지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "/사진제공=메리고라운드컴퍼니",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "6시 내고향 완도 제철 수산물 위치 6시 내고향 완도 제철 수산물 투영이네수산 주문 택배 위치 총정리",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "언니네 산지직송 접이식 매트리스 추천 숙면연구소 3단 매트리스 15cm 후기 리뷰",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 뱀",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 촬영지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 재방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 시청률",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 편성표",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 태안",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 6회",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네 산지직송3 ott",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "언니네산지직송협찬차량",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789144056,
+  "programId": "EA202609121320",
+  "cached": false
+ },
+ "EA202609090800": {
+  "keywords": [
+   {
+    "keyword": "히든에이지 앰플",
+    "score": 20.0,
+    "confidence": 100,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "naver-ac",
+     "광고키워드",
+     "조합"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 앰플",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "히든에이지 앰플"
+    ]
+   },
+   {
+    "keyword": "히든에이지 자켓",
+    "score": 15.48,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 원피스",
+    "score": 15.48,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "조합"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 시간도둑 찾아라",
+    "score": 12.3,
+    "confidence": 62,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum",
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "히든에이지: 시간도둑을 찾아라",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "레드 더블버튼 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 자켓",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 유인나 원피스",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "옐로우 딘트 원피스",
+    "score": 10.8,
+    "confidence": 54,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "하이드 앰플",
+    "score": 8.0,
+    "confidence": 40,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 원피스 어디",
+    "score": 7.8,
+    "confidence": 39,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 어디 제품",
+    "score": 7.8,
+    "confidence": 39,
+    "category": "패션",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "결벽쿠션",
+    "score": 6.8,
+    "confidence": 34,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "리리코스 수분앰플 단종",
+    "score": 5.2,
+    "confidence": 26,
+    "category": "뷰티",
+    "shoppable": true,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "유인나 레드 더블버튼",
+    "score": 4.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "화사한 옐로우 딘트",
+    "score": 4.8,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "daum"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 피부",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 피부",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "히든에이지 유산균",
+    "score": 4.75,
+    "confidence": 24,
+    "category": "기타",
+    "shoppable": false,
+    "sources": [
+     "naver-ac"
+    ],
+    "evidence": [
+     {
+      "text": "히든에이지 유산균",
+      "url": "",
+      "source": "naver-ac"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 28,
+  "queries": [
+   "히든에이지 15회 협찬 제품",
+   "히든에이지 협찬 제품 어디",
+   "히든에이지 나온 상품 구매"
+  ],
+  "errors": [
+   "DuckDuckGo 검색 실패(히든에이지 15회 협찬 제품): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(히든에이지 협찬 제품 어디): <urlopen error timed out>",
+   "DuckDuckGo 검색 실패(히든에이지 나온 상품 구매): <urlopen error timed out>"
+  ],
+  "documents": [
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[딘트] tvN 히든에이지 시간도둑을 찾아라 15회 유인나 레드 더블버튼 자켓 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "'히든에이지: 시간도둑을 찾아라' 15회 속 유인나 레드 자켓 정보 / 하객룩 추천",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "제15회 레트롤링 X 용산전자랜드 개최 공지",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "철면수심 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "드라마 '별에서 온 그대(별온그/별그대)' 15화 속 김수현, 전지현 / 도민준, 천송이 패션 살펴보기!! (카페그다이)",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "수미산장 1회 에이핑크 정은지 패션 프리모떼 귀걸이 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "어벤져스: 에이지 오브 울트론 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "[시청역 더히든게임룸] 아마겟돈 사전예약 & 워해머 뉴비 모임",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "흑백요리사2 속 아이템 찾아보기",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이동휘 브랜드 론칭 전참시서 공개 수호 선물 반전",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "히든에이지 유인나 원피스 어디 제품? 화사한 옐로우 딘트 원피스 정보",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "네이버 인플루언서",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "나가쉬/에이지 오브 시그마 - 나무위키",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "두 언더독이 선보이는 ‘아키텍트’, 모두의 MMORPG를 꿈꾸다",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "인벤",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "리리코스 수분앰플 단종 후 뭘 쓰지? 헤라 에이지 어웨이 에스테틱 BX 하이드로 앰플",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "5월 뷰티신상소식 7호 ㅣ 디올 백스테이지 에디션, 3CE 결벽쿠션, 라카 트윈립",
+    "url": ""
+   },
+   {
+    "source": "daum",
+    "kind": "web",
+    "title": "이직로그 팝업 후기 + 팝업이랑 굿즈 사진들",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지: 시간도둑을 찾아라",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 뜻",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지57세",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 앰플",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 방송",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 피부",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 유산균",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 나무위키",
+    "url": ""
+   },
+   {
+    "source": "naver-ac",
+    "kind": "autocomplete",
+    "title": "히든에이지 화장품",
+    "url": ""
+   }
+  ],
+  "analyzedAt": 1789144128,
+  "programId": "EA202609090800",
+  "cached": false
  }
 }
