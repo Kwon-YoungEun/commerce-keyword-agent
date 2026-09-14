@@ -386,6 +386,7 @@ async function loadKeywords(program, refresh) {
   const meta = document.getElementById("analysisMeta");
   list.innerHTML = '<div class="loading"><span class="spinner"></span>검색해서 키워드를 뽑는 중이에요… (10초쯤 걸려요)</div>';
   meta.textContent = "";
+  renderGallery(null);
 
   try {
     const url = `/api/keywords?programId=${encodeURIComponent(program.id)}` + (refresh ? "&refresh=1" : "");
@@ -472,11 +473,56 @@ function renderSummaryBox(tvn) {
   box.hidden = false;
 }
 
+/** 검색어는 소스마다 달라서, 묶음으로 받아 한 줄로 풀어 보여줍니다. */
+function queryText(queries) {
+  if (!queries) return "";
+  const list = Array.isArray(queries)
+    ? queries
+    : Object.keys(queries).reduce((acc, key) => acc.concat(queries[key] || []), []);
+  const seen = [];
+  for (const q of list) if (q && !seen.includes(q)) seen.push(q);
+  return seen.map((q) => `<code>${escapeHtml(q)}</code>`).join(" · ");
+}
+
+/** 회차를 눈으로 다시 확인할 수 있게 공식 클립·유튜브 썸네일을 보여줍니다. */
+function renderGallery(gallery) {
+  const box = document.getElementById("clipGallery");
+  const items = gallery || [];
+  if (!items.length) {
+    box.hidden = true;
+    box.innerHTML = "";
+    return;
+  }
+
+  box.hidden = false;
+  box.innerHTML =
+    `<div class="gallery-head">이 회차 영상 ${items.length}건 <span class="muted">— 눌러서 열어보고 키워드를 확인해 보세요</span></div>` +
+    `<div class="gallery-grid">` +
+    items
+      .map((it) => {
+        const badge = it.source === "clip" ? "tvN 공식" : "유튜브";
+        const views = it.views ? `조회수 ${Number(it.views).toLocaleString()}회` : "";
+        const sub = [views, it.published].filter(Boolean).join(" · ");
+        const inner =
+          `<span class="gallery-thumb">` +
+          (it.thumb ? `<img src="${escapeHtml(it.thumb)}" alt="">` : "") +
+          `<span class="gallery-badge">${badge}</span></span>` +
+          `<span class="gallery-title">${escapeHtml(it.title || "")}</span>` +
+          (sub ? `<span class="gallery-sub">${escapeHtml(sub)}</span>` : "");
+        return it.url
+          ? `<a class="gallery-item" href="${escapeHtml(it.url)}" target="_blank" rel="noopener">${inner}</a>`
+          : `<span class="gallery-item">${inner}</span>`;
+      })
+      .join("") +
+    `</div>`;
+}
+
 function renderKeywords(analysis) {
   const meta = document.getElementById("analysisMeta");
   const when = analysis.analyzedAt ? new Date(analysis.analyzedAt * 1000) : null;
+  renderGallery(analysis.gallery);
   meta.innerHTML =
-    `검색어: ${analysis.queries.map((q) => `<code>${escapeHtml(q)}</code>`).join(" · ")}<br>` +
+    `검색어: ${queryText(analysis.queries)}<br>` +
     `문서 ${analysis.docCount}건 분석` +
     (when ? ` · ${when.getMonth() + 1}/${when.getDate()} ${String(when.getHours()).padStart(2, "0")}:${String(when.getMinutes()).padStart(2, "0")} 기준` : "") +
     (analysis.cached ? " (저장된 결과)" : "") +

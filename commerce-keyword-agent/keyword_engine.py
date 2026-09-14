@@ -17,6 +17,7 @@
 
 import html
 import json
+import math
 import re
 import time
 import urllib.error
@@ -39,7 +40,10 @@ CATEGORY_TERMS = {
         원두 차 녹차 보리차 진피차 과자 빵 잼 소스 육수 한우 삼겹살 수육 가브리살 닭갈비 통닭 치킨
         훈제 소시지 돈가스 규카츠 장어 과일 사과 배 감귤 한라봉 딸기 포도 샤인머스캣 수박 복숭아
         자두 매실 대추 밤 옥수수 감자 고구마 버섯 표고 나물 장아찌 액젓 선물세트 세트 즙 진액 환
-        분말 티백 육포 어묵 두부 계란 우유 요거트 치즈 수프 크림수프 디저트 케이크 꼬치 족발 순대""".split(),
+        분말 티백 육포 어묵 두부 계란 우유 요거트 치즈 수프 크림수프 디저트 케이크 꼬치 족발 순대
+        바지락 꼬막 가리비 소라 다슬기 우럭 광어 방어 대게 꽃게 갈치 고등어 삼치 명태 코다리 황태
+        막국수 냉면 국밥 찌개 전골 구이 볶음 조림 튀김 탕수육 짬뽕 짜장 초밥 회 물회 매운탕
+        약과 정과 유과 강정 젤리 아이스크림 마카롱 크로플 도넛 샌드위치 버거 피자 파스타""".split(),
     "패션": """원피스 니트 가디건 코트 자켓 재킷 점퍼 패딩 셔츠 블라우스 티셔츠 맨투맨 후드 팬츠
         바지 청바지 데님 슬랙스 스커트 치마 가방 백팩 크로스백 토트백 숄더백 에코백 신발 운동화
         스니커즈 부츠 샌들 슬리퍼 로퍼 구두 모자 버킷햇 캡모자 볼캡 비니 목걸이 귀걸이 반지 팔찌
@@ -87,7 +91,14 @@ STOPWORDS = set(
     프로필 나이 학력 열애 결혼 소속사 팬미팅 논란 인정 종결 호불호 진화 완벽 만원 가지 부분
     재방송 본방송 몇시 시청방법 편성시간 모음 정리본 유료광고포함 유료광고 highlight shorts
     있는 없는 하는 되는 같은 나오는 들어간 품은 감싸 하시 거예요 이런 저런 그런 지금 여기 거기
-    지구급 극강 화려한 시끌벅적 유쾌한 부드러움 감칠맛 맛으 향긋한 폭발 매콤새콤""".split()
+    지구급 극강 화려한 시끌벅적 유쾌한 부드러움 감칠맛 맛으 향긋한 폭발 매콤새콤
+    무조건 필수 전용 저녁 아침 점심 새벽 인분 겉바속촉 오픈 역대급 최애 강추 대박 실화
+    퍼포먼스 답변들 찐친 찐맛 개꿀 꿀조합 레전드 소문 정체 비법 공개된
+    셰프 요리사 사장님 게스트 멤버 출연자 진행자 심사위원 패널 제작진 스태프
+    맛집 식당 공방 법정 현장 스튜디오 특집 예고편 비하인드 메이킹 풀버전 미방분
+    리액션 티저 쇼츠 클립 편집본 몰아보기 명장면 짤방
+    with and the for of vs zip ep feat part full sub eng ver open new best
+    official mix live special edition""".split()
 )
 
 JOSA = [
@@ -115,6 +126,7 @@ PAIR_SPLIT_RE = re.compile(r"\s*[&＆×xX]\s*")
 KIND_WEIGHT = {
     "preview": 6.0,       # tvN 공식 회차 미리보기
     "clip": 5.0,          # tvN 공식 클립 제목(같은 회차)
+    "youtube": 4.5,       # 유튜브 검색 결과 제목(회차로 검색, 조회수로 가중)
     "ad": 4.0,            # 검색광고 키워드
     "news": 3.0,          # 구글 뉴스 제목
     "autocomplete": 2.5,  # 네이버 자동완성
@@ -137,6 +149,14 @@ def short_title(title):
 
 def norm_compact(text):
     return re.sub(r"\s+", "", text or "")
+
+
+MATCH_KEY_RE = re.compile(r"[^가-힣0-9a-zA-Z]")
+
+
+def match_key(text):
+    """제목·채널 비교용 — 공백과 기호를 모두 지웁니다."""
+    return MATCH_KEY_RE.sub("", text or "").lower()
 
 
 # ------------------------------------------------------------------ 수집기
@@ -186,6 +206,92 @@ def search_google_news(query, limit=30):
             "url": _strip_tags((RSS_LINK_RE.search(chunk) or [None, ""])[1]),
             "query": query, "ts": ts,
         })
+    return docs
+
+
+VIEW_COUNT_RE = re.compile(r"([\d,]+)")
+
+
+def _parse_views(text):
+    """'조회수 79,226회' → 79226"""
+    m = VIEW_COUNT_RE.search(text or "")
+    if not m:
+        return 0
+    try:
+        return int(m.group(1).replace(",", ""))
+    except ValueError:
+        return 0
+
+
+def view_weight(views):
+    """조회수가 많을수록 화제도가 높다고 봅니다(로그로 완만하게)."""
+    if views <= 0:
+        return 1.0
+    return 1.0 + min(0.8, math.log10(views) / 6.0)
+
+
+def search_youtube(query, program_keys=(), limit=12):
+    """유튜브 검색 — 키 없이 검색 페이지의 ytInitialData 를 읽습니다.
+
+    program_keys 에 프로그램명(띄어쓰기 제거)을 넘기면, 제목이나 채널에 그 말이
+    들어간 영상만 남깁니다. 검색 결과에는 무관한 프로그램이 섞여 들어옵니다.
+    """
+    url = ("https://www.youtube.com/results?search_query=%s&hl=ko&gl=KR"
+           % urllib.parse.quote(query))
+    body = _fetch(url, timeout=20)
+    m = re.search(r"var ytInitialData = (\{.*?\});</script>", body, re.S)
+    if not m:
+        return []
+    data = json.loads(m.group(1))
+
+    found = []
+
+    def walk(node):
+        if len(found) >= limit * 3:
+            return
+        if isinstance(node, dict):
+            vr = node.get("videoRenderer")
+            if isinstance(vr, dict):
+                runs = (vr.get("title") or {}).get("runs") or []
+                title = "".join(r.get("text", "") for r in runs).strip()
+                if title:
+                    thumbs = ((vr.get("thumbnail") or {}).get("thumbnails") or [])
+                    found.append({
+                        "title": title,
+                        "channel": (((vr.get("ownerText") or {}).get("runs") or [{}])[0]
+                                    .get("text", "")),
+                        "views": _parse_views(
+                            (vr.get("viewCountText") or {}).get("simpleText", "")),
+                        "published": (vr.get("publishedTimeText") or {}).get("simpleText", ""),
+                        "videoId": vr.get("videoId", ""),
+                        # 검색 결과에 붙어 오는 서명 주소는 다른 곳에서 열리지 않아
+                        # 영상 번호로 만든 고정 주소를 씁니다.
+                        "thumb": ("https://i.ytimg.com/vi/%s/mqdefault.jpg" % vr["videoId"]
+                                  if vr.get("videoId")
+                                  else (thumbs[-1]["url"] if thumbs else "")),
+                    })
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    walk(data)
+
+    docs = []
+    for item in found:
+        haystack = match_key(item["title"] + " " + item["channel"])
+        if program_keys and not any(k and k in haystack for k in program_keys):
+            continue                      # 무관한 프로그램 영상은 버립니다.
+        docs.append({
+            "kind": "youtube", "source": "youtube", "title": item["title"],
+            "snippet": "", "url": "https://www.youtube.com/watch?v=" + item["videoId"],
+            "query": query, "ts": 0,
+            "views": item["views"], "thumb": item["thumb"],
+            "channel": item["channel"], "published": item["published"],
+        })
+        if len(docs) >= limit:
+            break
     return docs
 
 
@@ -260,7 +366,8 @@ def tokenize(text):
 
 
 def is_bad_token(tok):
-    if tok in STOPWORDS or tok.isdigit():
+    # 영어는 제목마다 대소문자가 달라서 소문자로도 맞춰 봅니다.
+    if tok in STOPWORDS or tok.lower() in STOPWORDS or tok.isdigit():
         return True
     if HANGUL_RE.search(tok):
         return len(tok) < 2
@@ -311,6 +418,19 @@ def split_commerce_keyword(text):
     return None
 
 
+# '함께한 끝이라면', '만든 짬뽕' 처럼 꾸밈말로 시작하는 조각을 걸러냅니다.
+MODIFIER_HEAD_RE = re.compile(r"^.{1,3}(한|든|는|운|린|던|워|해)$")
+
+
+# '끝이라면' 의 '라면', '갔더라고' 처럼 어미가 상품어로 잡히는 경우를 막습니다.
+SENTENCE_TAIL_RE = re.compile(r"(이라면|이라고|라니까|더라고|던데요|거든요|잖아요|네요|군요)$")
+
+
+def looks_like_fragment(tokens):
+    """검색 제목에서 잘려 나온 문장 토막인지."""
+    return bool(tokens) and bool(MODIFIER_HEAD_RE.match(tokens[0]))
+
+
 # 따옴표 안이라도 대사·감탄사는 상품이 아닙니다.
 SPEECH_TAIL_RE = re.compile(r"(요|다|야|죠|네|까|군|잖아|는데|던데|았어|었어|해요|예요|이에요)$")
 SPEECH_NOISE_RE = re.compile(r"[ㄱ-ㅎㅏ-ㅣ]|(.)\1{2,}")
@@ -352,14 +472,36 @@ def extract_emphasis(lines):
 # ------------------------------------------------------------------ 수집
 
 
-def build_queries(program):
-    """뉴스·웹 검색어. 뉴스는 회차 번호를 쓰면 결과가 없어 프로그램명으로 찾습니다."""
+def build_queries(program, official=None):
+    """소스마다 잘 맞는 검색어가 다릅니다.
+
+    뉴스   — 회차 번호를 쓰면 결과가 0건이라 프로그램명으로 찾고 방송일로 거릅니다.
+    유튜브 — 회차별 클립이 올라와서 '프로그램명 + 회차' 가 가장 정확합니다.
+    검색광고 — '협찬·제품' 같은 말을 붙여야 커머스 광고가 걸립니다.
+    """
+    official = official or {}
     name = short_title(program.get("programName") or program.get("title") or "")
-    episode = program.get("episode") or ""
+    episode = (program.get("episode") or "").strip()
+    cast = [c for c in (official.get("cast") or []) if c][:1]
+
+    news = [name]
+    if cast:
+        news.append(f"{name} {cast[0]}")
+
+    youtube = []
+    if episode:
+        youtube.append(f"{name} {episode}")
+    youtube.append(f"{name} 하이라이트")
+
+    autocomplete = [name, name + " 협찬"]
+    if episode:
+        autocomplete.append(f"{name} {episode}")
+
     return {
-        "news": [name],
-        "web": [f"{name} {episode} 협찬 제품".strip(), f"{name} 나온 상품 구매"],
-        "autocomplete": [name, name + " 협찬"],
+        "news": news,
+        "youtube": youtube,
+        "ad": [f"{name} 협찬 제품", f"{name} 나온 상품 구매"],
+        "autocomplete": autocomplete,
     }
 
 
@@ -371,17 +513,29 @@ def collect_documents(program, official=None):
     for line in official.get("preview") or []:
         docs.append({"kind": "preview", "source": "tvn-preview", "title": line,
                      "snippet": "", "url": "", "query": "", "ts": 0})
-    for title in official.get("clips") or []:
-        docs.append({"kind": "clip", "source": "tvn-clip", "title": title,
-                     "snippet": "", "url": "", "query": "", "ts": 0})
+    for clip in official.get("clips") or []:
+        if isinstance(clip, str):
+            clip = {"title": clip}
+        docs.append({"kind": "clip", "source": "tvn-clip", "title": clip.get("title", ""),
+                     "snippet": "", "url": clip.get("url", ""), "query": "", "ts": 0,
+                     "thumb": clip.get("thumb", "")})
 
-    queries = build_queries(program)
+    name = short_title(program.get("programName") or program.get("title") or "")
+    program_keys = {match_key(name), match_key(re.sub(r"\d+$", "", name))}
+    program_keys = {k for k in program_keys if len(k) >= 3}
+
+    queries = build_queries(program, official)
     for query in queries["news"]:
         try:
             docs.extend(search_google_news(query))
         except Exception as exc:
             errors.append("구글 뉴스 실패(%s): %s" % (query, exc))
-    for query in queries["web"]:
+    for query in queries["youtube"]:
+        try:
+            docs.extend(search_youtube(query, program_keys))
+        except Exception as exc:
+            errors.append("유튜브 검색 실패(%s): %s" % (query, exc))
+    for query in queries["ad"]:
         try:
             docs.extend(search_daum(query))
         except Exception as exc:
@@ -404,6 +558,12 @@ def extract_keywords(program, docs, official=None, top_n=18):
     title = (program.get("title") or "").strip()
     name = short_title(program.get("programName") or title)
     title_tokens = {strip_josa(t) for t in TOKEN_RE.findall(title + " " + name)}
+    # 시청자들이 쓰는 프로그램 줄임말(놀라운 토요일 → 놀토)도 상품이 아닙니다.
+    name_parts = [t for t in re.split(r"\s+", re.sub(r"[^가-힣0-9a-zA-Z ]", " ", name)) if t]
+    if len(name_parts) >= 2:
+        abbrev = "".join(part[0] for part in name_parts)
+        if len(abbrev) >= 2:
+            title_tokens.add(abbrev)
     air_ts = program.get("startTs") or 0
     # 출연진 이름은 그 자체로는 살 수 없는 말이라 단독으로는 빼고,
     # '염정아 모자' 처럼 상품어와 붙은 것만 남깁니다.
@@ -412,9 +572,13 @@ def extract_keywords(program, docs, official=None, top_n=18):
     scores = defaultdict(float)
     kinds = defaultdict(set)
     evidence = defaultdict(list)
+    doc_hits = defaultdict(set)      # 몇 건의 문서에서 나왔는지
 
     # 1) 공식 자료의 강조 표기 — 가장 신뢰도가 높습니다.
-    official_lines = list(official.get("preview") or []) + list(official.get("clips") or [])
+    official_lines = list(official.get("preview") or []) + [
+        (c.get("title") if isinstance(c, dict) else c) or ""
+        for c in (official.get("clips") or [])
+    ]
     emphasized = set()
     for phrase in extract_emphasis(official_lines):
         if phrase and phrase not in title_tokens:
@@ -423,7 +587,7 @@ def extract_keywords(program, docs, official=None, top_n=18):
             kinds[phrase].add("preview")
 
     # 2) 문서별 n-gram
-    for doc in docs:
+    for doc_no, doc in enumerate(docs):
         kind = doc.get("kind", "web")
         weight = KIND_WEIGHT.get(kind, 1.0)
         if kind == "news" and air_ts and doc.get("ts"):
@@ -432,6 +596,8 @@ def extract_keywords(program, docs, official=None, top_n=18):
                 weight *= 0.4          # 다른 회차 기사일 가능성이 큽니다.
         if kind == "clip" and official.get("ppl"):
             weight += PPL_BONUS
+        if kind == "youtube":
+            weight *= view_weight(doc.get("views", 0))   # 많이 본 영상일수록 화제
 
         text = (doc.get("title", "") + " " + doc.get("snippet", "")).strip()
         for toks in tokenize(text):
@@ -451,6 +617,7 @@ def extract_keywords(program, docs, official=None, top_n=18):
                         gain += 0.8
                     scores[phrase] += gain
                     kinds[phrase].add(kind)
+                    doc_hits[phrase].add(doc_no)
                     if doc.get("title") and len(evidence[phrase]) < 2:
                         evidence[phrase].append({
                             "text": doc["title"][:90], "url": doc.get("url", ""),
@@ -487,6 +654,8 @@ def extract_keywords(program, docs, official=None, top_n=18):
         if len(toks) == 1 and phrase in PRODUCT_TERMS:
             score *= 0.55                            # '모자' 처럼 너무 넓은 말
         if all(t in title_tokens for t in toks):
+            if not cat:
+                continue                             # 프로그램명·줄임말 그 자체
             score *= 0.3
         if len(toks) >= 2:
             score += 1.0
@@ -496,6 +665,20 @@ def extract_keywords(program, docs, official=None, top_n=18):
             continue
         if looks_like_speech(phrase):
             continue
+        # 검색 제목은 해시태그·감탄사가 섞여 긴 조각이 잘 생깁니다.
+        # 공식 자료(미리보기·클립)에서 나온 게 아니면 두 어절까지만 인정하고,
+        # 꾸밈말로 시작하는 조각도 버립니다.
+        official_seen = bool(kinds[phrase] & {"preview", "clip"})
+        if not official_seen:
+            if len(toks) >= 3:
+                continue
+            if looks_like_fragment(toks):
+                continue
+            if SENTENCE_TAIL_RE.search(phrase):
+                continue
+            # 영상 제목 하나에만 스쳐 나온 말은 화제 상품으로 보기 어렵습니다.
+            if kinds[phrase] == {"youtube"} and len(doc_hits[phrase]) < 2:
+                continue
         if any(t in cast_names for t in toks) and cat:
             score += 4.0                             # '염정아 모자' 같은 조합은 우대
 
@@ -514,8 +697,11 @@ def extract_keywords(program, docs, official=None, top_n=18):
     # 상품으로 볼 수 있는 것을 먼저, 그 밖의 말은 뒤에 조금만 둡니다.
     results.sort(key=lambda x: (0 if x[2] else 1, -x[1]))
 
-    kept, others = [], 0
+    kept, others, seen_keys = [], 0, set()
     for phrase, score, cat, ks in results:
+        key = match_key(phrase)
+        if key in seen_keys:          # 띄어쓰기만 다른 같은 말
+            continue
         # 이미 뽑은 키워드를 감싸기만 한 긴 조각은 버립니다.
         # ('통닭' 을 뽑았으면 '맛으 수원 통닭' 은 문장 토막으로 봅니다)
         if any(phrase in k and score <= s * 1.6 for k, s, _, _ in kept):
@@ -523,10 +709,11 @@ def extract_keywords(program, docs, official=None, top_n=18):
         if any(k in phrase and score <= s for k, s, _, _ in kept):
             continue
         if not cat:
-            if others >= 3:
+            if others >= 2:
                 continue
             others += 1
         kept.append((phrase, score, cat, ks))
+        seen_keys.add(key)
         if len(kept) >= top_n:
             break
 
@@ -578,10 +765,24 @@ def analyze_program(program, verify=True, official=None):
     counts = defaultdict(int)
     for doc in docs:
         counts[doc.get("kind", "web")] += 1
+    gallery = []
+    for doc in docs:
+        if doc.get("thumb") and doc.get("kind") in ("clip", "youtube"):
+            gallery.append({
+                "title": doc.get("title", ""),
+                "thumb": doc.get("thumb", ""),
+                "url": doc.get("url", ""),
+                "views": doc.get("views", 0),
+                "published": doc.get("published", ""),
+                "source": doc.get("kind"),
+            })
+    gallery.sort(key=lambda g: -(g.get("views") or 0))
+
     return {
         "keywords": keywords,
         "docCount": len(docs),
         "docCounts": dict(counts),
-        "queries": build_queries(program)["news"] + build_queries(program)["web"],
+        "queries": build_queries(program, official),
+        "gallery": gallery[:9],
         "errors": errors,
     }

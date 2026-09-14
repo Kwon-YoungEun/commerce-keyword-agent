@@ -553,6 +553,9 @@ def fetch_program_page(slug):
                     "episode": (EPISODE_NO_RE.search(item.get("pgmNm") or "").group(1)
                                 if EPISODE_NO_RE.search(item.get("pgmNm") or "") else ""),
                     "ppl": "유료광고" in title,
+                    "thumb": (item.get("videoTnailImgPathAddr") or "").strip(),
+                    "url": (item.get("clipFrontDetailUrlAddr")
+                            or item.get("pgmFrontDetailUrlAddr") or "").strip(),
                 })
             continue
 
@@ -888,7 +891,11 @@ def collect_official_material(program, store):
             break
     for clip in page.get("clips") or []:
         if clip.get("episode") == episode_no:
-            out["clips"].append(clip["title"])
+            out["clips"].append({
+                "title": clip.get("title", ""),
+                "thumb": clip.get("thumb", ""),
+                "url": clip.get("url", ""),
+            })
             if clip.get("ppl"):
                 out["ppl"] = True
     return out
@@ -916,6 +923,8 @@ def analyze_program_keywords(program, force=False):
             "episode": program.get("episode", ""),
             "subtitle": program.get("subtitle", ""),
             "genre": program.get("genre", ""),
+            # 방송일이 있어야 다른 회차 기사를 걸러낼 수 있습니다.
+            "startTs": program.get("startTs", 0),
         },
         official=collect_official_material(program, load_schedule_store()),
     )
