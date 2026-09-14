@@ -19,3 +19,13 @@ __pycache__/
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# 다시 만들 수 있는 캐시 — 자동 커밋 때마다 전체 사본이 쌓여 저장소가 커집니다.
+# 지워도 앱이 다시 받아옵니다.
+commerce-keyword-agent/data/keyword_cache.json
+commerce-keyword-agent/data/preview_cache.json
+commerce-keyword-agent/data/tving_cache.json
+commerce-keyword-agent/data/program_catalog.json
+
+# 인코딩 점검용 임시 파일
+commerce-keyword-agent/data/.enc_test

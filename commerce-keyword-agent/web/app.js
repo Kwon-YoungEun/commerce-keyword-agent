@@ -495,7 +495,7 @@ function renderKeywords(analysis) {
     el.className = "kw" + (k.shoppable ? "" : " is-generic");
     el.dataset.keyword = k.keyword;
 
-    const srcText = (k.kinds || k.sources || []).map((s) => SOURCE_LABEL[s] || s).join(" · ");
+    const srcText = (k.kinds || []).map((s) => SOURCE_LABEL[s] || s).join(" · ");
     el.innerHTML =
       `<div class="kw-main">` +
       `<div class="kw-name">${escapeHtml(k.keyword)}</div>` +

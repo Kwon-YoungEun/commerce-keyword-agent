@@ -451,9 +451,9 @@ def extract_keywords(program, docs, official=None, top_n=18):
                         gain += 0.8
                     scores[phrase] += gain
                     kinds[phrase].add(kind)
-                    if doc.get("title") and len(evidence[phrase]) < 3:
+                    if doc.get("title") and len(evidence[phrase]) < 2:
                         evidence[phrase].append({
-                            "text": doc["title"][:120], "url": doc.get("url", ""),
+                            "text": doc["title"][:90], "url": doc.get("url", ""),
                             "source": doc.get("source", ""),
                         })
 
@@ -543,7 +543,6 @@ def extract_keywords(program, docs, official=None, top_n=18):
             "kinds": ks,
             "crossChecked": len(ks) >= 2,
             "official": bool(set(ks) & {"preview", "clip"}),
-            "sources": ks,
             "evidence": evidence.get(phrase, []),
             "demandChecked": False,
             "demand": [],
@@ -585,7 +584,4 @@ def analyze_program(program, verify=True, official=None):
         "docCounts": dict(counts),
         "queries": build_queries(program)["news"] + build_queries(program)["web"],
         "errors": errors,
-        "documents": [
-            {k: d.get(k) for k in ("source", "kind", "title", "url")} for d in docs[:40]
-        ],
     }
