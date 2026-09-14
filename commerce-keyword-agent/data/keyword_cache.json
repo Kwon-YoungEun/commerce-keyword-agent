@@ -5247,19 +5247,21 @@
   "keywords": [
    {
     "keyword": "재첩",
-    "score": 46.0,
+    "score": 54.25,
     "confidence": 100,
     "category": "식품",
     "shoppable": true,
     "kinds": [
      "clip",
-     "news"
+     "news",
+     "web"
     ],
     "crossChecked": true,
     "official": true,
     "sources": [
      "clip",
-     "news"
+     "news",
+     "web"
     ],
     "evidence": [
      {
@@ -5280,18 +5282,18 @@
     ],
     "demandChecked": true,
     "demand": [
-     "재첩국",
      "재첩",
+     "재첩국",
      "섬진강 재첩국",
-     "재첩국 효능",
      "재첩 제철",
-     "할매재첩국"
+     "재첩국 효능",
+     "섬진강 재첩"
     ]
    },
    {
     "keyword": "언니네 양식당",
     "score": 34.3,
-    "confidence": 75,
+    "confidence": 63,
     "category": "체험",
     "shoppable": true,
     "kinds": [
@@ -5322,7 +5324,7 @@
    {
     "keyword": "염정아 모자",
     "score": 30.0,
-    "confidence": 65,
+    "confidence": 55,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5350,8 +5352,8 @@
    },
    {
     "keyword": "돈가스",
-    "score": 23.89,
-    "confidence": 52,
+    "score": 24.33,
+    "confidence": 45,
     "category": "식품",
     "shoppable": true,
     "kinds": [
@@ -5378,8 +5380,8 @@
       "source": "tvn-clip"
      },
      {
-      "text": "강유석, 재첩 잡고 돈가스 만들고…‘언니네 산지직송3’ 일당백 활약",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1uSWVaMW92VnJRdEcyZGpFd1RpLXd3N2ZqYTF5enVTNTUyeFE5ci12TTQwTjVwbDFoZXFJd0dSMjFsWGEzdlBtU1ZVbU93ZEc3bVNtWW4tZHE?oc=5",
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
       "source": "google-news"
      }
     ],
@@ -5388,15 +5390,15 @@
      "돈가스",
      "돈가스 맛집",
      "돈가스클럽",
-     "돈가스집",
+     "돈가스 소스 만들기",
      "돈가스 만들기",
-     "돈가스 소스 만들기"
+     "돈가스집"
     ]
    },
    {
     "keyword": "노윤서 모자",
     "score": 23.0,
-    "confidence": 50,
+    "confidence": 42,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5417,7 +5419,7 @@
    {
     "keyword": "양식당 open",
     "score": 21.18,
-    "confidence": 46,
+    "confidence": 39,
     "category": "체험",
     "shoppable": true,
     "kinds": [
@@ -5448,7 +5450,7 @@
    {
     "keyword": "섬진강 한가운데 식당",
     "score": 21.0,
-    "confidence": 46,
+    "confidence": 39,
     "category": "체험",
     "shoppable": true,
     "kinds": [
@@ -5472,7 +5474,7 @@
    {
     "keyword": "만든 크림수프",
     "score": 19.0,
-    "confidence": 41,
+    "confidence": 35,
     "category": "식품",
     "shoppable": true,
     "kinds": [
@@ -5496,7 +5498,7 @@
    {
     "keyword": "끓인 정아표 수프",
     "score": 18.0,
-    "confidence": 39,
+    "confidence": 33,
     "category": "식품",
     "shoppable": true,
     "kinds": [
@@ -5520,7 +5522,7 @@
    {
     "keyword": "데님 모자",
     "score": 17.0,
-    "confidence": 37,
+    "confidence": 31,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5538,7 +5540,7 @@
    {
     "keyword": "염정아 가방",
     "score": 15.3,
-    "confidence": 33,
+    "confidence": 28,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5562,7 +5564,7 @@
    {
     "keyword": "염정아 꽃조끼",
     "score": 15.3,
-    "confidence": 33,
+    "confidence": 28,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5586,7 +5588,7 @@
    {
     "keyword": "김선영 가방",
     "score": 14.5,
-    "confidence": 32,
+    "confidence": 27,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5610,7 +5612,7 @@
    {
     "keyword": "인분 깍두기",
     "score": 12.75,
-    "confidence": 28,
+    "confidence": 24,
     "category": "식품",
     "shoppable": true,
     "kinds": [
@@ -5632,9 +5634,33 @@
     "demand": []
    },
    {
+    "keyword": "염정아표 깍두기",
+    "score": 12.75,
+    "confidence": 24,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "'언니네 산지직송3' 하동 섬진강 재첩→염정아표 깍두기 완성",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nSDNuX3FxYlZaeW9KYmw3Nm40T1VNMlBfempnX2x0bmxqS25STFpYWF9JWkh6endrU05HZlVDUDUyZXBFeGg3aXk2eWlMMDVVTkNWbF9B?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
     "keyword": "크림수프 겉바속촉",
     "score": 12.0,
-    "confidence": 26,
+    "confidence": 22,
     "category": "식품",
     "shoppable": true,
     "kinds": [
@@ -5658,7 +5684,7 @@
    {
     "keyword": "식당 있다고",
     "score": 12.0,
-    "confidence": 26,
+    "confidence": 22,
     "category": "체험",
     "shoppable": true,
     "kinds": [
@@ -5682,7 +5708,7 @@
    {
     "keyword": "노윤서모자",
     "score": 12.0,
-    "confidence": 26,
+    "confidence": 22,
     "category": "패션",
     "shoppable": true,
     "kinds": [
@@ -5696,30 +5722,6 @@
     "evidence": [
      {
       "text": "노윤서모자",
-      "url": "",
-      "source": "daum-ad"
-     }
-    ],
-    "demandChecked": false,
-    "demand": []
-   },
-   {
-    "keyword": "데님모자",
-    "score": 12.0,
-    "confidence": 26,
-    "category": "패션",
-    "shoppable": true,
-    "kinds": [
-     "ad"
-    ],
-    "crossChecked": false,
-    "official": false,
-    "sources": [
-     "ad"
-    ],
-    "evidence": [
-     {
-      "text": "데님모자",
       "url": "",
       "source": "daum-ad"
      }
@@ -5975,18 +5977,3520 @@
    {
     "source": "google-news",
     "kind": "news",
-    "title": "'언니네 산지직송3' 염정아→노윤서, 곡소리 터진 섬진강 조업…\"고행 수준\" - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5adGNqejV4MlBrcGVoczBIOTZMQXB3SEJzcFQyRFRvX1VMZmhabVRJRkFUV3ZVYUw3OTNHbmVQSm1nRUFRZEpTaHZ6V2d6VGhnMzQ5NjlxLWNPaHpnc2RUOXRGak1kenpCbmRkRjY2VF81U2_SAXhBVV95cUxPN0JodDhheHlyUkZfU2JtTEh4VzhlckVJNlFueDRGVFk5N2ZtSXV4c2JzT3RTZHhXU2VfVlZ3YkF6dDFCX1c2aW9SWHkxVnJfYmNmZGgxdzE1RGFmeDlvQVl0QzB3bEsyMFhvWXJoLWZGVTl1MWhaTGU?oc=5"
+    "title": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "tvN 제대로 일냈다…첫방부터 시청률 '4.4%'→쾌속 '1위' 찍고 대박 난 韓 예능 ('산지 직송3')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBqVWMtZUZ6b3NMbTgxa1BuZ3VVdk1KeExIQ2xMM3VxUTZlMDFGRUJOa05vVHVHelJiRjUxSm1YZUU4LUtvZFhtVmRtTEFmRWM?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345164,
+  "programId": "EA202609110825",
+  "cached": false
+ },
+ "EA202609091120": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 30.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad",
+     "web"
+    ],
+    "crossChecked": true,
+    "official": false,
+    "sources": [
+     "ad",
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네산지직송3 염정아 모자 스카프 버킷햇 화이트샌즈 플로피햇",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아 모자"
+    ]
+   },
+   {
+    "keyword": "섬진강 재첩",
+    "score": 26.8,
+    "confidence": 89,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "김선영, 섬진강 재첩 잡다 염정아 '깜짝' 놀라게 한 한마디…\"목숨도 바칠 수 있어요\" ('산지직송3')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBWZTNSNnFLQ1NHMW15ZThteXRDVjNpeC1SLW9MTUFlVUJVUjhuTzhmZkVVQmJlc0hjUVBnMWplcmhpMTBoUnc?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "‘언니네3’ 염정아·김선영·강유석·노윤서, 섬진강 재첩 사냥…곡소리 나네",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRbGhGbFFJRDBOQTY2U1RsVV9uX3B5YWZrS3NBaGJXVU02N2xSOUxCWm9JRGdmcENrWWEzT0pVUng5cVZpb2FxZGRJc1Y0YlI1eDFrNGlrWVRYSlNPOWfSAWNBVV95cUxNOGMwaXh5SjB0dmRHcWhwbDFwVE50dURUUy1lUUdpSGUyRXM1NG5FeUNzMWhVendIY2xPdS1mNTN3aW1obWpVLXZBWUhxOFdwYllXcko3R1N1Z1JHLXp6SVgyVkU?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "섬진강 재첩",
+     "섬진강 재첩국",
+     "섬진강 재첩살",
+     "섬진강 재첩체험",
+     "섬진강 재첩국수",
+     "부산 섬진강 재첩국"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 19.0,
+    "confidence": 63,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "폴로 데님 모자",
+     "셀린느 데님 모자"
+    ]
+   },
+   {
+    "keyword": "언니네 조업 한계란",
+    "score": 18.8,
+    "confidence": 63,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 조업에 한계란 없다!",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "강유석 하동 재첩",
+    "score": 18.3,
+    "confidence": 61,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "강유석 재첩",
+    "score": 17.55,
+    "confidence": 59,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "재첩 조업",
+    "score": 16.92,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "노윤서 재첩",
+    "score": 16.75,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 재첩",
+    "score": 16.75,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "‘언니네 산지직송3’ 염정아, 재첩 26kg 잡았다",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBSdjNIU3JvR1gwX0p0cmpUVUs5dC1XMXRBOXkyRUJsX2xTVnluaThiajBiQi03UjdDdDV3dWh6NFdhS1NWLUE5eDByLU1JNjJkeDhJbi1yV1NCeW9RS3BZSHFzeW4?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 꽃조끼",
+    "score": 15.3,
+    "confidence": 51,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 염정아 꽃조끼 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "산지직송 염정아 마늘족발",
+    "score": 14.8,
+    "confidence": 49,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송 염정아 마늘족발｜잡내 없이 만든 족발 한 상, 막국수까지 🧄🍖",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김선영 가방",
+    "score": 14.5,
+    "confidence": 48,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조업 흑돼지 돈가스",
+    "score": 14.3,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "거랭 들고 재첩",
+    "score": 14.3,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아, 15kg 거랭이 들고 재첩 조업…\"몸살 걸릴 것 같아\" [산지직송3]",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LWmNfSlNhb0JVQ1ZrZVMtWHNiaW52eUxZQXVVS2FFb2hXbnZjU1ctVzlhMmdmYTFIMVhQX3RJM3dIbFRlOFhKQTBxVFVzM2M?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "재첩 염정아표 깍두기",
+    "score": 13.5,
+    "confidence": 45,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "'언니네 산지직송3' 하동 섬진강 재첩→염정아표 깍두기 완성",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nSDNuX3FxYlZaeW9KYmw3Nm40T1VNMlBfempnX2x0bmxqS25STFpYWF9JWkh6endrU05HZlVDUDUyZXBFeGg3aXk2eWlMMDVVTkNWbF9B?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "인분 깍두기",
+    "score": 12.75,
+    "confidence": 42,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 큰손 맞네, 40인분 깍두기 도전 (언니네 산지직송3)",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5PdGlLRFRmMEdIMXlGZDEyWUFaZUxMZFlhSDhlRHhqX3lwcUg1NXc4aV9lX1JTbzF6am9oTUpFT2dvT3FQUHpFSWlhd2FNY2dVVmlBQUYwR3hCNjQ4RE03RGYzU19KSkZTZ3hUd1ln?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "노윤서모자",
+    "score": 12.0,
+    "confidence": 40,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [
+     {
+      "text": "노윤서모자",
+      "url": "",
+      "source": "daum-ad"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 78,
+  "docCounts": {
+   "preview": 23,
+   "news": 30,
+   "ad": 3,
+   "web": 12,
+   "autocomplete": 10
+  },
+  "queries": [
+   "언니네 산지직송3",
+   "언니네 산지직송3 6회 협찬 제품",
+   "언니네 산지직송3 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "모두가 평온하게 잠든 이른 아침,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "꼬꼬꼬꼬댁~~ 언니네를 깨우는 요란한 닭 소리(?)!!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "“내가 그럴 줄 알았어!!!!!”",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "사 남매의 운명을 결정지은 히든 미션 결과에",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "희비는 극명하게 엇갈리는데...",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "뒤통수 제대로 맞은 사 남매에게 무슨 일이? ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "언니네 조업에 한계란 없다!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "역대급 푸드닭(?)거리는 험난한 길을 뚫고 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "최상급 식재료를 찾아 나선 조업 당첨자들!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "신선함으로 꽉 찬 알~찬 보너스 일거리의 정체는?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "프로 자취러 유석의 언산 메인 셰프 데뷔전!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "현란한 손목 스냅으로 차리는 바지락순두부찌개와",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "말벌 선영의 완전범죄 프로젝트!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "염 대장의 눈을 피해 만든 정체불명 달걀튀김(?)",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "우당탕탕 대혼돈 속에 완성된 아침상!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "그리고.. ‘사 남매 VS 제작진’ ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "끝날 듯 끝나지 않는 복수전까지!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "푸르른~ 바다에 새기는 태안에서의 또 다른 추억!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "배우 사 남매의 소년X소녀美 가득한 청춘영화 한 편 뚝딱~",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "꽃길 가득한 시원~한 모래사장에서 펼쳐지는",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "♡청량 200% 바다 이야기♡",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "9월 3일 목요일 저녁 8시 40분 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "올여름, 가장 청량한 웃음이 직송됩니다~",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "tvN 제대로 일냈다…첫방부터 시청률 '4.4%'→쾌속 '1위' 찍고 대박 난 韓 예능 ('산지 직송3')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBqVWMtZUZ6b3NMbTgxa1BuZ3VVdk1KeExIQ2xMM3VxUTZlMDFGRUJOa05vVHVHelJiRjUxSm1YZUU4LUtvZFhtVmRtTEFmRWM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아, tvN 재정 걱정했다…\"돈 없어서 그러는 거야?\" 제작진 당황시킨 돌직구 ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA0bGxGcmgzRUpmbmJoLVl6eXNJQkE0TGozc3JVb0NmLXB0eXZCVG9fN1B0NFZhb3hkT1VfUVo5OGdELU5UV0MtWXdUSGEtU2c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "김선영, 섬진강 재첩 잡다 염정아 '깜짝' 놀라게 한 한마디…\"목숨도 바칠 수 있어요\" ('산지직송3')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBWZTNSNnFLQ1NHMW15ZThteXRDVjNpeC1SLW9MTUFlVUJVUjhuTzhmZkVVQmJlc0hjUVBnMWplcmhpMTBoUnc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송3', 역대 최고 조업비·시청률 상승…염정아 \"tvN 돈 없어?\" [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAzZzRrYTRBTWFoSTJBcUlrUkFTZjYzNzZGWVBBY1NnZWQ3dUdyQkZPUDRPS1dvSW84QUN0RjVNRzJyaVB6NVhFRzFLYUFpMFE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아, 하동 어르신 위해 100인분 뷔페 제안…\"하려면 하지\" ('산지직송3') [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE41aExCREV2QWhSVmdfTVZ3Qnh6a0UyOWlEVkhGS29SNFMyOVotVlgwVjhDWEhQaWNHeWFqRUxpbmY1TnZ5ZVE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“여기서 밥을 먹는다고?” 섬진강 한가운데 ‘풍덩’…발리 뺨치는 플로팅 식사 (‘언니네 산지직송3’)",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5BM3oxZG5yNU1pLWZjVUwtRGxDSHE5LVc0M2N1VEpaOEFTSDREYUJrOWhYelNNZEl4TUxULU5mcVB4eEQ0a3c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5"
    },
    {
     "source": "google-news",
     "kind": "news",
     "title": "'언니네 산지직송3', 역대 최고 조업비·시청률 상승…염정아 \"tvN 돈 없어?\" [종합] - 머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBneXNLOHFXX1VHaE5td3FSM1NGdFRzUm12dm1aT1pMd3M4YjR5b2ZjWkxjWkhpMjMxYUYwSzJHT044ZkNVcm9xaTRtel8xcXFMN3daSWtGWjlvVkJQbW1hUU5GRFFidjVWaXdjNDhpQUhPdHB5Z3RFadIBeEFVX3lxTFBneXNLOHFXX1VHaE5td3FSM1NGdFRzUm12dm1aT1pMd3M4YjR5b2ZjWkxjWkhpMjMxYUYwSzJHT044ZkNVcm9xaTRtel8xcXFMN3daSWtGWjlvVkJQbW1hUU5GRFFidjVWaXdjNDhpQUhPdHB5Z3RFaQ?oc=5"
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE56WnN6V0FtSTh2MWF3TjVJMWpDM2xMR0ZJc19LR1N1V2x0S0h3ZHVYOWNROFVZS1Nzbl9RaUluazNUaUhsWG9sSnVNbmRmVDVSb1dMek4ySWpScDBYT1piR1VWQzVVb1VBNTIyU19hUmcyVGfSAXhBVV95cUxQZ3lzSzhxV19VR2hObXdxUjNTRnRUc1JtdnZtWk9aTHdzOGI0eW9mY1pMY1pIaTIzMWFGMEsyR09OOGZDVXJvcWk0bXpfMXFxTDd3WklrRlo5b1ZCUG1tYVFORkRRYnY1Vml3YzQ4aUFIT3RweWd0RWk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아 큰손 맞네, 40인분 깍두기 도전 (언니네 산지직송3)",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5PdGlLRFRmMEdIMXlGZDEyWUFaZUxMZFlhSDhlRHhqX3lwcUg1NXc4aV9lX1JTbzF6am9oTUpFT2dvT3FQUHpFSWlhd2FNY2dVVmlBQUYwR3hCNjQ4RE03RGYzU19KSkZTZ3hUd1ln?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 염정아, 재첩 26kg 잡았다",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBSdjNIU3JvR1gwX0p0cmpUVUs5dC1XMXRBOXkyRUJsX2xTVnluaThiajBiQi03UjdDdDV3dWh6NFdhS1NWLUE5eDByLU1JNjJkeDhJbi1yV1NCeW9RS3BZSHFzeW4?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 새 멤버들 어떻길래…3주 연속 동시간대 시청률 1위[美친 시청률]",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNckp1Tm1ZVk03eTVQZ3JoOXg2Y3NMaFRyc295QzY1ZlBxNkcwTDhaTkV3cEl4aXNVUmJreTBncEh0aTVweEFBRWtNeWpRLWpPVU9YRUxLaGMtUlRIVlVxMENhQ1dDaHA5WGJLSG4tUXlSQVpnMDdHeHJGdUpIek9obm45b05oZXRTY25tRzN0MA?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아 ‘산지직송3’ 굴욕 씻었다‥2%대 부진 끝내고 3%대 시청률 회복",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9vRFJpaEd6M1JOVFV2RXFYbVpFRE94VjhNOEtXUVZJVGJ0TXpDMUNwaDBSVVotR0gxWU13NW1EakFab1ZDdUoxM051NDJ6ekNvd1JCLTNOYVpyQXU1LVloQlRVX1JiT3J2?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네3’ 염정아·김선영·강유석·노윤서, 섬진강 재첩 사냥…곡소리 나네",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRbGhGbFFJRDBOQTY2U1RsVV9uX3B5YWZrS3NBaGJXVU02N2xSOUxCWm9JRGdmcENrWWEzT0pVUng5cVZpb2FxZGRJc1Y0YlI1eDFrNGlrWVRYSlNPOWfSAWNBVV95cUxNOGMwaXh5SjB0dmRHcWhwbDFwVE50dURUUy1lUUdpSGUyRXM1NG5FeUNzMWhVendIY2xPdS1mNTN3aW1obWpVLXZBWUhxOFdwYllXcko3R1N1Z1JHLXp6SVgyVkU?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송' '집 안에 뱀 등장 현장 발칵..김선영 혼비백산 비명",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9PQXpUZklPTjZPeDlMb0x4QzdoUWRwZGhKVktXTUdVaHF4bnVwUUcwdEwtQUF6aS1kT1FiTzVwTGxfTDRBYWNaWUFmQzBEYmxBUG9KZzFwSllDc3JtWjlMcnJn?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송3' 염정아→노윤서, 곡소리 터진 섬진강 조업…\"고행 수준\" - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5adGNqejV4MlBrcGVoczBIOTZMQXB3SEJzcFQyRFRvX1VMZmhabVRJRkFUV3ZVYUw3OTNHbmVQSm1nRUFRZEpTaHZ6V2d6VGhnMzQ5NjlxLWNPaHpnc2RUOXRGak1kenpCbmRkRjY2VF81U2_SAXhBVV95cUxPN0JodDhheHlyUkZfU2JtTEh4VzhlckVJNlFueDRGVFk5N2ZtSXV4c2JzT3RTZHhXU2VfVlZ3YkF6dDFCX1c2aW9SWHkxVnJfYmNmZGgxdzE1RGFmeDlvQVl0QzB3bEsyMFhvWXJoLWZGVTl1MWhaTGU?oc=5"
    }
   ],
-  "analyzedAt": 1789145444,
-  "programId": "EA202609110825",
+  "analyzedAt": 1789345406,
+  "programId": "EA202609091120",
+  "cached": false
+ },
+ "EA202609080000": {
+  "keywords": [
+   {
+    "keyword": "에스파",
+    "score": 19.0,
+    "confidence": 100,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "에스파 카리나가 여기서 왜 나와…‘우주떡집’ 신입 알바생 출격",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kSjhJM2hYYVBJZzFmVHJLNFU5RlI0WUltNDJNemZwMkd2cG9Cbll3T052V2dxLVhVVHI1cUtkR1VfeEw4MmtJVmRvR2lEdkg1am5taHNpcVptMXlfa0pQcFlKVGIySDh4?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "에스파 카리나 '우주떡집'에 투입되자 3천 명 몰려",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DbmZSRll1ZmNzck9YZ3pCV3Z0Z29mc2xnS0FfVk5GcnFrZExXQXA5NUdBUENrclBzTnBxOGo2YkFNRjd2NGRBZ3BhUU9ocElkZzc2anVmRXhGaGFKVnZGSVM0cVhhZU1jR3BEM1JR?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "에스파 카리나, tvN '우주떡집' 신입 아르바이트생으로 합류",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1jczdSbkRkRlVkTzNVc01HQ3RCb0dpdndCMGF2VFVsR20xWGR4cDJEaXRaX0s3LXNvZU1ST3Y2SmdGZDFuNjNpNnlLVG94X0c0emNfNGs5akxCQi0tZm9mdmgtM1RsaWlDWkNmN21BbHdOZw?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "에스파",
+     "에스파 나무위키",
+     "에스파 레모네이드",
+     "에스파 윈터",
+     "에스파 카리나",
+     "에스파일"
+    ]
+   },
+   {
+    "keyword": "강제 취업 식당",
+    "score": 18.0,
+    "confidence": 95,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "본격 강제 취업 식당 노동 어드벤처! <우주떡집>",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "늘어난 테이블",
+    "score": 16.5,
+    "confidence": 87,
+    "category": "리빙",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "B.U.T 늘어난 테이블과 낯선 시스템에 지락이들은 걱정부터 앞서는데...",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "어디 없나요 디저트",
+    "score": 14.3,
+    "confidence": 75,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "‘우주떡집 흑임자인절미’ 어디 없나요…디저트 새 강자는",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2UG1EMUtXLXVXekdKYzF6aXh4Vy0tN2FQSUkwVVlCWWpUcmpXemF1WkFBSjZMcm9DNzduT0ZRazFLV3lqNlF3OGNuQ1JLMXFzcGFpNzA5LWFiYXNWaWw0UVRWdWtDTVhkdjV3TTFwZjBwdw?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "강릉유천점 강릉 닭칼국수",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "강릉 닭칼국수 삼계칼국수",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "닭칼국수 삼계칼국수 맛집",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "우주떡집 셀린느 데님",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "셀린느 데님 원피스",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "떡집 찹쌀떡 맛집",
+    "score": 11.6,
+    "confidence": 61,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "마스코트",
+    "score": 11.0,
+    "confidence": 58,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "아이브 안유진, 알잘딱깔센의 의인화…'우주떡집' 마스코트",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5mZFJJUmJiUHlZMnpTUE5INU9hVXN2N2RjX19xS0Fna3lzUzdGQ2NiWUMxQXVUaE0xeVBrRC00TjhBXzlueXk4eWl6VUJaZldsY3V5Vg?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "테이블 낯선",
+    "score": 10.5,
+    "confidence": 55,
+    "category": "리빙",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "B.U.T 늘어난 테이블과 낯선 시스템에 지락이들은 걱정부터 앞서는데...",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "식당 노동",
+    "score": 10.5,
+    "confidence": 55,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "본격 강제 취업 식당 노동 어드벤처! <우주떡집>",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "자꾸 식당",
+    "score": 10.5,
+    "confidence": 55,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "예능은 왜 자꾸 식당을 차릴까",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "시장 전통시장",
+    "score": 10.5,
+    "confidence": 55,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "피자설기 하나에 2030이 시장으로…전통시장 ‘뜻밖의 특수’",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "현풍닭칼국수",
+    "score": 10.0,
+    "confidence": 53,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "맛집 다이닝코드",
+    "score": 8.76,
+    "confidence": 46,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "현풍닭칼국수 강릉유천점 - 강릉 닭칼국수, 삼계칼국수 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "만수당 - 예천 떡집, 찹쌀떡 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "원피스 가격",
+    "score": 7.38,
+    "confidence": 39,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "안유진 우주떡집, 셀린느 데님 원피스 가격 확인해보니",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 73,
+  "docCounts": {
+   "preview": 20,
+   "news": 30,
+   "web": 12,
+   "autocomplete": 11
+  },
+  "queries": [
+   "우주떡집",
+   "우주떡집 6화 협찬 제품",
+   "우주떡집 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "[굿바이, 고흥!]",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "본사의 명령으로 하루아침에 고흥을 떠나게 된 지락이들...",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "‘거긴 포스기 있나?(^^)’ 서울행이 마냥 설레는 홀 팀과 달리",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "주방 팀은 절규하며 크나큰 슬픔에 빠지고 마는데...!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "정들었던 고흥과 무사히 작별할 수 있을지?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "[이제는 서울이다! 우주떡집 지구 2호점 GRAND OPENING★]",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "1호점과 180도 달라진 우주떡집 지구 2호점 in 서울!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "배로 넓어진 공간은 물론,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "홀 팀이 염원하던 입식 좌석과 포스기도 전~부 준비 완료↗",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "B.U.T 늘어난 테이블과 낯선 시스템에 지락이들은 걱정부터 앞서는데...",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "2호점에서 펼쳐질 또 다른 좌충우돌 이야기, 커밍 쑨-☆",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "[패스트푸드점 감성 듬뿍♥ 2호점 新메뉴 출시]",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "2호점에서 만나볼 새로운 메뉴, 전격 공개합니다☎",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "재등장한 본사 권성준 팀장과 함께 신메뉴 연습에 나선 지락이들!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "레시피 익혔으면 바로 실전 연습 가실게요~",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "▶MISSION: 신메뉴를 활용해 제작진의 ‘스탭밀’을 제공하라♨",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "곧이어 쏟아진 제작진의 가감 없는 솔/직/평/가, 그 결과는?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "9월 4일 금요일 저녁 8시 35분",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "떡에서 요리까지, 토롱이의 계략에 휘말린 지락이들의",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "본격 강제 취업 식당 노동 어드벤처! <우주떡집>",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"닷새 만에 50만개 동났다\"…안유진도 반한 이 디저트",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOal8zQTVMZXBIbzl1VmFsQU9DZ2E4YUtUclRDRW9uY3lQWGExOS1JSkNjZDRFZ29EYnNzMHV5UDBJMk1uSWV2MXFsY1YyRjJXam94ZDdXRUg0ZWRjNnpUN2tCeGRmY2xqMXlCUnlqQ0lyaXppSFZoZS0tMlhsZTlDLQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘우주떡집’ 아이브 안유진, 상황극 달인",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DQ2ZkVkZ6Y0pRX1pVaHBKUHR6S0FlalZ4UDgyLWNZUUZ6ZDk1OEVkdG5SUGxxbWVpMllnWGx5LUpJQ0RzU3JMdGpYV1Ftbmc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "에스파 카리나가 여기서 왜 나와…‘우주떡집’ 신입 알바생 출격",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kSjhJM2hYYVBJZzFmVHJLNFU5RlI0WUltNDJNemZwMkd2cG9Cbll3T052V2dxLVhVVHI1cUtkR1VfeEw4MmtJVmRvR2lEdkg1am5taHNpcVptMXlfa0pQcFlKVGIySDh4?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"비욘세 와도 인사 못 해\"…카리나, 알바생으로 첫 등장에 '우르르' ('우주떡집') [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1XR0xvbS1DelVNUlhsbEpOMExVQS1GNV9WMUEzVFdzSDg0U2RTeWp3cDYzTTA5Yzg4cmhTdzdUOUo4OVhiaVhRampOM2FyUWhtYUtkTldmV1VpRi1OcW13MQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "안유진, \"알바 너 한번 들어와 봐라\"…갑자기 등장한 '새 알바생' 정체 ('우주떡집')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE51VXJLbjFCeFp6MW92S1lpNUVSQ1VIN1gtci1mYnRmeTI5U2pxNHNiNE5heWwzUWpSbk02WEQyUzBIbTVESWxKTXc3ZGI2dmM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'우주떡집' 이은지·안유진, 실수 연발 홀팀…갈 길 잃은 음식",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9pdlRJU3ZmMGFZMTY5dUFGZGtwQm5UMWxRYzVwOVlQWW5PQnhVSVE4N3JQSFp1NUlQZjhaZnRYZ3hQV2ROMTFsNXRQYVNFbWM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“비욘세가 와도 인사 못 해”라더니‥이영지→안유진, 카리나 등장에 우르르(우주떡집)[어제TV]",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5RN3ViTlI1YXRvSTRWVlRMcHdEM3VkLVh0YjlPSnB3bWdCV0FWVmFMVjFTTjRFNFN2MzMwZlR5YUg4b3k0dWlTZDJHMUM1WG1YcDVteWRza3FLWl9HZlhnRGJXczdLX0xV?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "안유진, 新 막내 알바생 기강 잡는다 “냉장고로 따라와”(우주떡집)",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5wQTFLOWxleEo5aXVUOVRnWEY3dG5YV1duTzhONFh1TlpIMjZvZHFqSThVUE9hV2NHei16MFdCbVczTi1LR3VoMEpiNFhsdl9BZGJxU2VuZEJkcjZjWjNTX3Azb2ZNMHRk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "안유진, 새 알바생 오기 전 '기강 잡기' 돌입…\"너 냉장고로 따라와\" ('우주떡집')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9rRU9Ra3pkcXhwdXpXTGl5ZkFsN0lBS2t5MHl4RHJITUwzVWxBejlmNThpbWNjY0JJSVFrbm15UjBqaVhpWTR1NV9MWV9iX2M?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "아이브(IVE) 안유진, 센스 넘치는 예능감과 능숙한 일처리 ‘우주떡집’ 빛냈다",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9lS0FNNUFra1BXVkhrX0ZFNHlwcVRLa0ZSdDUtZnFGLTlxcHFFdzFrQ1c4UzdHTGJ1Wmw2Vk5DNHN0TW9PZ1FwUERkc3lXQ19NTE1PeFpQSjZfWVpjaEHSAWNBVV95cUxQSjZwT1RoeWs4V3B0cjZ5d3dCN0xCdm1BLUItZGxJaHhOZjc2Uk5lTFRzOUhNcEhIeDRiaW1Lamg1ZUtuYTltaG9GQTBZeHdUTEZEbi1rTVJtcG56Nk1xYTkzbk0?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'우주떡집' 이은지·안유진, 실수 연발 홀팀…갈 길 잃은 음식 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBtTnR4WHFoSlp1SmdOcGVFNFhzbE9KTWRLT2VpM2I0aE43Mm41X0JMWUFmWS02S2xzNFpCQmp0V0cxMnZjcGwzaTNVcTVlWWQxUmtQNU1Kb3pOZUhzcUpGQ0tySm93dmpwaEdEdXNoak1hUjVTYlpXTNIBeEFVX3lxTFBtTnR4WHFoSlp1SmdOcGVFNFhzbE9KTWRLT2VpM2I0aE43Mm41X0JMWUFmWS02S2xzNFpCQmp0V0cxMnZjcGwzaTNVcTVlWWQxUmtQNU1Kb3pOZUhzcUpGQ0tySm93dmpwaEdEdXNoak1hUjVTYlpXTA?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "카리나 '우주떡집' 신입 알바생 등장…애타게 기다린 막내",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5ndnk4Qk93TkRLV0ZORnZ0RjVMQWk0OHpEbXY2MUhkUjRLVk5jc1diUWRYNktXY0VNc1RIVGVUWUR1dXVlNi0wdzBEelJrdVJ0WklKOA?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘우주떡집 흑임자인절미’ 어디 없나요…디저트 새 강자는",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA2UG1EMUtXLXVXekdKYzF6aXh4Vy0tN2FQSUkwVVlCWWpUcmpXemF1WkFBSjZMcm9DNzduT0ZRazFLV3lqNlF3OGNuQ1JLMXFzcGFpNzA5LWFiYXNWaWw0UVRWdWtDTVhkdjV3TTFwZjBwdw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“50만개 동나도 또 찾는다”…롯데웰푸드 ‘찰떡아이스 우주떡집’의 대박 비결",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBSbHhXV1l3UE5LeXZzdEEwMWdXSWVVQ2M4Tk9zMk1Fei1GNVFNWlRKX1NTZ295RkZSSzVwZFFQZ2pjQ1BPUmEtS0ZfOUxrX0ZE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[식후감] \"닷새만에 50만개 동났다\"⋯품절대란 '흑임자 찰떡아이스'",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9WdzBoVEFMX3dsbW5qOWdOZ0lZd3ZkYllqZ2FRY2ZlSDNtWDZtTG5yTm1LYThTLS1OajduSGhHU216SVh5T3paYTRwQQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "롯데웰푸드 \"'우주떡집' 찰떡아이스 50만개 닷새 만에 완판\"",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XZjNlZE1Rel9za3VvVExISmxHaGE5cVNOLXI0REowWHA1T3dEVFBiejA2S1RnVE9FdzczTjJfcVNERzZKUU81dUlRZm1kS2lWSkdRdVVIRXpSQm_SAWBBVV95cUxPOElCdVVZVnpQQjlTeldWTFdsNERkb0dELUZyOEI5Sk15eU9uR2xwLUM4SXVZZFktdHdiNFhFY0FzaFZxV0VJQlFSU2dzNm9vVFVQbUdNdlZRNzV6UjlpX24?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "롯데웰푸드, '찰떡아이스 IN 우주떡집 흑임자인절미' 초도물량 완판",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA4bXFsTncyaWRHTE9PTnJxM3Y2aUhUZWVoZmZGc1RKODJKNVR4VlBzR2hnazZBaTNyaG9oUnZmMUc1UEpyWUhhdFE2LVRhZ3lWcDVPOVl1Qkkxd3Blalc2SElmNmpNaC1rbVgzaFY0WdIBc0FVX3lxTE5KdkVPMW90cXdZWDktMlNPSXpGaGZydk1BcFAwdGJ5QjZ3SVRDNUJ6eFJ2UkNxTy1KTjRLSjRRSTZycnV2aGswOG1SZ3pNSFA3MXNHVTZQNmFjc3h5RVhQTjlRalJMWTluTUtJT1hVTGhTQlk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘우주떡집’ 카리나 알바 합류",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBqZWN2cUd6ajNEdTlPQ1kxX1kwQ1RQaFdBbzlYNGVrQ08zdXVFMjBOT0Z5LTFsRHpnRXJSaXJQbnd5Z3o0MGpyR3hzS0dtU3RXTWl5SEFqLUdiSE5DX2NkczRTWEg?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[유통가 NOW] 롯데웰푸드 찰떡아이스 우주떡집 품귀·CJ프레시웨이 자원순환 표창…풀무원·신세계푸드·KGC·동서식품",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5YX2gtNWdfOHJKNmtDZHZ3dlF2R2FHSG1oNk9teU9ydHFpQ24zYU9JZ21yUVZPRlNXQXFoSW9oRU5hLUowcFc2TUlUM2NQYWFzMGoxTHZxMXcyMjQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[TF초점] '우주떡집', 최저 시청률에도 빛난 '지락실 4인방' 센스",
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB2blFTdVRrb2k0NzN2T1dWZ3dwLUNBU3hMalQzS055dDFvMmpCd0pXZk9JcUFSaXJPTTVjQnpXcjVKa25QMTJ5WGpZRUh3TS0tUjFLaHVydDAydkN50gFXQVVfeXFMUHRIN0RrSkdpa0t2T2dTOHVwZC1HUkZ3S2hUV2pwOFRDOHhPeDI5QkZJeFFWNUFJcXYyUk1YalBSajVieTB3cURCeGxQVlZzb0h2TmZ2SjFr?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345208,
+  "programId": "EA202609080000",
+  "cached": false
+ },
+ "EA202609080340": {
+  "keywords": [
+   {
+    "keyword": "염정아 모자",
+    "score": 30.0,
+    "confidence": 100,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad",
+     "web"
+    ],
+    "crossChecked": true,
+    "official": false,
+    "sources": [
+     "ad",
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 모자 정보, 단골 수준 언니네 산지직송3, 재구매율 90% 달성 비결 3",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "염정아 모자",
+     "산지직송 염정아 모자"
+    ]
+   },
+   {
+    "keyword": "섬진강 재첩",
+    "score": 26.8,
+    "confidence": 89,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "김선영, 섬진강 재첩 잡다 염정아 '깜짝' 놀라게 한 한마디…\"목숨도 바칠 수 있어요\" ('산지직송3')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBWZTNSNnFLQ1NHMW15ZThteXRDVjNpeC1SLW9MTUFlVUJVUjhuTzhmZkVVQmJlc0hjUVBnMWplcmhpMTBoUnc?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "‘언니네3’ 염정아·김선영·강유석·노윤서, 섬진강 재첩 사냥…곡소리 나네",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRbGhGbFFJRDBOQTY2U1RsVV9uX3B5YWZrS3NBaGJXVU02N2xSOUxCWm9JRGdmcENrWWEzT0pVUng5cVZpb2FxZGRJc1Y0YlI1eDFrNGlrWVRYSlNPOWfSAWNBVV95cUxNOGMwaXh5SjB0dmRHcWhwbDFwVE50dURUUy1lUUdpSGUyRXM1NG5FeUNzMWhVendIY2xPdS1mNTN3aW1obWpVLXZBWUhxOFdwYllXcko3R1N1Z1JHLXp6SVgyVkU?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "섬진강 재첩",
+     "섬진강 재첩국",
+     "섬진강 재첩살",
+     "섬진강 재첩체험",
+     "섬진강 재첩국수",
+     "부산 섬진강 재첩국"
+    ]
+   },
+   {
+    "keyword": "노윤서 모자",
+    "score": 23.0,
+    "confidence": 77,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "산지직송 노윤서 모자",
+     "노윤서 모자"
+    ]
+   },
+   {
+    "keyword": "데님 모자",
+    "score": 19.0,
+    "confidence": 63,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [],
+    "demandChecked": true,
+    "demand": [
+     "데님 모자",
+     "나이키 데님 모자",
+     "슈프림 데님 모자",
+     "데님 모자 코디",
+     "폴로 데님 모자",
+     "셀린느 데님 모자"
+    ]
+   },
+   {
+    "keyword": "강유석 하동 재첩",
+    "score": 18.3,
+    "confidence": 61,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "강유석 재첩",
+    "score": 17.55,
+    "confidence": 59,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "재첩 조업",
+    "score": 16.92,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "노윤서 재첩",
+    "score": 16.75,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 재첩",
+    "score": 16.75,
+    "confidence": 56,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "‘언니네 산지직송3’ 염정아, 재첩 26kg 잡았다",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBSdjNIU3JvR1gwX0p0cmpUVUs5dC1XMXRBOXkyRUJsX2xTVnluaThiajBiQi03UjdDdDV3dWh6NFdhS1NWLUE5eDByLU1JNjJkeDhJbi1yV1NCeW9RS3BZSHFzeW4?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "마늘 족발",
+    "score": 16.5,
+    "confidence": 55,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "탱글함 폭발 마늘 족발부터 매콤새콤 메밀막국수까지",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "염정아 꽃조끼",
+    "score": 15.3,
+    "confidence": 51,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 염정아 꽃조끼 정보",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "김선영 가방",
+    "score": 14.5,
+    "confidence": 48,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "언니네 산지직송3 김선영 가방 어디꺼야? 바다 나들이 때 멘 보라색 미니 크로스백",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "조업 흑돼지 돈가스",
+    "score": 14.3,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "거랭 들고 재첩",
+    "score": 14.3,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아, 15kg 거랭이 들고 재첩 조업…\"몸살 걸릴 것 같아\" [산지직송3]",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LWmNfSlNhb0JVQ1ZrZVMtWHNiaW52eUxZQXVVS2FFb2hXbnZjU1ctVzlhMmdmYTFIMVhQX3RJM3dIbFRlOFhKQTBxVFVzM2M?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "메밀막국수",
+    "score": 14.0,
+    "confidence": 47,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "탱글함 폭발 마늘 족발부터 매콤새콤 메밀막국수까지",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "재첩 염정아표 깍두기",
+    "score": 13.5,
+    "confidence": 45,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "'언니네 산지직송3' 하동 섬진강 재첩→염정아표 깍두기 완성",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nSDNuX3FxYlZaeW9KYmw3Nm40T1VNMlBfempnX2x0bmxqS25STFpYWF9JWkh6endrU05HZlVDUDUyZXBFeGg3aXk2eWlMMDVVTkNWbF9B?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "인분 깍두기",
+    "score": 12.75,
+    "confidence": 42,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "news"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "news"
+    ],
+    "evidence": [
+     {
+      "text": "염정아 큰손 맞네, 40인분 깍두기 도전 (언니네 산지직송3)",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5PdGlLRFRmMEdIMXlGZDEyWUFaZUxMZFlhSDhlRHhqX3lwcUg1NXc4aV9lX1JTbzF6am9oTUpFT2dvT3FQUHpFSWlhd2FNY2dVVmlBQUYwR3hCNjQ4RE03RGYzU19KSkZTZ3hUd1ln?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "노윤서모자",
+    "score": 12.0,
+    "confidence": 40,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "ad"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "ad"
+    ],
+    "evidence": [
+     {
+      "text": "노윤서모자",
+      "url": "",
+      "source": "daum-ad"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   }
+  ],
+  "docCount": 79,
+  "docCounts": {
+   "preview": 24,
+   "news": 30,
+   "ad": 3,
+   "web": 12,
+   "autocomplete": 10
+  },
+  "queries": [
+   "언니네 산지직송3",
+   "언니네 산지직송3 5회 협찬 제품",
+   "언니네 산지직송3 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "언니네 오늘 마늘 캐러 왔슈~!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "조정석과 함께하는 두 번째 조업! 서산 명물, 마늘!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "알싸~한 향 가득한 마늘밭에서",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "상황극 하랴~ 마늘 캐랴~ 댄스 추랴~ 분주한 언니네!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "웃음도, 수확도 풍년인 대환장 마늘밭 현장!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "‘아까까지 마늘 캐던 우리가... 이 세계에선 빠쇼니스타?!’",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "충청도를 뒤흔든 충격적 비주얼의 등장!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "복고 그 자체! 정아부터 90년대 걸그룹미 장착한 소녀 윤서,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "“미쿡에서 왔어요~ 제니카예요!” 자유분방 히피 스타일의 선영,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "누나들 마음 저격한 능글능글 유임스딘(?)까지 총출동!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "어딘가 남다른 레트로 가족사진 촬영 현장 COMING SOON!♥",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "레트로 비주얼 그대로 저녁 준비에 나선 언니네!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "염 셰프를 긴장하게 만든 오늘의 요리~",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "“잡내 제거 내가 다 잡아버리겠어!!!”",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "탱글함 폭발 마늘 족발부터 매콤새콤 메밀막국수까지",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "여느 때와 같이 평화로운 저녁 준비가 이어지는데..",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "“으아아아아악!!!!”",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "갑자기 언니네 하우스에 울려 퍼지는 비명 소리?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "새파랗게 질린 정아와 맨발로 혼비백산하는 선영!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "다급한 사건 현장을 살피러 간 유석과",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "“오빠 하지 마!!!” 걱정스레 울부짖는 윤서?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "과연 사 남매에겐 무슨 일이? ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "8월 27일 목요일 저녁 8시 40분 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "올여름, 가장 청량한 웃음이 직송됩니다~",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아→노윤서, 섬진강 재첩 조업에 녹초…\"고행 수준\" ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1veGdnTjBDUC1jVjlZZ1dqVTZGYnpjZ3lKN0dBcVRoazF5eE5tc2xyRE1LSjVYNWRxSzJIQ2IyaVc5Z2tNUVE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "tvN 제대로 일냈다…첫방부터 시청률 '4.4%'→쾌속 '1위' 찍고 대박 난 韓 예능 ('산지 직송3')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBqVWMtZUZ6b3NMbTgxa1BuZ3VVdk1KeExIQ2xMM3VxUTZlMDFGRUJOa05vVHVHelJiRjUxSm1YZUU4LUtvZFhtVmRtTEFmRWM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 강유석, 하동 재첩 조업→셰프 활약",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EbE05eFhTMWNWcDdISE01R1RzVXBXQ1BmcVBSbXJqZkRRZEpDb1BjS2JvbUI5MlBWaUozWVFkRGVpUzIzLWhWR1hrOEZGTHM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아, tvN 재정 걱정했다…\"돈 없어서 그러는 거야?\" 제작진 당황시킨 돌직구 ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA0bGxGcmgzRUpmbmJoLVl6eXNJQkE0TGozc3JVb0NmLXB0eXZCVG9fN1B0NFZhb3hkT1VfUVo5OGdELU5UV0MtWXdUSGEtU2c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "김선영, 섬진강 재첩 잡다 염정아 '깜짝' 놀라게 한 한마디…\"목숨도 바칠 수 있어요\" ('산지직송3')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBWZTNSNnFLQ1NHMW15ZThteXRDVjNpeC1SLW9MTUFlVUJVUjhuTzhmZkVVQmJlc0hjUVBnMWplcmhpMTBoUnc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송3', 역대 최고 조업비·시청률 상승…염정아 \"tvN 돈 없어?\" [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAzZzRrYTRBTWFoSTJBcUlrUkFTZjYzNzZGWVBBY1NnZWQ3dUdyQkZPUDRPS1dvSW84QUN0RjVNRzJyaVB6NVhFRzFLYUFpMFE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아, 하동 어르신 위해 100인분 뷔페 제안…\"하려면 하지\" ('산지직송3') [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE41aExCREV2QWhSVmdfTVZ3Qnh6a0UyOWlEVkhGS29SNFMyOVotVlgwVjhDWEhQaWNHeWFqRUxpbmY1TnZ5ZVE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“여기서 밥을 먹는다고?” 섬진강 한가운데 ‘풍덩’…발리 뺨치는 플로팅 식사 (‘언니네 산지직송3’)",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5BM3oxZG5yNU1pLWZjVUwtRGxDSHE5LVc0M2N1VEpaOEFTSDREYUJrOWhYelNNZEl4TUxULU5mcVB4eEQ0a3c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강유석, 재첩 조업→흑돼지 돈가스까지…\"노윤서보다 재첩\" 농담 ('산지직송')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5femt3aFRrWmxjVGtwWUVlcTBvaXQ4SFg4bjJPd25uRllBNkhsZHdmenRuTnhzRG10TTRwRElvekRGNWxrY05JS004bHk4UHc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송3', 역대 최고 조업비·시청률 상승…염정아 \"tvN 돈 없어?\" [종합] - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE56WnN6V0FtSTh2MWF3TjVJMWpDM2xMR0ZJc19LR1N1V2x0S0h3ZHVYOWNROFVZS1Nzbl9RaUluazNUaUhsWG9sSnVNbmRmVDVSb1dMek4ySWpScDBYT1piR1VWQzVVb1VBNTIyU19hUmcyVGfSAXhBVV95cUxQZ3lzSzhxV19VR2hObXdxUjNTRnRUc1JtdnZtWk9aTHdzOGI0eW9mY1pMY1pIaTIzMWFGMEsyR09OOGZDVXJvcWk0bXpfMXFxTDd3WklrRlo5b1ZCUG1tYVFORkRRYnY1Vml3YzQ4aUFIT3RweWd0RWk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아 큰손 맞네, 40인분 깍두기 도전 (언니네 산지직송3)",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5PdGlLRFRmMEdIMXlGZDEyWUFaZUxMZFlhSDhlRHhqX3lwcUg1NXc4aV9lX1JTbzF6am9oTUpFT2dvT3FQUHpFSWlhd2FNY2dVVmlBQUYwR3hCNjQ4RE03RGYzU19KSkZTZ3hUd1ln?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 염정아, 재첩 26kg 잡았다",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBSdjNIU3JvR1gwX0p0cmpUVUs5dC1XMXRBOXkyRUJsX2xTVnluaThiajBiQi03UjdDdDV3dWh6NFdhS1NWLUE5eDByLU1JNjJkeDhJbi1yV1NCeW9RS3BZSHFzeW4?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네 산지직송3’ 새 멤버들 어떻길래…3주 연속 동시간대 시청률 1위[美친 시청률]",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNckp1Tm1ZVk03eTVQZ3JoOXg2Y3NMaFRyc295QzY1ZlBxNkcwTDhaTkV3cEl4aXNVUmJreTBncEh0aTVweEFBRWtNeWpRLWpPVU9YRUxLaGMtUlRIVlVxMENhQ1dDaHA5WGJLSG4tUXlSQVpnMDdHeHJGdUpIek9obm45b05oZXRTY25tRzN0MA?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "염정아 ‘산지직송3’ 굴욕 씻었다‥2%대 부진 끝내고 3%대 시청률 회복",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9vRFJpaEd6M1JOVFV2RXFYbVpFRE94VjhNOEtXUVZJVGJ0TXpDMUNwaDBSVVotR0gxWU13NW1EakFab1ZDdUoxM051NDJ6ekNvd1JCLTNOYVpyQXU1LVloQlRVX1JiT3J2?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘언니네3’ 염정아·김선영·강유석·노윤서, 섬진강 재첩 사냥…곡소리 나네",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRbGhGbFFJRDBOQTY2U1RsVV9uX3B5YWZrS3NBaGJXVU02N2xSOUxCWm9JRGdmcENrWWEzT0pVUng5cVZpb2FxZGRJc1Y0YlI1eDFrNGlrWVRYSlNPOWfSAWNBVV95cUxNOGMwaXh5SjB0dmRHcWhwbDFwVE50dURUUy1lUUdpSGUyRXM1NG5FeUNzMWhVendIY2xPdS1mNTN3aW1obWpVLXZBWUhxOFdwYllXcko3R1N1Z1JHLXp6SVgyVkU?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'언니네 산지직송' '집 안에 뱀 등장 현장 발칵..김선영 혼비백산 비명",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9PQXpUZklPTjZPeDlMb0x4QzdoUWRwZGhKVktXTUdVaHF4bnVwUUcwdEwtQUF6aS1kT1FiTzVwTGxfTDRBYWNaWUFmQzBEYmxBUG9KZzFwSllDc3JtWjlMcnJn?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345212,
+  "programId": "EA202609080340",
+  "cached": false
+ },
+ "EA202609091610": {
+  "keywords": [
+   {
+    "keyword": "프러포즈 엔딩",
+    "score": 23.97,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "preview"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "[프러포즈 엔딩] 강훈♡김혜준, 매일 돌아올 곳이 되어주고 싶은 사람",
+      "url": "",
+      "source": "tvn-clip"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "웃겨웃겨",
+    "score": 22.4,
+    "confidence": 93,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "preview"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "[웃겨웃겨 모음] 티랑이를 위해 웃음 가득 최애즈가 왔어요! 귀여운 애드립이 넘치는 찐 마지막 비하인드🤣",
+      "url": "",
+      "source": "tvn-clip"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "메이킹",
+    "score": 22.4,
+    "confidence": 93,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "preview"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "[메이킹] 제 최애는 최애즈입니다💗 모두 저마다의 빛으로 반짝이길✨ | 11-최종화 비하인드&종영소감",
+      "url": "",
+      "source": "tvn-clip"
+     }
+    ],
+    "demandChecked": false,
+    "demand": []
+   },
+   {
+    "keyword": "포스코사거리점 삼성역 베트남쌀국수",
+    "score": 11.6,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "사이공 본가 포스코사거리점 - 삼성역 베트남쌀국수, 베트남음식 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "베트남쌀국수 베트남음식 맛집",
+    "score": 11.6,
+    "confidence": 48,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "사이공 본가 포스코사거리점 - 삼성역 베트남쌀국수, 베트남음식 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "street 남산동 디저트",
+    "score": 11.6,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "Lovesome Street - 남산동 디저트, 마카롱 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "디저트 마카롱 맛집",
+    "score": 11.6,
+    "confidence": 48,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "Lovesome Street - 남산동 디저트, 마카롱 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "맛집 다이닝코드",
+    "score": 8.76,
+    "confidence": 37,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "사이공 본가 포스코사거리점 - 삼성역 베트남쌀국수, 베트남음식 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     },
+     {
+      "text": "Lovesome Street - 남산동 디저트, 마카롱 맛집 - 다이닝코드",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "스피커",
+    "score": 7.06,
+    "confidence": 29,
+    "category": "디지털",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "최애의 사원 루니 AI 스피커 진짜 파는 제품일까? 나도 사고 싶어 찾아봤다",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "스피커",
+     "USB스피커",
+     "TV스피커",
+     "스피커앰프",
+     "거실스피커",
+     "스피커브랜드"
+    ]
+   }
+  ],
+  "docCount": 63,
+  "docCounts": {
+   "clip": 10,
+   "news": 30,
+   "web": 12,
+   "autocomplete": 11
+  },
+  "queries": [
+   "최애의 사원",
+   "최애의 사원 12화 협찬 제품",
+   "최애의 사원 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "[웃겨웃겨 모음] 티랑이를 위해 웃음 가득 최애즈가 왔어요! 귀여운 애드립이 넘치는 찐 마지막 비하인드🤣",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "[메이킹] 제 최애는 최애즈입니다💗 모두 저마다의 빛으로 반짝이길✨ | 11-최종화 비하인드&종영소감",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "12화 하이라이트｜\"옆에 있어줄래요?\" 김혜준을 꽉 붙잡은 강훈의 고백",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "12화 하이라이트｜마침내 하나가 된 다섯, D.N.X의 화려한 컴백",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "12화 하이라이트｜사실 보내기 싫은 마음.. 속앓이하는 강훈",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "[프러포즈 엔딩] 강훈♡김혜준, 매일 돌아올 곳이 되어주고 싶은 사람",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "무대에서 다시 빛날 시간, D.N.X 완전체 컴백 콘서트!",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "꿈꾸던 최애의 사원, D.N.X 담당자가 된 김혜준",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "축) 김혜준 귀국🎉 팀원들 앞에서 당당히 사랑고백♡",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "파리로 떠난 김혜준, 강훈만의 기다리기 미션🍀",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"어장관리·비호감으로 보이기 싫어\" 대본 수정 요청했다… 김혜준, 로코에 쏟은 진심 ('최애의')[인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBRVGdaSTBwQ3p5ODlOdElyRFFyUkVPaTdHaGRFYkdCMEVvU01qWUROeURJaURSejlXTVpfaV9mZi1jUTRTM0E?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[인터뷰]강훈, 가장 나다운 속도로",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE05YUk5VV9HXzBnZzdZYVNIMklDQi1yZlB2SEhlM09DaWt6LWw5R1I2MGhLblg1em8xejVJek1oZlcxS3poTXRLQ2NoUjcxQkZLc3BV?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강훈 \"태연 만나려 배우 시작, 이젠 누군가의 '최애' 되고 싶어\" [★FULL인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Vd3ItZXFhQ2s1Y285SlBJdHdVZ2pyT0MzaHdQZjR2SDdjTzU4NkVDNDBHOFgtYXprRThRb2luOGl5MzEyV0NBNGgybjRBTnc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "tvN 드라마와 실제 아이돌 해체 상황 겹쳤다…'CIX 출신' 현석 \"복잡 미묘한 감정\" ('최애의')[인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE96d0xtWkVoTW9BaFZReXVUd0cwODhUbFdwLXpyU3Jqa0ZGdm13bmlEWmJIbk5JSE5aWE10c1FnQTh1djlTWHc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "김혜준 “첫 로코, 키스신 그렇게 오래 찍는 줄 몰라 민망”[인터뷰①]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA1S1ZBRnM4T0FUSlFhWUF6b3YtbTJRZFVkdklUalYzV2VKamRfWmlqLXZNeFY5OVItSXJnQlhFMW5hMkZxZ01UY0VPTXNpeUk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강훈, 실사판 '최애의 사원'이었다…\"태연 만나기 위해 연기 학원 등록→배우 데뷔 성공\" [TEN인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBES3puN2E4eDk4SktlVklBNnFDUEpkSVFQbWVGZDQtYzAySVNOcTRsRUVFeWxrdnlBdUhZRkRwdm5MQ2NFZ0dzODBXR1NxNEk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "홍경·김민하와 '한양대 14학번 트로이카'로 우뚝…김혜준 \"키운 건 아니지만 뿌듯\" ('최애의')[인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBlVHlMLVlVMHktU1NUR0RuVWJ6aVJ1Q3lwMUNxRmx4aVh5XzdJWkQxOXo3RDBmeHBZMzVzSHRYenMxRy1abkE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "tvN 로코 맛집이네…일·사랑 모두 잡은 '해피엔딩'→글로벌 민심까지 녹인 韓 드라마 ('최애의 사원')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9jQ19rbzlLa1FmZkxFaUZVOHB5UGVLSUt2NF80WWpGQ3NFWkdHZkp4dHRvNmhSUlBIb2tfSXhYZGhCQ2FMWTRUQWZUVE9EMEk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"태연 누나, 연하는 어때요\" 강훈, '놀토' 촬영 후일담에 입 열었다…\"연락처 교환은\" ('최애의')[인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4yRTJOZUNzdjVxb2FfOXhGQUJwbjFzZ1hTZ0FuTDVUdXRIcGVhQURLUmFoTDJRZFZiUUpBNUpCOXdYYXBUQzRwVkVrU3ZERjg?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "정현민, '최애의 사원' D.N.X 래퍼 지누 역으로 존재감",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KYmU1dXJZV2o4VXB3SGlqWlRYWklnVFo4R3hoQnRmZGVlOGJhVjl3Z0ZraF9QMERUdmZpT0s3bDNPcXlsZGk1Z1hlM2N3VC1WMmJmMTJ5Z1hGRlJhUUxqWTdDcEZsOHps?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[TF인터뷰] '무궁무진' 강훈 \"'최애의 사원' 첫 로코 주연? 70점\"",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE12RFZTQThhU0tYNVVkSUl2bUlFOEUzZTVNSEg5T1ptRFgzX2FCbUZPTXVsdXpKWjNXLUdQYXJrMVdCcGZITUE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "꿈·사랑 다 이룬 김혜준…'최애의 사원' 3.1% 종영",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9qam9kTzdkYnptUzNGcmVFNTVuZ01EQlRRT2kwOFUwdjlBTmJNQUZqTTJUcUE2V18wajJtbWg4YlFvY0RaQ3U3UXd4WTd5QnNTMGFQVEZUc0JqOWvSAWBBVV95cUxQUWFPOEJETmpWak5wZGZrcjVRbEVPdkljd1daNFFRUlVSZ3ZlM1VQTVRQQXpxTzZDZE5RR2ZRQXhqRzdUdmxfMFRFdTlzNTVicGZCUU9SZ2lzVFdJeHdwbS0?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "정현민, ‘최애의 사원’서 D.N.X 래퍼 지누 역 열연…신예 배우 존재감",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE93ekR6a1VNQUk1UkhMaFFfSUh6NFRSN1Z3UU8zejZrbFgtV2ExNjFLM3FfNldOM0JYQnoxSmRUckxaVEJGend0WGw2R2dUN2J4Q2pUM0dEeEw1ZTZjWGtWX0FrcTRqRWNzN0tRay1qUXZUMEE20gF4QVVfeXFMT3hmUVFKcGJxUjBBNnpNc2pIM3ZsVExNQmMxNi1Ea1VlNnRielJYYVFmZFlvVjhwT2ZCVm9RQmtXY3dSR3BaZWxFQWt5dEFVRlpJTDJXbVVWdUhwZDZuLS0yemxiZlhhMGZuS2g4UktjMVJwTmVtWHBn?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 김혜준 \"첫 로코서 키스신만 반나절 촬영..오글거림 이겨내\" [★FULL인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdWg1UnoyMVJrRkQ0OEVTQ29yc0lKeFhzRjBPVlhyN3BwUnNWTTU5UzJQUUdpTlVlWXE1WV9hV3ctVWtHMkl3dl9MMEZ6NEJzRGZZdWY5aEprd09TTWV1WlNsWm1DTTJYdlM3dkpBSHd2T3JjZld5M21DTnJJOGJHMGhn?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 강훈 \"젊고 예쁜 시절 보여주기에 '로코'만한 게 없죠\" [인터뷰+]",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9UbWJlOUdhbVdkN0tRemxNMExPeHo1bWVtTDNTVDd6eEFqdmtIaHN1b09BaUxCNDc0LUY5TndaUXRqM1JLOWFmYWl0bUxtb0R4WmxSblhVSFRLdw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강훈♥김혜준, 서로의 곁에서 해피엔딩…'최애의 사원' 괄목할 성적으로 유종의 미 - 조선비즈",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMXNvbDZsNlhxVERPNGtTRW4yNVUyRkV4NXI0MkVLdWRvOE9sRXo5M0c2MldKeXlQc2Fjc1BPQVIwUHEzd21qSFdHcE1GRFhnWDBLOEk5cDFMZTUtR2pGQlExUF83YmVwY2RoY2JTb1p3cnk3ZjRLdzNKSTNPek5jTmZkQmjSAZgBQVVfeXFMTmVEMlU5WkEwS0U4S1JLM1hIUmR6QkFkSm1hZWJYSTc2VjZ2ZTNxUEF2U0diVjgwekNLTVdyMktaQ21pNG9uNzJQZ0g5NGl3ZHR0LVM1bVJveGNFOUlfOGVuZkx5akNXMjM5c3VtU0I1Mzh2SDBnY3B3UUJzODNRMFQ2N2VTS2MxVzZCQlRaMGl1Q0tOZWJwdmY?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[인터뷰] ‘최애의 사원’ 강훈 “로코 장인? 얼굴 예쁠 때 로맨스 더 하고파”",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBYbTRXaVlXODdjUmxHMzFFdnZSalFhSG1rbEhoNHVScV9FMldFemNNbFU4Q3laT3NPUnlEUElvaEljZjQ3WElTUzluOTRzR1lncm9UV3VmZEpwYWNZSmU3aTJiRkwtdw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[TF인터뷰] 김혜준, '최애의 사원'으로 얻은 용기",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE56bXV0RFVSWGY5ZFgzaVZtZWZxakotRG5ZSWpPTUItQnN5RmdLZXBrT1VSTDJoWVhSWEh2YUl2WkFkNDdOSWpORllLYmU2NFE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[인터뷰①]'최애의 사원' 김혜준 \"첫 로코, '프리티걸'로 텐션 올렸다…지안이면 벌써 폭탄으로 끝냈다고\"",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR3JlVkdiTVc3U3hMejJxZ1NTT1dmOFFUU3dKeVNKX05tMnZ3NnloaWctY3J3bHVaR2ZkTkNuZnduOTZjSXBWNFVmVFJNdWxXYXN3UUlkOHlDWnZ1eEtpQUkxYWlLS3ZoemdGYjR5ekI4YVp4VWpYRmF1ejZwV0NGZlNrS0thcENtMklNYVIzbw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 김혜준 \"첫 로코 큰 도전, 오글거렸지만 과감하게 표현\" [인터뷰①]",
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVWRkVlVLQ2xSS19TWl9LVFc3S2gzVG1TLU5YNU1XbEowbTJEa3BNZnJaLTJVNldXbkdaek8td0taNFY5eTV4LVpBbkQ5RVFIMGpJbk1lODkwX2ZrY2ZVMGVjQmMxTHdlMFdNWmlMRjZKU3FXdTJPQmQzVlNyNW9lZzN3?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘최애의 사원’ 강훈, 김혜준 진짜 사랑했다..“작품·예능 찾아보며 노력”[인터뷰②]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBWWU04dlk3dUJHUHZqQkNmcDJDUVdwUVRQSU53RGVTUWZPVER3eVFwRG5uTDZNZEMxSkVEQndjSFBDdDRnamc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "강훈, '최애의 사원' 통해 갈증 해소…\"첫 주연이라 집 가는 길에 울컥, 너무 바랐던 순간\" [엑's 인터뷰]",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5lcmUtYXJOYXVybGxyaWR6QVEzSlhscm96ODFrellKdjVKQmdNU2czQ3hqblFQWjZtb3BLSlFDdGZDbVh2UGc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 김혜준 \"첫 로코 주연, 도전 의식 생겨\" [N인터뷰]②",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1sNWNfMVpFT09XTTFOODFzYjhMMFRIVEFmWHdpbGVfclo0NXhQdzJkSlhhMDNuXzJjcU5pTVZWWnB3VDVRRGc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 김혜준 \"학창시절 소시·샤이니 좋아한 '핑크블러드'\" [N인터뷰]①",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9XZE1oaXNESG9KMG9ydGwtSTlmVVlNVi1qZUgyNW10YmVpb2RQazh5NkgxSFRaTG1lTHVDcEtRY29jWHN3dWc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘최애의 사원’ 종영, 남다름 꿈·사랑 다 이뤄…닐슨 시청률 3.1% 기록",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBYZjc5dTBYOTh4WGdkYmhNT1NjblNtRDYyWjR2VC0zNHRDQWxGREhrcG9Xdlk0dURTV2xqa3ktUlU2MGdEX1NEYlRpZ3U0Ri1hRW1ENk1B?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 강훈 \"첫 로코·주인공, 꿈꿨던 순간…기분 좋은 부담감\"[인터뷰①]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5ObUNBdEVsWW5fMjF2WldteVJad0VoclluMjMyU2VadWdsa1M4UTFDdlBNQ2diQW0zcmlRZXU4cENtTTNuXy0yX1hSNnFISXM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "‘최애의 사원’ 해피엔딩 향한 최종회",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5CSnlJMENvVmxFckRvcEpvcmlTWjNJYk0xRzdmdmxVbEk3c2k0TlJST0dpUWVlZUV0SUwyRW5iOTV3SWpQRk1DT195eW5GTjFzanh5VFdPQzFrQ0t6SnE5bk9xR2s?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "단 2회 남기고 사고치나...시청률 4.2% 찍고 역주행 반등 노리는 韓 드라마 ('최애의사원')",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1Mc01TSGc1NWI2d2FTZ0s1ZjJFaG1rVFl4elJ5UlBFTnRyTE16Rm5BSmtjQWQ5V2NVdjBaQjg2c25rQVlqRUhQS0NtVDBIcHc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원', 강훈♥김혜준은 해피엔딩...시청률은 하락 3.1% 새드엔딩 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1uTGRQaVJjOGh3dy1PQjZkMGN6RnZGOHVJbmVqMzBCdTNEVnpaQVluRUJtZ3F6eTdmM25OWkZmei1mYVY2OGp4UTdET3ItZDBOWjRsMGEya1hVbzJ1RW81cFNac0pmOW8tekx6VVhmOGZXMmvSAXhBVV95cUxPdGZ6T0hMZy1veGpnVmdGUmxsQk8wNTgxYTdFRlFhS0ZDMm1FbkpFcGxTSzBUTnFUdm5EX3JIYTlMZ0x5TGRSZXZJT01hQklnTXZ1aVNZNkFmU1ZwSElrZFY0bnRaTTA3UmhUcmU1blJZTXY1RnBwbFM?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'최애의 사원' 김혜준 \"첫 로코, 귀엽다는 말에 힘 났죠\" [인터뷰+]",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9uenBaQ3hkMUgwR2MxbEFDcHRIQlhwb1Q0SjJvbVBVWTV5STBSUGRrU0JkVGRISGNVdFR4UjN4NjZ5NVFqNjBsMHlSOEpoV19qTXpXUmhvdDhpdw?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345232,
+  "programId": "EA202609091610",
+  "cached": false
+ },
+ "EA202609101640": {
+  "keywords": [
+   {
+    "keyword": "경주기행",
+    "score": 33.5,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "news",
+     "preview"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "news",
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "〈동백꽃 필 무렵〉부터 〈경주기행〉까지! 전성기 맞은 이정은✨ 9년간 알코올 중독과 싸운 외과 의사 이준서🍺",
+      "url": "",
+      "source": "tvn-clip"
+     },
+     {
+      "text": "‘경주기행’ 이정은, tvN ‘유 퀴즈 온 더 블럭’ 출연…연기 인생 들려준다",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9rMWRMYnBIYmtsWjlscVpBUHNMSW5iOFpoaEhBMmM4SmtvTVpLVk16SUY0Ukg1N256VXRVT1NIRV9oYS1rWFlBOFNzSkpCazhLV0stUTctaVlvQXNVVEJuZ3NCVnlOSlNmRnd1VUc0RUc5UQ?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "이정은 ‘경주기행’, tvN ‘유 퀴즈 온 더 블럭’ 출연",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1QbDB5NmI1VE9FUG05eFRtOF91SG4xdjN6alh6Y3MtSmlaaXIwWXpybE1OWDEwUktNVGtNaF90UWRsLUszeDBkeHlIandRUmpsZ2luSVJQZTl1YmRLQ0oydDY5OEZtd2lGQkQxakp5U1ZTQQ?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "경주기행",
+     "영화 경주기행",
+     "경주기행 쿠키",
+     "경주기행 결말",
+     "경주기행 영화",
+     "경주기행 무대인사"
+    ]
+   },
+   {
+    "keyword": "유퀴즈",
+    "score": 21.71,
+    "confidence": 65,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "news",
+     "web"
+    ],
+    "crossChecked": true,
+    "official": false,
+    "sources": [
+     "news",
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "이정은, 이효리 연기력에 소신 발언 \"재능 있다고 생각\"…유재석은 '갸우뚱'('유퀴즈')",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8wSUpkdFA1YXVwY0dDeEtSajRLRFR3Wk02Sld1TzFxZDdTRDkxMlc0OWhOT2xCQjU2SUFXRlRNV2dQUUZfRXc?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "\"화장실서 반라로 발견될 정도\"…이준서 의사, 9년 알코올 중독 고백 [TVis] (유퀴즈)",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kWnRjNDlqNEZKcWNQTnJUVnF3aHAxblhoUjF0THBBSzNfVDUyVjdCVzhob2swMV95WmhsUWE3c2N6d2hQUVFJVU9JdEFTYXExLUNN?oc=5",
+      "source": "google-news"
+     },
+     {
+      "text": "BTS 리센느 그린 85세 작가, 유재석도 그렸다…로판 남주 재질에 \"카톡 프사 하고파\"(유퀴즈)",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9xRUxQWVZiTWlTWHpEN3Z3UVNLakZPSm51Z1dINFJERmpwNjB5OHlac2ZjbnM4QWZQVU9NRldhaE5DZjVyVkplQlNkWkdsQTFtWWY0?oc=5",
+      "source": "google-news"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "유 퀴즈 온 더 블럭",
+     "유퀴즈",
+     "유퀴즈 만화가",
+     "유퀴즈 피터팬",
+     "유퀴즈 조세호",
+     "유퀴즈 재방송"
+    ]
+   },
+   {
+    "keyword": "이정",
+    "score": 17.44,
+    "confidence": 52,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "news",
+     "preview",
+     "web"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "news",
+     "preview",
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "오래 준비해서 제대로 피어난, 지금이 가장 눈부신 배우 이정은",
+      "url": "",
+      "source": "tvn-preview"
+     },
+     {
+      "text": "〈동백꽃 필 무렵〉부터 〈경주기행〉까지! 전성기 맞은 이정은✨ 9년간 알코올 중독과 싸운 외과 의사 이준서🍺",
+      "url": "",
+      "source": "tvn-clip"
+     },
+     {
+      "text": "녹즙 배달하며 버틴 29년 무명 끝, 50살에 전성기를 맞은 배우 이정은✨",
+      "url": "",
+      "source": "tvn-clip"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "이정후",
+     "이정현",
+     "이정은",
+     "이정",
+     "이정재",
+     "이정효"
+    ]
+   },
+   {
+    "keyword": "미담 부코페 티켓",
+    "score": 10.8,
+    "confidence": 32,
+    "category": "체험",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "김준호 유재석 미담, 부코페 티켓 200장의 감동 실화",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   }
+  ],
+  "docCount": 80,
+  "docCounts": {
+   "preview": 21,
+   "clip": 7,
+   "news": 30,
+   "web": 12,
+   "autocomplete": 10
+  },
+  "queries": [
+   "유 퀴즈 온 더 블럭",
+   "유 퀴즈 온 더 블럭 359회 협찬 제품",
+   "유 퀴즈 온 더 블럭 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "<끝인 줄 알았지> ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "대통령을 지키던 경호원에서 하늘을 가르는 윙슈터로! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "세계 최고령 기네스북에 도전하는 임종순",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "5년간 하늘을 가른 횟수만 무려 2,500여 회?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "세계 최고령 윙슈터를 꿈꾸며 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "73세 나이에 기네스북에 도전한 결과는?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "술과 너무 가까웠던 한 의사의 결심! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "금주로 새 삶을 시작한 간담췌외과 이준서 선생님",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "회식 후 눈 떠보니 응급실?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "알코올 인생을 청산하기 위해 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "간담췌외과 의사가 시도한 오만가지 금주 방법은?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "마음속 소녀를 그리는 ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "여든다섯의 1세대 순정 만화가 민애니 작가님",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "어린 시절 순정 만화책 한 권에 반해 시작한 그림 인생",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "그의 펜 끝에서 새롭게 태어난 BTS부터 리센느까지! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "여든다섯 순정 만화가의 그림 속으로",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "오래 준비해서 제대로 피어난, 지금이 가장 눈부신 배우 이정은",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "녹즙 배달부터 채소 장사까지, 안 해 본 일 없이",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "연기를 향한 마음 하나로 버텨온 시간들",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "29년의 무명을 견뎌낸 끝에 비로소 만난 전성기!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "<유 퀴즈 온 더 블럭> 9월 9일 수요일 저녁 8시 45분",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "〈동백꽃 필 무렵〉부터 〈경주기행〉까지! 전성기 맞은 이정은✨ 9년간 알코올 중독과 싸운 외과 의사 이준서🍺",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "1세대 순정만화가 민애니가 그린 로판 남주 재석과✒️ 세계 최고령 기네스북에 도전하는 73세 윙슈터 임종순🪽",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "녹즙 배달하며 버틴 29년 무명 끝, 50살에 전성기를 맞은 배우 이정은✨",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "BTS부터 리센느까지✨ 전 세계를 열광시킨 순정만화가 민애니의 아이돌 일러스트💓",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "술 때문에 응급실까지... 9년간 알코올 중독과 싸운 간담췌외과 의사 이준서🩺",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "다섯 대통령을 지킨 경호원 임종순이 35년 만에 밝힌 한·소 정상회담 비하인드🔥",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "[선공개]전성기ing 이정은✨ 빚더미에 이효리 연기 코칭?! 슬럼프를 이겨낸 정은에게 온 공효진의 영상편지💌",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "이정은, 이효리 연기력에 소신 발언 \"재능 있다고 생각\"…유재석은 '갸우뚱'('유퀴즈')",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8wSUpkdFA1YXVwY0dDeEtSajRLRFR3Wk02Sld1TzFxZDdTRDkxMlc0OWhOT2xCQjU2SUFXRlRNV2dQUUZfRXc?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"화장실서 반라로 발견될 정도\"…이준서 의사, 9년 알코올 중독 고백 [TVis] (유퀴즈)",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kWnRjNDlqNEZKcWNQTnJUVnF3aHAxblhoUjF0THBBSzNfVDUyVjdCVzhob2swMV95WmhsUWE3c2N6d2hQUVFJVU9JdEFTYXExLUNN?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“하루 5개만 피우자” 실패한 유재석…20년 금연한 몸은 어떻게 달라졌나",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQV3V1UENoQXZtUjJKTV9LdVB1cElHYmszOTlTbXUtakFUenpfNm5HZVlXNW9VRDJIcXBPMWVWaWdFRWxPSnFETW03Tm8yOWpqSHU0UXNUdjd1cnR2cnZsMFBwUEE3ZDNYdUJXMEJEVDdwbm9DOXFiRnA4RnU3dV9RZG9uY0gwTFAwX29JdzRlNFRpT25fMkVRZ2x1V1paQdIBZkFVX3lxTE4zeFRLSUcxTnJ3UW13UlVmdTg2anM1RFoxRU1OeFVPV1djNElQNnpzOEtHZ0hDcVd2akxrZ0llX2RXTU5kVTJBX3RtSGdEVnhSOEk1Y3BObVRRLW5lZmdJbmpINW91Zw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "BTS 리센느 그린 85세 작가, 유재석도 그렸다…로판 남주 재질에 \"카톡 프사 하고파\"(유퀴즈)",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9xRUxQWVZiTWlTWHpEN3Z3UVNLakZPSm51Z1dINFJERmpwNjB5OHlac2ZjbnM4QWZQVU9NRldhaE5DZjVyVkplQlNkWkdsQTFtWWY0?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"문득 그립길\"…'피터팬 아빠' 故전경철 작가 '유퀴즈'에 남긴 부정 [종합]",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE44Mnc2SVdIY3JpQUtka0NEb0Z0UmxidWNZSHFNTG92eVNSV3BHazRscUd5NXJHWllTZnhyMEI5Q3prVFNyMDFYZmpvNmFKbXFUTDhB?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'덱스 대선배' UDT 출신 73세 임종수…5대 대통령 모신 경호원 은퇴 후 '최고령 윙슈터' 변신 ('유퀴즈')",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9QMkt4UF82MEYyWGpIRWQwTGFWcWdEZExkbjB5dWl1N2dJS3dSbXowMzN5U3VDdHlaZloyazRuTzI1WDRzM3FTSlpfaTg2MExSSzVN?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "이정은 \"빚 5천만원, 신하균→지진희 흔쾌히 빌려줘…갚기까지 13년\" [유퀴즈][★밤TView]",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA1TTJTUUZYVWpkV0k5UXkyaG1xNjNJeUdmY29sRm1obWtGdVpEQVRRa2pwMGtMVnR2UlBRVkFnOXpwUmhLX1lTZWxQUlowUVhldlBZ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'구독자 4만' 유리몸이군, '유퀴즈' 입성...유재석 미담 \"영상·댓글까지 모두 봐\"",
+    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5BUU5EejVfdk1RdE9mbnpGVXk5MXVVd3U4VDVqT2JIZTBGQ1JtbGFlOFIyYVJfVEJRWHFaWmdMQjlSVEpHN3c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'유퀴즈' 측, '피터팬 아빠' 故전경철 작가 추모…\"남겨주신 마음 오래 기억\"",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rbS1oYlkwS2daNXdpeU9YaVdqUWx3WmpMbXNFZUR4WUFxeGt3cUJxalJUOW5ZMUJ0ejdmMm9QYnl4RV9ybDcwSGN1cHdqSGxCTjln?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "50세에 전성기 이정은, 신하균 지진희 우현에 빌린 5천만원 13년만 청산(유퀴즈)[어제TV]",
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1WeG5SaW9RbnhRalVBZGpGOThEUnJMU1JndXI4aVJDRWdtVXVZQTNRcEhZdUtpUGdCTlZtZTUta254UlIzYm5fYzZpSW5jLTQxekpj?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "유 퀴즈 온 더 블럭, 시청률 1위 속 고 전경철 작가 추모로 먹먹한 여운",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE43TmpUVzJwVFFCaHQzVXo4UXdCU3BNdWRFM3YwQi1MQWRRNk5UZXVfNXpGQlo1RHAxLWlNTG1IRkxTQTFwYl90TTJlZk1hRWhSZW5HZk9FRjdUcGF1VEgxLTR6ejNVa2pXSERiVWw1N1RXZw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'유퀴즈', 故전경철 작가 추모 \"문득 그리운 사람 있다고 기억해주길\" [스타이슈]",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0zclNoWl9ublBBQWVfOE9yWWlTWV9DaVA1bEROa2VWa3F3Rk1PN0dlVmZrUTg0U1dzZHZjSHFPTk5NX01FNG5vTnN6akVOSkU?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345235,
+  "programId": "EA202609101640",
+  "cached": false
+ },
+ "EA202609101215": {
+  "keywords": [
+   {
+    "keyword": "남편",
+    "score": 24.88,
+    "confidence": 100,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "clip",
+     "news",
+     "preview",
+     "web"
+    ],
+    "crossChecked": true,
+    "official": true,
+    "sources": [
+     "clip",
+     "news",
+     "preview",
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "남편 말은 무조건 반대! 모든 걸 자기 뜻대로 하라며 강요하는 아내?!",
+      "url": "",
+      "source": "tvn-preview"
+     },
+     {
+      "text": "남편이 집안일 할 때마다 팔짱 끼고 감시하는 건 기본,",
+      "url": "",
+      "source": "tvn-preview"
+     },
+     {
+      "text": "심지어 \"모르겠으면 적어\"라며 남편을 다그치기까지?! ",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "남편들",
+     "남편 뜻",
+     "남편 영어로",
+     "남편",
+     "넷플릭스 남편들",
+     "남편 생일선물"
+    ]
+   },
+   {
+    "keyword": "가족 관계 전쟁",
+    "score": 21.0,
+    "confidence": 84,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "싸우지 말고 꽉 묶자! 이 세상 모든 ‘가족 관계 전쟁’을",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "모르겠으면 적어",
+    "score": 19.95,
+    "confidence": 80,
+    "category": "기타",
+    "shoppable": false,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "심지어 \"모르겠으면 적어\"라며 남편을 다그치기까지?! ",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   },
+   {
+    "keyword": "신라면",
+    "score": 11.2,
+    "confidence": 45,
+    "category": "식품",
+    "shoppable": true,
+    "kinds": [
+     "web"
+    ],
+    "crossChecked": false,
+    "official": false,
+    "sources": [
+     "web"
+    ],
+    "evidence": [
+     {
+      "text": "[5/22(금) 베스트모음] 신라면 78봉지 9970원 (9,970원/무료)",
+      "url": "",
+      "source": "daum"
+     }
+    ],
+    "demandChecked": true,
+    "demand": [
+     "신라면세점",
+     "신라면",
+     "신라면 투움바",
+     "신라면 골드",
+     "신라면 로제",
+     "신라면 레시피"
+    ]
+   },
+   {
+    "keyword": "것도 모자라",
+    "score": 10.5,
+    "confidence": 42,
+    "category": "패션",
+    "shoppable": true,
+    "kinds": [
+     "preview"
+    ],
+    "crossChecked": false,
+    "official": true,
+    "sources": [
+     "preview"
+    ],
+    "evidence": [
+     {
+      "text": "하루에도 몇 번씩 전화해 남편의 끼니를 챙겼는지 확인하는 것도 모자라,",
+      "url": "",
+      "source": "tvn-preview"
+     }
+    ],
+    "demandChecked": true,
+    "demand": []
+   }
+  ],
+  "docCount": 75,
+  "docCounts": {
+   "preview": 19,
+   "clip": 4,
+   "news": 30,
+   "web": 12,
+   "autocomplete": 10
+  },
+  "queries": [
+   "이호선 상담소",
+   "이호선 상담소 31회 협찬 제품",
+   "이호선 상담소 나온 상품 구매"
+  ],
+  "errors": [],
+  "documents": [
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "싸우지 말고 꽉 묶자! 이 세상 모든 ‘가족 관계 전쟁’을",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "28년 차 가족 상담계 레전드, 심리상담가 이호선이 끝내겠습니다!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "서른한 번째 관계 전쟁은? 대화할수록 갈등만 깊어지는 가족!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "갈등의 악순환을 끊고 싶은 오늘의 내담자는?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "남편 말은 무조건 반대! 모든 걸 자기 뜻대로 하라며 강요하는 아내?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "남편이 집안일 할 때마다 팔짱 끼고 감시하는 건 기본,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "조금만 마음에 안 들면 불호령을 내린다는데... ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "심지어 \"모르겠으면 적어\"라며 남편을 다그치기까지?! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "이젠 아내가 한숨만 쉬어도 심장이 벌렁거린다는 남편!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "앞으로 아이까지 낳고 키우며 살아갈 미래가 끔찍해요. 이제 그만 이혼하고 싶어요! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "시도 때도 없이 싸우는 결혼 2년 차 신혼부부!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "부부싸움의 발단은 시어머니의 도 넘은 아들 사랑 때문?!",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "하루에도 몇 번씩 전화해 남편의 끼니를 챙겼는지 확인하는 것도 모자라,",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "급기야 신혼집에 불쑥 들어와 냉장고 검사까지 한다는데... ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "참다못해 남편에게 중재를 부탁했지만, 오히려 시어머니 편을 드는 남편?! ",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "시어머니보다 더 야속한 남편의 태도! 이런 남편과 헤어져야 할까요?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "28년 차 베테랑 심리상담가 이호선 교수의 솔루션은",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "끝이 보이지 않던 싸움을 멈출 수 있을까?",
+    "url": ""
+   },
+   {
+    "source": "tvn-preview",
+    "kind": "preview",
+    "title": "<이호선 상담소> 2026년 9월 8일 화요일 저녁 8시 방송",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "신혼집 카드키가 시어머니에게⁉️ 중재는커녕 어머니 편을 드는 남편과 헤어져야 할까요?",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "무조건 자기 뜻대로 하라며 강요하는 아내😧 아기가 생기기 전에 이혼하고 싶은 남편의 사연은?",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "#사연모집 #방청신청 당신을 힘들게 하는 모든 가족 갈등⚠️ 이호선이 날려버려 드리겠습니다💥",
+    "url": ""
+   },
+   {
+    "source": "tvn-clip",
+    "kind": "clip",
+    "title": "[31회 예고] 남편의 모든 걸 지적하는 아내?! 이런 아내와 아이를 낳고 계속 살 수 있을까요😢",
+    "url": ""
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"아이는 또 낳으면 되니까\"…물에 빠진 아들 구조하다 나와버린 엄마",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBBY211ZlcxWVFsVm5nTmYxbjFuRlBFdEdsY3hwTXZseGdkNEpqNEtMUDNTWVZzaWJCdHA2c3lTalRiR2RCN0QzZThuYXowdWhlUUo0QkVZb3gtamRmYUhta9IBZkFVX3lxTE91N3pRVlVzYlFZQ2syRk5hWm4ydlJuT2NzYTFwQlJRa19ScG1Fa0QzeVFPR0lObVRnRzhVNmQzZW5HcHRBOWg2MmdiUEtvMmxVQ1J2el9BZU5JcDlHd2NUN1o2X1Fydw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "'신혼집 들락' 시모에 대들자 남편 \"못 배운 X\"…고부갈등 전말 '반전' - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9QWDVWeVdkeHU1YTJMZWNYcGZrN1RSMFotRl9pLWNaV0RBWjN6TWZia3VnckRhTWtTeU4wcHNHNUFRcmgybGRJTTdpd0xDdVFpMWNBVFNRVjVyMDM1UDhZdF9nX1d0amF3ZTZjMVZTUXJ4NlnSAXhBVV95cUxPZUc5ZWYxZ2ZZN1M3ZUpPZkJNYmRvTHkxczVsenVaQ1lCSjZGR3JSYlh2RG1zRzZjV0p0OWFIQzdSb0M3T0dvNV8yaW5LYnlTSW9CaUpZSFlOUER4VkxwNFdVei1VdlE4WXFMMk03YS0zZkxnUmVQWG8?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“차라리 고아였으면”…母와 관계 버거운 34세 아들에 이호선 “3년 연락 끊어라”",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1QR2t5cEZDS2Q4UWpEV1gzempMWDdla3pYZ1psazQtQi1aOUFEcU5FT3NxYTVNRU56amkwWWdiMzBfSTBQeXhaT2VrRktGcU5LVW9hdnJpbUx1SmdxeW0zcGdYT1RENy1SRWU4ejFoVXBKS3FCemfSAWZBVV95cUxOVndYXzBjZUJKMEdHa2dDNGJKQlB1TF83UmNTTFNvS0JSdkF5VE1sZjUwR2xNTUZwYTJLRHJaOHAwMXhFY2diU1diM3F6T0ppd2F4MmVYUlFNOFptb2FrSUNzLUMyX2c?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“숨소리만 들어도 가슴이 벌렁”…‘이호선 상담소’ 모든 걸 통제하는 아내",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9xLWNmSTd3QkF6dzB4QnJJQURCLXg5eEZlT1pBWUJ4ZE1mNHFQNVdvRWFIOGtNNjNNRDF4M1U3X3ZacDVyaHNCWGViaFV4Mm0wYUk3N3I2OFZqV0JTM3VVWGtlRXFhMzhlVlRwbFBtVmdnQQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "이호선, 오은영과 체중 비교에 발끈…\"내가 압도적으로 뚱뚱해\" (상담소)",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1yY2ZwYmV5bjR4bU5sUV9VMTRtdlhJVURYWlJqTEZlNkYteWJmWUtxdUxqdXRWME5YOE5MbWxlUlN5bFlCZ0oweDN3RUxhbUE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“애는 또 낳으면 되지” 물에 빠진 아들 두고 나온 엄마가 아들에게 한 말",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1oRGptU0Y0a1h5VW56dmxHa2psZUl3bV8wendmUVg3QTJWZm1RSlJyakUweFViVzl5OGZ0b2o3Q1lYSUFoLWVLTWhYZjZ3VTRC?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "한 달 15일 삐지던 남편…숨겨진 과거에 이호선도 '살아줘서 고맙다'",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE05eWVfNEF1aS1xdVZ5MFg2RWJjNHVsdGVFVlNIQWZmZHFKelE1QlpUTS1Ma0JQaVNNMk5qcERWWTNfTnY1NDd0bXJUZ0ZabHZFNE12SzRUYXNDUFJfQndjY1FB?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[종합] “큰아들에게 유산 80%를”…‘이호선 상담소’ 이호선이 짚은 '가족 편애'의 심리",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1RX0lTUENfNEstOVExdE10MUZMR2FpM2kycEVKRHM4TV9iVDlLaXktMzZMcjZhTVN1MHdnc0NIaTJuZ0pCN3lZM3ltSEFRUjdYOEhndVN1YXBZSEZjMDhzNVM2UVZXQWEwd0VpSVMtekpvZw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "아들 물에 빠졌는데 \"애는 또 낳으면 돼\"...도망친 엄마 속내에 '충격' - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE00UlA4cUp5dThxTUI0N1RLQ1ppY2NvWEk3ZUplcHZIcDhld1ZWdjBkRDNBa3NMVldLRlYyLUpNbGRFUWRZaXdBWUpvT1pXQ2oxQlhrcXhIMHpZVzdULWczX2Y3eUwyUUliS01yeGduMUVDUEXSAXhBVV95cUxNVHBYQ1d1bUwyUGhFZHRETkV3bG5jYXA4X1pBYjNDOTlKOFl3REJ5cHMtc2ZacG1zX21KZG1iT09WUFUzOVhodm9Sazg4VjhodjB2U0hVdUFVR3N1N1RNYUU2ZmhGdWZwa1lLVkZSVGhscWRjZk84UDk?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "이호선, 오은영과 체중 비교 질문에 즉답…“내가 압도적으로 뚱뚱”",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBlV3llUjRsczF0T3J2XzlqY3VFZ01xMEJ1Q3FvaEpTc2p4MFpqeWVtdkZWeWxYRGZmRHdNaHN3RXpjcUlERS16blJGd29nbzB0RzB3d1pzRnZjS2FWUDlDa1lWTEppSWJQaDNydnZvZ1RMb2ctR1HSAWZBVV95cUxNOW9oa00ya2hQa1MyZjRVOXJ6V3ZMWmNycUd6azdzM0VTWGw4TkZvTnJaR1FGbnN3UmFqd3FPT0VjOGF6TFVEekVsdXlSRTE4cXBlTzlZV2lEUThGWm40U3R5V09CelE?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“사랑받는 법을 적어놨더라”…‘이호선 상담소’ 인교진, 한 장의 글에 마음 무너졌다",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1yNmJObjdnNnRkWFhFVnNtUEtRanpVZmdYbHVrTHR3QUFYUHlVZFAtU3NHVl9WUXJnTEtQY0VDcWdsRE4zMkVjZmVBZ2YyX0tDa3k1TFdhWllGWTdUNEE5ZEFnbk5vN2Q0QzRnaWZMaDhidw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "\"언니 잘못되면 죄책감 감당되겠냐\"…동생에 언니 감시시킨 엄마 - 머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5udzVjRGZKb09reDNqWXUwLUdLQkY1c1hISHFRWnRGeGphZUdaaVRndHRYT1Y5TTYtcFlQN2pnX0hGNGlkN09PWUdvM0pFbHk0MVBQa2hQQzhCSWF5WGVaeHRma1hjWkFqQ1JCOHVMdkpZSGvSAXhBVV95cUxOTGQzbWpuUDJNclZoMnpDdk1UTFR2MHVsWDltZFhNQmxLM1c5dlVhcWE4MU92ZHQ4d2xxbm5lNWhab01BNXNpc1VYNEVLbEJYaFB6UmJfMzFtejNDVVdDdl9NZ1NqOHNNTDlwdXloLVc4RXBaR0FHVHY?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“깔끔하고 스마트한 줄 알았는데”…‘이호선 상담소’ 장영란, 결혼 후 알게 된 남편의 반전 모습",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBfX1hSZXBBYjhjbzBzYXRHblN6aVVQSmVPQlBMMGlrLXBYMzNfa2N3YjZtT0JvemdlZjdjb1NnRUJPTDRzSGpDaW5xYU5DVDdXLW9wRHBmcm1LX1NjUjZNaThFTkRSaGtsalBQSEVtTjl0Zw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[종합] “유산까지 했다”…‘이호선 상담소’, 남편과 안 살고 싶은 아내의 사연은",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5mYWVTRUNfYjRLZzlhYmE5aGcxbzRsMG5WbWl1Sm1HenQyQUFlOVNvUGhoSkV4bWdXOVNMX1VoYURHZzZBSGk0dl9sdnMtT2ZZSlpQT054UWJuQjNiN2pXbk5LY3ZfZzByNlNsQUtzVms2Zw?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“내가 떨어질 이유가 없는데”…‘이호선 상담소’ 이호선이 밝힌 욱하는 사람들의 공통점?",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1kbGVHdkZfbktCaGhxTncwX3ZLRmdyUFZfV3hiQTFRc1M2eHZyeFNFV1laSHk1eUlQZ1Vja1FUTkxnbXd4V2FtV0IxUUhSb0RmMTl2dHdsTVZCSjE5ZXJPb0ZjMC14aUJ0Q3E0TVo1WmtnUQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "“‘내 아들을 낳아줘’까지”…‘이호선 상담소’ 끝나지 않은 부부의 상처",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE16a2FEaVpneFRLckphOXlWa04xai1JcFZxX0FWTUR1dGc5UVBpX3VKVGJ1QUluWXV1WWRZR1FNOGw1T2ozNWRFTmwxdjQ5SEt1Q2EyMWZqODl3Y3Nfd1g2MVZ5NDdyMG9Rd3AwWFVYcTZyUQ?oc=5"
+   },
+   {
+    "source": "google-news",
+    "kind": "news",
+    "title": "[종합] “엄마가 나 버렸잖아요”…‘이호선 상담소’ 어린 딸에게 평생 상처로 남은 엄마의 선택",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5kOVBqdzZLUnZFbXdNSmRoaU5LR2h6ZEM0NXhfb3p1cTRnSU9GZ3V3ZkFaa0xsbVFUenpvRjRmT0Zval9oN2x4SjNydzFvNlBuWklEaU1BRnFtNlA0UUt1MGN6bWxseHQ2ZlQyRDkxTWY0dw?oc=5"
+   }
+  ],
+  "analyzedAt": 1789345246,
+  "programId": "EA202609101215",
   "cached": false
  }
 }

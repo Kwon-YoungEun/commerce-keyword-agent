@@ -31,6 +31,7 @@ const state = {
   genrePickerFor: null,
   bodyDraft: null,
   summary: null,
+  weekPinned: false,   // 사용자가 직접 주를 옮겼는지
 };
 
 /* ------------------------------------------------------------- 날짜 유틸 */
@@ -74,6 +75,13 @@ async function loadSchedule({ refresh = false } = {}) {
 
     state.days = json.days || {};
     state.fetchedAt = json.fetchedAt || 0;
+
+    // 화면을 오래 열어 두면 주가 넘어가도 예전 주를 계속 보게 됩니다.
+    // 직접 주를 옮긴 게 아니라면 오늘이 속한 주로 맞춥니다.
+    if (!state.weekPinned) {
+      const thisWeek = mondayOf(new Date());
+      if (ymd(thisWeek) !== ymd(state.weekStart)) state.weekStart = thisWeek;
+    }
     state.programsByDate = new Map();
     let maxEnd = 1440;
     for (const p of json.programs || []) {
@@ -302,12 +310,41 @@ function syncStickyOffset() {
   document.documentElement.style.setProperty("--topbar-h", h + "px");
 }
 
+/** 보고 있는 주에서 tvN 이 아직 편성을 안 올린 날을 알려 줍니다. */
+function updateScheduleNotice() {
+  const empty = [];
+  let filled = 0;
+  for (let i = 0; i < 7; i++) {
+    const date = addDays(state.weekStart, i);
+    const key = ymd(date);
+    if ((state.programsByDate.get(key) || []).length) filled += 1;
+    else empty.push(date);
+  }
+  if (!empty.length) {
+    showNotice("");
+    return;
+  }
+  const label = (d) => `${d.getMonth() + 1}/${d.getDate()}`;
+  if (!filled) {
+    showNotice(
+      `${label(state.weekStart)}~${label(addDays(state.weekStart, 6))} 편성이 아직 없어요. ` +
+      "tvN 은 보통 이번 주까지만 공개합니다."
+    );
+  } else {
+    showNotice(
+      `tvN 이 ${label(empty[0])} 이후 편성을 아직 공개하지 않았어요. ` +
+      "공개되면 편성표 새로고침으로 가져옵니다."
+    );
+  }
+}
+
 function render() {
   syncStickyOffset();
   renderWeekLabel();
   renderDayHead();
   renderTimeGutter();
   renderGrid();
+  updateScheduleNotice();
 }
 
 /* ----------------------------------------------------------------- 팝업 */
@@ -1348,18 +1385,22 @@ function closeModal() {
 function bindEvents() {
   document.getElementById("btnPrev").addEventListener("click", () => {
     state.weekStart = addDays(state.weekStart, -7);
+    state.weekPinned = true;
     render();
   });
   document.getElementById("btnNext").addEventListener("click", () => {
     state.weekStart = addDays(state.weekStart, 7);
+    state.weekPinned = true;
     render();
   });
   document.getElementById("btnToday").addEventListener("click", () => {
     state.weekStart = mondayOf(new Date());
+    state.weekPinned = false;
     render();
   });
   document.getElementById("btnRefresh").addEventListener("click", async (e) => {
     e.target.disabled = true;
+    state.weekPinned = false;        // 새로고침은 오늘 주 기준으로 봅니다.
     await loadSchedule({ refresh: true });
     render();
     e.target.disabled = false;
