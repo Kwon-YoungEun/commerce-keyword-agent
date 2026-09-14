@@ -1,25 +1,25 @@
 {
  "items": [
   {
-   "id": "a8674eb4-78b4-4e8c-9a24-97a85b26962e",
+   "id": "e090ee25-7f98-4ae7-8f93-4121f6d2b017",
    "programName": "언니네 산지직송3",
    "programCode": "CS0207DEMO",
-   "scheduleId": "EA202609091120",
-   "fromTs": 1788920400,
-   "date": "20260909",
-   "startLabel": "11:20",
+   "scheduleId": "EA202609081605",
+   "fromTs": 1788851100,
+   "date": "20260908",
+   "startLabel": "16:05",
    "episode": "6회",
-   "keyword": "염정아 모자",
-   "bodyText": "{\n  \"requestId\": \"a8674eb4-78b4-4e8c-9a24-97a85b26962e\",\n  \"timestamp\": 1789346148623,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"염정아 모자\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "keyword": "염정아 모자 추천",
+   "bodyText": "{\n  \"requestId\": \"e090ee25-7f98-4ae7-8f93-4121f6d2b017\",\n  \"timestamp\": 1789361461054,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"염정아 모자 추천\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
    "body": {
-    "requestId": "a8674eb4-78b4-4e8c-9a24-97a85b26962e",
-    "timestamp": 1789346148623,
+    "requestId": "e090ee25-7f98-4ae7-8f93-4121f6d2b017",
+    "timestamp": 1789361461054,
     "programName": "언니네 산지직송3",
     "programId": "CS0207DEMO",
     "productInfo": [
      {
       "productIndex": 0,
-      "productKeyword": "염정아 모자",
+      "productKeyword": "염정아 모자 추천",
       "productMethod": [
        "MANUAL"
       ],
@@ -31,22 +31,22 @@
     ],
     "productCategory": []
    },
-   "createdAt": 1789346171
+   "createdAt": 1789361500
   },
   {
-   "id": "0133ea4d-6b3d-47ea-bf9c-988e3cb321a8",
+   "id": "8aeafc5a-72df-46ae-9aac-a5e851818ba9",
    "programName": "언니네 산지직송3",
    "programCode": "CS0207DEMO",
-   "scheduleId": "EA202609110825",
-   "fromTs": 1789082700,
+   "scheduleId": "EA202609111650",
+   "fromTs": 1789113000,
    "date": "20260911",
-   "startLabel": "08:25",
+   "startLabel": "16:50",
    "episode": "7회",
    "keyword": "재첩",
-   "bodyText": "{\n  \"requestId\": \"0133ea4d-6b3d-47ea-bf9c-988e3cb321a8\",\n  \"timestamp\": 1789346192267,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"재첩\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "bodyText": "{\n  \"requestId\": \"8aeafc5a-72df-46ae-9aac-a5e851818ba9\",\n  \"timestamp\": 1789361513448,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"재첩\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
    "body": {
-    "requestId": "0133ea4d-6b3d-47ea-bf9c-988e3cb321a8",
-    "timestamp": 1789346192267,
+    "requestId": "8aeafc5a-72df-46ae-9aac-a5e851818ba9",
+    "timestamp": 1789361513448,
     "programName": "언니네 산지직송3",
     "programId": "CS0207DEMO",
     "productInfo": [
@@ -64,7 +64,7 @@
     ],
     "productCategory": []
    },
-   "createdAt": 1789346195
+   "createdAt": 1789361518
   }
  ]
 }
