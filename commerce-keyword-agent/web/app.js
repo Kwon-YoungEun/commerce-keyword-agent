@@ -373,8 +373,7 @@ function openProgram(p) {
     (p.episode ? ` · ${p.episode}` : "") + (p.genre ? ` · ${p.genre}${p.subGenre ? "(" + p.subGenre + ")" : ""}` : "") +
     (p.subtitle ? ` · ${p.subtitle}` : "");
 
-  document.getElementById("previewPanel").innerHTML =
-    '<div class="placeholder">왼쪽에서 키워드를 클릭하면 검색 결과를 미리 봅니다.</div>';
+  state.selectedKeyword = null;   // 상세는 키워드를 누를 때 그 아래에 펼칩니다.
   renderRegistered(p);
   document.getElementById("modalBackdrop").hidden = false;
   loadSummary(p);              // tvN 공식 요약은 따로 빨리 가져옵니다.
@@ -386,7 +385,7 @@ async function loadKeywords(program, refresh) {
   const meta = document.getElementById("analysisMeta");
   list.innerHTML = '<div class="loading"><span class="spinner"></span>검색해서 키워드를 뽑는 중이에요… (10초쯤 걸려요)</div>';
   meta.textContent = "";
-  renderGallery(null);
+  renderGallery(null, true);
 
   try {
     const url = `/api/keywords?programId=${encodeURIComponent(program.id)}` + (refresh ? "&refresh=1" : "");
@@ -481,22 +480,22 @@ function queryText(queries) {
     : Object.keys(queries).reduce((acc, key) => acc.concat(queries[key] || []), []);
   const seen = [];
   for (const q of list) if (q && !seen.includes(q)) seen.push(q);
-  return seen.map((q) => `<code>${escapeHtml(q)}</code>`).join(" · ");
+  return seen.map((q) => `<span class="qtag">${escapeHtml(q)}</span>`).join("");
 }
 
 /** 회차를 눈으로 다시 확인할 수 있게 공식 클립·유튜브 썸네일을 보여줍니다. */
-function renderGallery(gallery) {
+function renderGallery(gallery, loading) {
   const box = document.getElementById("clipGallery");
   const items = gallery || [];
   if (!items.length) {
-    box.hidden = true;
-    box.innerHTML = "";
+    box.innerHTML = loading
+      ? '<div class="loading"><span class="spinner"></span>영상을 찾는 중…</div>'
+      : '<div class="placeholder">이 회차에서 찾은 영상이 없어요.</div>';
     return;
   }
 
-  box.hidden = false;
   box.innerHTML =
-    `<div class="gallery-head">이 회차 영상 ${items.length}건 <span class="muted">— 눌러서 열어보고 키워드를 확인해 보세요</span></div>` +
+    `<p class="gallery-head muted">눌러서 열어보고 키워드가 맞는지 확인해 보세요.</p>` +
     `<div class="gallery-grid">` +
     items
       .map((it) => {
@@ -507,8 +506,10 @@ function renderGallery(gallery) {
           `<span class="gallery-thumb">` +
           (it.thumb ? `<img src="${escapeHtml(it.thumb)}" alt="">` : "") +
           `<span class="gallery-badge">${badge}</span></span>` +
+          `<span class="gallery-text">` +
           `<span class="gallery-title">${escapeHtml(it.title || "")}</span>` +
-          (sub ? `<span class="gallery-sub">${escapeHtml(sub)}</span>` : "");
+          (sub ? `<span class="gallery-sub">${escapeHtml(sub)}</span>` : "") +
+          `</span>`;
         return it.url
           ? `<a class="gallery-item" href="${escapeHtml(it.url)}" target="_blank" rel="noopener">${inner}</a>`
           : `<span class="gallery-item">${inner}</span>`;
@@ -560,15 +561,31 @@ function renderKeywords(analysis) {
   }
 }
 
+/** 키워드를 누르면 그 블록 바로 아래에 상세를 펼칩니다.
+ *  같은 키워드를 다시 누르면 접습니다. */
 function selectKeyword(k, el) {
-  state.selectedKeyword = k;
+  const open = el.classList.contains("is-active");
   document.querySelectorAll(".kw").forEach((n) => n.classList.remove("is-active"));
+  const old = document.getElementById("previewPanel");
+  if (old) old.remove();
+
+  if (open) {
+    state.selectedKeyword = null;
+    return;
+  }
+
+  state.selectedKeyword = k;
   el.classList.add("is-active");
+  const panel = document.createElement("div");
+  panel.id = "previewPanel";
+  panel.className = "preview-panel";
+  el.insertAdjacentElement("afterend", panel);
   renderPreview(k);
 }
 
 async function renderPreview(k) {
   const panel = document.getElementById("previewPanel");
+  if (!panel) return;
   panel.innerHTML = '<div class="loading"><span class="spinner"></span>키워드를 확인하는 중…</div>';
 
   let data;
@@ -580,7 +597,8 @@ async function renderPreview(k) {
     panel.innerHTML = `<div class="notice">${escapeHtml(err.message)}</div>`;
     return;
   }
-  if (state.selectedKeyword !== k) return;   // 그 사이 다른 키워드를 눌렀으면 무시합니다.
+  // 그 사이 다른 키워드를 누르거나 접었으면 무시합니다.
+  if (state.selectedKeyword !== k || document.getElementById("previewPanel") !== panel) return;
 
   const relatedHtml = data.related.length
     ? data.related.map((r) => `<span class="chip">${escapeHtml(r)}</span>`).join("")
@@ -598,10 +616,6 @@ async function renderPreview(k) {
     : "<li class='muted'>근거 문서가 없습니다(조합으로 만든 키워드).</li>";
 
   panel.innerHTML =
-    `<div class="preview-head">` +
-    `<span class="preview-kw">${escapeHtml(k.keyword)}</span>` +
-    `<span class="cat cat-${k.category}">${k.category}</span>` +
-    `</div>` +
     `<section class="check-block">` +
     `<h4>네이버 연관 검색어 <small>실제로 검색되는 문구인지</small></h4>` +
     `<div class="chips">${relatedHtml}</div>` +
