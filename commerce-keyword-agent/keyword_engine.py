@@ -230,11 +230,52 @@ def view_weight(views):
     return 1.0 + min(0.8, math.log10(views) / 6.0)
 
 
-def search_youtube(query, program_keys=(), limit=12):
+# tvN 은 영상 제목에 'EP.6' 을 꼬박 답니다. '6화 예고', '7회' 표기도 함께 봅니다.
+EPISODE_MARK_RE = re.compile(r"ep\s*\.?\s*(\d{1,4})|(\d{1,4})\s*[회화]", re.I)
+PUBLISHED_RE = re.compile(r"(\d+)\s*(초|분|시간|일|주|개월|년)")
+PUBLISHED_UNIT_DAYS = {"초": 0, "분": 0, "시간": 0, "일": 1, "주": 7, "개월": 30, "년": 365}
+
+
+def episode_numbers(text):
+    """제목에 적힌 회차 번호를 모두 뽑습니다."""
+    found = set()
+    for a, b in EPISODE_MARK_RE.findall(text or ""):
+        num = a or b
+        if num:
+            found.add(int(num))
+    return found
+
+
+def published_days_ago(text):
+    """'10일 전', '2주 전', '8개월 전' → 며칠 전인지. 못 읽으면 None."""
+    m = PUBLISHED_RE.search(text or "")
+    if not m:
+        return None
+    return int(m.group(1)) * PUBLISHED_UNIT_DAYS.get(m.group(2), 0)
+
+
+def in_age_window(age, min_days, max_days, strict):
+    """방송 무렵에 올라온 영상인지. strict 면 시점을 모르는 영상은 버립니다."""
+    if age is None:
+        return not strict
+    if max_days is not None and age > max_days:
+        return False
+    if min_days is not None and age < min_days:
+        return False
+    return True
+
+
+def search_youtube(query, program_keys=(), limit=12, episode_no=None,
+                   min_age_days=None, max_age_days=None):
     """유튜브 검색 — 키 없이 검색 페이지의 ytInitialData 를 읽습니다.
 
     program_keys 에 프로그램명(띄어쓰기 제거)을 넘기면, 제목이나 채널에 그 말이
     들어간 영상만 남깁니다. 검색 결과에는 무관한 프로그램이 섞여 들어옵니다.
+
+    검색어에 회차를 넣어도 유튜브는 다른 회차를 함께 돌려줍니다. 그래서
+    episode_no 를 넘기면 제목의 회차 표기로 한 번 더 거르고, 표기가 없는 영상은
+    방송 무렵(min_age_days ~ max_age_days)에 올라온 것만 남깁니다. 이 회차보다
+    나중에 올라온 영상은 대개 다음 회차 것이라 아래쪽 경계도 함께 봅니다.
     """
     url = ("https://www.youtube.com/results?search_query=%s&hl=ko&gl=KR"
            % urllib.parse.quote(query))
@@ -283,6 +324,15 @@ def search_youtube(query, program_keys=(), limit=12):
         haystack = match_key(item["title"] + " " + item["channel"])
         if program_keys and not any(k and k in haystack for k in program_keys):
             continue                      # 무관한 프로그램 영상은 버립니다.
+
+        age = published_days_ago(item["published"])
+        title_eps = episode_numbers(item["title"])
+        if title_eps and episode_no:
+            if episode_no not in title_eps:
+                continue                  # 다른 회차 영상입니다.
+        elif not in_age_window(age, min_age_days, max_age_days, strict=bool(episode_no)):
+            continue                      # 회차 표기가 없으면 올라온 시점으로 봅니다.
+
         docs.append({
             "kind": "youtube", "source": "youtube", "title": item["title"],
             "snippet": "", "url": "https://www.youtube.com/watch?v=" + item["videoId"],
@@ -419,7 +469,7 @@ def split_commerce_keyword(text):
 
 
 # '함께한 끝이라면', '만든 짬뽕' 처럼 꾸밈말로 시작하는 조각을 걸러냅니다.
-MODIFIER_HEAD_RE = re.compile(r"^.{1,3}(한|든|는|운|린|던|워|해)$")
+MODIFIER_HEAD_RE = re.compile(r"^.{1,3}(한|든|는|운|린|던|워|해|인|은)$")
 
 
 # '끝이라면' 의 '라면', '갔더라고' 처럼 어미가 상품어로 잡히는 경우를 막습니다.
@@ -427,8 +477,17 @@ SENTENCE_TAIL_RE = re.compile(r"(이라면|이라고|라니까|더라고|던데�
 
 
 def looks_like_fragment(tokens):
-    """검색 제목에서 잘려 나온 문장 토막인지."""
-    return bool(tokens) and bool(MODIFIER_HEAD_RE.match(tokens[0]))
+    """'만든 크림수프', '끓인 정아표 수프' 처럼 꾸밈말로 시작하는 토막인지.
+
+    상품어 자체가 그렇게 끝나는 경우('곤약', '수박'은 아니지만 만일을 대비)는
+    빼고 봅니다.
+    """
+    if not tokens:
+        return False
+    head = tokens[0]
+    if head in PRODUCT_TERMS:
+        return False
+    return bool(MODIFIER_HEAD_RE.match(head))
 
 
 # 따옴표 안이라도 대사·감탄사는 상품이 아닙니다.
@@ -472,6 +531,12 @@ def extract_emphasis(lines):
 # ------------------------------------------------------------------ 수집
 
 
+def episode_number(episode):
+    """'7회' → 7. 회차를 모르면 None."""
+    m = re.search(r"(\d{1,4})", episode or "")
+    return int(m.group(1)) if m else None
+
+
 def build_queries(program, official=None):
     """소스마다 잘 맞는 검색어가 다릅니다.
 
@@ -488,10 +553,14 @@ def build_queries(program, official=None):
     if cast:
         news.append(f"{name} {cast[0]}")
 
+    episode_no = episode_number(episode)
     youtube = []
     if episode:
         youtube.append(f"{name} {episode}")
-    youtube.append(f"{name} 하이라이트")
+    if episode_no:
+        youtube.append(f"{name} EP.{episode_no}")   # tvN 공식 채널 표기
+    else:
+        youtube.append(f"{name} 하이라이트")
 
     autocomplete = [name, name + " 협찬"]
     if episode:
@@ -521,8 +590,19 @@ def collect_documents(program, official=None):
                      "thumb": clip.get("thumb", "")})
 
     name = short_title(program.get("programName") or program.get("title") or "")
-    program_keys = {match_key(name), match_key(re.sub(r"\d+$", "", name))}
-    program_keys = {k for k in program_keys if len(k) >= 3}
+    # 시즌 번호까지 그대로 맞춥니다. 번호를 떼면 시즌1의 같은 회차 영상
+    # ('언니네산지직송 EP.7')이 함께 걸립니다.
+    program_keys = {k for k in {match_key(name)} if len(k) >= 3}
+
+    # 이 회차 방송일을 기준으로, 그 무렵에 올라온 영상만 봅니다.
+    episode_no = episode_number(program.get("episode"))
+    air_ts = program.get("startTs") or 0
+    if air_ts:
+        days_since_air = max(0.0, (time.time() - air_ts) / 86400.0)
+        max_age_days = days_since_air + 6      # 예고 영상은 방송 며칠 전에 올라옵니다
+        min_age_days = max(0.0, days_since_air - 5)   # 더 최근 것은 다음 회차입니다
+    else:
+        max_age_days, min_age_days = 45, None  # 방송일을 모르면 넉넉하게 봅니다
 
     queries = build_queries(program, official)
     for query in queries["news"]:
@@ -532,7 +612,10 @@ def collect_documents(program, official=None):
             errors.append("구글 뉴스 실패(%s): %s" % (query, exc))
     for query in queries["youtube"]:
         try:
-            docs.extend(search_youtube(query, program_keys))
+            docs.extend(search_youtube(query, program_keys,
+                                       episode_no=episode_no,
+                                       min_age_days=min_age_days,
+                                       max_age_days=max_age_days))
         except Exception as exc:
             errors.append("유튜브 검색 실패(%s): %s" % (query, exc))
     for query in queries["ad"]:
@@ -547,7 +630,19 @@ def collect_documents(program, official=None):
                              "snippet": "", "url": "", "query": seed, "ts": 0})
         except Exception as exc:
             errors.append("네이버 자동완성 실패(%s): %s" % (seed, exc))
-    return docs, errors
+    # 검색어가 겹쳐 같은 영상이 두 번 오고, 가로 영상과 쇼츠가 같은 제목으로
+    # 따로 올라오기도 합니다. 둘 다 한 번만 셉니다.
+    seen, unique = set(), []
+    for doc in docs:
+        if doc.get("kind") == "youtube":
+            key = doc.get("url") or ""
+            title_key = match_key(doc.get("title", ""))
+            if key in seen or (title_key and title_key in seen):
+                continue
+            seen.add(key)
+            seen.add(title_key)
+        unique.append(doc)
+    return unique, errors
 
 
 # ------------------------------------------------------------------ 추출기
@@ -665,16 +760,14 @@ def extract_keywords(program, docs, official=None, top_n=18):
             continue
         if looks_like_speech(phrase):
             continue
+        # '만든 크림수프' 처럼 꾸밈말로 시작하는 말은 어디서 나왔든 상품명이 아닙니다.
+        if looks_like_fragment(toks) or SENTENCE_TAIL_RE.search(phrase):
+            continue
         # 검색 제목은 해시태그·감탄사가 섞여 긴 조각이 잘 생깁니다.
-        # 공식 자료(미리보기·클립)에서 나온 게 아니면 두 어절까지만 인정하고,
-        # 꾸밈말로 시작하는 조각도 버립니다.
+        # 공식 자료(미리보기·클립)에서 나온 게 아니면 두 어절까지만 인정합니다.
         official_seen = bool(kinds[phrase] & {"preview", "clip"})
         if not official_seen:
             if len(toks) >= 3:
-                continue
-            if looks_like_fragment(toks):
-                continue
-            if SENTENCE_TAIL_RE.search(phrase):
                 continue
             # 영상 제목 하나에만 스쳐 나온 말은 화제 상품으로 보기 어렵습니다.
             if kinds[phrase] == {"youtube"} and len(doc_hits[phrase]) < 2:

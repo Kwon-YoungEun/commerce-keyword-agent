@@ -494,8 +494,11 @@ function renderGallery(gallery, loading) {
     return;
   }
 
+  const ep = state.currentProgram && state.currentProgram.episode;
   box.innerHTML =
-    `<p class="gallery-head muted">눌러서 열어보고 키워드가 맞는지 확인해 보세요.</p>` +
+    `<p class="gallery-head muted">` +
+    (ep ? `${escapeHtml(ep)} 영상만 골라 왔어요. ` : "") +
+    `눌러서 열어보고 키워드가 맞는지 확인해 보세요.</p>` +
     `<div class="gallery-grid">` +
     items
       .map((it) => {
