@@ -5,7 +5,8 @@
       "name": "keyword-agent",
       "runtimeExecutable": "python",
       "runtimeArgs": ["commerce-keyword-agent/server.py"],
-      "port": 8765
+      "port": 8765,
+      "autoPort": true
     }
   ]
 }
