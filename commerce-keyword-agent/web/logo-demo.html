@@ -65,31 +65,33 @@
   }
 
   /* =================================== B안 — 로고 자체를 그라데이션으로 물들임 */
+  /* 가운데 × 도 같은 그라데이션을 타도록 마스크 한 겹으로 넣습니다 */
   .lock-b {
     /* tvN 쪽이 자홍에 머물지 않도록 빨강을 앞당겨 둡니다 */
     background: linear-gradient(100deg, #3617CE 0%, #6E12B4 38%, #E2004A 72%, #FA0028 100%);
-    -webkit-mask-image: url(img/btv.png), url(img/tvn.png);
-    mask-image: url(img/btv.png), url(img/tvn.png);
-    -webkit-mask-repeat: no-repeat, no-repeat;
-    mask-repeat: no-repeat, no-repeat;
-    -webkit-mask-position: left center, right center;
-    mask-position: left center, right center;
+    --x: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 2L8 8M8 2L2 8' stroke='%23000' stroke-width='1.9' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-image: url(img/btv.png), var(--x), url(img/tvn.png);
+    mask-image: url(img/btv.png), var(--x), url(img/tvn.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: left center, center center, right center;
+    mask-position: left center, center center, right center;
   }
-  /* btv 677x300, tvn 700x283 비율에 맞춰 폭을 잡고 사이 간격은 높이의 0.6배 */
+  /* btv 677x300, tvn 700x283 비율에 맞춰 폭을 잡고 가운데에 × 자리를 둡니다 */
   .lock-b.h22 {
-    width: 110px; height: 22px;
-    -webkit-mask-size: 50px 22px, 47px 19px;
-    mask-size: 50px 22px, 47px 19px;
+    width: 117px; height: 22px;
+    -webkit-mask-size: 50px 22px, 8px 8px, 47px 19px;
+    mask-size: 50px 22px, 8px 8px, 47px 19px;
   }
   .lock-b.h40 {
-    width: 200px; height: 40px;
-    -webkit-mask-size: 90px 40px, 86px 35px;
-    mask-size: 90px 40px, 86px 35px;
+    width: 210px; height: 40px;
+    -webkit-mask-size: 90px 40px, 14px 14px, 86px 35px;
+    mask-size: 90px 40px, 14px 14px, 86px 35px;
   }
   .lock-b.h64 {
-    width: 319px; height: 64px;
-    -webkit-mask-size: 144px 64px, 137px 55px;
-    mask-size: 144px 64px, 137px 55px;
+    width: 333px; height: 64px;
+    -webkit-mask-size: 144px 64px, 22px 22px, 137px 55px;
+    mask-size: 144px 64px, 22px 22px, 137px 55px;
   }
 
   .big-a .btv { height: 40px; }
