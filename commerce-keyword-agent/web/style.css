@@ -53,19 +53,26 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 34px;
-  padding: 0 12px;
-  border-radius: 8px;
-  background: var(--skb-red);
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: .04em;
-  font-size: 15px;
+.brand { display: flex; align-items: center; gap: 14px; }
+
+/* B tv × tvN 콜라보 로고 — 두 로고와 가운데 × 를 하나의 그라데이션으로 잇습니다.
+   글자를 새로 그리지 않고 공식 로고 파일을 마스크로만 씁니다.
+   크기: btv 677x300, tvn 700x283 비율 · 높이 26px 기준 */
+.brand-logo {
+  display: inline-block;
+  flex: none;
+  width: 137px;
+  height: 26px;
+  background: linear-gradient(100deg, #3617CE 0%, #6E12B4 38%, #E2004A 72%, #FA0028 100%);
+  --x-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 2L8 8M8 2L2 8' stroke='%23000' stroke-width='1.9' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-image: url(img/btv.png), var(--x-mark), url(img/tvn.png);
+  mask-image: url(img/btv.png), var(--x-mark), url(img/tvn.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: left center, center center, right center;
+  mask-position: left center, center center, right center;
+  -webkit-mask-size: 59px 26px, 9px 9px, 54px 22px;
+  mask-size: 59px 26px, 9px 9px, 54px 22px;
 }
 .brand-text h1 { margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
 .brand-text p { margin: 2px 0 0; font-size: 12.5px; color: var(--text-secondary); }
