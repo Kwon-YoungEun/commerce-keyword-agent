@@ -193,13 +193,14 @@
         <input id="cfgRegisterUrl" type="text" placeholder="https://…/keyword/manual">
       </label>
       <label class="field">
-        <span>인증 헤더 이름 <small class="muted">Postman 의 Headers 탭 그대로</small></span>
-        <input id="cfgAuthName" type="text" placeholder="Authorization 또는 x-api-key">
-      </label>
-      <label class="field">
-        <span>인증 헤더 값 <small class="muted">이 PC 에만 저장되고 깃에 올라가지 않습니다</small></span>
-        <input id="cfgAuthValue" type="password" autocomplete="off" placeholder="Bearer …">
+        <span>인증 헤더 <small class="muted">Postman 의 Headers 탭에서 한 줄에 하나씩 · 이름: 값</small></span>
+        <textarea id="cfgAuthHeaders" class="id-box" spellcheck="false" autocomplete="off"
+                  placeholder="x-client-id: abcd1234&#10;x-client-secret: efgh5678"></textarea>
         <small id="cfgAuthState" class="muted"></small>
+        <span class="field-sub">
+          <button id="cfgAuthClear" class="btn btn-ghost btn-sm" type="button">저장된 헤더 지우기</button>
+          <small class="muted">이 PC 에만 저장되고 깃에 올라가지 않습니다.</small>
+        </span>
       </label>
       <label class="field">
         <span>프로그램 ID 표 <small class="muted">프로그램명,ID 를 한 줄에 하나씩</small></span>

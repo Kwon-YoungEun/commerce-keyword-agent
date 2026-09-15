@@ -486,26 +486,40 @@ def public_config(cfg):
 # 값 자체는 브라우저로 내려보내지 않고, 서버가 요청을 대신 보낼 때만 씁니다.
 
 SECRETS_STORE = os.path.join(DATA_DIR, "secrets.json")
-DEFAULT_SECRETS = {"authHeaderName": "", "authHeaderValue": ""}
 
 
 def load_secrets():
-    data = dict(DEFAULT_SECRETS)
-    data.update(_read_json(SECRETS_STORE, {}))
-    return data
+    data = _read_json(SECRETS_STORE, {})
+    headers = data.get("authHeaders")
+    return {"authHeaders": headers if isinstance(headers, list) else []}
+
+
+def parse_header_lines(text):
+    """'이름: 값' 을 한 줄에 하나씩. 값 안의 콜론은 그대로 둡니다."""
+    out = []
+    for line in (text or "").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        name, sep, value = line.partition(":")
+        if not sep:
+            continue
+        name, value = name.strip(), value.strip()
+        if name and value:
+            out.append({"name": name, "value": value})
+    return out
 
 
 def save_secrets(patch):
-    """헤더 이름과 값을 저장합니다. 값이 안 오면 기존 값을 유지합니다."""
+    """인증 헤더를 저장합니다. 입력이 비어 있으면 기존 값을 그대로 둡니다."""
     with _store_lock:
         data = load_secrets()
-        if patch.get("authHeaderName") is not None:
-            data["authHeaderName"] = str(patch["authHeaderName"]).strip()
-        value = patch.get("authHeaderValue")
-        if value is not None and str(value).strip():
-            data["authHeaderValue"] = str(value).strip()
-        if patch.get("clearValue"):
-            data["authHeaderValue"] = ""
+        if patch.get("clearAuthHeaders"):
+            data["authHeaders"] = []
+        else:
+            parsed = parse_header_lines(patch.get("authHeadersText"))
+            if parsed:
+                data["authHeaders"] = parsed
         _write_json(SECRETS_STORE, data)
         return data
 
@@ -521,11 +535,11 @@ def mask_secret(value):
 
 
 def public_secrets(data):
-    """브라우저에는 값 대신 '설정됨' 여부와 가린 문자열만 보냅니다."""
+    """브라우저에는 값 대신 헤더 이름과 가린 문자열만 보냅니다."""
     return {
-        "authHeaderName": data.get("authHeaderName", ""),
-        "hasAuthValue": bool(data.get("authHeaderValue")),
-        "maskedAuthValue": mask_secret(data.get("authHeaderValue")),
+        "authHeaders": [{"name": h.get("name", ""),
+                         "masked": mask_secret(h.get("value"))}
+                        for h in data.get("authHeaders", [])],
     }
 
 
@@ -550,10 +564,11 @@ def send_registration(payload):
 
     secrets = load_secrets()
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    name = (secrets.get("authHeaderName") or "").strip()
-    value = (secrets.get("authHeaderValue") or "").strip()
-    if name and value:
-        headers[name] = value
+    for item in secrets.get("authHeaders", []):
+        name, value = (item.get("name") or "").strip(), (item.get("value") or "").strip()
+        if name and value:
+            headers[name] = value
+    auth_names = [h for h in headers if h.lower() != "content-type"]
 
     raw = json.dumps(body, ensure_ascii=False).encode("utf-8")
     started = time.time()
@@ -585,7 +600,7 @@ def send_registration(payload):
         _write_json(SEND_LOG, log)
 
     return {"ok": 200 <= status < 300, "status": status, "took": took,
-            "response": text[:2000], "usedAuthHeader": bool(name and value)}
+            "response": text[:2000], "usedAuthHeaders": auth_names}
 
 
 # ------------------------------------------------- tvN 공식 회차 미리보기

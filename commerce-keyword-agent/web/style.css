@@ -320,6 +320,10 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .modal { width: min(1080px, 100%); }
 .btn-sm { padding: 4px 10px; font-size: 12px; }
 /* 되돌릴 수 없는 외부 전송 — 다른 버튼과 구분되게 둡니다 */
+.field-sub {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 7px; flex-wrap: wrap;
+}
 .btn-send { border-color: var(--skb-orange); color: var(--skb-orange); font-weight: 600; }
 .btn-send:hover { background: #FFF6F0; }
 

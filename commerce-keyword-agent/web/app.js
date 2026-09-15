@@ -1019,7 +1019,9 @@ async function sendToApi() {
     `주소: ${cfg.registerApiUrl}\n` +
     `프로그램: ${body.programName} (${body.programId || "ID 없음"})\n` +
     `키워드: ${keyword}\n` +
-    `인증 헤더: ${cfg.hasAuthValue ? cfg.authHeaderName + " (설정됨)" : "없음"}`
+    `인증 헤더: ${(cfg.authHeaders || []).length
+      ? cfg.authHeaders.map((h) => h.name).join(", ")
+      : "없음"}`
   );
   if (!ok) return;
 
@@ -1495,18 +1497,24 @@ function openSettings() {
   const c = state.config || {};
   document.getElementById("cfgStoreUrl").value = c.storeSearchUrl || "";
   document.getElementById("cfgRegisterUrl").value = c.registerApiUrl || "";
-  document.getElementById("cfgAuthName").value = c.authHeaderName || "";
-  // 값 자체는 서버에서 내려오지 않습니다. 비워 두면 기존 값을 그대로 씁니다.
-  document.getElementById("cfgAuthValue").value = "";
-  document.getElementById("cfgAuthState").textContent = c.hasAuthValue
-    ? `저장돼 있어요 (${c.maskedAuthValue}). 바꿀 때만 새로 넣으세요.`
-    : "아직 넣지 않았어요.";
+  // 값 자체는 서버에서 내려오지 않습니다. 비워 두면 기존 헤더를 그대로 씁니다.
+  document.getElementById("cfgAuthHeaders").value = "";
+  renderAuthState();
   document.getElementById("cfgProgramIds").value = Object.entries(state.programIds)
     .map(([name, id]) => name + "," + id)
     .join("\n");
   document.getElementById("cfgStatus").textContent = "";
   document.getElementById("cfgStatus").className = "muted cfg-status";
   document.getElementById("settingsBackdrop").hidden = false;
+}
+
+/** 저장된 인증 헤더 상태 — 이름과 가린 값만 보여 줍니다. */
+function renderAuthState() {
+  const list = (state.config && state.config.authHeaders) || [];
+  document.getElementById("cfgAuthState").textContent = list.length
+    ? "저장됨: " + list.map((h) => `${h.name} (${h.masked})`).join(" · ") +
+      " — 바꿀 때만 새로 넣으세요."
+    : "아직 넣지 않았어요.";
 }
 
 function parseProgramIdText(text) {
@@ -1534,11 +1542,13 @@ async function saveSettings() {
       body: JSON.stringify({
         storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim(),
         registerApiUrl: document.getElementById("cfgRegisterUrl").value.trim(),
-        authHeaderName: document.getElementById("cfgAuthName").value.trim(),
-        authHeaderValue: document.getElementById("cfgAuthValue").value.trim(),
+        authHeadersText: document.getElementById("cfgAuthHeaders").value,
       }),
     });
     state.config = await cfgRes.json();
+    // 저장했으면 입력칸을 비우고, 어떤 헤더가 들어갔는지만 보여 줍니다.
+    document.getElementById("cfgAuthHeaders").value = "";
+    renderAuthState();
 
     const map = parseProgramIdText(document.getElementById("cfgProgramIds").value);
     const idRes = await fetch("/api/program-ids", {
@@ -1618,6 +1628,18 @@ function bindEvents() {
     if (e.target.id === "settingsBackdrop") e.target.hidden = true;
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
+  document.getElementById("cfgAuthClear").addEventListener("click", async () => {
+    if (!(await askConfirm("저장된 인증 헤더를 모두 지웁니다. 계속할까요?"))) return;
+    const res = await fetch("/api/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clearAuthHeaders: true }),
+    });
+    state.config = await res.json();
+    document.getElementById("cfgAuthHeaders").value = "";
+    renderAuthState();
+    showToast("인증 헤더를 지웠어요.", "ok");
+  });
 
   document.getElementById("storeClose").addEventListener("click", closeStoreModal);
   document.getElementById("storeBackdrop").addEventListener("click", (e) => {
