@@ -350,9 +350,18 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 }
 .link-note { font-size: 11.5px; margin: 10px 0 0; }
 .store-frame {
-  width: 100%; height: 66vh; min-height: 400px; display: block;
+  width: 100%; height: 58vh; min-height: 360px; display: block;
   border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card);
 }
+/* 머리글에는 snapshotId 와 shortUrl 만 둡니다 */
+.link-meta {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 14px;
+  margin: 0; min-width: 0; font-size: 12px;
+}
+.link-meta dt {
+  color: var(--text-secondary); font-family: Consolas, monospace; font-size: 11.5px;
+}
+.link-meta dd { margin: 0; word-break: break-all; }
 
 .field-sub {
   display: flex; align-items: center; gap: 10px;

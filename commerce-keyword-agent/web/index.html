@@ -239,13 +239,10 @@
 
 <!-- 응답에 담겨 온 링크 미리보기 -->
 <div id="linkBackdrop" class="modal-backdrop" hidden>
-  <div class="modal modal-store" role="dialog" aria-modal="true" aria-labelledby="linkTitle">
+  <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="linkTitle">
     <button id="linkClose" class="modal-close" type="button" aria-label="닫기">×</button>
     <div class="modal-head store-head">
-      <div class="store-head-text">
-        <h2 id="linkTitle">등록 결과 화면</h2>
-        <p id="linkMeta" class="muted"></p>
-      </div>
+      <dl id="linkMeta" class="link-meta"></dl>
       <div class="store-head-actions">
         <a id="linkOpen" class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noopener">새 탭에서 열기 ↗</a>
       </div>

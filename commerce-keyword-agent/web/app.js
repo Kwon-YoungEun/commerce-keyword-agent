@@ -1058,6 +1058,7 @@ function renderSendResult(json) {
   } catch (err) {
     data = null;
   }
+  state.lastSendData = data;
 
   const head =
     `<div class="send-head">` +
@@ -1101,13 +1102,27 @@ function renderSendResult(json) {
     `</tbody></table>`;
 
   box.querySelectorAll(".send-link").forEach((btn) => {
-    btn.addEventListener("click", () => openLinkPreview(btn.dataset.url));
+    btn.addEventListener("click", () => openLinkPreview(btn.dataset.url, data));
   });
+
+  // 성공했으면 등록 결과 화면을 바로 띄웁니다.
+  const shortUrl = flattenObject(data).shortUrl || flattenObject(data)["data.shortUrl"];
+  if (json.ok && shortUrl) openLinkPreview(shortUrl, data);
 }
 
-/** 응답에 담겨 온 주소를 팝업 안에서 열어 봅니다. */
-function openLinkPreview(url) {
-  document.getElementById("linkMeta").textContent = url;
+/** 응답에 담겨 온 주소를 팝업 안에서 열어 봅니다.
+ *  머리글에는 snapshotId 와 shortUrl 만 둡니다. */
+function openLinkPreview(url, data) {
+  const flat = flattenObject(data || state.lastSendData || {});
+  const rows = [
+    ["snapshotId", flat.snapshotId || flat["data.snapshotId"] || ""],
+    ["shortUrl", url],
+  ];
+  document.getElementById("linkMeta").innerHTML = rows
+    .filter(([, value]) => value)
+    .map(([key, value]) =>
+      `<dt>${escapeHtml(key)}</dt><dd>${escapeHtml(value)}</dd>`)
+    .join("");
   document.getElementById("linkOpen").href = url;
   document.getElementById("linkFrameBox").innerHTML =
     `<iframe class="store-frame" title="등록 결과 화면" referrerpolicy="no-referrer"` +
