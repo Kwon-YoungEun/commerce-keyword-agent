@@ -29,3 +29,10 @@ commerce-keyword-agent/data/program_catalog.json
 
 # 인코딩 점검용 임시 파일
 commerce-keyword-agent/data/.enc_test
+
+# 등록 API 인증 키 — 깃에 한 번 올라가면 기록에서 지우기 어렵습니다.
+# 저장소가 비공개여도 넣지 않습니다.
+commerce-keyword-agent/data/secrets.json
+
+# 전송 기록 — 언제 무엇을 보냈는지만 남는 로컬 기록입니다.
+commerce-keyword-agent/data/send_log.json

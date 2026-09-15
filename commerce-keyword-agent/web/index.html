@@ -139,6 +139,7 @@
         <button id="btnDownloadBody" class="btn" type="button">.json 저장</button>
         <button id="btnCopyCurl" class="btn" type="button">curl 복사</button>
         <button id="btnPostman" class="btn" type="button">Postman 컬렉션 저장</button>
+        <button id="btnSendApi" class="btn btn-send" type="button">API 로 전송</button>
         <button id="btnConfirmRegister" class="btn btn-line" type="button">캘린더에 등록</button>
       </div>
       <p id="bodyStatus" class="muted body-status"></p>
@@ -188,8 +189,17 @@
         <small class="muted">키워드가 들어갈 자리에 <code>{keyword}</code> 를 적어 주세요.</small>
       </label>
       <label class="field">
-        <span>키워드 등록 API 주소 <small class="muted">curl · Postman 만들 때 사용</small></span>
+        <span>키워드 등록 API 주소 <small class="muted">전송 · curl · Postman 에 사용</small></span>
         <input id="cfgRegisterUrl" type="text" placeholder="https://…/keyword/manual">
+      </label>
+      <label class="field">
+        <span>인증 헤더 이름 <small class="muted">Postman 의 Headers 탭 그대로</small></span>
+        <input id="cfgAuthName" type="text" placeholder="Authorization 또는 x-api-key">
+      </label>
+      <label class="field">
+        <span>인증 헤더 값 <small class="muted">이 PC 에만 저장되고 깃에 올라가지 않습니다</small></span>
+        <input id="cfgAuthValue" type="password" autocomplete="off" placeholder="Bearer …">
+        <small id="cfgAuthState" class="muted"></small>
       </label>
       <label class="field">
         <span>프로그램 ID 표 <small class="muted">프로그램명,ID 를 한 줄에 하나씩</small></span>

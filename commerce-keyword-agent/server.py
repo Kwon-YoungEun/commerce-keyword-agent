@@ -479,6 +479,115 @@ def public_config(cfg):
     return {"storeSearchUrl": cfg["storeSearchUrl"], "registerApiUrl": cfg["registerApiUrl"]}
 
 
+# ------------------------------------------------------------------ 인증 키
+#
+# 인증 키는 config.json 과 따로 secrets.json 에 둡니다. 이 파일은 .gitignore
+# 에 넣어 깃에 올라가지 않습니다. 한 번 커밋되면 기록에서 지우기 어렵습니다.
+# 값 자체는 브라우저로 내려보내지 않고, 서버가 요청을 대신 보낼 때만 씁니다.
+
+SECRETS_STORE = os.path.join(DATA_DIR, "secrets.json")
+DEFAULT_SECRETS = {"authHeaderName": "", "authHeaderValue": ""}
+
+
+def load_secrets():
+    data = dict(DEFAULT_SECRETS)
+    data.update(_read_json(SECRETS_STORE, {}))
+    return data
+
+
+def save_secrets(patch):
+    """헤더 이름과 값을 저장합니다. 값이 안 오면 기존 값을 유지합니다."""
+    with _store_lock:
+        data = load_secrets()
+        if patch.get("authHeaderName") is not None:
+            data["authHeaderName"] = str(patch["authHeaderName"]).strip()
+        value = patch.get("authHeaderValue")
+        if value is not None and str(value).strip():
+            data["authHeaderValue"] = str(value).strip()
+        if patch.get("clearValue"):
+            data["authHeaderValue"] = ""
+        _write_json(SECRETS_STORE, data)
+        return data
+
+
+def mask_secret(value):
+    """화면에는 끝 4자리만 보여 줍니다."""
+    value = value or ""
+    if not value:
+        return ""
+    if len(value) <= 4:
+        return "•" * len(value)
+    return "•" * 8 + value[-4:]
+
+
+def public_secrets(data):
+    """브라우저에는 값 대신 '설정됨' 여부와 가린 문자열만 보냅니다."""
+    return {
+        "authHeaderName": data.get("authHeaderName", ""),
+        "hasAuthValue": bool(data.get("authHeaderValue")),
+        "maskedAuthValue": mask_secret(data.get("authHeaderValue")),
+    }
+
+
+SEND_LOG = os.path.join(DATA_DIR, "send_log.json")
+
+
+def send_registration(payload):
+    """등록 API 로 대신 보냅니다.
+
+    인증 키는 이 함수 안에서만 쓰이고 화면으로도, 기록으로도 나가지 않습니다.
+    """
+    body = payload.get("body")
+    if not isinstance(body, dict):
+        return {"ok": False, "error": "보낼 내용이 없습니다."}
+
+    cfg = load_config()
+    url = (cfg.get("registerApiUrl") or "").strip()
+    if not url:
+        return {"ok": False, "error": "등록 API 주소가 비어 있습니다. 설정에서 넣어 주세요."}
+    if not url.lower().startswith("https://"):
+        return {"ok": False, "error": "https 주소만 보낼 수 있습니다: " + url}
+
+    secrets = load_secrets()
+    headers = {"Content-Type": "application/json; charset=utf-8"}
+    name = (secrets.get("authHeaderName") or "").strip()
+    value = (secrets.get("authHeaderValue") or "").strip()
+    if name and value:
+        headers[name] = value
+
+    raw = json.dumps(body, ensure_ascii=False).encode("utf-8")
+    started = time.time()
+    try:
+        req = urllib.request.Request(url, data=raw, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=20) as res:
+            status, text = res.status, res.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as exc:
+        status = exc.code
+        text = exc.read().decode("utf-8", "replace") if exc.fp else str(exc)
+    except Exception as exc:
+        return {"ok": False, "error": "보내지 못했습니다: %s" % exc}
+
+    took = round(time.time() - started, 2)
+    record = {
+        "at": int(time.time()),
+        "url": url,
+        "status": status,
+        "took": took,
+        # 무엇을 보냈는지 알 수 있게 키워드만 남기고 키는 남기지 않습니다.
+        "keyword": ((body.get("productInfo") or [{}])[0] or {}).get("productKeyword", ""),
+        "programName": body.get("programName", ""),
+        "requestId": body.get("requestId", ""),
+    }
+    with _store_lock:
+        log = _read_json(SEND_LOG, {"items": []})
+        log.setdefault("items", []).insert(0, record)
+        log["items"] = log["items"][:200]
+        _write_json(SEND_LOG, log)
+
+    return {"ok": 200 <= status < 300, "status": status, "took": took,
+            "response": text[:2000], "usedAuthHeader": bool(name and value)}
+
+
 # ------------------------------------------------- tvN 공식 회차 미리보기
 #
 # tvN 프로그램 페이지(https://tvn.cjenm.com/ko/<slug>/)의 __NEXT_DATA__ 에는
@@ -1122,7 +1231,8 @@ class Handler(BaseHTTPRequestHandler):
                                    **store_products(keyword)})
 
             if path == "/api/config":
-                return self._json({"ok": True, **public_config(load_config())})
+                return self._json({"ok": True, **public_config(load_config()),
+                                   **public_secrets(load_secrets())})
 
             if path == "/api/program-ids":
                 return self._json({"ok": True, "map": load_program_ids()})
@@ -1170,8 +1280,14 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         try:
             if parsed.path == "/api/config":
-                cfg = save_config(self._body_json())
-                return self._json({"ok": True, **public_config(cfg)})
+                body = self._body_json()
+                cfg = save_config(body)
+                secrets = save_secrets(body)
+                return self._json({"ok": True, **public_config(cfg),
+                                   **public_secrets(secrets)})
+
+            if parsed.path == "/api/send-registration":
+                return self._json(send_registration(self._body_json()))
 
             if parsed.path == "/api/program-catalog":
                 body = self._body_json()

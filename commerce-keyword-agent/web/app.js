@@ -997,6 +997,55 @@ function buildPostmanCollection(body, program) {
   };
 }
 
+/** 등록 API 로 실제 전송 — 되돌릴 수 없어서 보내기 전에 한 번 확인받습니다.
+ *  인증 키는 서버에만 있고 이 코드에는 들어오지 않습니다. */
+async function sendToApi() {
+  const body = currentBody();
+  if (!body) return;
+
+  const keyword = body.productInfo[0].productKeyword;
+  if (!keyword) {
+    setBodyStatus("보내려면 productKeyword 를 채워 주세요.", "bad");
+    return;
+  }
+  const cfg = state.config || {};
+  if (!cfg.registerApiUrl) {
+    setBodyStatus("설정에서 등록 API 주소를 먼저 넣어 주세요.", "bad");
+    return;
+  }
+
+  const ok = await askConfirm(
+    `아래 내용을 실제 API 로 보냅니다. 되돌릴 수 없어요.\n\n` +
+    `주소: ${cfg.registerApiUrl}\n` +
+    `프로그램: ${body.programName} (${body.programId || "ID 없음"})\n` +
+    `키워드: ${keyword}\n` +
+    `인증 헤더: ${cfg.hasAuthValue ? cfg.authHeaderName + " (설정됨)" : "없음"}`
+  );
+  if (!ok) return;
+
+  setBodyStatus("보내는 중…", "");
+  try {
+    const res = await fetch("/api/send-registration", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ body: body }),
+    });
+    const json = await res.json();
+    if (json.error) {
+      setBodyStatus(json.error, "bad");
+      showToast(json.error, "bad");
+      return;
+    }
+    const line = `응답 ${json.status} · ${json.took}초` +
+      (json.response ? ` · ${json.response.slice(0, 200)}` : "");
+    setBodyStatus(line, json.ok ? "ok" : "bad");
+    showToast(json.ok ? `전송 성공 (${json.status})` : `전송 실패 (${json.status})`,
+              json.ok ? "ok" : "bad");
+  } catch (err) {
+    setBodyStatus("보내지 못했습니다: " + err.message, "bad");
+  }
+}
+
 async function confirmRegister() {
   const body = currentBody();
   if (!body) return;
@@ -1446,6 +1495,12 @@ function openSettings() {
   const c = state.config || {};
   document.getElementById("cfgStoreUrl").value = c.storeSearchUrl || "";
   document.getElementById("cfgRegisterUrl").value = c.registerApiUrl || "";
+  document.getElementById("cfgAuthName").value = c.authHeaderName || "";
+  // 값 자체는 서버에서 내려오지 않습니다. 비워 두면 기존 값을 그대로 씁니다.
+  document.getElementById("cfgAuthValue").value = "";
+  document.getElementById("cfgAuthState").textContent = c.hasAuthValue
+    ? `저장돼 있어요 (${c.maskedAuthValue}). 바꿀 때만 새로 넣으세요.`
+    : "아직 넣지 않았어요.";
   document.getElementById("cfgProgramIds").value = Object.entries(state.programIds)
     .map(([name, id]) => name + "," + id)
     .join("\n");
@@ -1479,6 +1534,8 @@ async function saveSettings() {
       body: JSON.stringify({
         storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim(),
         registerApiUrl: document.getElementById("cfgRegisterUrl").value.trim(),
+        authHeaderName: document.getElementById("cfgAuthName").value.trim(),
+        authHeaderValue: document.getElementById("cfgAuthValue").value.trim(),
       }),
     });
     state.config = await cfgRes.json();
@@ -1613,6 +1670,7 @@ function bindEvents() {
     downloadFile("postman-" + body.requestId.slice(0, 8) + ".json", JSON.stringify(collection, null, 2));
     setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
   });
+  document.getElementById("btnSendApi").addEventListener("click", sendToApi);
   document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
   document.getElementById("btnSaveProgramId").addEventListener("click", onProgramIdButton);
   document.getElementById("fldProgramId").addEventListener("keydown", (e) => {
