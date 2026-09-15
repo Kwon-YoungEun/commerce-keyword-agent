@@ -205,15 +205,19 @@
 
 <!-- 네이버+스토어 미리보기 팝업 (3단계) -->
 <div id="storeBackdrop" class="modal-backdrop" hidden>
-  <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="storeTitle">
+  <div class="modal modal-store" role="dialog" aria-modal="true" aria-labelledby="storeTitle">
     <button id="storeClose" class="modal-close" type="button" aria-label="닫기">×</button>
     <div class="modal-head">
       <h2 id="storeTitle">네이버+스토어 미리보기</h2>
       <p id="storeMeta" class="muted"></p>
     </div>
     <div class="modal-body">
-      <div id="storeResult"></div>
+      <div id="storeResult">
+        <iframe id="storeFrame" class="store-frame" src="about:blank"
+                title="네이버+스토어 검색 결과" referrerpolicy="no-referrer"></iframe>
+      </div>
       <div class="store-actions">
+        <button id="btnStoreList" class="btn btn-ghost btn-sm" type="button">화면이 비어 있나요? 상품 목록으로 보기</button>
         <a id="storeOpen" class="btn btn-line" href="#" target="_blank" rel="noopener">네이버+스토어에서 보기 ↗</a>
       </div>
     </div>

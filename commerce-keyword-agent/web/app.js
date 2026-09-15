@@ -639,21 +639,46 @@ async function renderPreview(k) {
 
 /* ------------------------------------------ 네이버+스토어 미리보기 (3단계) */
 //
-// 플러스스토어는 화면을 그대로 끼워 넣을 수 없어(iframe 차단), 서버가 대신
-// 상품을 가져와 카드로 그립니다. 원본이 필요하면 아래 링크로 나갑니다.
+// shopping.naver.com 은 프레임으로 띄울 수 있어서 진짜 스토어 화면을 그대로
+// 보여 줍니다. (search.shopping.naver.com 은 막혀 있어 쓸 수 없습니다.)
+// 프레임이 비어 보이는 환경을 위해 상품 목록으로 바꿔 보는 길도 남겨 둡니다.
+
+const STORE_FRAME_URL = "https://shopping.naver.com/ns/search?query=";
+
+function storeFrameHtml(keyword) {
+  return `<iframe id="storeFrame" class="store-frame" title="네이버+스토어 검색 결과"` +
+    ` referrerpolicy="no-referrer"` +
+    ` src="${STORE_FRAME_URL}${encodeURIComponent(keyword)}"></iframe>`;
+}
 
 function openStoreModal(keyword) {
-  const box = document.getElementById("storeResult");
-  document.getElementById("storeTitle").textContent = `네이버+스토어 미리보기`;
+  state.storeKeyword = keyword;
   document.getElementById("storeMeta").textContent = `"${keyword}" 검색 결과`;
-  document.getElementById("storeOpen").href = "#";
-  box.innerHTML = '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
+  document.getElementById("storeResult").innerHTML = storeFrameHtml(keyword);
+  document.getElementById("storeOpen").href = STORE_FRAME_URL + encodeURIComponent(keyword);
+
+  const listBtn = document.getElementById("btnStoreList");
+  listBtn.hidden = false;
+  listBtn.textContent = "화면이 비어 있나요? 상품 목록으로 보기";
   document.getElementById("storeBackdrop").hidden = false;
-  loadStoreProducts(keyword);
 }
 
 function closeStoreModal() {
   document.getElementById("storeBackdrop").hidden = true;
+  // 프레임을 비워 뒤에서 계속 돌지 않게 합니다.
+  document.getElementById("storeResult").innerHTML = "";
+  state.storeKeyword = null;
+}
+
+/** 프레임이 막히는 환경에서 쓰는 대체 화면 — 서버가 가져온 상품 목록. */
+function showStoreList() {
+  const keyword = state.storeKeyword;
+  if (!keyword) return;
+  const btn = document.getElementById("btnStoreList");
+  btn.hidden = true;
+  document.getElementById("storeResult").innerHTML =
+    '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
+  loadStoreProducts(keyword);
 }
 
 async function loadStoreProducts(keyword) {
@@ -667,8 +692,6 @@ async function loadStoreProducts(keyword) {
     box.innerHTML = `<div class="notice">${escapeHtml(err.message)}</div>`;
     return;
   }
-
-  document.getElementById("storeOpen").href = data.searchUrl;
 
   const items = data.products || [];
   if (!items.length) {
@@ -1559,6 +1582,7 @@ function bindEvents() {
   document.getElementById("storeBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "storeBackdrop") closeStoreModal();
   });
+  document.getElementById("btnStoreList").addEventListener("click", showStoreList);
 
   document.getElementById("bodyClose").addEventListener("click", () => {
     document.getElementById("bodyBackdrop").hidden = true;
@@ -1626,7 +1650,11 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
-    for (const id of ["storeBackdrop", "settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
+    if (!document.getElementById("storeBackdrop").hidden) {
+      closeStoreModal();
+      return;
+    }
+    for (const id of ["settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
       const el = document.getElementById(id);
       if (!el.hidden) {
         el.hidden = true;
