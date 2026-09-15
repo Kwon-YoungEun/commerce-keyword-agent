@@ -733,15 +733,21 @@ a.store-card:hover { border-color: var(--skb-red); }
 .store-sub { font-size: 10.5px; color: var(--text-secondary); }
 .modal-store { width: min(1080px, 100%); }
 
-/* 제목 옆, 닫기 버튼 왼쪽에 실행 버튼을 둡니다 */
+/* 제목과 설명을 한 줄에 두고 오른쪽에 실행 버튼 — 머리글을 얇게 유지합니다 */
 .store-head {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 16px; padding-right: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 58px 13px 22px;
 }
-.store-head-text { min-width: 0; }
+.store-head-text {
+  display: flex; align-items: baseline; gap: 9px;
+  flex-wrap: wrap; min-width: 0;
+}
+.modal-store .modal-head h2 { margin: 0; font-size: 15px; letter-spacing: -.01em; }
+.modal-store #storeMeta { margin: 0; font-size: 12px; }
+.modal-store .modal-close { top: 8px; right: 12px; font-size: 22px; }
+.modal-store .modal-body { padding: 16px 22px 22px; }
 .store-head-actions {
-  display: flex; align-items: center; gap: 8px; flex: none;
-  padding-top: 8px; flex-wrap: wrap; justify-content: flex-end;
+  display: flex; align-items: center; gap: 7px; flex: none;
 }
 
 

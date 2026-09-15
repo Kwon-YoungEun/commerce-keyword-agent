@@ -651,7 +651,7 @@ function storeSearchUrl(keyword) {
 
 function openStoreModal(keyword) {
   state.storeKeyword = keyword;
-  document.getElementById("storeMeta").textContent = `"${keyword}" 검색 결과`;
+  document.getElementById("storeMeta").textContent = `"${keyword}"`;
   document.getElementById("storeOpen").href = storeSearchUrl(keyword);
   document.getElementById("storeResult").innerHTML =
     '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
@@ -688,9 +688,9 @@ async function loadStoreProducts(keyword) {
 
   const adCount = items.filter((p) => p.isAd).length;
   document.getElementById("storeMeta").innerHTML =
-    `"${escapeHtml(keyword)}" 검색 결과 ${items.length}건` +
-    (adCount ? ` <span class="muted">· 광고 ${adCount}건</span>` : "") +
-    ` <span class="muted">· 네이버 쇼핑 기준</span>`;
+    `"${escapeHtml(keyword)}" · 상품 ${items.length}건` +
+    (adCount ? ` · 광고 ${adCount}건` : "") +
+    ` · 네이버 쇼핑 기준`;
 
   box.innerHTML =
     `<div class="store-grid">` +
