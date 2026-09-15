@@ -749,6 +749,9 @@ a.store-card:hover { border-color: var(--skb-red); }
 .store-head-actions {
   display: flex; align-items: center; gap: 7px; flex: none;
 }
+/* 네이버+스토어 공식 아이콘 — 원본 비율(324x162) 그대로 씁니다 */
+.store-link { display: inline-flex; align-items: center; gap: 6px; }
+.nps-icon { width: 30px; height: 15px; display: block; flex: none; }
 
 
 .kw-tag {
