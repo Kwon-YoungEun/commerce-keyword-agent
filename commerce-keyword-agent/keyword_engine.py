@@ -390,6 +390,87 @@ def naver_autocomplete(seed, limit=10):
     return out[:limit]
 
 
+# ------------------------------------------------------- 네이버 쇼핑 상품 조회
+#
+# 플러스스토어(search.shopping.naver.com)는 페이지도 내부 API 도 막혀 있어서
+# (405 / 418) 통합검색 쇼핑탭을 대신 읽습니다. 같은 네이버 쇼핑 상품이지만
+# 정렬은 플러스스토어 화면과 다를 수 있습니다.
+
+MOBILE_UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+             "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile Safari/604.1")
+CARD_START_RE = re.compile(r'\{"cardType"')
+MARK_TAG_RE = re.compile(r"</?mark>")
+
+
+def _slice_json_object(text, start):
+    """text[start] 의 '{' 와 짝이 맞는 '}' 까지 잘라 냅니다."""
+    depth, in_str, esc = 0, False, False
+    for i in range(start, min(len(text), start + 300000)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+    return None
+
+
+def search_shopping(keyword, limit=16):
+    """검색어로 네이버 쇼핑 상품을 가져옵니다."""
+    url = ("https://m.search.naver.com/search.naver?where=m_shop&query="
+           + urllib.parse.quote(keyword))
+    body = _fetch(url, headers={"User-Agent": MOBILE_UA,
+                                "Accept-Language": "ko-KR,ko;q=0.9"}, timeout=20)
+
+    products, seen = [], set()
+    for match in CARD_START_RE.finditer(body):
+        raw = _slice_json_object(body, match.start())
+        if not raw:
+            continue
+        try:
+            # 화면 코드라 값이 undefined 로 비어 있는 자리가 있습니다.
+            card = json.loads(raw.replace(":undefined", ":null"))
+        except Exception:
+            continue
+
+        name = MARK_TAG_RE.sub("", card.get("productName") or "").strip()
+        if not name:
+            continue
+        key = norm_compact(name)
+        if key in seen:
+            continue
+        seen.add(key)
+
+        images = card.get("images") or []
+        image = (images[0].get("imageUrl") if images else "") or card.get("imageUrl") or ""
+        products.append({
+            "name": name,
+            "price": card.get("discountedSalePrice") or card.get("salePrice") or 0,
+            "mall": (card.get("mallName") or "").strip(),
+            "image": image,
+            "reviewCount": card.get("totalReviewCount") or 0,
+            "reviewScore": card.get("averageReviewScore") or 0,
+            "mallCount": card.get("mallCount") or 0,
+            "isAd": card.get("sourceType") == "AD",
+            "url": ((card.get("productClickUrl") or {}).get("mobileUrl")
+                    or (card.get("productClickUrl") or {}).get("pcUrl") or ""),
+        })
+        if len(products) >= limit:
+            break
+    return products
+
+
 # ------------------------------------------------------------------ 전처리
 
 

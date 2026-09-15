@@ -629,11 +629,86 @@ async function renderPreview(k) {
     `</section>` +
     (data.warning ? `<p class="muted" style="font-size:11.5px">${escapeHtml(data.warning)}</p>` : "") +
     `<div class="preview-actions">` +
-    `<a class="btn btn-line" href="${data.searchUrl}" target="_blank" rel="noopener">네이버플러스스토어에서 열기 ↗</a>` +
+    `<button id="btnStorePreview" class="btn btn-line" type="button">네이버+스토어 미리보기</button>` +
     `<button id="btnRegister" class="btn" type="button">매뉴얼 키워드 등록</button>` +
     `</div>`;
 
+  document.getElementById("btnStorePreview").addEventListener("click", () => openStoreModal(k.keyword));
   document.getElementById("btnRegister").addEventListener("click", () => registerKeyword(k));
+}
+
+/* ------------------------------------------ 네이버+스토어 미리보기 (3단계) */
+//
+// 플러스스토어는 화면을 그대로 끼워 넣을 수 없어(iframe 차단), 서버가 대신
+// 상품을 가져와 카드로 그립니다. 원본이 필요하면 아래 링크로 나갑니다.
+
+function openStoreModal(keyword) {
+  const box = document.getElementById("storeResult");
+  document.getElementById("storeTitle").textContent = `네이버+스토어 미리보기`;
+  document.getElementById("storeMeta").textContent = `"${keyword}" 검색 결과`;
+  document.getElementById("storeOpen").href = "#";
+  box.innerHTML = '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
+  document.getElementById("storeBackdrop").hidden = false;
+  loadStoreProducts(keyword);
+}
+
+function closeStoreModal() {
+  document.getElementById("storeBackdrop").hidden = true;
+}
+
+async function loadStoreProducts(keyword) {
+  const box = document.getElementById("storeResult");
+  let data;
+  try {
+    const res = await fetch("/api/store-products?keyword=" + encodeURIComponent(keyword));
+    data = await res.json();
+    if (!data.ok) throw new Error(data.error || "불러오지 못했습니다.");
+  } catch (err) {
+    box.innerHTML = `<div class="notice">${escapeHtml(err.message)}</div>`;
+    return;
+  }
+
+  document.getElementById("storeOpen").href = data.searchUrl;
+
+  const items = data.products || [];
+  if (!items.length) {
+    box.innerHTML =
+      `<div class="placeholder">이 검색어로는 상품이 잡히지 않았어요.` +
+      (data.warning ? `<br>${escapeHtml(data.warning)}` : "") +
+      `</div>`;
+    return;
+  }
+
+  const adCount = items.filter((p) => p.isAd).length;
+  document.getElementById("storeMeta").innerHTML =
+    `"${escapeHtml(keyword)}" 검색 결과 ${items.length}건` +
+    (adCount ? ` <span class="muted">· 광고 ${adCount}건</span>` : "") +
+    ` <span class="muted">· 네이버 쇼핑 기준</span>`;
+
+  box.innerHTML =
+    `<div class="store-grid">` +
+    items.map(storeCardHtml).join("") +
+    `</div>`;
+}
+
+function storeCardHtml(p) {
+  const price = p.price ? Number(p.price).toLocaleString() + "원" : "가격 정보 없음";
+  const review = p.reviewCount
+    ? `리뷰 ${Number(p.reviewCount).toLocaleString()}` +
+      (p.reviewScore ? ` · ★ ${p.reviewScore}` : "")
+    : "";
+  const seller = p.mall || (p.mallCount > 1 ? `판매처 ${p.mallCount}곳` : "");
+  const inner =
+    `<span class="store-thumb">` +
+    (p.image ? `<img src="${escapeHtml(p.image)}" alt="">` : "") +
+    (p.isAd ? `<span class="store-ad">광고</span>` : "") +
+    `</span>` +
+    `<span class="store-name">${escapeHtml(p.name)}</span>` +
+    `<span class="store-price">${price}</span>` +
+    `<span class="store-sub">${escapeHtml([seller, review].filter(Boolean).join(" · "))}</span>`;
+  return p.url
+    ? `<a class="store-card" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${inner}</a>`
+    : `<span class="store-card">${inner}</span>`;
 }
 
 /* ------------------------------------------------- JSON body 만들기 (4단계) */
@@ -1480,6 +1555,11 @@ function bindEvents() {
   });
   document.getElementById("cfgSave").addEventListener("click", saveSettings);
 
+  document.getElementById("storeClose").addEventListener("click", closeStoreModal);
+  document.getElementById("storeBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "storeBackdrop") closeStoreModal();
+  });
+
   document.getElementById("bodyClose").addEventListener("click", () => {
     document.getElementById("bodyBackdrop").hidden = true;
   });
@@ -1546,7 +1626,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
-    for (const id of ["settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
+    for (const id of ["storeBackdrop", "settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
       const el = document.getElementById(id);
       if (!el.hidden) {
         el.hidden = true;

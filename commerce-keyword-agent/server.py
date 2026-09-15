@@ -866,6 +866,30 @@ def store_preview(keyword):
     }
 
 
+STORE_PRODUCT_TTL_SEC = 6 * 3600
+_product_cache = {}
+
+
+def store_products(keyword, limit=16):
+    """미리보기 팝업에 그릴 상품 목록. 같은 키워드는 잠시 재사용합니다."""
+    now = time.time()
+    hit = _product_cache.get(keyword)
+    if hit and now - hit["at"] < STORE_PRODUCT_TTL_SEC:
+        return {"products": hit["products"], "cached": True, "warning": ""}
+
+    try:
+        products = keyword_engine.search_shopping(keyword, limit=limit)
+    except Exception as exc:
+        return {"products": [], "cached": False,
+                "warning": "상품을 불러오지 못했습니다: %s" % exc}
+
+    _product_cache[keyword] = {"at": now, "products": products}
+    if len(_product_cache) > 200:                   # 오래된 것부터 버립니다
+        for key in sorted(_product_cache, key=lambda k: _product_cache[k]["at"])[:50]:
+            _product_cache.pop(key, None)
+    return {"products": products, "cached": False, "warning": ""}
+
+
 def collect_official_material(program, store):
     """이 회차의 공식 자료 — tvN 미리보기 본문과 공식 클립 제목.
 
@@ -1087,6 +1111,15 @@ class Handler(BaseHTTPRequestHandler):
                 if not keyword:
                     return self._error("키워드가 비어 있습니다.", 400)
                 return self._json({"ok": True, "keyword": keyword, **store_preview(keyword)})
+
+            if path == "/api/store-products":
+                keyword = query.get("keyword", [""])[0].strip()
+                if not keyword:
+                    return self._error("키워드가 비어 있습니다.", 400)
+                cfg = load_config()
+                return self._json({"ok": True, "keyword": keyword,
+                                   "searchUrl": store_search_url(cfg, keyword),
+                                   **store_products(keyword)})
 
             if path == "/api/config":
                 return self._json({"ok": True, **public_config(load_config())})
