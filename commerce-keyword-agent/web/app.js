@@ -639,11 +639,14 @@ async function renderPreview(k) {
 
 /* ------------------------------------------ 네이버+스토어 미리보기 (3단계) */
 //
-// shopping.naver.com 은 프레임으로 띄울 수 있어서 진짜 스토어 화면을 그대로
-// 보여 줍니다. (search.shopping.naver.com 은 막혀 있어 쓸 수 없습니다.)
-// 프레임이 비어 보이는 환경을 위해 상품 목록으로 바꿔 보는 길도 남겨 둡니다.
+// 진짜 스토어 검색 결과를 그대로 띄웁니다.
+// shopping.naver.com/ns/search 는 검색어를 입력받는 화면이라 결과가 나오지 않고,
+// 결과는 search.shopping.naver.com/ns/search 에 있습니다. 서버에서 가져오는 건
+// 막혀 있지만(405) 브라우저 프레임으로는 열립니다.
+// 다만 이 앱을 감싼 미리보기 브라우저처럼 도메인을 막는 환경이 있어서,
+// 상품 목록으로 바꿔 보는 길을 함께 둡니다.
 
-const STORE_FRAME_URL = "https://shopping.naver.com/ns/search?query=";
+const STORE_FRAME_URL = "https://search.shopping.naver.com/ns/search?query=";
 
 function storeFrameHtml(keyword) {
   return `<iframe id="storeFrame" class="store-frame" title="네이버+스토어 검색 결과"` +
