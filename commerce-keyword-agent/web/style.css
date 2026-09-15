@@ -320,6 +320,40 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .modal { width: min(1080px, 100%); }
 .btn-sm { padding: 4px 10px; font-size: 12px; }
 /* 되돌릴 수 없는 외부 전송 — 다른 버튼과 구분되게 둡니다 */
+/* 전송 응답 — 원문을 그대로 늘어놓지 않고 표로 정리합니다 */
+.send-result {
+  margin-top: 12px; padding: 13px 15px;
+  border: 1px solid var(--border); border-radius: 10px; background: #FCFCFD;
+}
+.send-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 12px; }
+.send-badge {
+  font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
+}
+.send-badge.is-ok { background: #E4F3EA; color: var(--status-good); }
+.send-badge.is-bad { background: #FDE7EB; color: var(--status-bad); }
+.send-links { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 11px; }
+.send-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.send-table th, .send-table td {
+  padding: 6px 9px; border-bottom: 1px solid var(--border);
+  text-align: left; vertical-align: top;
+}
+.send-table th {
+  width: 190px; color: var(--text-secondary); font-weight: 600;
+  font-family: Consolas, monospace; font-size: 11.5px; word-break: break-all;
+}
+.send-table td { word-break: break-all; }
+.send-table tr:last-child th, .send-table tr:last-child td { border-bottom: none; }
+.send-raw {
+  margin: 0; padding: 10px; border-radius: 8px; background: #F1F2F4;
+  font-family: Consolas, monospace; font-size: 11.5px; line-height: 1.6;
+  white-space: pre-wrap; word-break: break-all; max-height: 240px; overflow: auto;
+}
+.link-note { font-size: 11.5px; margin: 10px 0 0; }
+.store-frame {
+  width: 100%; height: 66vh; min-height: 400px; display: block;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card);
+}
+
 .field-sub {
   display: flex; align-items: center; gap: 10px;
   margin-top: 7px; flex-wrap: wrap;

@@ -1038,14 +1038,105 @@ async function sendToApi() {
       showToast(json.error, "bad");
       return;
     }
-    const line = `응답 ${json.status} · ${json.took}초` +
-      (json.response ? ` · ${json.response.slice(0, 200)}` : "");
-    setBodyStatus(line, json.ok ? "ok" : "bad");
+    setBodyStatus(`응답 ${json.status} · ${json.took}초`, json.ok ? "ok" : "bad");
+    renderSendResult(json);
     showToast(json.ok ? `전송 성공 (${json.status})` : `전송 실패 (${json.status})`,
               json.ok ? "ok" : "bad");
   } catch (err) {
     setBodyStatus("보내지 못했습니다: " + err.message, "bad");
   }
+}
+
+/** 응답을 읽기 쉽게 풀어 보여 줍니다. JSON 이 아니면 원문을 그대로 둡니다. */
+function renderSendResult(json) {
+  const box = document.getElementById("sendResult");
+  box.hidden = false;
+
+  let data = null;
+  try {
+    data = JSON.parse(json.response);
+  } catch (err) {
+    data = null;
+  }
+
+  const head =
+    `<div class="send-head">` +
+    `<span class="send-badge ${json.ok ? "is-ok" : "is-bad"}">${json.ok ? "성공" : "실패"} ${json.status}</span>` +
+    `<span class="muted">${json.took}초</span>` +
+    (json.usedAuthHeaders && json.usedAuthHeaders.length
+      ? `<span class="muted">· 헤더 ${json.usedAuthHeaders.join(", ")}</span>` : "") +
+    `</div>`;
+
+  if (!data || typeof data !== "object") {
+    box.innerHTML = head +
+      `<pre class="send-raw">${escapeHtml(json.response || "(본문 없음)")}</pre>`;
+    return;
+  }
+
+  // 링크로 보이는 값은 눌러서 열 수 있게 따로 모읍니다.
+  const rows = [];
+  const links = [];
+  for (const [key, value] of Object.entries(flattenObject(data))) {
+    if (typeof value === "string" && /^https?:\/\//.test(value)) {
+      links.push({ key, url: value });
+    }
+    rows.push({ key, value });
+  }
+
+  box.innerHTML = head +
+    (links.length
+      ? `<div class="send-links">` +
+        links.map((l) =>
+          `<button class="btn btn-sm send-link" type="button" data-url="${escapeHtml(l.url)}">` +
+          `${escapeHtml(l.key)} 미리보기</button>` +
+          `<a class="btn btn-ghost btn-sm" href="${escapeHtml(l.url)}" target="_blank" rel="noopener">새 탭 ↗</a>`
+        ).join("") +
+        `</div>`
+      : "") +
+    `<table class="send-table"><tbody>` +
+    rows.map((r) =>
+      `<tr><th>${escapeHtml(r.key)}</th>` +
+      `<td>${escapeHtml(String(r.value === null ? "" : r.value))}</td></tr>`
+    ).join("") +
+    `</tbody></table>`;
+
+  box.querySelectorAll(".send-link").forEach((btn) => {
+    btn.addEventListener("click", () => openLinkPreview(btn.dataset.url));
+  });
+}
+
+/** 응답에 담겨 온 주소를 팝업 안에서 열어 봅니다. */
+function openLinkPreview(url) {
+  document.getElementById("linkMeta").textContent = url;
+  document.getElementById("linkOpen").href = url;
+  document.getElementById("linkFrameBox").innerHTML =
+    `<iframe class="store-frame" title="등록 결과 화면" referrerpolicy="no-referrer"` +
+    ` src="${escapeHtml(url)}"></iframe>`;
+  document.getElementById("linkBackdrop").hidden = false;
+}
+
+function closeLinkPreview() {
+  document.getElementById("linkBackdrop").hidden = true;
+  document.getElementById("linkFrameBox").innerHTML = "";
+}
+
+/** 중첩된 응답도 'a.b.c' 형태로 펼쳐서 한 표에 담습니다. */
+function flattenObject(obj, prefix = "", out = {}) {
+  for (const [key, value] of Object.entries(obj || {})) {
+    const path = prefix ? `${prefix}.${key}` : key;
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      flattenObject(value, path, out);
+    } else if (Array.isArray(value)) {
+      value.forEach((v, i) => {
+        if (v && typeof v === "object") flattenObject(v, `${path}[${i}]`, out);
+        else out[`${path}[${i}]`] = v;
+      });
+      if (!value.length) out[path] = "[]";
+    } else {
+      out[path] = value;
+    }
+  }
+  return out;
 }
 
 async function confirmRegister() {
@@ -1693,6 +1784,10 @@ function bindEvents() {
     setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
   });
   document.getElementById("btnSendApi").addEventListener("click", sendToApi);
+  document.getElementById("linkClose").addEventListener("click", closeLinkPreview);
+  document.getElementById("linkBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "linkBackdrop") closeLinkPreview();
+  });
   document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
   document.getElementById("btnSaveProgramId").addEventListener("click", onProgramIdButton);
   document.getElementById("fldProgramId").addEventListener("keydown", (e) => {
@@ -1719,6 +1814,10 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
+    if (!document.getElementById("linkBackdrop").hidden) {
+      closeLinkPreview();
+      return;
+    }
     if (!document.getElementById("storeBackdrop").hidden) {
       closeStoreModal();
       return;

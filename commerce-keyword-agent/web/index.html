@@ -143,6 +143,7 @@
         <button id="btnConfirmRegister" class="btn btn-line" type="button">캘린더에 등록</button>
       </div>
       <p id="bodyStatus" class="muted body-status"></p>
+      <section id="sendResult" class="send-result" hidden></section>
     </div>
   </div>
 </div>
@@ -232,6 +233,28 @@
     </div>
     <div class="modal-body">
       <div id="storeResult"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 응답에 담겨 온 링크 미리보기 -->
+<div id="linkBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-store" role="dialog" aria-modal="true" aria-labelledby="linkTitle">
+    <button id="linkClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head store-head">
+      <div class="store-head-text">
+        <h2 id="linkTitle">등록 결과 화면</h2>
+        <p id="linkMeta" class="muted"></p>
+      </div>
+      <div class="store-head-actions">
+        <a id="linkOpen" class="btn btn-ghost btn-sm" href="#" target="_blank" rel="noopener">새 탭에서 열기 ↗</a>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="linkFrameBox"></div>
+      <p class="muted link-note">
+        네이버가 화면 안에서 보안인증을 요구하면 비어 보일 수 있어요. 그럴 때는 <b>새 탭에서 열기</b>를 눌러 주세요.
+      </p>
     </div>
   </div>
 </div>
