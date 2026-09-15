@@ -1,4 +1,4 @@
 {
  "storeSearchUrl": "https://search.shopping.naver.com/ns/search?query={keyword}",
- "registerApiUrl": ""
+ "registerApiUrl": "https://nspa-external-api.io.naver.com/skb/v2/product/search/result"
 }
