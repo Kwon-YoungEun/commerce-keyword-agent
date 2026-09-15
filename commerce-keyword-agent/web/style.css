@@ -731,13 +731,18 @@ a.store-card:hover { border-color: var(--skb-red); }
 }
 .store-price { font-size: 13.5px; font-weight: 700; letter-spacing: -.01em; }
 .store-sub { font-size: 10.5px; color: var(--text-secondary); }
-.store-actions {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
-}
-
 .modal-store { width: min(1080px, 100%); }
-.store-note { font-size: 11.5px; }
+
+/* 제목 옆, 닫기 버튼 왼쪽에 실행 버튼을 둡니다 */
+.store-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; padding-right: 56px;
+}
+.store-head-text { min-width: 0; }
+.store-head-actions {
+  display: flex; align-items: center; gap: 8px; flex: none;
+  padding-top: 8px; flex-wrap: wrap; justify-content: flex-end;
+}
 
 
 .kw-tag {

@@ -1566,6 +1566,12 @@ function bindEvents() {
   document.getElementById("storeBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "storeBackdrop") closeStoreModal();
   });
+  document.getElementById("btnStoreRegister").addEventListener("click", () => {
+    const k = state.selectedKeyword;
+    if (!k) return;
+    closeStoreModal();          // 등록 창이 위에 겹치지 않게 먼저 닫습니다.
+    registerKeyword(k);
+  });
 
   document.getElementById("bodyClose").addEventListener("click", () => {
     document.getElementById("bodyBackdrop").hidden = true;

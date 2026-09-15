@@ -207,16 +207,18 @@
 <div id="storeBackdrop" class="modal-backdrop" hidden>
   <div class="modal modal-store" role="dialog" aria-modal="true" aria-labelledby="storeTitle">
     <button id="storeClose" class="modal-close" type="button" aria-label="닫기">×</button>
-    <div class="modal-head">
-      <h2 id="storeTitle">네이버+스토어 미리보기</h2>
-      <p id="storeMeta" class="muted"></p>
+    <div class="modal-head store-head">
+      <div class="store-head-text">
+        <h2 id="storeTitle">네이버+스토어 미리보기</h2>
+        <p id="storeMeta" class="muted"></p>
+      </div>
+      <div class="store-head-actions">
+        <a id="storeOpen" class="btn btn-sm" href="#" target="_blank" rel="noopener">네이버+스토어에서 보기 ↗</a>
+        <button id="btnStoreRegister" class="btn btn-line btn-sm" type="button">매뉴얼 키워드 등록</button>
+      </div>
     </div>
     <div class="modal-body">
       <div id="storeResult"></div>
-      <div class="store-actions">
-        <span class="muted store-note">네이버 쇼핑에서 가져온 목록입니다. 실제 화면은 오른쪽 버튼으로 열어 주세요.</span>
-        <a id="storeOpen" class="btn btn-line" href="#" target="_blank" rel="noopener">네이버+스토어에서 보기 ↗</a>
-      </div>
     </div>
   </div>
 </div>
