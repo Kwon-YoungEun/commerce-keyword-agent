@@ -639,49 +639,30 @@ async function renderPreview(k) {
 
 /* ------------------------------------------ 네이버+스토어 미리보기 (3단계) */
 //
-// 진짜 스토어 검색 결과를 그대로 띄웁니다.
-// shopping.naver.com/ns/search 는 검색어를 입력받는 화면이라 결과가 나오지 않고,
-// 결과는 search.shopping.naver.com/ns/search 에 있습니다. 서버에서 가져오는 건
-// 막혀 있지만(405) 브라우저 프레임으로는 열립니다.
-// 다만 이 앱을 감싼 미리보기 브라우저처럼 도메인을 막는 환경이 있어서,
-// 상품 목록으로 바꿔 보는 길을 함께 둡니다.
+// 스토어 화면을 프레임에 그대로 띄워 봤지만, 네이버가 프레임 안에서는 보안인증을
+// 요구해서 쓸 수 없었습니다. 그래서 서버가 가져온 상품 목록을 바로 보여 주고,
+// 진짜 화면이 필요하면 새 탭으로 엽니다(새 탭에서는 인증을 묻지 않습니다).
 
-const STORE_FRAME_URL = "https://search.shopping.naver.com/ns/search?query=";
+const STORE_SEARCH_URL = "https://search.shopping.naver.com/ns/search?query=";
 
-function storeFrameHtml(keyword) {
-  return `<iframe id="storeFrame" class="store-frame" title="네이버+스토어 검색 결과"` +
-    ` referrerpolicy="no-referrer"` +
-    ` src="${STORE_FRAME_URL}${encodeURIComponent(keyword)}"></iframe>`;
+function storeSearchUrl(keyword) {
+  return STORE_SEARCH_URL + encodeURIComponent(keyword);
 }
 
 function openStoreModal(keyword) {
   state.storeKeyword = keyword;
   document.getElementById("storeMeta").textContent = `"${keyword}" 검색 결과`;
-  document.getElementById("storeResult").innerHTML = storeFrameHtml(keyword);
-  document.getElementById("storeOpen").href = STORE_FRAME_URL + encodeURIComponent(keyword);
-
-  const listBtn = document.getElementById("btnStoreList");
-  listBtn.hidden = false;
-  listBtn.textContent = "화면이 비어 있나요? 상품 목록으로 보기";
+  document.getElementById("storeOpen").href = storeSearchUrl(keyword);
+  document.getElementById("storeResult").innerHTML =
+    '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
   document.getElementById("storeBackdrop").hidden = false;
+  loadStoreProducts(keyword);
 }
 
 function closeStoreModal() {
   document.getElementById("storeBackdrop").hidden = true;
-  // 프레임을 비워 뒤에서 계속 돌지 않게 합니다.
   document.getElementById("storeResult").innerHTML = "";
   state.storeKeyword = null;
-}
-
-/** 프레임이 막히는 환경에서 쓰는 대체 화면 — 서버가 가져온 상품 목록. */
-function showStoreList() {
-  const keyword = state.storeKeyword;
-  if (!keyword) return;
-  const btn = document.getElementById("btnStoreList");
-  btn.hidden = true;
-  document.getElementById("storeResult").innerHTML =
-    '<div class="loading"><span class="spinner"></span>상품을 불러오는 중…</div>';
-  loadStoreProducts(keyword);
 }
 
 async function loadStoreProducts(keyword) {
@@ -1585,7 +1566,6 @@ function bindEvents() {
   document.getElementById("storeBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "storeBackdrop") closeStoreModal();
   });
-  document.getElementById("btnStoreList").addEventListener("click", showStoreList);
 
   document.getElementById("bodyClose").addEventListener("click", () => {
     document.getElementById("bodyBackdrop").hidden = true;
