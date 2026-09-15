@@ -940,63 +940,6 @@ async function copyText(text, okMessage) {
   }
 }
 
-function downloadFile(filename, text, mime) {
-  const blob = new Blob([text], { type: mime || "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function buildCurl(body) {
-  const url = (state.config && state.config.registerApiUrl) || "<등록 API 주소를 설정에 넣어 주세요>";
-  const json = bodyToText(body, false).split("'").join("'\\''");
-  return (
-    "curl -X POST '" + url + "' \\\n" +
-    "  -H 'Content-Type: application/json' \\\n" +
-    "  -d '" + json + "'"
-  );
-}
-
-function buildPostmanCollection(body, program) {
-  const url = (state.config && state.config.registerApiUrl) || "";
-  let urlNode;
-  if (url) {
-    const withoutScheme = url.replace(/^https?:\/\//, "");
-    const host = withoutScheme.split("/")[0];
-    const path = withoutScheme.split("/").slice(1).filter(Boolean);
-    urlNode = { raw: url, protocol: url.split("://")[0], host: [host], path: path };
-  } else {
-    urlNode = { raw: "{{baseUrl}}/keyword/manual", host: ["{{baseUrl}}"], path: ["keyword", "manual"] };
-  }
-  return {
-    info: {
-      name: "커머스광고 키워드 등록 - " + program.title,
-      schema: "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    },
-    item: [
-      {
-        name: (program.title + " " + (program.episode || "") + " " + state.bodyDraft.keyword).trim(),
-        request: {
-          method: "POST",
-          header: [{ key: "Content-Type", value: "application/json" }],
-          body: {
-            mode: "raw",
-            raw: bodyToText(body, true),
-            options: { raw: { language: "json" } },
-          },
-          url: urlNode,
-        },
-      },
-    ],
-    variable: url ? [] : [{ key: "baseUrl", value: "https://example.com" }],
-  };
-}
-
 /** 등록 API 로 실제 전송 — 되돌릴 수 없어서 보내기 전에 한 번 확인받습니다.
  *  인증 키는 서버에만 있고 이 코드에는 들어오지 않습니다. */
 async function sendToApi() {
@@ -1018,10 +961,7 @@ async function sendToApi() {
     `아래 내용을 실제 API 로 보냅니다. 되돌릴 수 없어요.\n\n` +
     `주소: ${cfg.registerApiUrl}\n` +
     `프로그램: ${body.programName} (${body.programId || "ID 없음"})\n` +
-    `키워드: ${keyword}\n` +
-    `인증 헤더: ${(cfg.authHeaders || []).length
-      ? cfg.authHeaders.map((h) => h.name).join(", ")
-      : "없음"}`
+    `키워드: ${keyword}`
   );
   if (!ok) return;
 
@@ -1118,11 +1058,18 @@ function openLinkPreview(url, data) {
     ["snapshotId", flat.snapshotId || flat["data.snapshotId"] || ""],
     ["shortUrl", url],
   ];
-  document.getElementById("linkMeta").innerHTML = rows
+  const meta = document.getElementById("linkMeta");
+  meta.innerHTML = rows
     .filter(([, value]) => value)
     .map(([key, value]) =>
-      `<dt>${escapeHtml(key)}</dt><dd>${escapeHtml(value)}</dd>`)
+      `<dt>${escapeHtml(key)}</dt><dd>${escapeHtml(value)}` +
+      (key === "shortUrl"
+        ? ` <button class="btn btn-ghost btn-sm btn-copy-url" type="button">주소 복사</button>`
+        : "") +
+      `</dd>`)
     .join("");
+  const copyBtn = meta.querySelector(".btn-copy-url");
+  if (copyBtn) copyBtn.addEventListener("click", () => copyText(url, "주소를 복사했어요."));
   document.getElementById("linkOpen").href = url;
   document.getElementById("linkFrameBox").innerHTML =
     `<iframe class="store-frame" title="등록 결과 화면" referrerpolicy="no-referrer"` +
@@ -1776,27 +1723,6 @@ function bindEvents() {
   document.getElementById("btnCopyBody").addEventListener("click", () => {
     const body = currentBody();
     if (body) copyText(bodyToText(body, true), "JSON 을 복사했어요. Postman Body(raw)에 붙여 넣으세요.");
-  });
-  document.getElementById("btnDownloadBody").addEventListener("click", () => {
-    const body = currentBody();
-    if (!body) return;
-    downloadFile("keyword-body-" + body.requestId.slice(0, 8) + ".json", bodyToText(body, true));
-    setBodyStatus("JSON 파일을 저장했어요.", "ok");
-  });
-  document.getElementById("btnCopyCurl").addEventListener("click", () => {
-    const body = currentBody();
-    if (!body) return;
-    if (!(state.config && state.config.registerApiUrl)) {
-      setBodyStatus("설정에 등록 API 주소를 넣으면 주소까지 채워집니다.", "bad");
-    }
-    copyText(buildCurl(body), "curl 명령을 복사했어요.");
-  });
-  document.getElementById("btnPostman").addEventListener("click", () => {
-    const body = currentBody();
-    if (!body) return;
-    const collection = buildPostmanCollection(body, state.currentProgram);
-    downloadFile("postman-" + body.requestId.slice(0, 8) + ".json", JSON.stringify(collection, null, 2));
-    setBodyStatus("Postman 컬렉션을 저장했어요. Postman → Import 로 불러오세요.", "ok");
   });
   document.getElementById("btnSendApi").addEventListener("click", sendToApi);
   document.getElementById("linkClose").addEventListener("click", closeLinkPreview);
