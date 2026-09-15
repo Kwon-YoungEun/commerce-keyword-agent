@@ -683,7 +683,11 @@ button.cat.cat-none { border-style: dashed; border-color: var(--border); }
 .modal-ask { width: min(440px, 100%); }
 .modal-ask .modal-head { padding-bottom: 12px; }
 .modal-ask .modal-head h2 { font-size: 16px; margin: 0; }
-.ask-message { margin: 0 0 20px; font-size: 13.5px; line-height: 1.65; }
+/* 줄바꿈을 그대로 살립니다. 긴 주소는 칸 안에서 끊어 줍니다. */
+.ask-message {
+  margin: 0 0 20px; font-size: 13.5px; line-height: 1.65;
+  white-space: pre-line; overflow-wrap: anywhere;
+}
 .ask-actions { display: flex; justify-content: flex-end; gap: 8px; }
 
 /* 방금 등록한 회차를 잠깐 강조합니다. */
