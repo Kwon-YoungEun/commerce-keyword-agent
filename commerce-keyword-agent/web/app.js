@@ -793,6 +793,14 @@ function openBodyModal(k) {
     prettyDate(p.date) + " " + p.start + "~" + p.end +
     (p.episode ? " · " + p.episode : "") + " · 키워드 " + k.keyword;
 
+  // 직전 전송 결과는 지웁니다. 안 지우면 다른 프로그램에서 보낸 결과가
+  // 이 회차의 것처럼 남아 보입니다. 지난 전송은 등록 이력에서 봅니다.
+  const result = document.getElementById("sendResult");
+  result.hidden = true;
+  result.innerHTML = "";
+  state.lastSendData = null;
+  setBodyStatus("", "");
+
   refreshBodyJson();
   document.getElementById("bodyBackdrop").hidden = false;
 }
