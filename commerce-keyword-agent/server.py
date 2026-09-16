@@ -657,7 +657,19 @@ LOG_COLUMNS = LOG_COLUMNS_MAIN + LOG_COLUMNS_TAIL
 
 
 def load_send_log():
-    return _read_json(SEND_LOG, {"items": []}).get("items", [])
+    """기록을 읽으면서 예전 형식을 지금 형식에 맞춰 둡니다.
+
+    칸 이름이 바뀌기 전 기록(keyword)과, 응답에서 snapshotId 를 받아 적기
+    전 기록을 함께 다룹니다. 그때 받은 snapshotId 는 우리가 보낸 requestId 와
+    같은 값이었습니다.
+    """
+    items = _read_json(SEND_LOG, {"items": []}).get("items", [])
+    for item in items:
+        if not item.get("productKeyword") and item.get("keyword"):
+            item["productKeyword"] = item["keyword"]
+        if not item.get("snapshotId") and item.get("requestId"):
+            item["snapshotId"] = item["requestId"]
+    return items
 
 
 def load_performance():
