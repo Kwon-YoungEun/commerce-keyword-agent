@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>등록 이력 예시 화면</title>
+<style>
+:root {
+  --skb-red: #EA002C;
+  --skb-orange: #F47725;
+  --text-primary: #202124;
+  --text-secondary: #5F6368;
+  --bg-page: #F7F8FA;
+  --bg-card: #FFFFFF;
+  --border: #E5E7EB;
+  --status-good: #287D4E;
+  --status-warn: #925000;
+  --status-bad: #B42318;
+
+  --px-per-min: 1.25;
+  --gutter-w: 62px;
+  --radius: 10px;
+  --font: "Pretendard", "Pretendard Variable", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: inherit; }
+code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
+.muted { color: var(--text-secondary); }
+
+/* ------------------------------------------------------------- 상단 바 */
+.topbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+.topbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+
+/* B tv × tvN 콜라보 로고 — 두 로고와 가운데 × 를 하나의 그라데이션으로 잇습니다.
+   글자를 새로 그리지 않고 공식 로고 파일을 마스크로만 씁니다.
+   크기: btv 677x300, tvn 700x283 비율 · 높이 26px 기준 */
+.brand-logo {
+  display: inline-block;
+  flex: none;
+  width: 137px;
+  height: 26px;
+  background: linear-gradient(100deg, #3617CE 0%, #6E12B4 38%, #E2004A 72%, #FA0028 100%);
+  --x-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 2L8 8M8 2L2 8' stroke='%23000' stroke-width='1.9' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-image: url(img/btv.png), var(--x-mark), url(img/tvn.png);
+  mask-image: url(img/btv.png), var(--x-mark), url(img/tvn.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: left center, center center, right center;
+  mask-position: left center, center center, right center;
+  -webkit-mask-size: 59px 26px, 9px 9px, 54px 22px;
+  mask-size: 59px 26px, 9px 9px, 54px 22px;
+}
+.brand-text h1 { margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+.brand-text p { margin: 2px 0 0; font-size: 12.5px; color: var(--text-secondary); }
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+.fetch-info { font-size: 12.5px; color: var(--text-secondary); }
+
+/* --------------------------------------------------------------- 버튼 */
+.btn {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 7px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.btn:hover { background: #F1F2F4; }
+.btn-ghost { color: var(--text-secondary); }
+.btn-line { border-color: var(--skb-red); color: var(--skb-red); font-weight: 600; }
+.btn-line:hover { background: #FEF1F3; }
+.btn-icon {
+  width: 34px; height: 34px; padding: 0;
+  font-size: 20px; line-height: 1; color: var(--text-secondary);
+}
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+/* ------------------------------------------------------------ 페이지 */
+.page { max-width: 1440px; margin: 0 auto; padding: 20px 24px 48px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.week-nav { display: flex; align-items: center; gap: 10px; }
+.week-label { min-width: 230px; text-align: center; }
+.week-label strong { display: block; font-size: 15.5px; letter-spacing: -.01em; }
+.week-label span { font-size: 12px; }
+
+.legend { display: flex; gap: 16px; flex-wrap: wrap; }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-secondary); }
+.swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--border); }
+.swatch-live { background: #FDE7EB; border-color: var(--skb-red); }
+.swatch-rerun { background: #F3F4F6; border-color: #D3D6DB; }
+.swatch-registered { background: #FFF1E6; border-color: var(--skb-orange); }
+
+.notice {
+  border: 1px solid #F2D6A9;
+  background: #FFF8EC;
+  color: var(--status-warn);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.foot-note { margin: 14px 2px 0; font-size: 12px; color: var(--text-secondary); }
+
+/* ------------------------------------------------------------ 캘린더 */
+.calendar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  /* hidden 을 쓰면 안쪽 sticky(요일 헤더)가 동작하지 않습니다. clip 은 잘라내되
+     스크롤 컨테이너를 만들지 않아 헤더가 화면에 계속 붙어 있습니다. */
+  overflow: clip;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, .05);
+}
+
+.calendar-head {
+  display: grid;
+  grid-template-columns: var(--gutter-w) 1fr;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  position: sticky;
+  /* 상단 바 높이는 창 너비에 따라 달라져서 JS 가 실제 값을 넣어 줍니다. */
+  top: var(--topbar-h, 63px);
+  z-index: 20;
+  /* 위쪽: 상단 바와의 1px 이음새를 카드 색으로 덮습니다.
+     아래쪽: 편성 블록이 헤더 밑으로 지나간다는 게 보이도록 옅은 그림자를 둡니다. */
+  box-shadow: 0 -10px 0 var(--bg-card), 0 5px 6px -5px rgba(16, 24, 40, .28);
+}
+.time-gutter-head { border-right: 1px solid var(--border); }
+.day-head-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+
+.day-head {
+  padding: 9px 8px 10px;
+  text-align: center;
+  border-left: 1px solid var(--border);
+  min-width: 0;
+}
+.day-head:first-child { border-left: none; }
+.day-head .wk { font-size: 12px; color: var(--text-secondary); }
+.day-head .dd { font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
+.day-head.is-sat .wk, .day-head.is-sat .dd { color: #1D4ED8; }
+.day-head.is-sun .wk, .day-head.is-sun .dd { color: var(--skb-red); }
+.day-head.is-today { background: #FEF1F3; box-shadow: inset 0 -2px 0 var(--skb-red); }
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: var(--gutter-w) 1fr;
+  position: relative;
+  /* 화면 위쪽은 05:30 에서 잘리게 두고, 아래 끝 라벨만 여백을 줍니다. */
+  padding: 0 0 12px;
+}
+
+.time-gutter { border-right: 1px solid var(--border); position: relative; background: #FCFCFD; }
+.time-gutter .hour {
+  position: absolute;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.day-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+
+.day-col {
+  position: relative;
+  border-left: 1px solid var(--border);
+  min-width: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #EEF0F3 0, #EEF0F3 1px,
+    transparent 1px, transparent calc(60 * var(--px-per-min))
+  );
+  /* 화면이 05:30 부터 시작하므로 눈금선도 그만큼 끌어올립니다. */
+  background-position: 0 calc(-30 * var(--px-per-min));
+}
+.day-col:first-child { border-left: none; }
+.day-col.is-today { background-color: #FFFAFB; }
+.day-col.is-empty::after {
+  content: "편성 데이터 없음";
+  position: absolute;
+  top: 24px; left: 0; right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #9AA0A6;
+}
+
+.now-line { position: absolute; left: 0; right: 0; height: 2px; background: var(--skb-red); z-index: 6; }
+.now-line::before {
+  content: ""; position: absolute; left: -4px; top: -3px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--skb-red);
+}
+
+/* 프로그램 블록 */
+.pgm {
+  position: absolute;
+  left: 3px; right: 3px;
+  border: 1px solid #D3D6DB;
+  border-left: 3px solid #B0B4BA;
+  border-radius: 6px;
+  background: #F7F8FA;
+  padding: 4px 7px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  display: block;
+  transition: box-shadow .12s, transform .12s;
+}
+.pgm:hover { box-shadow: 0 3px 10px rgba(16, 24, 40, .16); z-index: 8; }
+.pgm:focus-visible { outline: 2px solid var(--skb-red); outline-offset: 1px; }
+.pgm.is-live { background: #FDF0F3; border-color: #F3C2CC; border-left-color: var(--skb-red); }
+.pgm.is-registered { background: #FFF6EE; border-color: #F6CFAC; border-left-color: var(--skb-orange); }
+.pgm .t { font-size: 11px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.pgm .n {
+  font-size: 12.5px; font-weight: 600; letter-spacing: -.02em;
+  line-height: 1.3; margin-top: 1px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.pgm .e { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+.pgm.is-short { padding: 2px 6px; }
+.pgm.is-short .n { -webkit-line-clamp: 1; font-size: 11.5px; }
+.pgm.is-short .e { display: none; }
+.pgm-flag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 0 4px; border-radius: 3px; margin-right: 4px;
+  background: var(--skb-red); color: #fff; vertical-align: 1px;
+}
+.pgm-keys { margin-top: 3px; display: flex; flex-wrap: wrap; gap: 2px; }
+.pgm-key {
+  display: inline-block; max-width: 100%;
+  font-size: 10px; font-weight: 600; line-height: 1.4;
+  padding: 0 4px; border-radius: 3px;
+  background: var(--skb-orange); color: #fff;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pgm-key.is-more { background: #F6CFAC; color: #7A3D06; }
+.pgm.is-short .pgm-keys { display: none; }
+
+/* -------------------------------------------------------------- 팝업 */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(16, 24, 40, .45);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.modal {
+  background: var(--bg-card);
+  border-radius: 14px;
+  width: min(860px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 18px 48px rgba(16, 24, 40, .28);
+}
+.modal-close {
+  position: absolute; top: 12px; right: 14px;
+  border: none; background: transparent; font-size: 26px; line-height: 1;
+  color: var(--text-secondary); cursor: pointer;
+}
+.modal-head { padding: 22px 26px 16px; border-bottom: 1px solid var(--border); }
+.modal-head h2 { margin: 6px 0 2px; font-size: 19px; letter-spacing: -.02em; }
+.modal-body { padding: 20px 26px 26px; }
+.badge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 999px;
+  background: #FDE7EB; color: var(--skb-red);
+}
+.badge.is-rerun { background: #F1F2F4; color: var(--text-secondary); }
+
+.placeholder {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  background: #FCFCFD;
+}
+
+@media (max-width: 900px) {
+  .page { padding: 16px 12px 40px; }
+  .pgm .e { display: none; }
+}
+
+/* ------------------------------------------------------- 키워드 분석 팝업 */
+.modal { width: min(1080px, 100%); }
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+/* 되돌릴 수 없는 외부 전송 — 다른 버튼과 구분되게 둡니다 */
+/* 전송 응답 — 원문을 그대로 늘어놓지 않고 표로 정리합니다 */
+.send-result {
+  margin-top: 12px; padding: 13px 15px;
+  border: 1px solid var(--border); border-radius: 10px; background: #FCFCFD;
+}
+.send-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 12px; }
+.send-badge {
+  font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
+}
+.send-badge.is-ok { background: #E4F3EA; color: var(--status-good); }
+.send-badge.is-bad { background: #FDE7EB; color: var(--status-bad); }
+.send-links { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 11px; }
+.send-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.send-table th, .send-table td {
+  padding: 6px 9px; border-bottom: 1px solid var(--border);
+  text-align: left; vertical-align: top;
+}
+.send-table th {
+  width: 190px; color: var(--text-secondary); font-weight: 600;
+  font-family: Consolas, monospace; font-size: 11.5px; word-break: break-all;
+}
+.send-table td { word-break: break-all; }
+.send-table tr:last-child th, .send-table tr:last-child td { border-bottom: none; }
+.send-raw {
+  margin: 0; padding: 10px; border-radius: 8px; background: #F1F2F4;
+  font-family: Consolas, monospace; font-size: 11.5px; line-height: 1.6;
+  white-space: pre-wrap; word-break: break-all; max-height: 240px; overflow: auto;
+}
+.link-note { font-size: 11.5px; margin: 10px 0 0; }
+.store-frame {
+  width: 100%; height: 58vh; min-height: 360px; display: block;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card);
+}
+/* 머리글에는 snapshotId 와 shortUrl 만 둡니다 */
+.link-meta {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 14px;
+  margin: 0; min-width: 0; font-size: 12px;
+}
+.link-meta dt {
+  color: var(--text-secondary); font-family: Consolas, monospace; font-size: 11.5px;
+}
+.link-meta dd { margin: 0; word-break: break-all; }
+
+/* 등록 이력 — 칸이 많아 가로로 스크롤합니다 */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+.tab {
+  border: none; background: none; cursor: pointer; font-family: inherit;
+  padding: 8px 14px; font-size: 13px; color: var(--text-secondary);
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.tab:hover { color: var(--text-primary); }
+.tab.is-on { color: var(--skb-red); font-weight: 700; border-bottom-color: var(--skb-red); }
+.history-table td.is-keyword { font-weight: 600; }
+.history-filter {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  font-size: 12.5px;
+}
+.history-filter label { color: var(--text-secondary); }
+.history-filter select {
+  font-family: inherit; font-size: 12.5px; padding: 5px 9px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg-card); color: var(--text-primary);
+  max-width: 320px;
+}
+.history-wrap { overflow-x: auto; max-height: 62vh; overflow-y: auto; }
+.history-table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+.history-table th, .history-table td {
+  padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: left;
+}
+.history-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--bg-page); font-size: 11.5px; color: var(--text-secondary);
+}
+.history-table th.is-perf, .history-table td.is-perf { background: #FFF8F2; }
+.history-table thead th.is-perf { background: #FDEFE2; color: var(--status-warn); }
+/* 식별자는 참고용이라 흐리게 둡니다 */
+.history-table td.is-id { color: var(--text-secondary); font-size: 11px; }
+.history-table tbody tr:hover td { background: #FAFBFC; }
+.history-table a { color: var(--text-primary); }
+.history-table a:hover { color: var(--skb-red); }
+
+.field-sub {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 7px; flex-wrap: wrap;
+}
+.btn-send { border-color: var(--skb-orange); color: var(--skb-orange); font-weight: 600; }
+.btn-send:hover { background: #FFF6F0; }
+
+.analysis { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; }
+.analysis-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; margin-bottom: 8px;
+}
+.analysis-head h3 { margin: 0; font-size: 14px; letter-spacing: -.01em; }
+.analysis-meta { font-size: 12px; margin: 0 0 12px; line-height: 1.9; }
+/* 검색어는 한글이라 고정폭 글꼴을 쓰면 늘어져 보입니다. */
+.qtag {
+  display: inline-block; margin: 0 4px 0 0; padding: 1px 7px;
+  border: 1px solid var(--border); border-radius: 999px;
+  background: var(--bg-page); font-size: 11.5px; color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.keyword-list { display: flex; flex-direction: column; gap: 8px; }
+
+.kw {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  padding: 9px 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color .12s, background .12s;
+}
+.kw:hover { border-color: var(--skb-red); background: #FEFAFB; }
+.kw.is-active {
+  border-color: var(--skb-red); background: #FEF1F3;
+  box-shadow: inset 3px 0 0 var(--skb-red);
+  border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+}
+.kw-main { min-width: 0; }
+.kw-name { font-size: 13.5px; font-weight: 600; letter-spacing: -.01em; }
+.kw-sub { font-size: 11.5px; color: var(--text-secondary); margin-top: 2px; }
+.kw-side { display: flex; align-items: center; gap: 8px; }
+
+.cat {
+  font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 999px;
+  background: #F1F2F4; color: var(--text-secondary); white-space: nowrap;
+}
+.cat-식품 { background: #FDECEF; color: var(--skb-red); }
+.cat-패션 { background: #FFF1E6; color: #A4520F; }
+.cat-뷰티 { background: #FDECEF; color: #9B1B36; }
+.cat-리빙 { background: #EEF2F6; color: #40566D; }
+.cat-디지털 { background: #EEF2F6; color: #40566D; }
+
+.score-bar { width: 54px; height: 6px; border-radius: 3px; background: #EDEFF2; overflow: hidden; }
+.score-bar i { display: block; height: 100%; background: var(--skb-red); }
+.kw.is-generic .score-bar i { background: #B0B4BA; }
+
+.demand-tag {
+  font-size: 10.5px; color: var(--status-good); font-weight: 600; white-space: nowrap;
+}
+
+.analysis-right { border-left: 1px solid var(--border); padding-left: 20px; }
+
+/* 키워드 블록 바로 아래에 펼쳐지는 상세 */
+.preview-panel {
+  border: 1px solid var(--skb-red);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 14px 14px 13px;
+  margin: -9px 0 2px;          /* 위 블록과 맞붙게 */
+  background: #FFFBFB;
+}
+
+.loading { display: flex; align-items: center; gap: 9px; color: var(--text-secondary); font-size: 13px; padding: 18px 0; }
+.spinner {
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 2px solid #E3E6EA; border-top-color: var(--skb-red);
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 860px) {
+  .analysis { grid-template-columns: 1fr; }
+  .analysis-right { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 16px; }
+}
+
+/* --------------------------------------------------------------- 설정 팝업 */
+.modal-narrow { width: min(520px, 100%); }
+.field { display: block; margin-bottom: 14px; }
+.field > span { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
+.field input {
+  width: 100%; padding: 8px 11px; font-size: 13px; font-family: inherit;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card); color: var(--text-primary);
+}
+.field input:focus { outline: none; border-color: var(--skb-red); }
+.field small { display: block; margin-top: 5px; font-size: 11.5px; }
+.field-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.how-to { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 14px; font-size: 12.5px; color: var(--text-secondary); }
+.how-to summary { cursor: pointer; font-weight: 600; color: var(--text-primary); }
+.how-to ol { margin: 10px 0 0; padding-left: 18px; line-height: 1.8; }
+.how-to a { color: var(--skb-red); }
+
+/* ------------------------------------------------------- 스토어 미리보기 */
+.preview-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.preview-kw { font-size: 14px; font-weight: 700; letter-spacing: -.01em; }
+.preview-total { font-size: 12px; color: var(--text-secondary); }
+.preview-open { font-size: 12px; color: var(--skb-red); font-weight: 600; text-decoration: none; }
+.preview-open:hover { text-decoration: underline; }
+
+.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.product {
+  border: 1px solid var(--border); border-radius: 9px; overflow: hidden;
+  background: var(--bg-card); text-decoration: none; color: inherit; display: block;
+}
+.product:hover { border-color: var(--skb-orange); }
+.product .thumb {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: #F1F2F4;
+}
+.product .body { padding: 7px 8px 9px; }
+.product .nm {
+  font-size: 11.5px; line-height: 1.35; letter-spacing: -.02em;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.product .pr { font-size: 12.5px; font-weight: 700; margin-top: 4px; }
+.product .ml { font-size: 10.5px; color: var(--text-secondary); margin-top: 2px; }
+
+.preview-actions { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.cfg-status { font-size: 12px; line-height: 1.5; flex: 1; }
+.cfg-status.is-ok { color: var(--status-good); font-weight: 600; }
+.cfg-status.is-bad { color: var(--status-bad); }
+.field-actions { align-items: flex-start; }
+
+/* ------------------------------------------------------- 키워드 점검 패널 */
+.check-block { margin-bottom: 16px; }
+.check-block h4 { margin: 0 0 7px; font-size: 12.5px; letter-spacing: -.01em; }
+.check-block h4 small { font-weight: 400; color: var(--text-secondary); margin-left: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 11.5px; padding: 3px 9px; border-radius: 999px;
+  background: #F3F4F6; color: var(--text-secondary); border: 1px solid var(--border);
+}
+.evidence { margin: 0; padding-left: 16px; font-size: 12px; line-height: 1.7; color: var(--text-secondary); }
+.evidence a { color: var(--text-primary); }
+.evidence a:hover { color: var(--skb-red); }
+
+/* --------------------------------------------------- 등록 대상 트레이 (4단계) */
+.tray {
+  margin-top: 20px; padding: 14px 16px;
+  border: 1px solid #F3C2CC; border-radius: 10px; background: #FEF7F8;
+}
+.tray-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 9px; }
+.tray-head strong { font-size: 13px; }
+.tray-head span { font-size: 12px; }
+.tray .chips { margin-bottom: 12px; }
+.tray .chip { background: #fff; border-color: #F3C2CC; color: var(--text-primary); }
+.tray .chip button {
+  border: none; background: none; cursor: pointer; color: var(--text-secondary);
+  margin-left: 5px; padding: 0; font-size: 13px; line-height: 1;
+}
+.tray-actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+.registered-box {
+  margin-top: 16px; padding: 12px 14px;
+  border: 1px solid var(--border); border-radius: 10px; background: #FCFCFD;
+  font-size: 12.5px;
+}
+.registered-box h4 { margin: 0 0 8px; font-size: 12.5px; }
+.registered-box ul { margin: 0; padding-left: 16px; line-height: 1.9; color: var(--text-secondary); }
+.registered-box button {
+  border: none; background: none; color: var(--status-bad);
+  cursor: pointer; font-size: 11.5px; margin-left: 6px; padding: 0;
+}
+
+/* --------------------------------------------------- JSON body 팝업 (4·5단계) */
+.modal-wide { width: min(760px, 100%); }
+.body-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.body-opts {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; margin: 4px 0 12px;
+}
+.check { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; cursor: pointer; }
+.check input { width: 15px; height: 15px; accent-color: var(--skb-red); }
+
+.json-box, .id-box {
+  width: 100%; border: 1px solid var(--border); border-radius: 9px;
+  padding: 12px 13px; background: #FCFCFD; color: var(--text-primary);
+  font-family: "D2Coding", Consolas, monospace; font-size: 12px; line-height: 1.6;
+  resize: vertical;
+}
+.json-box { min-height: 300px; }
+.id-box { min-height: 84px; font-size: 12px; }
+.json-box:focus, .id-box:focus { outline: none; border-color: var(--skb-red); }
+.json-error { margin: 8px 0 0; font-size: 12px; color: var(--status-bad); }
+
+.body-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.body-status { font-size: 12px; margin: 10px 0 0; min-height: 18px; }
+.body-status.is-ok { color: var(--status-good); font-weight: 600; }
+.body-status.is-bad { color: var(--status-bad); }
+
+@media (max-width: 620px) {
+  .body-fields { grid-template-columns: 1fr; }
+}
+
+
+/* ------------------------------------------------ 편성 프로그램 ID 표 */
+.input-row { display: flex; gap: 6px; align-items: center; }
+.input-row input { flex: 1; min-width: 0; }
+
+.pid-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.pid-table th, .pid-table td {
+  padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle;
+}
+.pid-table th {
+  font-size: 12px; color: var(--text-secondary); font-weight: 600;
+  border-bottom: 1px solid #D3D6DB; position: sticky; top: 0; background: var(--bg-card);
+}
+.pid-table td:first-child { letter-spacing: -.01em; }
+.pid-table .col-num { width: 64px; text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.pid-table td:last-child { width: 260px; }
+.pid-table input {
+  width: 100%; padding: 5px 9px; font-size: 12.5px; font-family: inherit;
+  border: 1px solid var(--border); border-radius: 7px; background: var(--bg-card); color: var(--text-primary);
+}
+.pid-table input:focus { outline: none; border-color: var(--skb-red); }
+.pid-table tr.is-missing td:first-child { color: var(--text-secondary); }
+.pid-table tr.is-missing input { border-color: #F2D6A9; background: #FFFCF6; }
+.pid-table .cat { margin-left: 6px; }
+
+.field input.is-locked {
+  background: #F1F2F4;
+  color: var(--text-secondary);
+  cursor: default;
+}
+.field input.is-locked:focus { border-color: var(--border); }
+
+.pid-table input.is-locked {
+  background: #F1F2F4;
+  color: var(--text-secondary);
+  cursor: default;
+}
+.pid-table tr.is-missing input.is-locked { background: #F1F2F4; }
+.pid-table input.is-locked:focus { border-color: var(--border); }
+
+.cat-드라마 { background: #FDECEF; color: #9B1B36; }
+.cat-예능 { background: #FFF1E6; color: #A4520F; }
+.cat-교양 { background: #EEF2F6; color: #40566D; }
+.cat-브랜디드 { background: #FDE7EB; color: var(--skb-red); }
+.cat-none { background: transparent; color: #9AA0A6; border: 1px dashed var(--border); font-weight: 400; }
+
+/* ----------------------------------------------------- 장르 직접 지정 */
+.name-cell { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+button.cat { border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+button.cat:hover { filter: brightness(0.96); border-color: currentColor; }
+button.cat.cat-none { border-style: dashed; border-color: var(--border); }
+
+.genre-picker {
+  position: fixed; z-index: 200;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, .16);
+  padding: 6px; display: flex; flex-direction: column; min-width: 138px;
+}
+.genre-opt {
+  border: none; background: none; text-align: left; cursor: pointer;
+  padding: 7px 10px; border-radius: 7px; font-size: 12.5px; font-family: inherit;
+  color: var(--text-primary);
+}
+.genre-opt:hover { background: #F1F2F4; }
+.genre-opt.is-current { color: var(--skb-red); font-weight: 700; }
+.genre-opt.is-reset {
+  border-top: 1px solid var(--border); margin-top: 4px; padding-top: 9px;
+  color: var(--text-secondary); font-size: 12px;
+}
+
+/* ------------------------------------------------------------- 상단 알림 */
+.toast {
+  position: fixed;
+  top: 18px; left: 50%;
+  transform: translate(-50%, -12px);
+  z-index: 300;
+  max-width: min(680px, calc(100vw - 32px));
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #202124;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, .3);
+  opacity: 0;
+  transition: opacity .22s ease, transform .22s ease;
+}
+.toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+.toast.is-ok { background: var(--status-good); }
+.toast.is-bad { background: var(--status-bad); }
+
+.field input.is-blocked {
+  border-color: var(--status-bad);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, .14);
+}
+
+/* ------------------------------------------------------------- 확인창 */
+.ask-backdrop { z-index: 400; }
+.modal-ask { width: min(440px, 100%); }
+.modal-ask .modal-head { padding-bottom: 12px; }
+.modal-ask .modal-head h2 { font-size: 16px; margin: 0; }
+/* 줄바꿈을 그대로 살립니다. 긴 주소는 칸 안에서 끊어 줍니다. */
+.ask-message {
+  margin: 0 0 20px; font-size: 13.5px; line-height: 1.65;
+  white-space: pre-line; overflow-wrap: anywhere;
+}
+.ask-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* 방금 등록한 회차를 잠깐 강조합니다. */
+.pgm.is-flash {
+  outline: 2px solid var(--skb-orange);
+  outline-offset: 1px;
+  animation: airing-flash 2.4s ease-out;
+  z-index: 9;
+}
+@keyframes airing-flash {
+  0%, 30% { box-shadow: 0 0 0 6px rgba(244, 119, 37, .28); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 119, 37, 0); }
+}
+
+/* ------------------------------------------------------------- 방송 요약 */
+.summary-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #FCFCFD;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+.summary-box h3 { margin: 0 0 8px; font-size: 12.5px; letter-spacing: -.01em; }
+.sum-row { display: flex; gap: 10px; font-size: 12.5px; line-height: 1.6; margin-bottom: 4px; }
+.sum-key {
+  flex: none; width: 30px; color: var(--text-secondary);
+  font-size: 11.5px; padding-top: 1px;
+}
+.sum-val { min-width: 0; }
+.sum-val a { color: var(--text-primary); }
+.sum-val a:hover { color: var(--skb-red); }
+.sum-note { margin: 8px 0 0; font-size: 11px; color: var(--text-secondary); }
+
+
+/* 회차 확인용 썸네일 — 뽑힌 키워드가 맞는지 눈으로 되짚어 보는 자리 */
+.gallery-head { font-size: 11.5px; margin: 0 0 10px; }
+.gallery-grid { display: flex; flex-direction: column; gap: 8px; }
+/* 제목이 잘리지 않도록 썸네일을 왼쪽에 두고 옆으로 제목을 펼칩니다. */
+.gallery-item {
+  display: grid; grid-template-columns: 124px 1fr;
+  align-items: start; gap: 10px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg-card); padding: 7px; text-decoration: none;
+  color: var(--text-primary);
+}
+a.gallery-item:hover { border-color: var(--skb-red); }
+.gallery-thumb {
+  position: relative; display: block;
+  aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden;
+  background: var(--bg-page);
+}
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-badge {
+  position: absolute; left: 4px; bottom: 4px;
+  background: rgba(32, 33, 36, .78); color: #fff;
+  font-size: 10px; line-height: 1; padding: 3px 5px; border-radius: 4px;
+}
+.gallery-text { min-width: 0; }
+.gallery-title {
+  font-size: 12px; line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.gallery-sub { font-size: 10.5px; color: var(--text-secondary); margin-top: 3px; display: block; }
+
+
+/* --------------------------------------- 네이버+스토어 미리보기 팝업 */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.store-card {
+  display: flex; flex-direction: column; gap: 4px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--bg-card); padding: 8px;
+  text-decoration: none; color: var(--text-primary);
+}
+a.store-card:hover { border-color: var(--skb-red); }
+.store-thumb {
+  position: relative; display: block;
+  aspect-ratio: 1 / 1; border-radius: 7px; overflow: hidden;
+  background: var(--bg-page); margin-bottom: 3px;
+}
+.store-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.store-ad {
+  position: absolute; left: 5px; top: 5px;
+  background: rgba(32, 33, 36, .78); color: #fff;
+  font-size: 10px; line-height: 1; padding: 3px 5px; border-radius: 4px;
+}
+.store-name {
+  font-size: 12px; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.store-price { font-size: 13.5px; font-weight: 700; letter-spacing: -.01em; }
+.store-sub { font-size: 10.5px; color: var(--text-secondary); }
+.modal-store { width: min(1080px, 100%); }
+
+/* 제목과 설명을 한 줄에 두고 오른쪽에 실행 버튼 — 머리글을 얇게 유지합니다 */
+.store-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 58px 13px 22px;
+}
+.store-head-text {
+  display: flex; align-items: baseline; gap: 9px;
+  flex-wrap: wrap; min-width: 0;
+}
+.modal-store .modal-head h2 { margin: 0; font-size: 15px; letter-spacing: -.01em; }
+.modal-store #storeMeta { margin: 0; font-size: 12px; }
+.modal-store .modal-close { top: 8px; right: 12px; font-size: 22px; }
+.modal-store .modal-body { padding: 16px 22px 22px; }
+.store-head-actions {
+  display: flex; align-items: center; gap: 7px; flex: none;
+}
+/* 아이콘이 든 버튼과 글자만 있는 버튼의 높이를 맞춥니다 */
+.store-head-actions .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 28px; line-height: 1;
+}
+/* 네이버+스토어 공식 아이콘 — 원본 비율(324x162) 그대로 씁니다 */
+.store-link { gap: 6px; }
+.nps-icon { width: 30px; height: 15px; display: block; flex: none; }
+
+
+.kw-tag {
+  font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; white-space: nowrap;
+}
+.kw-tag.is-official { background: #FDE7EB; color: var(--skb-red); }
+.kw-tag.is-cross { background: #E8F3EC; color: var(--status-good); }
+
+body { background: var(--bg-page); padding: 28px 26px 40px; }
+h1 { font-size: 18px; margin: 0 0 5px; }
+.lead { font-size: 12.5px; color: var(--text-secondary); margin: 0 0 26px; }
+.shot { margin-bottom: 34px; }
+.shot .modal { position: relative; max-height: none; width: 100%;
+               box-shadow: 0 6px 22px rgba(16,24,40,.12); }
+.shot .history-wrap { max-height: none; }
+.shot-label { font-size: 13.5px; font-weight: 700; margin: 0 0 4px; }
+.shot-desc { font-size: 12px; color: var(--text-secondary); margin: 0 0 10px; }
+.foot { font-size: 11.5px; color: var(--text-secondary); }
+</style></head><body>
+
+<h1>등록 이력 예시 화면</h1>
+<p class="lead">키워드 20건이 등록된 상태를 가정한 가안입니다.
+실제 API 는 호출하지 않았고, 프로그램·키워드·수치는 임의로 넣었습니다.</p>
+
+<p class="shot-label">현재 등록 현황</p>
+<p class="shot-desc">지금 어느 편성에 어떤 키워드가 걸려 있는지. 오른쪽 주황색이 올린 실적 CSV 에서 붙은 값입니다.</p>
+<div class="shot">
+<div class="modal modal-store">
+  <button class="modal-close" type="button">&times;</button>
+  <div class="modal-head store-head">
+    <div class="store-head-text">
+      <h2>등록 이력</h2>
+      <p class="muted">키워드가 걸린 편성 20개 · 앞뒤 2주 · 실적 106회차</p>
+    </div>
+    <div class="store-head-actions"><button class="btn btn-ghost btn-sm" type="button">실적 CSV 올리기</button>
+      <a class="btn btn-line btn-sm" href="#">CSV 내려받기</a>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="tabs">
+      <button class="tab is-on" type="button">현재 등록 현황</button>
+      <button class="tab" type="button">전송 이력</button>
+    </div>
+    <div class="history-filter"><label>프로그램</label><select><option>전체 (20건)</option><option>남겨서 뭐하게 (1건)</option><option>너의 몸소리가 들려 (1건)</option><option>놀라운 토요일 (2건)</option><option>로또 1등도 출근합니다 (2건)</option><option>벌거벗은 세계사 (1건)</option><option>스트릿 월드 파이터 (2건)</option><option>시간관찰자 (1건)</option><option>식스센스 시티투어 (1건)</option><option>식스센스: B사이드 (1건)</option><option>신사장 프로젝트 (1건)</option><option>언니네 산지직송3 (3건)</option><option>우주떡집 (2건)</option><option>적과의 동거 (1건)</option><option>포핸즈 (1건)</option></select></div>
+    <div class="history-wrap"><table class="history-table"><thead><tr><th>방송일</th><th>방송시각</th><th>전송시각</th><th>프로그램</th><th>회차</th><th>키워드</th><th class="is-perf">결과화면 노출 PV</th><th class="is-perf">문자받기 클릭 PV</th><th class="is-perf">문자받기 클릭률 % (PV)</th></tr></thead><tbody><tr><td>2026.09.16</td><td>20:10, 01:30</td><td>2026.09.16 19:42</td><td>언니네 산지직송3</td><td>8회</td><td class="is-keyword">하동 녹차</td><td class="is-perf">18,420</td><td class="is-perf">512</td><td class="is-perf">2.78</td></tr><tr><td>2026.09.15</td><td>13:10, 20:10</td><td>2026.09.15 12:05</td><td>언니네 산지직송3</td><td>7회</td><td class="is-keyword">섬진강 재첩</td><td class="is-perf">24,180</td><td class="is-perf">806</td><td class="is-perf">3.33</td></tr><tr><td>2026.09.14</td><td>15:20</td><td>2026.09.14 14:30</td><td>로또 1등도 출근합니다</td><td>2회</td><td class="is-keyword">스탠딩 책상</td><td class="is-perf">9,640</td><td class="is-perf">214</td><td class="is-perf">2.22</td></tr><tr><td>2026.09.13</td><td>16:25, 23:40</td><td>2026.09.13 15:10</td><td>로또 1등도 출근합니다</td><td>1회</td><td class="is-keyword">[프롬바이오] 위건강엔 매스틱</td><td class="is-perf">31,250</td><td class="is-perf">1,184</td><td class="is-perf">3.79</td></tr><tr><td>2026.09.13</td><td>19:40</td><td>2026.09.13 18:20</td><td>놀라운 토요일</td><td>434회</td><td class="is-keyword">파김치</td><td class="is-perf">27,890</td><td class="is-perf">942</td><td class="is-perf">3.38</td></tr><tr><td>2026.09.12</td><td>11:20</td><td>2026.09.12 10:35</td><td>우주떡집</td><td>7회</td><td class="is-keyword">수제 약과</td><td class="is-perf">7,310</td><td class="is-perf">168</td><td class="is-perf">2.3</td></tr><tr><td>2026.09.12</td><td>21:00, 02:15</td><td>2026.09.12 20:05</td><td>벌거벗은 세계사</td><td>272회</td><td class="is-keyword">세계사 도서 세트</td><td class="is-perf">12,760</td><td class="is-perf">397</td><td class="is-perf">3.11</td></tr><tr><td>2026.09.11</td><td>22:30</td><td>2026.09.11 21:15</td><td>스트릿 월드 파이터</td><td>5회</td><td class="is-keyword">스포츠 이어폰</td><td class="is-perf">15,920</td><td class="is-perf">603</td><td class="is-perf">3.79</td></tr><tr><td>2026.09.11</td><td>17:40</td><td>2026.09.11 16:50</td><td>식스센스: B사이드</td><td>1회</td><td class="is-keyword">수원 통닭</td><td class="is-perf">10,480</td><td class="is-perf">288</td><td class="is-perf">2.75</td></tr><tr><td>2026.09.10</td><td>20:45</td><td>2026.09.10 19:30</td><td>너의 몸소리가 들려</td><td>75회</td><td class="is-keyword">마사지건</td><td class="is-perf">21,340</td><td class="is-perf">915</td><td class="is-perf">4.29</td></tr><tr><td>2026.09.10</td><td>14:20, 03:05</td><td>2026.09.10 13:40</td><td>남겨서 뭐하게</td><td>59회</td><td class="is-keyword">밀폐용기 세트</td><td class="is-perf">8,970</td><td class="is-perf">201</td><td class="is-perf">2.24</td></tr><tr><td>2026.09.09</td><td>19:00</td><td>2026.09.09 18:10</td><td>신사장 프로젝트</td><td>2회</td><td class="is-keyword">캠핑 의자</td><td class="is-perf">13,650</td><td class="is-perf">489</td><td class="is-perf">3.58</td></tr><tr><td>2026.09.09</td><td>11:20, 01:05</td><td>2026.09.09 10:25</td><td>언니네 산지직송3</td><td>6회</td><td class="is-keyword">태안 바지락</td><td class="is-perf">19,730</td><td class="is-perf">671</td><td class="is-perf">3.4</td></tr><tr><td>2026.09.08</td><td>16:05</td><td>2026.09.08 15:20</td><td>포핸즈</td><td>3회</td><td class="is-keyword">피아노 교재</td><td class="is-perf">5,420</td><td class="is-perf">96</td><td class="is-perf">1.77</td></tr><tr><td>2026.09.08</td><td>21:50</td><td>2026.09.08 20:40</td><td>적과의 동거</td><td>4회</td><td class="is-keyword">공기청정기</td><td class="is-perf">16,880</td><td class="is-perf">724</td><td class="is-perf">4.29</td></tr><tr><td>2026.09.07</td><td>20:00</td><td>2026.09.07 19:05</td><td>시간관찰자</td><td>2회</td><td class="is-keyword">스마트워치</td><td class="is-perf">22,410</td><td class="is-perf">1,032</td><td class="is-perf">4.6</td></tr><tr><td>2026.09.07</td><td>13:30, 22:10</td><td>2026.09.07 12:45</td><td>놀라운 토요일</td><td>433회</td><td class="is-keyword">가브리살수육</td><td class="is-perf">29,650</td><td class="is-perf">1,088</td><td class="is-perf">3.67</td></tr><tr><td>2026.09.06</td><td>18:15</td><td>2026.09.06 17:30</td><td>식스센스 시티투어</td><td>7회</td><td class="is-keyword">인천 밴댕이회</td><td class="is-perf">11,290</td><td class="is-perf">342</td><td class="is-perf">3.03</td></tr><tr><td>2026.09.06</td><td>10:40</td><td>2026.09.06 09:55</td><td>우주떡집</td><td>6회</td><td class="is-keyword">미미 슈림프버거</td><td class="is-perf">9,180</td><td class="is-perf">255</td><td class="is-perf">2.78</td></tr><tr><td>2026.09.05</td><td>22:00</td><td>2026.09.05 21:10</td><td>스트릿 월드 파이터</td><td>4회</td><td class="is-keyword">댄스화</td><td class="is-perf">14,070</td><td class="is-perf">468</td><td class="is-perf">3.33</td></tr></tbody></table></div>
+  </div>
+</div></div>
+
+<p class="shot-label">전송 이력</p>
+<p class="shot-desc">언제 무엇을 보냈고 어떤 결과를 받았는지. 식별자는 오른쪽 끝에 흐리게 둡니다.</p>
+<div class="shot">
+<div class="modal modal-store">
+  <button class="modal-close" type="button">&times;</button>
+  <div class="modal-head store-head">
+    <div class="store-head-text">
+      <h2>등록 이력</h2>
+      <p class="muted">전송 20건</p>
+    </div>
+    <div class="store-head-actions">
+      <a class="btn btn-line btn-sm" href="#">CSV 내려받기</a>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="tabs">
+      <button class="tab" type="button">현재 등록 현황</button>
+      <button class="tab is-on" type="button">전송 이력</button>
+    </div>
+    
+    <div class="history-wrap"><table class="history-table"><thead><tr><th>전송시각</th><th>프로그램</th><th>회차</th><th>방송일</th><th>방송시각</th><th>키워드</th><th>결과</th><th>shortUrl</th><th class="is-id">programId</th><th class="is-id">snapshotId</th><th class="is-id">timestamp</th></tr></thead><tbody><tr><td>2026.09.16 19:42</td><td>언니네 산지직송3</td><td>8회</td><td>20260916</td><td>20:10</td><td>하동 녹차</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/760e51e9">https://plus-store.naver.com/PoFq/760e51e9</a></td><td class="is-id">CS11000000</td><td class="is-id">29b4de7a-a306-45fc-be36-03408ae5d42d</td><td class="is-id">1789500000000</td></tr><tr><td>2026.09.15 12:05</td><td>언니네 산지직송3</td><td>7회</td><td>20260915</td><td>13:10</td><td>섬진강 재첩</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/8cb257df">https://plus-store.naver.com/PoFq/8cb257df</a></td><td class="is-id">CS11001373</td><td class="is-id">191d8b60-1bcc-4f08-a8ef-9c3508197e8c</td><td class="is-id">1789413600000</td></tr><tr><td>2026.09.14 14:30</td><td>로또 1등도 출근합니다</td><td>2회</td><td>20260914</td><td>15:20</td><td>스탠딩 책상</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/199b538c">https://plus-store.naver.com/PoFq/199b538c</a></td><td class="is-id">CS11002746</td><td class="is-id">ed9b4d30-b3ec-4753-be25-6f92e1ca1e82</td><td class="is-id">1789327200000</td></tr><tr><td>2026.09.13 15:10</td><td>로또 1등도 출근합니다</td><td>1회</td><td>20260913</td><td>16:25</td><td>[프롬바이오] 위건강엔 매스틱</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/c3c37744">https://plus-store.naver.com/PoFq/c3c37744</a></td><td class="is-id">CS11004119</td><td class="is-id">2810f66a-1270-4cfa-82c9-af7af87aa6c9</td><td class="is-id">1789240800000</td></tr><tr><td>2026.09.13 18:20</td><td>놀라운 토요일</td><td>434회</td><td>20260913</td><td>19:40</td><td>파김치</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/a93db396">https://plus-store.naver.com/PoFq/a93db396</a></td><td class="is-id">CS11005492</td><td class="is-id">c58cf211-67ef-4965-afd8-fefbb5c5cbd3</td><td class="is-id">1789154400000</td></tr><tr><td>2026.09.12 10:35</td><td>우주떡집</td><td>7회</td><td>20260912</td><td>11:20</td><td>수제 약과</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/36f10e4a">https://plus-store.naver.com/PoFq/36f10e4a</a></td><td class="is-id">CS11006865</td><td class="is-id">d8f508ec-7040-48d8-bde4-9856f251399b</td><td class="is-id">1789068000000</td></tr><tr><td>2026.09.12 20:05</td><td>벌거벗은 세계사</td><td>272회</td><td>20260912</td><td>21:00</td><td>세계사 도서 세트</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/c7e1e22b">https://plus-store.naver.com/PoFq/c7e1e22b</a></td><td class="is-id">CS11008238</td><td class="is-id">055ccfd5-e76f-41cf-b6d9-1f370557bdb8</td><td class="is-id">1788981600000</td></tr><tr><td>2026.09.11 21:15</td><td>스트릿 월드 파이터</td><td>5회</td><td>20260911</td><td>22:30</td><td>스포츠 이어폰</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/b6754c05">https://plus-store.naver.com/PoFq/b6754c05</a></td><td class="is-id">CS11009611</td><td class="is-id">403f4bc6-bbe4-4c03-aba2-9d56a23f2ccb</td><td class="is-id">1788895200000</td></tr><tr><td>2026.09.11 16:50</td><td>식스센스: B사이드</td><td>1회</td><td>20260911</td><td>17:40</td><td>수원 통닭</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/742cc870">https://plus-store.naver.com/PoFq/742cc870</a></td><td class="is-id">CS11010984</td><td class="is-id">31172fb2-d895-4fd4-a017-590636c04102</td><td class="is-id">1788808800000</td></tr><tr><td>2026.09.10 19:30</td><td>너의 몸소리가 들려</td><td>75회</td><td>20260910</td><td>20:45</td><td>마사지건</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/d30e810f">https://plus-store.naver.com/PoFq/d30e810f</a></td><td class="is-id">CS11012357</td><td class="is-id">526f6162-fb13-411e-98a8-40d28957875b</td><td class="is-id">1788722400000</td></tr><tr><td>2026.09.10 13:40</td><td>남겨서 뭐하게</td><td>59회</td><td>20260910</td><td>14:20</td><td>밀폐용기 세트</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/8237afab">https://plus-store.naver.com/PoFq/8237afab</a></td><td class="is-id">CS11013730</td><td class="is-id">23ca13d9-c2c0-4992-85e1-cbee63eaa765</td><td class="is-id">1788636000000</td></tr><tr><td>2026.09.09 18:10</td><td>신사장 프로젝트</td><td>2회</td><td>20260909</td><td>19:00</td><td>캠핑 의자</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/9d4e862b">https://plus-store.naver.com/PoFq/9d4e862b</a></td><td class="is-id">CS11015103</td><td class="is-id">b7121773-58be-401b-9c9c-9f67ee642e20</td><td class="is-id">1788549600000</td></tr><tr><td>2026.09.09 10:25</td><td>언니네 산지직송3</td><td>6회</td><td>20260909</td><td>11:20</td><td>태안 바지락</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/96157d25">https://plus-store.naver.com/PoFq/96157d25</a></td><td class="is-id">CS11016476</td><td class="is-id">33c2c718-b7a6-4516-a737-8de7c7483b79</td><td class="is-id">1788463200000</td></tr><tr><td>2026.09.08 15:20</td><td>포핸즈</td><td>3회</td><td>20260908</td><td>16:05</td><td>피아노 교재</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/1caeb042">https://plus-store.naver.com/PoFq/1caeb042</a></td><td class="is-id">CS11017849</td><td class="is-id">efd9fd10-a6c5-4529-be68-8122e69e0f28</td><td class="is-id">1788376800000</td></tr><tr><td>2026.09.08 20:40</td><td>적과의 동거</td><td>4회</td><td>20260908</td><td>21:50</td><td>공기청정기</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/a180156a">https://plus-store.naver.com/PoFq/a180156a</a></td><td class="is-id">CS11019222</td><td class="is-id">17182881-01a6-42fe-801c-e373535638de</td><td class="is-id">1788290400000</td></tr><tr><td>2026.09.07 19:05</td><td>시간관찰자</td><td>2회</td><td>20260907</td><td>20:00</td><td>스마트워치</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/0897cabc">https://plus-store.naver.com/PoFq/0897cabc</a></td><td class="is-id">CS11020595</td><td class="is-id">52f068fc-8323-4246-9014-1d07dcb184c7</td><td class="is-id">1788204000000</td></tr><tr><td>2026.09.07 12:45</td><td>놀라운 토요일</td><td>433회</td><td>20260907</td><td>13:30</td><td>가브리살수육</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/0827194c">https://plus-store.naver.com/PoFq/0827194c</a></td><td class="is-id">CS11021968</td><td class="is-id">ab293bfa-385b-4db7-9e02-04401f0fff36</td><td class="is-id">1788117600000</td></tr><tr><td>2026.09.06 17:30</td><td>식스센스 시티투어</td><td>7회</td><td>20260906</td><td>18:15</td><td>인천 밴댕이회</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/14da2948">https://plus-store.naver.com/PoFq/14da2948</a></td><td class="is-id">CS11023341</td><td class="is-id">f68e7e59-571a-4317-8aa3-53886e7df2e6</td><td class="is-id">1788031200000</td></tr><tr><td>2026.09.06 09:55</td><td>우주떡집</td><td>6회</td><td>20260906</td><td>10:40</td><td>미미 슈림프버거</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/839f16b9">https://plus-store.naver.com/PoFq/839f16b9</a></td><td class="is-id">CS11024714</td><td class="is-id">9f2f8422-8b40-48ca-8a7b-a34f8fc46ac6</td><td class="is-id">1787944800000</td></tr><tr><td>2026.09.05 21:10</td><td>스트릿 월드 파이터</td><td>4회</td><td>20260905</td><td>22:00</td><td>댄스화</td><td><span class="send-badge is-ok">성공</span></td><td><a href="https://plus-store.naver.com/PoFq/5014136b">https://plus-store.naver.com/PoFq/5014136b</a></td><td class="is-id">CS11026087</td><td class="is-id">d822f105-a950-41c3-900f-e4ca169d3825</td><td class="is-id">1787858400000</td></tr></tbody></table></div>
+  </div>
+</div></div>
+
+<p class="foot">실제 화면에서는 프로그램 고르기, CSV 내려받기, 실적 CSV 올리기가 동작합니다.</p>
+</body></html>
