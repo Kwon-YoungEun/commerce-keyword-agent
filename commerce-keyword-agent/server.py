@@ -684,8 +684,8 @@ LOG_COLUMNS_MAIN = [
     ("airDate", "방송일"),
     ("airTime", "방송시각"),
     ("productKeyword", "키워드"),
-    ("statusText", "결과"),
-    ("status", "응답코드"),
+    # 이력에서는 성공·실패만 봅니다. 자세한 사유는 전송 직후 결과창에 나옵니다.
+    ("resultText", "결과"),
     ("shortUrl", "shortUrl"),
 ]
 LOG_COLUMNS_TAIL = [
@@ -710,7 +710,8 @@ def load_send_log():
             item["productKeyword"] = item["keyword"]
         if not item.get("snapshotId") and item.get("requestId"):
             item["snapshotId"] = item["requestId"]
-        item["statusText"] = status_text(item.get("status"))
+        code = item.get("status") or 0
+        item["resultText"] = "성공" if 200 <= code < 300 else "실패"
     return items
 
 

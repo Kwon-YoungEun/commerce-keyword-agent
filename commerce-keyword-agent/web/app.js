@@ -1205,13 +1205,10 @@ function renderHistory(data) {
     if (c.key === "shortUrl" && value) {
       return `<td class="${cls}"><a href="${escapeHtml(value)}" target="_blank" rel="noopener">${escapeHtml(value)}</a></td>`;
     }
-    if (c.key === "statusText") {
+    if (c.key === "resultText") {
       const okay = item.status >= 200 && item.status < 300;
       return `<td class="${cls}"><span class="send-badge ${okay ? "is-ok" : "is-bad"}">` +
              `${escapeHtml(String(value || ""))}</span></td>`;
-    }
-    if (c.key === "status") {
-      return `<td class="${cls} is-id">${escapeHtml(String(value === undefined ? "" : value))}</td>`;
     }
     return `<td class="${cls}">${escapeHtml(String(value === undefined || value === null ? "" : value))}</td>`;
   };
