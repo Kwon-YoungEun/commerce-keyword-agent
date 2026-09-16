@@ -619,6 +619,7 @@ def send_registration(payload):
 
     return {"ok": 200 <= status < 300, "status": status,
             "statusText": status_text(status), "took": took,
+            "at": record["at"],
             "response": text[:2000], "usedAuthHeaders": auth_names}
 
 

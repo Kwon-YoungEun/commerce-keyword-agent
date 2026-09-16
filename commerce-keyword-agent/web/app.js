@@ -1010,14 +1010,12 @@ function renderSendResult(json) {
   }
   state.lastSendData = data;
 
+  const meaning = json.statusText || (json.ok ? "성공" : "실패");
   const head =
     `<div class="send-head">` +
-    `<span class="send-badge ${json.ok ? "is-ok" : "is-bad"}">` +
-    `${escapeHtml(json.statusText || (json.ok ? "성공" : "실패"))}</span>` +
-    `<span class="muted">응답코드 ${escapeHtml(String(json.status))}</span>` +
-    `<span class="muted">${json.took}초</span>` +
-    (json.usedAuthHeaders && json.usedAuthHeaders.length
-      ? `<span class="muted">· 헤더 ${json.usedAuthHeaders.join(", ")}</span>` : "") +
+    `<span class="send-badge ${json.ok ? "is-ok" : "is-bad"}">${json.ok ? "성공" : "실패"}</span>` +
+    `<span class="muted">응답코드 ${escapeHtml(String(json.status))} (${escapeHtml(meaning)})</span>` +
+    `<span class="muted">${escapeHtml(formatStamp((json.at || Date.now() / 1000) * 1000))}</span>` +
     `</div>`;
 
   if (!data || typeof data !== "object") {
