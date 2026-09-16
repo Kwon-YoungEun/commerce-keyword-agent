@@ -1,0 +1,380 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════
+  최종과제 발표 덱 (pitch-deck) - 단일 HTML 슬라이드덱
+  - 방향키(← → ↑ ↓ / PageUp·Down / Space)로 슬라이드 넘김
+  - 마우스 스크롤도 슬라이드 단위로 스냅
+  - ⌘P(또는 Ctrl+P) → "가로(Landscape)" + "여백 없음" + "배경 그래픽" 켜고 PDF 저장
+  - 외부 의존성 0 (Pretendard 폰트만 CDN, 오프라인이면 시스템 폰트로 폴백)
+
+  ※ 다른 회사에 재사용: 아래 :root 의 --brand / --brand-2 두 값만 교체 (brand-presets.md 참고)
+  ※ 데이터 안전: 대외비·고객정보·개인정보는 넣지 말 것 - 가명(Project A)·더미 데이터만
+  ════════════════════════════════════════════════════════════════════
+-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>최종 과제 발표 - [프로젝트명]</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root{
+  /* ── 브랜드 (회사 바뀌면 이 2개만 교체) ───────────────── */
+  --brand:   #E4002B;   /* 기업 대표색 (SK브로드밴드 레드) */
+  --brand-2: #F97316;   /* 보조 액센트 (주황) - 빨강→주황 그라데이션 */
+  /* ── 공통 토큰 ──────────────────────────────────────── */
+  --ink:     #1A1A2E;   /* 본문 잉크 */
+  --bg:      #FFFFFF;
+  --soft:    #FBFAFA;   /* 살짝 따뜻한 배경 */
+  --brand-light: #FEF2F3;
+  --muted:   #6B7280;
+  --line:    #ECEAEA;
+  --grad: linear-gradient(120deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color:var(--ink); background:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  word-break:keep-all;
+}
+p,li,h1,h2,h3,h4{text-wrap:pretty}
+.title,.big-title{text-wrap:balance}
+
+/* 스크롤 스냅 컨테이너 */
+.deck{
+  height:100vh; overflow-y:scroll; scroll-snap-type:y mandatory;
+}
+.slide{
+  position:relative; height:100vh; scroll-snap-align:start;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(40px,6vw,104px) clamp(36px,7vw,128px);
+  background:var(--bg); overflow:hidden;
+}
+.slide::-webkit-scrollbar{display:none}
+.deck::-webkit-scrollbar{width:0}
+
+/* 상단 브랜드 바 (콘텐츠 슬라이드) */
+.slide.content::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:6px; background:var(--grad);
+}
+
+/* 은은한 글로우 */
+.glow{position:absolute; border-radius:50%; filter:blur(10px); pointer-events:none; opacity:.5; z-index:0}
+.glow.a{width:520px;height:520px;top:-180px;right:-120px;background:radial-gradient(circle,color-mix(in srgb,var(--brand) 12%,transparent),transparent 70%)}
+.glow.b{width:460px;height:460px;bottom:-160px;left:-120px;background:radial-gradient(circle,color-mix(in srgb,var(--brand-2) 12%,transparent),transparent 70%)}
+
+.inner{position:relative; z-index:1; width:100%; max-width:1180px; margin:0 auto}
+
+/* 공통 타이포 */
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:clamp(13px,1.1vw,15px);font-weight:800;
+  color:var(--brand);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+.kicker .num{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 8px;border-radius:8px;
+  background:var(--brand-light);color:var(--brand);font-size:14px;letter-spacing:0}
+.title{font-size:clamp(30px,4.4vw,56px);font-weight:800;line-height:1.16;letter-spacing:-.02em}
+.title .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,1.7vw,23px);font-weight:500;color:var(--muted);line-height:1.6;margin-top:20px;max-width:60ch}
+
+/* 카드 */
+.cards{display:grid;gap:20px;margin-top:40px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{position:relative;background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:34px 28px 28px;
+  box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.card::before{content:"";position:absolute;top:0;left:28px;width:34px;height:4px;border-radius:0 0 4px 4px;background:var(--grad)}
+.card h3{font-size:clamp(17px,1.5vw,21px);font-weight:800;margin-bottom:10px}
+.card p{font-size:clamp(14px,1.15vw,16.5px);color:#444;line-height:1.65}
+
+/* 프로세스 스텝 (S2) */
+.steps{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+.step{display:flex;gap:20px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);
+  border-radius:16px;padding:20px 24px}
+.step .n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--grad);color:#fff;font-weight:800;
+  display:grid;place-items:center;font-size:17px}
+.step .body h4{font-size:clamp(15px,1.3vw,19px);font-weight:800;margin-bottom:4px}
+.step .body p{font-size:clamp(13.5px,1.1vw,16px);color:#555;line-height:1.6}
+
+/* 칩 */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-size:clamp(12.5px,1vw,14.5px);font-weight:700;padding:8px 15px;border-radius:100px;
+  background:var(--brand-light);color:var(--brand);border:1px solid color-mix(in srgb,var(--brand) 22%,transparent)}
+
+/* 메트릭 (S3) */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:34px 0 28px}
+.metric{text-align:left}
+.metric .v{font-size:clamp(38px,5.4vw,68px);font-weight:900;line-height:1;letter-spacing:-.03em;white-space:nowrap;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric .l{font-size:clamp(13px,1.15vw,16px);font-weight:700;color:var(--ink);margin-top:10px}
+.metric .s{font-size:clamp(12px,1vw,14px);color:var(--muted);margin-top:3px}
+
+/* 스크린샷 슬롯 */
+.shot{margin-top:18px;border:2px dashed var(--line);border-radius:16px;background:var(--soft);
+  min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  color:var(--muted);font-size:14px;text-align:center;padding:24px}
+.shot .ph-label{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.shot img{max-width:100%;max-height:46vh;border-radius:12px;display:block;border:1px solid var(--line)}
+.shot.filled{border-style:solid;background:#fff;padding:14px}
+
+/* 2단 레이아웃 */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;margin-top:34px}
+/* 결과 슬라이드에서 스크린샷과 나란히 둘 때: 메트릭을 세로 스택으로(끼임 방지) */
+.split .metrics{grid-template-columns:1fr;gap:18px;margin:0 0 22px}
+.split .metric .v{font-size:clamp(30px,3.4vw,44px)}
+
+/* 리스트 */
+.list{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+.list li{list-style:none;display:flex;gap:14px;font-size:clamp(14.5px,1.25vw,18px);line-height:1.55;color:#333}
+.list li .mk{flex:none;width:26px;height:26px;border-radius:8px;background:var(--brand-light);color:var(--brand);
+  display:grid;place-items:center;font-weight:800;font-size:14px;margin-top:1px}
+
+/* ── 커버 (S0) ── */
+.cover{background:radial-gradient(120% 120% at 80% 0%,var(--brand-light) 0%,#fff 42%)}
+.cover .eyebrow{font-size:clamp(13px,1.1vw,15px);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+.cover .big-title{font-size:clamp(38px,6vw,84px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin:22px 0 0}
+.cover .big-title .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .onel{font-size:clamp(17px,1.9vw,26px);font-weight:500;color:#3a3a4a;margin-top:26px;max-width:64ch;line-height:1.55}
+.cover .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.cover .tag{font-size:clamp(13px,1.1vw,16px);font-weight:700;padding:10px 18px;border-radius:100px;
+  background:#fff;border:1px solid var(--line);color:var(--ink)}
+.cover .tag.brand{background:var(--grad);color:#fff;border:none}
+.cover .footnote{position:absolute;left:clamp(36px,7vw,128px);bottom:clamp(34px,4vw,56px);
+  font-size:clamp(11px,.95vw,13px);color:var(--muted);letter-spacing:.02em;z-index:1}
+
+/* 닫기 슬라이드(S4) 강조 배경 */
+.closing{background:radial-gradient(120% 120% at 15% 100%,var(--brand-light) 0%,#fff 45%)}
+
+/* 네비게이션 UI */
+.hud{position:fixed;right:22px;bottom:18px;z-index:50;display:flex;align-items:center;gap:12px;
+  font-size:13px;font-weight:700;color:var(--muted)}
+.hud .count{background:rgba(26,26,46,.06);padding:5px 12px;border-radius:100px}
+.progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:60;transition:width .25s ease}
+.hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;font-size:12px;color:var(--muted);
+  background:rgba(255,255,255,.8);padding:6px 14px;border-radius:100px;border:1px solid var(--line);
+  backdrop-filter:blur(6px);transition:opacity .4s}
+
+/* 반응형 (좁은 화면) - 인쇄에는 적용 안 함(다단 유지) */
+@media screen and (max-width:820px){
+  /* 좁은 화면: 슬라이드를 내용 높이만큼 늘려 잘림 방지 + 자연 세로 스크롤(스냅 해제) */
+  .deck{height:auto;overflow-y:visible;scroll-snap-type:none}
+  .slide{height:auto;min-height:100vh;min-height:100svh;overflow:visible;scroll-snap-align:none;justify-content:flex-start;padding:56px 22px}
+  .cols-2,.cols-3,.metrics{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:24px}
+  .title{font-size:clamp(26px,7vw,40px)}
+  .lead{font-size:clamp(15px,4vw,20px)}
+  .cover{justify-content:center}
+  .cover .big-title{font-size:clamp(34px,10vw,60px)}
+  .cover .onel{font-size:clamp(16px,4.4vw,22px)}
+  .metrics{gap:14px}
+  .metric .v{font-size:clamp(30px,9vw,46px)}
+  .split .metric .v{font-size:clamp(28px,8vw,40px)}
+  .cover .footnote{position:static;left:auto;bottom:auto;margin-top:22px}
+}
+
+/* ── 인쇄(PDF): 슬라이드당 1페이지, 가로 ── */
+@page{size:297mm 167mm;margin:0}   /* 16:9 가로 페이지 */
+@media print{
+  body{background:#fff}
+  .deck{height:auto;overflow:visible;scroll-snap-type:none}
+  .slide{height:167mm;width:297mm;page-break-after:always;break-after:page}
+  .slide:last-child{page-break-after:auto}
+  .hud,.progress,.hint{display:none!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+
+<div class="deck" id="deck">
+
+  <!-- ════ S0 · 커버 ════ -->
+  <section class="slide cover">
+    <div class="glow a"></div>
+    <div class="inner">
+      <div class="eyebrow">최종 과제 · SK브로드밴드 AI Camp</div>
+      <h1 class="big-title">주간 VOC 리포트<br><span class="hl">자동 정리 도구</span></h1>
+      <p class="onel">흩어진 고객 VOC 데이터를 자동으로 모아 유형별로 분류·요약해, 주간 리포트 작성 시간을 크게 줄이는 도구</p>
+      <div class="meta">
+        <span class="tag brand">홍길동 · 소속팀</span>
+        <span class="tag">SK브로드밴드 AI Camp 특화차수</span>
+        <span class="tag">2026.09.17</span>
+      </div>
+    </div>
+    <div class="footnote">SK브로드밴드 AI Camp · 최종 발표</div>
+  </section>
+
+  <!-- ════ S0.5 · 목차 ════ (불필요하면 이 section 통째로 삭제 가능) -->
+  <section class="slide content">
+    <div class="glow a"></div>
+    <div class="inner">
+      <span class="kicker"><span class="num">—</span> 목차 · Contents</span>
+      <h2 class="title">오늘 <span class="hl">발표 순서</span></h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div class="body">
+          <h4>과제 배경</h4>
+          <p>어떤 업무의 어떤 불편을 풀려 했나</p></div></div>
+        <div class="step"><div class="n">2</div><div class="body">
+          <h4>솔루션 내용 · 진행 과정</h4>
+          <p>무엇을, 어떻게 만들었나 (AI 활용 포함)</p></div></div>
+        <div class="step"><div class="n">3</div><div class="body">
+          <h4>솔루션 결과</h4>
+          <p>동작 화면과 정량·정성 기대효과</p></div></div>
+        <div class="step"><div class="n">4</div><div class="body">
+          <h4>최종 코멘트</h4>
+          <p>배운 점(Lesson Learned)과 향후 계획</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ S1 · 과제 배경 ════ -->
+  <section class="slide content">
+    <div class="glow a"></div>
+    <div class="inner">
+      <span class="kicker"><span class="num">01</span> 과제 배경</span>
+      <h2 class="title">반복되는 주간 리포트,<br><span class="hl">취합·정리에만 반나절</span></h2>
+      <p class="lead">어떤 업무의 불편을 풀려는지 - 현황과 그게 왜 문제인지 한눈에.</p>
+      <div class="cards cols-3">
+        <div class="card">
+          <h3>현황</h3>
+          <p>여러 시스템에 흩어진 VOC·처리 내역을 매주 수동으로 내려받아 취합</p>
+        </div>
+        <div class="card">
+          <h3>문제</h3>
+          <p>건별로 읽고 유형을 분류·요약 → 리포트 작성에만 매주 반나절 소요</p>
+        </div>
+        <div class="card">
+          <h3>왜 중요한가</h3>
+          <p>반복 작업에 시간을 뺏겨, 정작 중요한 원인 분석과 개선은 뒷전</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ S2 · 솔루션 내용 (진행 과정) ════ -->
+  <section class="slide content">
+    <div class="glow b"></div>
+    <div class="inner">
+      <span class="kicker"><span class="num">02</span> 솔루션 내용 · 진행 과정</span>
+      <h2 class="title">무엇을, <span class="hl">어떻게 만들었나</span></h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div class="body">
+          <h4>문제 정의 & 기획서 작성</h4>
+          <p>중간과제 기획서로 "파일 넣기 → 자동 분류 → 리포트 초안" 범위 확정</p></div></div>
+        <div class="step"><div class="n">2</div><div class="body">
+          <h4>AI와 함께 프로토타입 빌드</h4>
+          <p>Claude Code로 취합 스크립트·요약 프롬프트 설계, 더미 데이터로 반복 테스트</p></div></div>
+        <div class="step"><div class="n">3</div><div class="body">
+          <h4>화면·결과 다듬기</h4>
+          <p>분류 결과를 표·차트로 정리, 오분류 유형을 규칙으로 보완</p></div></div>
+      </div>
+      <div class="chips">
+        <span class="chip">Claude Code 활용</span>
+        <span class="chip">프롬프트 반복 설계</span>
+        <span class="chip">더미 데이터 검증</span>
+        <span class="chip">AI 협업으로 시행착오 단축</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ S3 · 솔루션 결과 ════ -->
+  <section class="slide content">
+    <div class="glow a"></div>
+    <div class="inner">
+      <span class="kicker"><span class="num">03</span> 솔루션 결과</span>
+      <h2 class="title">동작 화면과 <span class="hl">기대 효과</span></h2>
+      <div class="split">
+        <div>
+          <div class="metrics">
+            <div class="metric"><div class="v">4h→20m</div><div class="l">주간 리포트 작성 시간</div><div class="s">수동 취합 → 일괄 자동</div></div>
+            <div class="metric"><div class="v">92%</div><div class="l">유형 분류 정확도</div><div class="s">더미 300건 기준</div></div>
+            <div class="metric"><div class="v">300건</div><div class="l">일괄 처리</div><div class="s">주간 VOC 기준</div></div>
+          </div>
+          <ul class="list">
+            <li><span class="mk">✓</span> 정성: 담당자가 원인 분석과 개선안에 집중할 시간 확보</li>
+            <li><span class="mk">✓</span> 정성: 리포트 형식 일관성 ↑, 누락 위험 ↓</li>
+          </ul>
+        </div>
+        <div>
+          <!-- 스크린샷: ./screenshots/result.png 가 있으면 아래 주석을 풀어 교체 -->
+          <!-- <div class="shot filled"><img src="./screenshots/result.png" alt="동작 화면"></div> -->
+          <div class="shot">
+            <div class="ph-label">동작 화면</div>
+            <div><b>여기에 캡처 이미지</b><br>./screenshots/ 에 이미지를 넣고<br>위 주석의 &lt;img&gt; 태그를 사용하세요</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ S4 · 최종 코멘트 ════ -->
+  <section class="slide content closing">
+    <div class="glow b"></div>
+    <div class="inner">
+      <span class="kicker"><span class="num">04</span> 최종 코멘트</span>
+      <h2 class="title">Lesson Learned & <span class="hl">향후 계획</span></h2>
+      <div class="cards cols-2">
+        <div class="card">
+          <h3>배운 점</h3>
+          <p>완벽한 코드보다 "문제를 좁게 정의"하는 게 먼저였다. AI는 범위가 명확할수록 빠르게 도왔다.</p>
+        </div>
+        <div class="card">
+          <h3>향후 계획</h3>
+          <p>다른 팀 리포트 양식까지 확장. 실데이터 적용은 보안 검토 후 진행.</p>
+        </div>
+      </div>
+      <ul class="list">
+        <li><span class="mk">→</span> 다음 스텝: 더 많은 샘플로 분류 규칙 정교화</li>
+        <li><span class="mk">→</span> 확장: 요약 결과를 조직·상품별 대시보드로 연결</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<!-- 네비게이션 HUD -->
+<div class="hud"><span class="count" id="count">1 / …</span></div>
+<div class="hint" id="hint">← → 방향키로 넘기기 · ⌘P 로 PDF 저장</div>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=[].slice.call(deck.querySelectorAll('.slide'));
+  var count=document.getElementById('count');
+  var bar=document.getElementById('bar');
+  var hint=document.getElementById('hint');
+  var cur=0;
+
+  function render(i){
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    count.textContent=(cur+1)+' / '+slides.length;
+    bar.style.width=((cur+1)/slides.length*100)+'%';
+  }
+  function go(i){
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    slides[cur].scrollIntoView({behavior:'smooth'});
+    render(cur);
+  }
+  // 키보드
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(cur+1);}
+    else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(cur-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+  });
+  // 스크롤 위치로 카운터 동기화
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ render(slides.indexOf(en.target)); } });
+    },{root:deck,threshold:0.6});
+    slides.forEach(function(s){io.observe(s);});
+  }
+  // 힌트 자동 숨김
+  setTimeout(function(){ hint.style.opacity='0'; },4200);
+  render(0);
+})();
+</script>
+</body>
+</html>
