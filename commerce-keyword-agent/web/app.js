@@ -1156,7 +1156,6 @@ async function showHistoryTab(tab) {
     el.classList.toggle("is-on", el.dataset.tab === tab);
   });
   const history = tab === "history";
-  document.getElementById("btnPerfUpload").hidden = !history;
   document.getElementById("btnLogCsv").href =
     history ? "/api/send-log.csv" : "/api/current-keywords.csv";
   document.getElementById("historyTable").innerHTML =
@@ -1186,10 +1185,15 @@ async function loadCurrentKeywords() {
     if (!json.ok) throw new Error(json.error || "불러오지 못했습니다.");
 
     const items = json.items || [];
+    const perf = json.performance || {};
+    const perfCols = perf.columns || [];
+
     document.getElementById("historyMeta").textContent =
-      `키워드가 걸린 편성 ${items.length}개 · 앞뒤 2주`;
-    document.getElementById("perfState").textContent =
-      "지금 캘린더에 적용돼 있는 키워드입니다. 바꾸면 그 회차부터 적용되고, 지난 편성에는 예전 키워드가 남습니다.";
+      `키워드가 걸린 편성 ${items.length}개 · 앞뒤 2주` +
+      (perf.rowCount ? ` · 실적 ${perf.rowCount}회차` : "");
+    document.getElementById("perfState").textContent = perf.rowCount
+      ? `실적 파일: ${perf.fileName || "(이름 없음)"} · 프로그램ID 와 회차로 이어 붙였습니다.`
+      : "실적 CSV 를 올리면 회차별 수치를 오른쪽에 붙입니다.";
 
     if (!items.length) {
       document.getElementById("historyTable").innerHTML =
@@ -1197,12 +1201,19 @@ async function loadCurrentKeywords() {
       return;
     }
     const head = `<tr>` +
-      json.columns.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("") + `</tr>`;
+      json.columns.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("") +
+      perfCols.map((c) => `<th class="is-perf">${escapeHtml(c)}</th>`).join("") +
+      `</tr>`;
     const rows = items.map((item) =>
       `<tr>` + json.columns.map((c) => {
         let value = item[c.key] || "";
         if (c.key === "date" && value) value = prettyDate(value);
         return `<td${c.key === "keyword" ? ' class="is-keyword"' : ""}>${escapeHtml(String(value))}</td>`;
+      }).join("") +
+      perfCols.map((c) => {
+        const value = (item.performance || {})[c];
+        const text = typeof value === "number" ? value.toLocaleString() : (value || "");
+        return `<td class="is-perf">${escapeHtml(String(text))}</td>`;
       }).join("") + `</tr>`);
     document.getElementById("historyTable").innerHTML =
       `<table class="history-table"><thead>${head}</thead><tbody>${rows.join("")}</tbody></table>`;
@@ -1306,8 +1317,10 @@ async function uploadPerformance(file) {
       (json.columns ? `<br>이 파일의 칸: ${json.columns.map(escapeHtml).join(" · ")}` : "");
     return;
   }
-  showToast(`실적 ${json.rowCount}행을 붙였어요. 이력 ${json.matched}건과 맞았습니다.`, "ok");
-  await loadHistory();
+  const unit = json.kind === "airing" ? "회차" : "행";
+  showToast(`실적 ${json.rowCount}${unit}를 붙였어요. ${json.matched}건과 맞았습니다.`, "ok");
+  // 실적 모양에 맞는 탭을 보여 줍니다.
+  await showHistoryTab(json.kind === "airing" ? "current" : "history");
 }
 
 /** 응답에 담겨 온 주소를 팝업 안에서 열어 봅니다.

@@ -749,6 +749,123 @@ def parse_csv_text(text):
     return header, body
 
 
+# 편성 실적 CSV — 프로그램ID와 회차명으로 붙입니다.
+# 예: series_id=CS02070672, 회차명='언니네 산지직송3(7회)(재)'
+AIRING_PERF_STORE = os.path.join(DATA_DIR, "airing_performance.json")
+PROGRAM_ID_ALIASES = ("seriesid", "programid", "프로그램id", "콘텐츠id")
+EPISODE_NAME_ALIASES = ("회차명", "회차", "episodename", "contentname", "프로그램명")
+EPISODE_NO_IN_NAME = re.compile(r"(\d+)\s*회")
+PROGRAM_ID_VALUE = re.compile(r"^CS\d{6,}$", re.I)
+
+
+def find_column(normalized, aliases):
+    for alias in aliases:
+        if alias in normalized:
+            return normalized[alias]
+    # 이름이 길어도 별칭이 들어 있으면 그 칸으로 봅니다.
+    for key, original in normalized.items():
+        if any(alias in key for alias in aliases):
+            return original
+    return ""
+
+
+def to_number(text):
+    text = (text or "").replace(",", "").replace("%", "").strip()
+    if not text or text in ("-", "(empty)"):
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def save_airing_performance(header, rows, file_name=""):
+    """회차별로 일자 행을 합쳐 둡니다. 비율 칸은 합계에서 다시 계산합니다."""
+    normalized = {norm_header(h): h for h in header}
+    id_col = find_column(normalized, PROGRAM_ID_ALIASES)
+    name_col = find_column(normalized, EPISODE_NAME_ALIASES)
+    if not name_col:
+        return None
+
+    def is_date_col(name):
+        return any(w in norm_header(name) for w in ("logtime", "date", "일자", "날짜"))
+
+    def is_ratio_col(name):
+        return "%" in name or "률" in name
+
+    # 비율 칸은 값이 전부 '-' 일 수 있어서 이름으로 알아봅니다.
+    value_cols = []
+    for h in header:
+        if h in (id_col, name_col) or is_date_col(h):
+            continue
+        if is_ratio_col(h) or any(to_number(r.get(h)) is not None for r in rows[:200]):
+            value_cols.append(h)
+    ratio_cols = [h for h in value_cols if is_ratio_col(h)]
+    sum_cols = [h for h in value_cols if h not in ratio_cols]
+
+    groups = {}
+    for row in rows:
+        name = (row.get(name_col) or "").strip()
+        if not name or name == "(empty)":
+            continue
+        match = EPISODE_NO_IN_NAME.search(name)
+        episode = match.group(1) if match else ""
+        program_id = (row.get(id_col) or "").strip() if id_col else ""
+        if program_id == "(empty)":
+            program_id = ""
+        # 회차명 앞부분이 프로그램 이름입니다.
+        program_name = EPISODE_NO_IN_NAME.split(name)[0].strip(" ([-·")
+
+        key = "%s|%s" % (program_id or match_program_key(program_name), episode)
+        slot = groups.setdefault(key, {
+            "programId": program_id, "programName": program_name,
+            "episode": episode, "days": 0,
+            "values": {col: 0.0 for col in sum_cols},
+        })
+        slot["days"] += 1
+        for col in sum_cols:
+            number = to_number(row.get(col))
+            if number is not None:
+                slot["values"][col] += number
+
+    # 비율은 합계로 다시 계산합니다.
+    click_col = next((c for c in sum_cols if "클릭" in c), "")
+    show_col = next((c for c in sum_cols if "노출" in c), "")
+    for slot in groups.values():
+        for col in ratio_cols:
+            base = slot["values"].get(show_col) or 0
+            slot["values"][col] = (round(slot["values"].get(click_col, 0) / base * 100, 2)
+                                   if base else "")
+
+    data = {
+        "columns": sum_cols + ratio_cols,
+        "rows": {k: v["values"] for k, v in groups.items()},
+        "meta": {k: {"programName": v["programName"], "episode": v["episode"],
+                     "days": v["days"]} for k, v in groups.items()},
+        "updatedAt": int(time.time()),
+        "fileName": file_name,
+        "idColumn": id_col,
+        "nameColumn": name_col,
+    }
+    with _store_lock:
+        _write_json(AIRING_PERF_STORE, data)
+    return data
+
+
+def match_program_key(name):
+    return re.sub(r"[^가-힣0-9a-zA-Z]", "", name or "").lower()
+
+
+def load_airing_performance():
+    data = _read_json(AIRING_PERF_STORE, {})
+    return {
+        "columns": data.get("columns", []),
+        "rows": data.get("rows", {}),
+        "updatedAt": data.get("updatedAt", 0),
+        "fileName": data.get("fileName", ""),
+    }
+
+
 def save_performance(csv_text, file_name=""):
     """실적 CSV 를 올려 이력과 이어 붙입니다."""
     header, rows = parse_csv_text(csv_text)
@@ -766,9 +883,15 @@ def save_performance(csv_text, file_name=""):
             break
 
     if not key_field:
+        # 전송 한 건을 가리키는 칸이 없으면 회차별 실적으로 봅니다.
+        airing = save_airing_performance(header, rows, file_name)
+        if airing:
+            return {"ok": True, "kind": "airing", "columns": airing["columns"],
+                    "rowCount": len(airing["rows"]),
+                    "matched": count_airing_matches(airing["rows"])}
         return {"ok": False, "columns": header,
-                "error": "붙일 기준 칸을 못 찾았습니다. shortUrl · snapshotId · requestId "
-                         "중 하나가 들어 있어야 이력과 이어 붙일 수 있어요."}
+                "error": "붙일 기준 칸을 못 찾았습니다. 전송 이력에는 shortUrl · snapshotId,"
+                         " 현재 현황에는 회차명 칸이 있어야 이어 붙일 수 있어요."}
 
     indexed = {}
     for row in rows:
@@ -828,7 +951,7 @@ CURRENT_COLUMNS = [
 ]
 
 
-def current_registrations(days_ahead=14, days_back=14):
+def current_registrations(days_ahead=14, days_back=14, include_performance=True):
     """조회 시점 캘린더 기준으로 어느 편성에 어떤 키워드가 걸려 있는지.
 
     키워드는 '그 방송 시각에 유효했던 가장 최근 등록' 하나가 적용됩니다.
@@ -881,18 +1004,52 @@ def current_registrations(days_ahead=14, days_back=14):
         else:
             row["airingCount"] = 1
             merged[key] = row
-    return list(merged.values())
+
+    out = list(merged.values())
+    if include_performance:
+        perf = load_airing_performance()
+        for row in out:
+            row["performance"] = airing_perf_for(perf["rows"], row)
+    return out
+
+
+def airing_keys(row):
+    """실적 CSV 와 맞출 열쇠. 프로그램ID 로 먼저, 없으면 이름으로 찾습니다."""
+    episode = re.sub(r"\D", "", row.get("episode") or "")
+    keys = []
+    if row.get("programCode"):
+        keys.append("%s|%s" % (row["programCode"], episode))
+    keys.append("%s|%s" % (match_program_key(row.get("programName")), episode))
+    return keys
+
+
+def airing_perf_for(rows, row):
+    for key in airing_keys(row):
+        if key in rows:
+            return rows[key]
+    return {}
+
+
+def count_airing_matches(perf_rows):
+    hit = 0
+    for row in current_registrations(include_performance=False):
+        if any(key in perf_rows for key in airing_keys(row)):
+            hit += 1
+    return hit
 
 
 def current_csv():
     import csv as _csv
     from io import StringIO
 
+    perf = load_airing_performance()
     buf = StringIO()
     writer = _csv.writer(buf)
-    writer.writerow([label for _, label in CURRENT_COLUMNS])
+    writer.writerow([label for _, label in CURRENT_COLUMNS] + perf["columns"])
     for row in current_registrations():
-        writer.writerow([row.get(key, "") for key, _ in CURRENT_COLUMNS])
+        values = row.get("performance") or {}
+        writer.writerow([row.get(key, "") for key, _ in CURRENT_COLUMNS]
+                        + [values.get(col, "") for col in perf["columns"]])
     return "﻿" + buf.getvalue()
 
 
@@ -1594,10 +1751,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"ok": True, **send_log_view()})
 
             if path == "/api/current-keywords":
+                perf = load_airing_performance()
                 return self._json({
                     "ok": True,
                     "items": current_registrations(),
                     "columns": [{"key": k, "label": label} for k, label in CURRENT_COLUMNS],
+                    "performance": {
+                        "columns": perf["columns"],
+                        "fileName": perf["fileName"],
+                        "rowCount": len(perf["rows"]),
+                    },
                 })
 
             if path in ("/api/send-log.csv", "/api/current-keywords.csv"):

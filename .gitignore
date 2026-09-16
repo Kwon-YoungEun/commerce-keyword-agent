@@ -39,3 +39,5 @@ commerce-keyword-agent/data/send_log.json
 
 # 실적 데이터 — 다른 시스템에서 받아 온 것이라 저장소에 넣지 않습니다.
 commerce-keyword-agent/data/performance.json
+
+commerce-keyword-agent/data/airing_performance.json

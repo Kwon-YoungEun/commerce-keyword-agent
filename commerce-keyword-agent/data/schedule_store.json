@@ -708,9 +708,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609090100": {
    "id": "EA202609090100",
@@ -2988,9 +2988,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609142200": {
    "id": "EA202609142200",
@@ -3420,9 +3420,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609152105": {
    "id": "EA202609152105",
@@ -3444,9 +3444,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609152205": {
    "id": "EA202609152205",
@@ -3468,9 +3468,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609160035": {
    "id": "EA202609160035",
@@ -3756,9 +3756,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609161625": {
    "id": "EA202609161625",
@@ -3780,9 +3780,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609161735": {
    "id": "EA202609161735",
@@ -4668,9 +4668,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "영화",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609182330": {
    "id": "EA202609182330",
@@ -4692,9 +4692,9 @@
    "liveFlag": "본",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "영화",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609190130": {
    "id": "EA202609190130",
@@ -4956,9 +4956,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609191640": {
    "id": "EA202609191640",
@@ -4980,9 +4980,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "드라마",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609191750": {
    "id": "EA202609191750",
