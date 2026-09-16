@@ -979,11 +979,13 @@ async function sendToApi() {
       showToast(json.error, "bad");
       return;
     }
-    setBodyStatus(`응답 ${json.status} · ${json.took}초`, json.ok ? "ok" : "bad");
+    const label = json.statusText || (json.ok ? "성공" : "실패");
+    setBodyStatus(`${label} · ${json.took}초 (응답코드 ${json.status})`,
+                  json.ok ? "ok" : "bad");
     renderSendResult(json);
 
     if (!json.ok) {
-      showToast(`전송 실패 (${json.status})`, "bad");
+      showToast(`전송 실패 — ${label} (${json.status})`, "bad");
       return;
     }
     // 전송이 곧 등록입니다. 캘린더 쪽 현재 상태도 함께 맞춰 둡니다.
@@ -1010,7 +1012,9 @@ function renderSendResult(json) {
 
   const head =
     `<div class="send-head">` +
-    `<span class="send-badge ${json.ok ? "is-ok" : "is-bad"}">${json.ok ? "성공" : "실패"} ${json.status}</span>` +
+    `<span class="send-badge ${json.ok ? "is-ok" : "is-bad"}">` +
+    `${escapeHtml(json.statusText || (json.ok ? "성공" : "실패"))}</span>` +
+    `<span class="muted">응답코드 ${escapeHtml(String(json.status))}</span>` +
     `<span class="muted">${json.took}초</span>` +
     (json.usedAuthHeaders && json.usedAuthHeaders.length
       ? `<span class="muted">· 헤더 ${json.usedAuthHeaders.join(", ")}</span>` : "") +
@@ -1201,9 +1205,13 @@ function renderHistory(data) {
     if (c.key === "shortUrl" && value) {
       return `<td class="${cls}"><a href="${escapeHtml(value)}" target="_blank" rel="noopener">${escapeHtml(value)}</a></td>`;
     }
+    if (c.key === "statusText") {
+      const okay = item.status >= 200 && item.status < 300;
+      return `<td class="${cls}"><span class="send-badge ${okay ? "is-ok" : "is-bad"}">` +
+             `${escapeHtml(String(value || ""))}</span></td>`;
+    }
     if (c.key === "status") {
-      const okay = value >= 200 && value < 300;
-      return `<td class="${cls}"><span class="send-badge ${okay ? "is-ok" : "is-bad"}">${escapeHtml(String(value))}</span></td>`;
+      return `<td class="${cls} is-id">${escapeHtml(String(value === undefined ? "" : value))}</td>`;
     }
     return `<td class="${cls}">${escapeHtml(String(value === undefined || value === null ? "" : value))}</td>`;
   };

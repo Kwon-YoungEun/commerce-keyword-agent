@@ -617,7 +617,8 @@ def send_registration(payload):
         log["items"] = log["items"][:5000]
         _write_json(SEND_LOG, log)
 
-    return {"ok": 200 <= status < 300, "status": status, "took": took,
+    return {"ok": 200 <= status < 300, "status": status,
+            "statusText": status_text(status), "took": took,
             "response": text[:2000], "usedAuthHeaders": auth_names}
 
 
@@ -627,6 +628,45 @@ def send_registration(payload):
 # 성과 데이터는 다른 시스템에서 받은 CSV 를 올려 붙입니다.
 
 PERFORMANCE_STORE = os.path.join(DATA_DIR, "performance.json")
+
+# 응답 숫자만 보면 무슨 뜻인지 알 수 없어서 한국어를 함께 보여 줍니다.
+STATUS_TEXT = {
+    200: "성공",
+    201: "등록됨",
+    202: "접수됨",
+    204: "성공(내용 없음)",
+    400: "요청 형식 오류",
+    401: "인증 실패",
+    403: "권한 없음",
+    404: "주소를 찾을 수 없음",
+    409: "이미 등록됨",
+    413: "내용이 너무 큼",
+    422: "값이 올바르지 않음",
+    429: "요청이 너무 잦음",
+    500: "서버 오류",
+    502: "서버 연결 실패",
+    503: "서버 점검 중",
+    504: "서버 응답 지연",
+}
+
+
+def status_text(code):
+    """200 → '성공' 처럼 풀어 씁니다. 모르는 번호는 자리수로 짐작합니다."""
+    try:
+        code = int(code)
+    except (TypeError, ValueError):
+        return ""
+    if code in STATUS_TEXT:
+        return STATUS_TEXT[code]
+    if 200 <= code < 300:
+        return "성공"
+    if 300 <= code < 400:
+        return "다른 주소로 넘어감"
+    if 400 <= code < 500:
+        return "보낸 내용 문제"
+    if 500 <= code < 600:
+        return "받는 쪽 문제"
+    return ""
 
 # 실적 CSV 에서 이력과 이어 붙일 기준 칸. 위에 있을수록 먼저 씁니다.
 JOIN_CANDIDATES = [
@@ -644,7 +684,8 @@ LOG_COLUMNS_MAIN = [
     ("airDate", "방송일"),
     ("airTime", "방송시각"),
     ("productKeyword", "키워드"),
-    ("status", "응답"),
+    ("statusText", "결과"),
+    ("status", "응답코드"),
     ("shortUrl", "shortUrl"),
 ]
 LOG_COLUMNS_TAIL = [
@@ -669,6 +710,7 @@ def load_send_log():
             item["productKeyword"] = item["keyword"]
         if not item.get("snapshotId") and item.get("requestId"):
             item["snapshotId"] = item["requestId"]
+        item["statusText"] = status_text(item.get("status"))
     return items
 
 
