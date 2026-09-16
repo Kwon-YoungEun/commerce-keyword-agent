@@ -1,3 +1,37 @@
 {
- "items": []
+ "items": [
+  {
+   "id": "6bf0b7af-83c7-450c-9751-d45dfcf1a2ec",
+   "programName": "언니네 산지직송3",
+   "programCode": "CS0207DEMO",
+   "scheduleId": "EA202609161310",
+   "fromTs": 1789531800,
+   "date": "20260916",
+   "startLabel": "13:10",
+   "episode": "7회",
+   "keyword": "재첩",
+   "bodyText": "{\n  \"requestId\": \"6bf0b7af-83c7-450c-9751-d45dfcf1a2ec\",\n  \"timestamp\": 1789523860091,\n  \"programName\": \"언니네 산지직송3\",\n  \"programId\": \"CS0207DEMO\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"재첩\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "6bf0b7af-83c7-450c-9751-d45dfcf1a2ec",
+    "timestamp": 1789523860091,
+    "programName": "언니네 산지직송3",
+    "programId": "CS0207DEMO",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "재첩",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789523872
+  }
+ ]
 }
