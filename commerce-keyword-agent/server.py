@@ -649,8 +649,8 @@ LOG_COLUMNS_MAIN = [
 ]
 LOG_COLUMNS_TAIL = [
     ("programId", "programId"),
+    # snapshotId 는 우리가 보낸 requestId 와 같은 값이라 한 칸만 둡니다.
     ("snapshotId", "snapshotId"),
-    ("requestId", "requestId"),
     ("timestamp", "timestamp"),
 ]
 LOG_COLUMNS = LOG_COLUMNS_MAIN + LOG_COLUMNS_TAIL
