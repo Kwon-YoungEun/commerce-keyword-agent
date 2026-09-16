@@ -973,19 +973,11 @@ async function sendToApi() {
     return;
   }
 
-  // 지금 이 프로그램에 다른 키워드가 걸려 있으면 함께 알려 줍니다.
-  const p = state.currentProgram;
-  const current = p ? activeRegistration(p) : null;
-  const changeNote = current && current.keyword !== keyword
-    ? `\n\n지금은 '${current.keyword}' 가 적용 중이고, 이 회차부터 바뀝니다.` +
-      ` 그 전 편성에는 '${current.keyword}' 가 그대로 남습니다.`
-    : "";
-
   const ok = await askConfirm(
     `아래 내용을 실제 API 로 보냅니다. 되돌릴 수 없어요.\n\n` +
     `주소: ${cfg.registerApiUrl}\n` +
     `프로그램: ${body.programName} (${body.programId})\n` +
-    `키워드: ${keyword}` + changeNote
+    `키워드: ${keyword}`
   );
   if (!ok) return;
 

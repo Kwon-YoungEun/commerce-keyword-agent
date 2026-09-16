@@ -197,6 +197,39 @@
     "productCategory": []
    },
    "createdAt": 1789543858
+  },
+  {
+   "id": "f7051522-dd80-4c32-9f36-8e90bcfd1830",
+   "programName": "로또 1등도 출근합니다",
+   "programCode": "CS11256427",
+   "scheduleId": "EA202609161520",
+   "fromTs": 1789539600,
+   "date": "20260916",
+   "startLabel": "15:20",
+   "episode": "1화",
+   "keyword": "[프롬바이오] 위건강엔 매스틱",
+   "bodyText": "{\n  \"requestId\": \"f7051522-dd80-4c32-9f36-8e90bcfd1830\",\n  \"timestamp\": 1789544304484,\n  \"programName\": \"로또 1등도 출근합니다\",\n  \"programId\": \"CS11256427\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"[프롬바이오] 위건강엔 매스틱\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "f7051522-dd80-4c32-9f36-8e90bcfd1830",
+    "timestamp": 1789544304484,
+    "programName": "로또 1등도 출근합니다",
+    "programId": "CS11256427",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "[프롬바이오] 위건강엔 매스틱",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789544380
   }
  ]
 }
