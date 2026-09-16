@@ -1033,6 +1033,18 @@ function renderSendResult(json) {
     }
     rows.push({ key, value });
   }
+  // 원소가 하나뿐인 배열은 번호를 붙이지 않습니다. keywords[0] → keyword
+  const baseCount = {};
+  for (const row of rows) {
+    const base = row.key.replace(/\[\d+\]$/, "");
+    baseCount[base] = (baseCount[base] || 0) + 1;
+  }
+  for (const row of rows) {
+    const base = row.key.replace(/\[\d+\]$/, "");
+    row.label = baseCount[base] === 1 ? base : row.key;
+    if (row.label === "keywords") row.label = "keyword";
+  }
+
   // 무엇을 등록했는지가 제일 궁금하니 키워드를 맨 위로 올립니다.
   const isKeyword = (r) => /keyword/i.test(r.key);
   rows.sort((a, b) => (isKeyword(b) ? 1 : 0) - (isKeyword(a) ? 1 : 0));
@@ -1049,7 +1061,7 @@ function renderSendResult(json) {
       : "") +
     `<table class="send-table"><tbody>` +
     rows.map((r) =>
-      `<tr><th>${escapeHtml(r.key)}</th>` +
+      `<tr><th>${escapeHtml(r.label || r.key)}</th>` +
       `<td>${escapeHtml(String(r.value === null ? "" : r.value))}</td></tr>`
     ).join("") +
     `</tbody></table>`;
