@@ -373,7 +373,6 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .tab:hover { color: var(--text-primary); }
 .tab.is-on { color: var(--skb-red); font-weight: 700; border-bottom-color: var(--skb-red); }
 .history-table td.is-keyword { font-weight: 600; }
-.perf-state { font-size: 11.5px; margin: 0 0 12px; }
 .history-wrap { overflow-x: auto; max-height: 62vh; overflow-y: auto; }
 .history-table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
 .history-table th, .history-table td {

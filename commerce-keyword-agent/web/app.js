@@ -1156,6 +1156,8 @@ async function showHistoryTab(tab) {
     el.classList.toggle("is-on", el.dataset.tab === tab);
   });
   const history = tab === "history";
+  // 실적 올리기는 현재 현황에서만 씁니다.
+  document.getElementById("btnPerfUpload").hidden = history;
   document.getElementById("btnLogCsv").href =
     history ? "/api/send-log.csv" : "/api/current-keywords.csv";
   document.getElementById("historyTable").innerHTML =
@@ -1191,9 +1193,6 @@ async function loadCurrentKeywords() {
     document.getElementById("historyMeta").textContent =
       `키워드가 걸린 편성 ${items.length}개 · 앞뒤 2주` +
       (perf.rowCount ? ` · 실적 ${perf.rowCount}회차` : "");
-    document.getElementById("perfState").textContent = perf.rowCount
-      ? `실적 파일: ${perf.fileName || "(이름 없음)"} · 프로그램ID 와 회차로 이어 붙였습니다.`
-      : "실적 CSV 를 올리면 회차별 수치를 오른쪽에 붙입니다.";
 
     if (!items.length) {
       document.getElementById("historyTable").innerHTML =
@@ -1231,11 +1230,6 @@ function renderHistory(data) {
   document.getElementById("historyMeta").textContent =
     `전송 ${items.length}건` +
     (perf.rowCount ? ` · 실적 ${perf.rowCount}행 (${perf.keyField} 기준)` : "");
-
-  const state0 = document.getElementById("perfState");
-  state0.textContent = perf.rowCount
-    ? `실적 파일: ${perf.fileName || "(이름 없음)"} · ${perf.keyColumn} 칸으로 이어 붙였습니다.`
-    : "실적 CSV 를 올리면 shortUrl · snapshotId · requestId 중 겹치는 칸을 찾아 옆에 붙입니다.";
 
   if (!items.length) {
     document.getElementById("historyTable").innerHTML =
@@ -1288,8 +1282,9 @@ function formatStamp(ms) {
 
 /** 실적 CSV 올리기 — 엑셀이 저장한 CP949 파일도 읽습니다. */
 async function uploadPerformance(file) {
-  const stateEl = document.getElementById("perfState");
-  stateEl.textContent = "읽는 중…";
+  const box = document.getElementById("historyTable");
+  const fail = (html) => { box.innerHTML = `<div class="notice">${html}</div>`; };
+  box.innerHTML = '<div class="loading"><span class="spinner"></span>실적 파일을 읽는 중…</div>';
 
   let text = "";
   const buffer = await file.arrayBuffer();
@@ -1302,7 +1297,7 @@ async function uploadPerformance(file) {
     }
   }
   if (!text) {
-    stateEl.textContent = "파일을 읽지 못했습니다. UTF-8 이나 CP949 로 저장해 주세요.";
+    fail("파일을 읽지 못했습니다. UTF-8 이나 CP949 로 저장해 주세요.");
     return;
   }
 
@@ -1313,8 +1308,8 @@ async function uploadPerformance(file) {
   });
   const json = await res.json();
   if (!json.ok) {
-    stateEl.innerHTML = escapeHtml(json.error || "붙이지 못했습니다.") +
-      (json.columns ? `<br>이 파일의 칸: ${json.columns.map(escapeHtml).join(" · ")}` : "");
+    fail(escapeHtml(json.error || "붙이지 못했습니다.") +
+         (json.columns ? `<br>이 파일의 칸: ${json.columns.map(escapeHtml).join(" · ")}` : ""));
     return;
   }
   const unit = json.kind === "airing" ? "회차" : "행";
