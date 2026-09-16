@@ -250,6 +250,10 @@
       </div>
     </div>
     <div class="modal-body">
+      <div class="tabs" role="tablist">
+        <button class="tab is-on" type="button" data-tab="current" role="tab">현재 등록 현황</button>
+        <button class="tab" type="button" data-tab="history" role="tab">전송 이력</button>
+      </div>
       <input id="perfFile" type="file" accept=".csv,text/csv" hidden>
       <p id="perfState" class="perf-state muted"></p>
       <div id="historyTable" class="history-wrap"></div>

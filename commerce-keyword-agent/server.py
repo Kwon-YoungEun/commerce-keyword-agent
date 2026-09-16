@@ -761,6 +761,73 @@ def send_log_view():
     }
 
 
+CURRENT_COLUMNS = [
+    ("date", "방송일"),
+    ("start", "방송시각"),
+    ("programName", "프로그램"),
+    ("episode", "회차"),
+    ("keyword", "키워드"),
+    ("programCode", "programId"),
+    ("appliedFrom", "적용 시작"),
+]
+
+
+def current_registrations(days_ahead=14, days_back=14):
+    """조회 시점 캘린더 기준으로 어느 편성에 어떤 키워드가 걸려 있는지.
+
+    키워드는 '그 방송 시각에 유효했던 가장 최근 등록' 하나가 적용됩니다.
+    """
+    regs = load_registrations().get("items", [])
+    by_program = {}
+    for item in regs:
+        by_program.setdefault(item.get("programName") or "", []).append(item)
+
+    now = time.time()
+    low, high = now - days_back * 86400, now + days_ahead * 86400
+
+    rows = []
+    for program in (load_schedule_store().get("programs") or {}).values():
+        start_ts = program.get("startTs") or 0
+        if not (low <= start_ts <= high):
+            continue
+        name = program.get("programName") or program.get("title") or ""
+        best = None
+        for item in by_program.get(name, []):
+            from_ts = item.get("fromTs") or 0
+            if from_ts > start_ts:
+                continue
+            if (best is None or from_ts > (best.get("fromTs") or 0)
+                    or (from_ts == (best.get("fromTs") or 0)
+                        and (item.get("createdAt") or 0) > (best.get("createdAt") or 0))):
+                best = item
+        if not best:
+            continue
+        rows.append({
+            "date": program.get("date", ""),
+            "start": program.get("start", ""),
+            "programName": name,
+            "episode": program.get("episode", ""),
+            "keyword": best.get("keyword", ""),
+            "programCode": best.get("programCode", ""),
+            "appliedFrom": "%s %s" % (best.get("date", ""), best.get("startLabel", "")),
+            "startTs": start_ts,
+        })
+    rows.sort(key=lambda r: r["startTs"])
+    return rows
+
+
+def current_csv():
+    import csv as _csv
+    from io import StringIO
+
+    buf = StringIO()
+    writer = _csv.writer(buf)
+    writer.writerow([label for _, label in CURRENT_COLUMNS])
+    for row in current_registrations():
+        writer.writerow([row.get(key, "") for key, _ in CURRENT_COLUMNS])
+    return "﻿" + buf.getvalue()
+
+
 def send_log_csv():
     """엑셀에서 바로 열리도록 UTF-8 BOM 으로 내보냅니다."""
     import csv as _csv
@@ -1458,12 +1525,22 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/send-log":
                 return self._json({"ok": True, **send_log_view()})
 
-            if path == "/api/send-log.csv":
-                data = send_log_csv().encode("utf-8")
+            if path == "/api/current-keywords":
+                return self._json({
+                    "ok": True,
+                    "items": current_registrations(),
+                    "columns": [{"key": k, "label": label} for k, label in CURRENT_COLUMNS],
+                })
+
+            if path in ("/api/send-log.csv", "/api/current-keywords.csv"):
+                history = path.endswith("send-log.csv")
+                text = send_log_csv() if history else current_csv()
+                name = "keyword-log.csv" if history else "keyword-current.csv"
+                data = text.encode("utf-8")
                 self.send_response(200)
                 self.send_header("Content-Type", "text/csv; charset=utf-8")
                 self.send_header("Content-Disposition",
-                                 'attachment; filename="keyword-log.csv"')
+                                 'attachment; filename="%s"' % name)
                 self.send_header("Content-Length", str(len(data)))
                 self.end_headers()
                 return self.wfile.write(data)

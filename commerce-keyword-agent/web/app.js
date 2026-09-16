@@ -981,8 +981,15 @@ async function sendToApi() {
     }
     setBodyStatus(`응답 ${json.status} · ${json.took}초`, json.ok ? "ok" : "bad");
     renderSendResult(json);
-    showToast(json.ok ? `전송 성공 (${json.status})` : `전송 실패 (${json.status})`,
-              json.ok ? "ok" : "bad");
+
+    if (!json.ok) {
+      showToast(`전송 실패 (${json.status})`, "bad");
+      return;
+    }
+    // 전송이 곧 등록입니다. 캘린더 쪽 현재 상태도 함께 맞춰 둡니다.
+    const applied = await applyRegistration(body);
+    showToast(`전송 성공 (${json.status})` +
+              (applied ? ` · 이번 주 ${applied}개 편성에 표시됩니다.` : ""), "ok");
   } catch (err) {
     setBodyStatus("보내지 못했습니다: " + err.message, "bad");
   }
@@ -1051,6 +1058,40 @@ function renderSendResult(json) {
   if (json.ok && shortUrl) openLinkPreview(shortUrl, data);
 }
 
+/** 전송한 키워드를 캘린더 현재 상태에도 반영합니다.
+ *  이 회차부터 다음 등록 전까지 적용되고, 그 전 편성에는 예전 키워드가 남습니다. */
+async function applyRegistration(body) {
+  const p = state.currentProgram;
+  if (!p) return 0;
+  const item = {
+    id: body.requestId,
+    programName: body.programName,
+    programCode: body.programId,
+    scheduleId: p.id,
+    fromTs: p.startTs || 0,
+    date: p.date,
+    startLabel: p.start,
+    episode: p.episode,
+    keyword: body.productInfo[0].productKeyword,
+    bodyText: bodyToText(body, true),
+    body: body,
+  };
+  try {
+    const res = await fetch("/api/registrations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(item),
+    });
+    if (!(await res.json()).ok) return 0;
+    await loadRegistrations();
+    render();
+    renderRegistered(p);
+    return countAppliedAirings(item);
+  } catch (err) {
+    return 0;                 // 캘린더 반영에 실패해도 전송 자체는 끝난 상태입니다.
+  }
+}
+
 /* ------------------------------------------------ 등록 이력 · 실적 붙이기 */
 //
 // 규모가 작아 DB 없이 파일에 쌓습니다. 다른 시스템에서 받은 실적 CSV 를 올리면
@@ -1058,9 +1099,23 @@ function renderSendResult(json) {
 
 async function openHistory() {
   document.getElementById("historyBackdrop").hidden = false;
+  showHistoryTab(state.historyTab || "current");
+}
+
+/** 현재 등록 현황 / 전송 이력 두 갈래를 오갑니다. */
+async function showHistoryTab(tab) {
+  state.historyTab = tab;
+  document.querySelectorAll("#historyBackdrop .tab").forEach((el) => {
+    el.classList.toggle("is-on", el.dataset.tab === tab);
+  });
+  const history = tab === "history";
+  document.getElementById("btnPerfUpload").hidden = !history;
+  document.getElementById("btnLogCsv").href =
+    history ? "/api/send-log.csv" : "/api/current-keywords.csv";
   document.getElementById("historyTable").innerHTML =
     '<div class="loading"><span class="spinner"></span>불러오는 중…</div>';
-  await loadHistory();
+  if (history) await loadHistory();
+  else await loadCurrentKeywords();
 }
 
 async function loadHistory() {
@@ -1070,6 +1125,40 @@ async function loadHistory() {
     if (!json.ok) throw new Error(json.error || "불러오지 못했습니다.");
     state.history = json;
     renderHistory(json);
+  } catch (err) {
+    document.getElementById("historyTable").innerHTML =
+      `<div class="notice">${escapeHtml(err.message)}</div>`;
+  }
+}
+
+/** 조회 시점 기준으로 어느 편성에 어떤 키워드가 걸려 있는지. */
+async function loadCurrentKeywords() {
+  try {
+    const res = await fetch("/api/current-keywords");
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.error || "불러오지 못했습니다.");
+
+    const items = json.items || [];
+    document.getElementById("historyMeta").textContent =
+      `키워드가 걸린 편성 ${items.length}개 · 앞뒤 2주`;
+    document.getElementById("perfState").textContent =
+      "지금 캘린더에 적용돼 있는 키워드입니다. 바꾸면 그 회차부터 적용되고, 지난 편성에는 예전 키워드가 남습니다.";
+
+    if (!items.length) {
+      document.getElementById("historyTable").innerHTML =
+        '<div class="placeholder">아직 캘린더에 걸린 키워드가 없어요.</div>';
+      return;
+    }
+    const head = `<tr>` +
+      json.columns.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("") + `</tr>`;
+    const rows = items.map((item) =>
+      `<tr>` + json.columns.map((c) => {
+        let value = item[c.key] || "";
+        if (c.key === "date" && value) value = prettyDate(value);
+        return `<td${c.key === "keyword" ? ' class="is-keyword"' : ""}>${escapeHtml(String(value))}</td>`;
+      }).join("") + `</tr>`);
+    document.getElementById("historyTable").innerHTML =
+      `<table class="history-table"><thead>${head}</thead><tbody>${rows.join("")}</tbody></table>`;
   } catch (err) {
     document.getElementById("historyTable").innerHTML =
       `<div class="notice">${escapeHtml(err.message)}</div>`;
@@ -1849,6 +1938,9 @@ function bindEvents() {
   });
   document.getElementById("btnSendApi").addEventListener("click", sendToApi);
   document.getElementById("btnHistory").addEventListener("click", openHistory);
+  document.querySelectorAll("#historyBackdrop .tab").forEach((el) => {
+    el.addEventListener("click", () => showHistoryTab(el.dataset.tab));
+  });
   document.getElementById("historyClose").addEventListener("click", () => {
     document.getElementById("historyBackdrop").hidden = true;
   });
