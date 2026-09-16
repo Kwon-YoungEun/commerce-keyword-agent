@@ -944,7 +944,7 @@ def send_log_view():
 CURRENT_COLUMNS = [
     ("date", "방송일"),
     ("start", "방송시각"),
-    ("appliedFrom", "적용 시작"),
+    ("sentAt", "전송시각"),
     ("programName", "프로그램"),
     ("episode", "회차"),
     ("keyword", "키워드"),
@@ -996,9 +996,10 @@ def current_registrations(days_ahead=14, days_back=14, include_performance=True)
             "episode": program.get("episode", ""),
             "keyword": best.get("keyword", ""),
             "programCode": best.get("programCode", ""),
-            # 방송일과 같은 모양으로 맞춥니다: 2026.09.07 03:40
-            "appliedFrom": ("%s %s" % (pretty_date(best.get("date", "")),
-                                       best.get("startLabel", ""))).strip(),
+            # 이 키워드를 언제 보냈는지. 전송할 때 등록이 함께 만들어집니다.
+            "sentAt": (time.strftime("%Y.%m.%d %H:%M",
+                                     time.localtime(best.get("createdAt")))
+                       if best.get("createdAt") else ""),
             "startTs": start_ts,
         })
     rows.sort(key=lambda r: r["startTs"])
