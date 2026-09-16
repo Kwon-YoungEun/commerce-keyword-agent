@@ -946,9 +946,25 @@ async function sendToApi() {
   const body = currentBody();
   if (!body) return;
 
+  // 막힌 이유가 화면에서 바로 보이도록 알림을 띄우고 해당 칸으로 이동합니다.
+  const block = (message, fieldId) => {
+    setBodyStatus(message, "bad");
+    showToast(message, "bad");
+    const el = document.getElementById(fieldId);
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("is-blocked");
+    setTimeout(() => el.classList.remove("is-blocked"), 2000);
+    if (!el.readOnly) el.focus();
+  };
+
   const keyword = body.productInfo[0].productKeyword;
   if (!keyword) {
-    setBodyStatus("보내려면 productKeyword 를 채워 주세요.", "bad");
+    block("보내려면 productKeyword 를 채워 주세요.", "fldProductKeyword");
+    return;
+  }
+  if (!body.programId) {
+    block(body.programName + " 의 programId 가 없어요. 넣고 다시 눌러 주세요.",
+          "fldProgramId");
     return;
   }
   const cfg = state.config || {};
@@ -957,13 +973,35 @@ async function sendToApi() {
     return;
   }
 
+  // 지금 이 프로그램에 다른 키워드가 걸려 있으면 함께 알려 줍니다.
+  const p = state.currentProgram;
+  const current = p ? activeRegistration(p) : null;
+  const changeNote = current && current.keyword !== keyword
+    ? `\n\n지금은 '${current.keyword}' 가 적용 중이고, 이 회차부터 바뀝니다.` +
+      ` 그 전 편성에는 '${current.keyword}' 가 그대로 남습니다.`
+    : "";
+
   const ok = await askConfirm(
     `아래 내용을 실제 API 로 보냅니다. 되돌릴 수 없어요.\n\n` +
     `주소: ${cfg.registerApiUrl}\n` +
-    `프로그램: ${body.programName} (${body.programId || "ID 없음"})\n` +
-    `키워드: ${keyword}`
+    `프로그램: ${body.programName} (${body.programId})\n` +
+    `키워드: ${keyword}` + changeNote
   );
   if (!ok) return;
+
+  // 다음에 또 넣지 않도록 프로그램 ID 표에 저장해 둡니다.
+  if (state.programIds[body.programName] !== body.programId) {
+    try {
+      const res = await fetch("/api/program-ids", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: body.programName, id: body.programId }),
+      });
+      state.programIds = (await res.json()).map || state.programIds;
+    } catch (err) {
+      /* 표 저장에 실패해도 전송은 계속합니다. */
+    }
+  }
 
   setBodyStatus("보내는 중…", "");
   try {
@@ -1329,124 +1367,6 @@ function flattenObject(obj, prefix = "", out = {}) {
     }
   }
   return out;
-}
-
-async function confirmRegister() {
-  const body = currentBody();
-  if (!body) return;
-  // 막힌 이유가 화면에서 바로 보이도록 알림을 띄우고 해당 칸으로 이동합니다.
-  const block = (message, fieldId) => {
-    setBodyStatus(message, "bad");
-    showToast(message, "bad");
-    const el = document.getElementById(fieldId);
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
-    el.classList.add("is-blocked");
-    setTimeout(() => el.classList.remove("is-blocked"), 2000);
-    if (!el.readOnly) el.focus();
-  };
-
-  if (!body.productInfo[0].productKeyword) {
-    block("등록하려면 productKeyword 를 채워 주세요.", "fldProductKeyword");
-    return;
-  }
-  if (!body.programId) {
-    block(
-      body.programName + " 의 programId 가 없어요. 프로그램 ID 를 넣고 다시 눌러 주세요.",
-      "fldProgramId"
-    );
-    return;
-  }
-  const p = state.currentProgram;
-
-  if (state.programIds[body.programName] !== body.programId) {
-    try {
-      const res = await fetch("/api/program-ids", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: body.programName, id: body.programId }),
-      });
-      state.programIds = (await res.json()).map || state.programIds;
-    } catch (err) {
-      /* 표 저장에 실패해도 등록은 계속합니다. */
-    }
-  }
-
-  const item = {
-    id: body.requestId,
-    programName: body.programName,   // 이 이름의 프로그램 전체에 적용됩니다.
-    programCode: body.programId,     // 전송 body 의 programId
-    scheduleId: p.id,                // 등록을 누른 회차(참고용)
-    fromTs: p.startTs || 0,          // 이 회차부터 다음 등록 전까지 적용됩니다.
-    date: p.date,
-    startLabel: p.start,
-    episode: p.episode,
-    keyword: body.productInfo[0].productKeyword,
-    bodyText: bodyToText(body, true),
-    body: body,
-  };
-
-  // 매뉴얼 키워드는 한 시점에 한 개입니다. 바꾸면 이 회차부터 적용되고,
-  // 그 전 편성에는 예전 키워드가 기록으로 남습니다.
-  const current = activeRegistration(p);
-  if (current && current.keyword !== item.keyword) {
-    const ok = await askConfirm(
-      `${item.programName} 은 지금 '${current.keyword}' 가 적용 중이에요. ` +
-      `이 회차(${prettyDate(p.date)} ${p.start})부터 '${item.keyword}' 로 바뀝니다. ` +
-      `그 전 편성에는 '${current.keyword}' 가 그대로 남습니다.`,
-      "바꾸기"
-    );
-    if (!ok) {
-      showToast("등록을 취소했어요.", "");
-      return;
-    }
-  } else if (current) {
-    const ok = await askConfirm(
-      `'${item.keyword}' 는 이미 적용 중이에요. 다시 등록할까요?`, "다시 등록"
-    );
-    if (!ok) {
-      showToast("등록을 취소했어요.", "");
-      return;
-    }
-  }
-
-  try {
-    const res = await fetch("/api/registrations", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(item),
-    });
-    const json = await res.json();
-    if (!json.ok) throw new Error(json.error || "등록에 실패했습니다.");
-    await loadRegistrations();          // 개수를 세기 전에 먼저 갱신합니다.
-    render();
-    renderRegistered(p);
-
-    const hits = countAppliedAirings(item);
-    const prev = json.previous && json.previous !== item.keyword ? json.previous : "";
-    const message =
-      "등록했어요 — " + item.keyword + " · 이번 주 " + hits + "개 편성에 표시됩니다." +
-      (prev ? " (이전 편성은 '" + prev + "' 유지)" : "");
-    setBodyStatus(message, "ok");
-    showToast(message, "ok");
-
-    // 등록이 끝나면 팝업을 모두 닫고 캘린더로 돌아갑니다.
-    // 결과 문구는 화면 위 알림으로 남아 있습니다.
-    document.getElementById("bodyBackdrop").hidden = true;
-    closeModal();
-    revealAiring(p.id);
-  } catch (err) {
-    setBodyStatus("등록 실패: " + err.message, "bad");
-    showToast("등록 실패: " + err.message, "bad");
-  }
-}
-
-/** 방금 등록한 회차를 캘린더 화면에 띄우고 잠깐 표시해 줍니다. */
-function revealAiring(airingId) {
-  const block = document.querySelector('.pgm[data-airing="' + airingId + '"]');
-  if (!block) return;
-  block.scrollIntoView({ behavior: "smooth", block: "center" });
-  block.classList.add("is-flash");
-  setTimeout(() => block.classList.remove("is-flash"), 2400);
 }
 
 function countAppliedAirings(item) {
@@ -1977,7 +1897,6 @@ function bindEvents() {
   document.getElementById("linkBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "linkBackdrop") closeLinkPreview();
   });
-  document.getElementById("btnConfirmRegister").addEventListener("click", confirmRegister);
   document.getElementById("btnSaveProgramId").addEventListener("click", onProgramIdButton);
   document.getElementById("fldProgramId").addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.target.readOnly) saveProgramIdFromBody();
