@@ -940,15 +940,23 @@ def send_log_view():
     }
 
 
+# programId 는 실적을 맞추는 데만 쓰고 화면에는 내보내지 않습니다.
 CURRENT_COLUMNS = [
     ("date", "방송일"),
     ("start", "방송시각"),
+    ("appliedFrom", "적용 시작"),
     ("programName", "프로그램"),
     ("episode", "회차"),
     ("keyword", "키워드"),
-    ("programCode", "programId"),
-    ("appliedFrom", "적용 시작"),
 ]
+
+
+def pretty_date(yyyymmdd):
+    """20260907 → 2026.09.07"""
+    text = (yyyymmdd or "").strip()
+    if len(text) != 8 or not text.isdigit():
+        return text
+    return "%s.%s.%s" % (text[:4], text[4:6], text[6:])
 
 
 def current_registrations(days_ahead=14, days_back=14, include_performance=True):
@@ -988,7 +996,9 @@ def current_registrations(days_ahead=14, days_back=14, include_performance=True)
             "episode": program.get("episode", ""),
             "keyword": best.get("keyword", ""),
             "programCode": best.get("programCode", ""),
-            "appliedFrom": "%s %s" % (best.get("date", ""), best.get("startLabel", "")),
+            # 방송일과 같은 모양으로 맞춥니다: 2026.09.07 03:40
+            "appliedFrom": ("%s %s" % (pretty_date(best.get("date", "")),
+                                       best.get("startLabel", ""))).strip(),
             "startTs": start_ts,
         })
     rows.sort(key=lambda r: r["startTs"])
