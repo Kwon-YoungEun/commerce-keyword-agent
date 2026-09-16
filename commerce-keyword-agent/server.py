@@ -825,7 +825,19 @@ def current_registrations(days_ahead=14, days_back=14):
             "startTs": start_ts,
         })
     rows.sort(key=lambda r: r["startTs"])
-    return rows
+
+    # 같은 날 같은 회차에 같은 키워드면 본방송·재방송을 한 줄로 묶고
+    # 방송시각만 나란히 적습니다.
+    merged = {}
+    for row in rows:
+        key = (row["date"], row["programName"], row["episode"], row["keyword"])
+        if key in merged:
+            merged[key]["start"] += ", " + row["start"]
+            merged[key]["airingCount"] += 1
+        else:
+            row["airingCount"] = 1
+            merged[key] = row
+    return list(merged.values())
 
 
 def current_csv():
