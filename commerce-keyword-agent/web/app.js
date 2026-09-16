@@ -1164,8 +1164,9 @@ async function showHistoryTab(tab) {
     el.classList.toggle("is-on", el.dataset.tab === tab);
   });
   const history = tab === "history";
-  // 실적 올리기는 현재 현황에서만 씁니다.
+  // 실적 올리기와 프로그램 고르기는 현재 현황에서만 씁니다.
   document.getElementById("btnPerfUpload").hidden = history;
+  document.getElementById("historyFilter").hidden = history;
   document.getElementById("btnLogCsv").href =
     history ? "/api/send-log.csv" : "/api/current-keywords.csv";
   document.getElementById("historyTable").innerHTML =
@@ -1193,20 +1194,57 @@ async function loadCurrentKeywords() {
     const res = await fetch("/api/current-keywords");
     const json = await res.json();
     if (!json.ok) throw new Error(json.error || "불러오지 못했습니다.");
+    state.currentKeywords = json;
+    fillProgramFilter(json.items || []);
+    renderCurrentKeywords();
+  } catch (err) {
+    document.getElementById("historyTable").innerHTML =
+      `<div class="notice">${escapeHtml(err.message)}</div>`;
+  }
+}
 
-    const items = json.items || [];
-    const perf = json.performance || {};
-    const perfCols = perf.columns || [];
+/** 프로그램 고르는 칸을 채웁니다. 고른 값은 그대로 두고 목록만 갱신합니다. */
+function fillProgramFilter(items) {
+  const select = document.getElementById("filterProgram");
+  const names = [];
+  for (const item of items) {
+    if (item.programName && !names.includes(item.programName)) names.push(item.programName);
+  }
+  names.sort((a, b) => a.localeCompare(b, "ko"));
+  const chosen = state.historyProgram || "";
+  select.innerHTML =
+    `<option value="">전체 (${items.length}건)</option>` +
+    names.map((name) => {
+      const count = items.filter((i) => i.programName === name).length;
+      return `<option value="${escapeHtml(name)}">${escapeHtml(name)} (${count}건)</option>`;
+    }).join("");
+  // 고른 프로그램이 목록에서 사라졌으면 전체로 되돌립니다.
+  select.value = names.includes(chosen) ? chosen : "";
+  state.historyProgram = select.value;
+}
 
-    document.getElementById("historyMeta").textContent =
-      `키워드가 걸린 편성 ${items.length}개 · 앞뒤 2주` +
-      (perf.rowCount ? ` · 실적 ${perf.rowCount}회차` : "");
+function renderCurrentKeywords() {
+  const json = state.currentKeywords;
+  if (!json) return;
+  const chosen = state.historyProgram || "";
+  const all = json.items || [];
+  const items = chosen ? all.filter((i) => i.programName === chosen) : all;
+  const perf = json.performance || {};
+  const perfCols = perf.columns || [];
 
-    if (!items.length) {
-      document.getElementById("historyTable").innerHTML =
-        '<div class="placeholder">아직 캘린더에 걸린 키워드가 없어요.</div>';
-      return;
-    }
+  document.getElementById("historyMeta").textContent =
+    `키워드가 걸린 편성 ${items.length}개` +
+    (chosen ? ` (전체 ${all.length}개 중)` : "") + ` · 앞뒤 2주` +
+    (perf.rowCount ? ` · 실적 ${perf.rowCount}회차` : "");
+
+  if (!items.length) {
+    document.getElementById("historyTable").innerHTML =
+      `<div class="placeholder">${chosen
+        ? escapeHtml(chosen) + " 에 걸린 키워드가 없어요."
+        : "아직 캘린더에 걸린 키워드가 없어요."}</div>`;
+    return;
+  }
+  {
     const head = `<tr>` +
       json.columns.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("") +
       perfCols.map((c) => `<th class="is-perf">${escapeHtml(c)}</th>`).join("") +
@@ -1224,9 +1262,6 @@ async function loadCurrentKeywords() {
       }).join("") + `</tr>`);
     document.getElementById("historyTable").innerHTML =
       `<table class="history-table"><thead>${head}</thead><tbody>${rows.join("")}</tbody></table>`;
-  } catch (err) {
-    document.getElementById("historyTable").innerHTML =
-      `<div class="notice">${escapeHtml(err.message)}</div>`;
   }
 }
 
@@ -1886,6 +1921,10 @@ function bindEvents() {
   document.getElementById("btnHistory").addEventListener("click", openHistory);
   document.querySelectorAll("#historyBackdrop .tab").forEach((el) => {
     el.addEventListener("click", () => showHistoryTab(el.dataset.tab));
+  });
+  document.getElementById("filterProgram").addEventListener("change", (e) => {
+    state.historyProgram = e.target.value;
+    renderCurrentKeywords();
   });
   document.getElementById("historyClose").addEventListener("click", () => {
     document.getElementById("historyBackdrop").hidden = true;

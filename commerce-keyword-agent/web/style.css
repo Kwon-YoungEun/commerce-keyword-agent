@@ -373,6 +373,17 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 .tab:hover { color: var(--text-primary); }
 .tab.is-on { color: var(--skb-red); font-weight: 700; border-bottom-color: var(--skb-red); }
 .history-table td.is-keyword { font-weight: 600; }
+.history-filter {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  font-size: 12.5px;
+}
+.history-filter label { color: var(--text-secondary); }
+.history-filter select {
+  font-family: inherit; font-size: 12.5px; padding: 5px 9px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg-card); color: var(--text-primary);
+  max-width: 320px;
+}
 .history-wrap { overflow-x: auto; max-height: 62vh; overflow-y: auto; }
 .history-table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
 .history-table th, .history-table td {

@@ -253,6 +253,10 @@
         <button class="tab is-on" type="button" data-tab="current" role="tab">현재 등록 현황</button>
         <button class="tab" type="button" data-tab="history" role="tab">전송 이력</button>
       </div>
+      <div id="historyFilter" class="history-filter">
+        <label for="filterProgram">프로그램</label>
+        <select id="filterProgram"><option value="">전체</option></select>
+      </div>
       <input id="perfFile" type="file" accept=".csv,text/csv" hidden>
       <div id="historyTable" class="history-wrap"></div>
     </div>
