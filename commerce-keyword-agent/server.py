@@ -583,24 +583,227 @@ def send_registration(payload):
         return {"ok": False, "error": "보내지 못했습니다: %s" % exc}
 
     took = round(time.time() - started, 2)
+
+    # 응답에서 snapshotId 와 shortUrl 을 찾아 둡니다(중첩돼 있어도 찾습니다).
+    answer = {}
+    try:
+        answer = json.loads(text)
+    except Exception:
+        answer = {}
+    found = find_keys(answer, ("snapshotId", "shortUrl"))
+
+    program = payload.get("program") or {}
     record = {
         "at": int(time.time()),
-        "url": url,
         "status": status,
         "took": took,
-        # 무엇을 보냈는지 알 수 있게 키워드만 남기고 키는 남기지 않습니다.
-        "keyword": ((body.get("productInfo") or [{}])[0] or {}).get("productKeyword", ""),
-        "programName": body.get("programName", ""),
+        # 보낸 내용 — 인증 키는 남기지 않습니다.
         "requestId": body.get("requestId", ""),
+        "timestamp": body.get("timestamp", 0),
+        "programName": body.get("programName", ""),
+        "programId": body.get("programId", ""),
+        "productKeyword": ((body.get("productInfo") or [{}])[0] or {}).get("productKeyword", ""),
+        # 어느 회차에 등록했는지
+        "episode": (program.get("episode") or "").strip(),
+        "airDate": (program.get("date") or "").strip(),
+        "airTime": (program.get("start") or "").strip(),
+        # 받은 결과
+        "snapshotId": found.get("snapshotId") or body.get("requestId", ""),
+        "shortUrl": found.get("shortUrl", ""),
     }
     with _store_lock:
         log = _read_json(SEND_LOG, {"items": []})
         log.setdefault("items", []).insert(0, record)
-        log["items"] = log["items"][:200]
+        log["items"] = log["items"][:5000]
         _write_json(SEND_LOG, log)
 
     return {"ok": 200 <= status < 300, "status": status, "took": took,
             "response": text[:2000], "usedAuthHeaders": auth_names}
+
+
+# --------------------------------------------------- 등록 이력 · 실적 붙이기
+#
+# 규모가 작아서(내년 1월까지 많아야 수천 건) DB 없이 파일에 쌓습니다.
+# 성과 데이터는 다른 시스템에서 받은 CSV 를 올려 붙입니다.
+
+PERFORMANCE_STORE = os.path.join(DATA_DIR, "performance.json")
+
+# 실적 CSV 에서 이력과 이어 붙일 기준 칸. 위에 있을수록 먼저 씁니다.
+JOIN_CANDIDATES = [
+    ("shortUrl", ("shorturl", "short_url", "단축url", "단축주소", "링크", "url")),
+    ("snapshotId", ("snapshotid", "snapshot_id", "스냅샷id", "스냅샷아이디")),
+    ("requestId", ("requestid", "request_id", "요청id")),
+]
+
+# 자주 보는 칸을 앞에 두고, 실적을 그 뒤에 붙입니다.
+# 식별자는 스크롤 끝으로 밀어 둡니다.
+LOG_COLUMNS_MAIN = [
+    ("at", "전송시각"),
+    ("programName", "프로그램"),
+    ("episode", "회차"),
+    ("airDate", "방송일"),
+    ("airTime", "방송시각"),
+    ("productKeyword", "키워드"),
+    ("status", "응답"),
+    ("shortUrl", "shortUrl"),
+]
+LOG_COLUMNS_TAIL = [
+    ("programId", "programId"),
+    ("snapshotId", "snapshotId"),
+    ("requestId", "requestId"),
+    ("timestamp", "timestamp"),
+]
+LOG_COLUMNS = LOG_COLUMNS_MAIN + LOG_COLUMNS_TAIL
+
+
+def load_send_log():
+    return _read_json(SEND_LOG, {"items": []}).get("items", [])
+
+
+def load_performance():
+    data = _read_json(PERFORMANCE_STORE, {})
+    return {
+        "keyField": data.get("keyField", ""),
+        "keyColumn": data.get("keyColumn", ""),
+        "columns": data.get("columns", []),
+        "rows": data.get("rows", {}),
+        "updatedAt": data.get("updatedAt", 0),
+        "fileName": data.get("fileName", ""),
+    }
+
+
+def norm_header(text):
+    return re.sub(r"[\s_\-]", "", (text or "")).strip().lower()
+
+
+def parse_csv_text(text):
+    """CSV 를 표로 읽습니다. 빈 줄과 앞뒤 공백은 정리합니다."""
+    import csv as _csv
+    from io import StringIO
+
+    rows = list(_csv.reader(StringIO(text)))
+    rows = [r for r in rows if any((c or "").strip() for c in r)]
+    if not rows:
+        return [], []
+    header = [(c or "").strip() for c in rows[0]]
+    body = []
+    for row in rows[1:]:
+        row = list(row) + [""] * (len(header) - len(row))
+        body.append({header[i]: (row[i] or "").strip() for i in range(len(header))})
+    return header, body
+
+
+def save_performance(csv_text, file_name=""):
+    """실적 CSV 를 올려 이력과 이어 붙입니다."""
+    header, rows = parse_csv_text(csv_text)
+    if not header:
+        return {"ok": False, "error": "CSV 를 읽지 못했습니다. 내용이 비어 있어요."}
+
+    normalized = {norm_header(h): h for h in header}
+    key_field = key_column = ""
+    for field, aliases in JOIN_CANDIDATES:
+        for alias in aliases:
+            if alias in normalized:
+                key_field, key_column = field, normalized[alias]
+                break
+        if key_field:
+            break
+
+    if not key_field:
+        return {"ok": False, "columns": header,
+                "error": "붙일 기준 칸을 못 찾았습니다. shortUrl · snapshotId · requestId "
+                         "중 하나가 들어 있어야 이력과 이어 붙일 수 있어요."}
+
+    indexed = {}
+    for row in rows:
+        key = (row.get(key_column) or "").strip()
+        if key:
+            indexed[key] = {k: v for k, v in row.items() if k != key_column}
+
+    data = {
+        "keyField": key_field,
+        "keyColumn": key_column,
+        "columns": [h for h in header if h != key_column],
+        "rows": indexed,
+        "updatedAt": int(time.time()),
+        "fileName": file_name,
+    }
+    with _store_lock:
+        _write_json(PERFORMANCE_STORE, data)
+
+    matched = sum(1 for item in load_send_log()
+                  if (item.get(key_field) or "") in indexed)
+    return {"ok": True, "keyField": key_field, "keyColumn": key_column,
+            "rowCount": len(indexed), "columns": data["columns"], "matched": matched}
+
+
+def send_log_view():
+    """이력과 실적을 이어 붙인 결과."""
+    perf = load_performance()
+    items = []
+    for item in load_send_log():
+        row = dict(item)
+        key = (item.get(perf["keyField"]) or "") if perf["keyField"] else ""
+        row["performance"] = perf["rows"].get(key, {}) if key else {}
+        items.append(row)
+    return {
+        "items": items,
+        "columns": [{"key": k, "label": label} for k, label in LOG_COLUMNS_MAIN],
+        "tailColumns": [{"key": k, "label": label} for k, label in LOG_COLUMNS_TAIL],
+        "performance": {
+            "keyField": perf["keyField"],
+            "keyColumn": perf["keyColumn"],
+            "columns": perf["columns"],
+            "updatedAt": perf["updatedAt"],
+            "fileName": perf["fileName"],
+            "rowCount": len(perf["rows"]),
+        },
+    }
+
+
+def send_log_csv():
+    """엑셀에서 바로 열리도록 UTF-8 BOM 으로 내보냅니다."""
+    import csv as _csv
+    from io import StringIO
+
+    perf = load_performance()
+    buf = StringIO()
+    writer = _csv.writer(buf)
+    writer.writerow([label for _, label in LOG_COLUMNS_MAIN] + perf["columns"]
+                    + [label for _, label in LOG_COLUMNS_TAIL])
+
+    def cell(item, key):
+        value = item.get(key, "")
+        if key == "at" and value:
+            return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(value))
+        return value
+
+    for item in load_send_log():
+        matched = perf["rows"].get((item.get(perf["keyField"]) or "")) if perf["keyField"] else None
+        writer.writerow(
+            [cell(item, k) for k, _ in LOG_COLUMNS_MAIN]
+            + [(matched or {}).get(col, "") for col in perf["columns"]]
+            + [cell(item, k) for k, _ in LOG_COLUMNS_TAIL]
+        )
+    return "﻿" + buf.getvalue()
+
+
+def find_keys(node, names):
+    """중첩된 응답 어디에 있든 해당 이름의 값을 찾아 옵니다."""
+    out = {}
+
+    def walk(value):
+        if isinstance(value, dict):
+            for key, item in value.items():
+                if key in names and isinstance(item, (str, int)) and key not in out:
+                    out[key] = str(item)
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+
+    walk(node)
+    return out
 
 
 # ------------------------------------------------- tvN 공식 회차 미리보기
@@ -1252,6 +1455,19 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/program-ids":
                 return self._json({"ok": True, "map": load_program_ids()})
 
+            if path == "/api/send-log":
+                return self._json({"ok": True, **send_log_view()})
+
+            if path == "/api/send-log.csv":
+                data = send_log_csv().encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "text/csv; charset=utf-8")
+                self.send_header("Content-Disposition",
+                                 'attachment; filename="keyword-log.csv"')
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                return self.wfile.write(data)
+
             if path == "/api/summary":
                 program_id = query.get("programId", [""])[0]
                 store = load_schedule_store()
@@ -1303,6 +1519,15 @@ class Handler(BaseHTTPRequestHandler):
 
             if parsed.path == "/api/send-registration":
                 return self._json(send_registration(self._body_json()))
+
+            if parsed.path == "/api/performance":
+                body = self._body_json()
+                if body.get("clear"):
+                    with _store_lock:
+                        _write_json(PERFORMANCE_STORE, {})
+                    return self._json({"ok": True, "cleared": True})
+                return self._json(save_performance(body.get("csv") or "",
+                                                   body.get("fileName") or ""))
 
             if parsed.path == "/api/program-catalog":
                 body = self._body_json()

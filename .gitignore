@@ -36,3 +36,6 @@ commerce-keyword-agent/data/secrets.json
 
 # 전송 기록 — 언제 무엇을 보냈는지만 남는 로컬 기록입니다.
 commerce-keyword-agent/data/send_log.json
+
+# 실적 데이터 — 다른 시스템에서 받아 온 것이라 저장소에 넣지 않습니다.
+commerce-keyword-agent/data/performance.json

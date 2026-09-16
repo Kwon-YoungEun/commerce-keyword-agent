@@ -970,7 +970,8 @@ async function sendToApi() {
     const res = await fetch("/api/send-registration", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ body: body }),
+      // 어느 회차에 등록했는지도 함께 기록합니다.
+      body: JSON.stringify({ body: body, program: state.currentProgram || {} }),
     });
     const json = await res.json();
     if (json.error) {
@@ -1048,6 +1049,128 @@ function renderSendResult(json) {
   // 성공했으면 등록 결과 화면을 바로 띄웁니다.
   const shortUrl = flattenObject(data).shortUrl || flattenObject(data)["data.shortUrl"];
   if (json.ok && shortUrl) openLinkPreview(shortUrl, data);
+}
+
+/* ------------------------------------------------ 등록 이력 · 실적 붙이기 */
+//
+// 규모가 작아 DB 없이 파일에 쌓습니다. 다른 시스템에서 받은 실적 CSV 를 올리면
+// shortUrl · snapshotId · requestId 중 겹치는 칸을 찾아 이력에 이어 붙입니다.
+
+async function openHistory() {
+  document.getElementById("historyBackdrop").hidden = false;
+  document.getElementById("historyTable").innerHTML =
+    '<div class="loading"><span class="spinner"></span>불러오는 중…</div>';
+  await loadHistory();
+}
+
+async function loadHistory() {
+  try {
+    const res = await fetch("/api/send-log");
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.error || "불러오지 못했습니다.");
+    state.history = json;
+    renderHistory(json);
+  } catch (err) {
+    document.getElementById("historyTable").innerHTML =
+      `<div class="notice">${escapeHtml(err.message)}</div>`;
+  }
+}
+
+function renderHistory(data) {
+  const items = data.items || [];
+  const perf = data.performance || {};
+  const perfCols = perf.columns || [];
+
+  document.getElementById("historyMeta").textContent =
+    `전송 ${items.length}건` +
+    (perf.rowCount ? ` · 실적 ${perf.rowCount}행 (${perf.keyField} 기준)` : "");
+
+  const state0 = document.getElementById("perfState");
+  state0.textContent = perf.rowCount
+    ? `실적 파일: ${perf.fileName || "(이름 없음)"} · ${perf.keyColumn} 칸으로 이어 붙였습니다.`
+    : "실적 CSV 를 올리면 shortUrl · snapshotId · requestId 중 겹치는 칸을 찾아 옆에 붙입니다.";
+
+  if (!items.length) {
+    document.getElementById("historyTable").innerHTML =
+      '<div class="placeholder">아직 전송한 기록이 없어요.</div>';
+    return;
+  }
+
+  const main = data.columns || [];
+  const tail = data.tailColumns || [];
+
+  const head =
+    `<tr>` +
+    main.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("") +
+    perfCols.map((c) => `<th class="is-perf">${escapeHtml(c)}</th>`).join("") +
+    tail.map((c) => `<th class="is-id">${escapeHtml(c.label)}</th>`).join("") +
+    `</tr>`;
+
+  const cell = (item, c, cls) => {
+    let value = item[c.key];
+    if (c.key === "at" && value) value = formatStamp(value * 1000);
+    if (c.key === "shortUrl" && value) {
+      return `<td class="${cls}"><a href="${escapeHtml(value)}" target="_blank" rel="noopener">${escapeHtml(value)}</a></td>`;
+    }
+    if (c.key === "status") {
+      const okay = value >= 200 && value < 300;
+      return `<td class="${cls}"><span class="send-badge ${okay ? "is-ok" : "is-bad"}">${escapeHtml(String(value))}</span></td>`;
+    }
+    return `<td class="${cls}">${escapeHtml(String(value === undefined || value === null ? "" : value))}</td>`;
+  };
+
+  const rows = items.map((item) =>
+    `<tr>` +
+    main.map((c) => cell(item, c, "")).join("") +
+    perfCols.map((c) =>
+      `<td class="is-perf">${escapeHtml(String((item.performance || {})[c] || ""))}</td>`).join("") +
+    tail.map((c) => cell(item, c, "is-id")).join("") +
+    `</tr>`);
+
+  document.getElementById("historyTable").innerHTML =
+    `<table class="history-table"><thead>${head}</thead><tbody>${rows.join("")}</tbody></table>`;
+}
+
+function formatStamp(ms) {
+  const d = new Date(ms);
+  const two = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())} ` +
+         `${two(d.getHours())}:${two(d.getMinutes())}`;
+}
+
+/** 실적 CSV 올리기 — 엑셀이 저장한 CP949 파일도 읽습니다. */
+async function uploadPerformance(file) {
+  const stateEl = document.getElementById("perfState");
+  stateEl.textContent = "읽는 중…";
+
+  let text = "";
+  const buffer = await file.arrayBuffer();
+  for (const encoding of ["utf-8", "euc-kr"]) {
+    try {
+      text = new TextDecoder(encoding, { fatal: encoding === "utf-8" }).decode(buffer);
+      break;
+    } catch (err) {
+      text = "";
+    }
+  }
+  if (!text) {
+    stateEl.textContent = "파일을 읽지 못했습니다. UTF-8 이나 CP949 로 저장해 주세요.";
+    return;
+  }
+
+  const res = await fetch("/api/performance", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ csv: text, fileName: file.name }),
+  });
+  const json = await res.json();
+  if (!json.ok) {
+    stateEl.innerHTML = escapeHtml(json.error || "붙이지 못했습니다.") +
+      (json.columns ? `<br>이 파일의 칸: ${json.columns.map(escapeHtml).join(" · ")}` : "");
+    return;
+  }
+  showToast(`실적 ${json.rowCount}행을 붙였어요. 이력 ${json.matched}건과 맞았습니다.`, "ok");
+  await loadHistory();
 }
 
 /** 응답에 담겨 온 주소를 팝업 안에서 열어 봅니다.
@@ -1725,6 +1848,21 @@ function bindEvents() {
     if (body) copyText(bodyToText(body, true), "JSON 을 복사했어요. Postman Body(raw)에 붙여 넣으세요.");
   });
   document.getElementById("btnSendApi").addEventListener("click", sendToApi);
+  document.getElementById("btnHistory").addEventListener("click", openHistory);
+  document.getElementById("historyClose").addEventListener("click", () => {
+    document.getElementById("historyBackdrop").hidden = true;
+  });
+  document.getElementById("historyBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "historyBackdrop") e.target.hidden = true;
+  });
+  document.getElementById("btnPerfUpload").addEventListener("click", () => {
+    document.getElementById("perfFile").click();
+  });
+  document.getElementById("perfFile").addEventListener("change", (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) uploadPerformance(file);
+    e.target.value = "";          // 같은 파일을 다시 골라도 동작하도록
+  });
   document.getElementById("linkClose").addEventListener("click", closeLinkPreview);
   document.getElementById("linkBackdrop").addEventListener("click", (e) => {
     if (e.target.id === "linkBackdrop") closeLinkPreview();
@@ -1763,7 +1901,7 @@ function bindEvents() {
       closeStoreModal();
       return;
     }
-    for (const id of ["settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
+    for (const id of ["historyBackdrop", "settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
       const el = document.getElementById(id);
       if (!el.hidden) {
         el.hidden = true;

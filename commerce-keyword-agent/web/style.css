@@ -363,6 +363,25 @@ code { font-family: "D2Coding", Consolas, monospace; font-size: .92em; }
 }
 .link-meta dd { margin: 0; word-break: break-all; }
 
+/* 등록 이력 — 칸이 많아 가로로 스크롤합니다 */
+.perf-state { font-size: 11.5px; margin: 0 0 12px; }
+.history-wrap { overflow-x: auto; max-height: 62vh; overflow-y: auto; }
+.history-table { border-collapse: collapse; font-size: 12px; white-space: nowrap; }
+.history-table th, .history-table td {
+  padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: left;
+}
+.history-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--bg-page); font-size: 11.5px; color: var(--text-secondary);
+}
+.history-table th.is-perf, .history-table td.is-perf { background: #FFF8F2; }
+.history-table thead th.is-perf { background: #FDEFE2; color: var(--status-warn); }
+/* 식별자는 참고용이라 흐리게 둡니다 */
+.history-table td.is-id { color: var(--text-secondary); font-size: 11px; }
+.history-table tbody tr:hover td { background: #FAFBFC; }
+.history-table a { color: var(--text-primary); }
+.history-table a:hover { color: var(--skb-red); }
+
 .field-sub {
   display: flex; align-items: center; gap: 10px;
   margin-top: 7px; flex-wrap: wrap;

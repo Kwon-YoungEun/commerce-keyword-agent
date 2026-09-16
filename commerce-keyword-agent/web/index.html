@@ -37,6 +37,7 @@
       <button id="btnNext" class="btn btn-icon" type="button" aria-label="다음 주">›</button>
       <button id="btnToday" class="btn btn-line" type="button">이번 주</button>
       <button id="btnProgramList" class="btn" type="button">편성 프로그램 리스트</button>
+      <button id="btnHistory" class="btn" type="button">등록 이력</button>
     </div>
     <div class="legend">
       <span class="legend-item"><i class="swatch swatch-live"></i>본방송</span>
@@ -230,6 +231,28 @@
     </div>
     <div class="modal-body">
       <div id="storeResult"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 등록 이력 · 실적 붙이기 -->
+<div id="historyBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-store" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+    <button id="historyClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head store-head">
+      <div class="store-head-text">
+        <h2 id="historyTitle">등록 이력</h2>
+        <p id="historyMeta" class="muted"></p>
+      </div>
+      <div class="store-head-actions">
+        <button id="btnPerfUpload" class="btn btn-ghost btn-sm" type="button">실적 CSV 올리기</button>
+        <a id="btnLogCsv" class="btn btn-line btn-sm" href="/api/send-log.csv">CSV 내려받기</a>
+      </div>
+    </div>
+    <div class="modal-body">
+      <input id="perfFile" type="file" accept=".csv,text/csv" hidden>
+      <p id="perfState" class="perf-state muted"></p>
+      <div id="historyTable" class="history-wrap"></div>
     </div>
   </div>
 </div>
