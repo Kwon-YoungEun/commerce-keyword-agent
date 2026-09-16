@@ -1033,6 +1033,9 @@ function renderSendResult(json) {
     }
     rows.push({ key, value });
   }
+  // 무엇을 등록했는지가 제일 궁금하니 키워드를 맨 위로 올립니다.
+  const isKeyword = (r) => /keyword/i.test(r.key);
+  rows.sort((a, b) => (isKeyword(b) ? 1 : 0) - (isKeyword(a) ? 1 : 0));
 
   box.innerHTML = head +
     (links.length

@@ -98,6 +98,72 @@
     "productCategory": []
    },
    "createdAt": 1789542856
+  },
+  {
+   "id": "dfc52f20-0e65-411d-9d50-5e4d90512194",
+   "programName": "로또 1등도 출근합니다",
+   "programCode": "CS11256427",
+   "scheduleId": "EA202609161625",
+   "fromTs": 1789543500,
+   "date": "20260916",
+   "startLabel": "16:25",
+   "episode": "2화",
+   "keyword": "[프롬바이오] 위건강엔 매스틱",
+   "bodyText": "{\n  \"requestId\": \"dfc52f20-0e65-411d-9d50-5e4d90512194\",\n  \"timestamp\": 1789543407814,\n  \"programName\": \"로또 1등도 출근합니다\",\n  \"programId\": \"CS11256427\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"[프롬바이오] 위건강엔 매스틱\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "dfc52f20-0e65-411d-9d50-5e4d90512194",
+    "timestamp": 1789543407814,
+    "programName": "로또 1등도 출근합니다",
+    "programId": "CS11256427",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "[프롬바이오] 위건강엔 매스틱",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789543423
+  },
+  {
+   "id": "3568973f-252a-42cd-aaab-951e9af7b5ae",
+   "programName": "로또 1등도 출근합니다",
+   "programCode": "CS11256427",
+   "scheduleId": "EA202609161625",
+   "fromTs": 1789543500,
+   "date": "20260916",
+   "startLabel": "16:25",
+   "episode": "2화",
+   "keyword": "[프롬바이오]위건강엔 매스틱",
+   "bodyText": "{\n  \"requestId\": \"3568973f-252a-42cd-aaab-951e9af7b5ae\",\n  \"timestamp\": 1789543432167,\n  \"programName\": \"로또 1등도 출근합니다\",\n  \"programId\": \"CS11256427\",\n  \"productInfo\": [\n    {\n      \"productIndex\": 0,\n      \"productKeyword\": \"[프롬바이오]위건강엔 매스틱\",\n      \"productMethod\": [\n        \"MANUAL\"\n      ],\n      \"productScore\": 27.0,\n      \"isProductCropImg\": false,\n      \"productCropImg\": \"\",\n      \"pplInfo\": []\n    }\n  ],\n  \"productCategory\": []\n}",
+   "body": {
+    "requestId": "3568973f-252a-42cd-aaab-951e9af7b5ae",
+    "timestamp": 1789543432167,
+    "programName": "로또 1등도 출근합니다",
+    "programId": "CS11256427",
+    "productInfo": [
+     {
+      "productIndex": 0,
+      "productKeyword": "[프롬바이오]위건강엔 매스틱",
+      "productMethod": [
+       "MANUAL"
+      ],
+      "productScore": 27,
+      "isProductCropImg": false,
+      "productCropImg": "",
+      "pplInfo": []
+     }
+    ],
+    "productCategory": []
+   },
+   "createdAt": 1789543551
   }
  ]
 }
