@@ -895,17 +895,19 @@ def extract_keywords(program, docs, official=None, top_n=18):
                 continue          # '통닭 변신 무죄' 같은 문장 토막은 버립니다.
             else:
                 score = score * 0.6 + PRODUCT_IN_BONUS
-        # 성분·재료 이름은 그 하나로 상품이 특정되므로 깎지 않습니다.
-        # 깎으면 '콜라겐' 보다 '촬영 콜라겐' 이 위로 올라옵니다.
-        if len(toks) == 1 and phrase in INGREDIENT_SET:
-            pass
+        # 교양에서는 성분 이름 하나로 상품이 특정되므로 깎지 않습니다. 깎으면
+        # '콜라겐' 보다 '촬영 콜라겐' 이 위로 올라옵니다. 예능에서는 마늘·양파
+        # 같은 흔한 재료가 주인공을 밀어내서 그대로 둡니다.
+        if len(toks) == 1 and phrase in INGREDIENT_SET and bucket == "교양":
+            score += 1.5          # '촬영 콜라겐' 보다 '콜라겐' 이 위로 오게
         elif len(toks) == 1 and phrase in PRODUCT_TERMS:
             score *= 0.55                            # '모자' 처럼 너무 넓은 말
         if all(t in title_tokens for t in toks):
             if not cat:
                 continue                             # 프로그램명·줄임말 그 자체
             score *= 0.3
-        if len(toks) >= 2 and not any(t in INGREDIENT_SET for t in toks):
+        if len(toks) >= 2 and not (bucket == "교양"
+                                   and any(t in INGREDIENT_SET for t in toks)):
             score += 1.0
 
         # 출연진 이름만 있는 말, 대사로 보이는 말은 제외합니다.
