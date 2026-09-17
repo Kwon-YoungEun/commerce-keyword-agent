@@ -860,7 +860,10 @@ def extract_keywords(program, docs, official=None, top_n=18):
                         continue
                     if phrase == title or phrase == name:
                         continue
-                    gain = weight * (1.0 + 0.25 * (n - 1))
+                    # 길이로 가산하지 않습니다. 가산하면 미리보기 문장에서
+                    # '언니네 조업에 한계란 없다' 같은 줄이 통째로 잘려
+                    # '언니네 조업 한계란' 이 '한계란' 을 밀어냅니다.
+                    gain = weight
                     if has_cue:
                         gain += 0.8
                     scores[phrase] += gain
@@ -910,9 +913,7 @@ def extract_keywords(program, docs, official=None, top_n=18):
             if not cat:
                 continue                             # 프로그램명·줄임말 그 자체
             score *= 0.3
-        if len(toks) >= 2 and not (bucket == "교양"
-                                   and any(t in INGREDIENT_SET for t in toks)):
-            score += 1.0
+        # 어절 수로도 가산하지 않습니다. 같은 이유로 긴 조각이 이깁니다.
 
         # 출연진 이름만 있는 말, 대사로 보이는 말은 제외합니다.
         if toks and all(t in cast_names for t in toks):
@@ -961,7 +962,9 @@ def extract_keywords(program, docs, official=None, top_n=18):
         if any(k in phrase and score <= s for k, s, _, _ in kept):
             continue
         if not cat:
-            if others >= 2:
+            # 상품어 사전에 없는 말은 한 자리만 둡니다. 어절 수 가산을 없앤
+            # 뒤로 출연자 이름 같은 단독 고유명사가 그 자리를 차지합니다.
+            if others >= 1:
                 continue
             others += 1
         kept.append((phrase, score, cat, ks))
