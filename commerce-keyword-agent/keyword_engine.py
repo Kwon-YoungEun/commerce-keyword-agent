@@ -62,10 +62,31 @@ CATEGORY_TERMS = {
         공방 전시 공연 티켓""".split(),
 }
 
+# 교양·건강 프로그램에서 소개하는 성분·재료. 방송 뒤 이 이름으로 검색하고
+# 사서 먹기 때문에 그 자체가 화제 상품입니다. '모자' 처럼 넓은 말이 아니라
+# 이름 하나로 상품이 특정되므로, 단독으로 나와도 깎지 않습니다.
+INGREDIENT_TERMS = """
+    폴리코사놀 루테인 오메가 오메가3 프로바이오틱스 포스트바이오틱스 유산균 콜라겐 매스틱
+    비타민 마그네슘 칼슘 아연 셀레늄 밀크씨슬 크릴오일 코엔자임 글루코사민 히알루론산
+    아르기닌 타우린 아미노산 단백질 식이섬유 미네랄 항산화 폴리페놀 안토시아닌 레스베라트롤
+    커큐민 카테킨 프로폴리스 보스웰리아 쏘팔메토 아스타잔틴 스피룰리나 클로렐라 모링가
+    녹용 흑삼 아슈와간다 노니 아사이 구기자 복분자 아로니아
+    파로 퀴노아 렌틸 렌틸콩 귀리 오트밀 치아씨드 아마씨 햄프씨드 병아리콩 통곡물 고대곡물
+    효소 소화효소 낫토 케피어 콤부차 발효액 식초 올리브유 아보카도오일 들깨 참깨
+    양파 배추 우엉 마늘 생강 강황 양배추 브로콜리 케일 시금치 토마토 당근 호박 연근 도토리
+    주꾸미 성게 멍게 해삼 골뱅이 다슬기 미더덕 톳 파래 매생이 감태 함초
+    차돌박이 우설 도가니 곱창 막창 등심 목살 항정살 갈매기살
+    유자 유자차 모과 오미자 도라지청 배즙 흑마늘 개똥쑥 산양삼 침향
+""".split()
+
 PRODUCT_TERMS = {}
 for _cat, _words in CATEGORY_TERMS.items():
     for _w in _words:
         PRODUCT_TERMS.setdefault(_w, _cat)
+for _w in INGREDIENT_TERMS:
+    PRODUCT_TERMS.setdefault(_w, "식품")
+
+INGREDIENT_SET = set(INGREDIENT_TERMS)
 
 SPLITTABLE_TERMS = sorted([w for w in PRODUCT_TERMS if len(w) >= 2], key=len, reverse=True)
 
@@ -785,6 +806,7 @@ def extract_keywords(program, docs, official=None, top_n=18):
     # 출연진 이름은 그 자체로는 살 수 없는 말이라 단독으로는 빼고,
     # '염정아 모자' 처럼 상품어와 붙은 것만 남깁니다.
     cast_names = {c.strip() for c in (official.get("cast") or []) if c and c.strip()}
+    bucket = genre_bucket(program.get("genre"))
 
     scores = defaultdict(float)
     kinds = defaultdict(set)
@@ -807,10 +829,15 @@ def extract_keywords(program, docs, official=None, top_n=18):
     for doc_no, doc in enumerate(docs):
         kind = doc.get("kind", "web")
         weight = KIND_WEIGHT.get(kind, 1.0)
-        if kind == "news" and air_ts and doc.get("ts"):
-            gap_days = abs(doc["ts"] - air_ts) / 86400.0
-            if gap_days > NEWS_WINDOW_DAYS:
-                weight *= 0.4          # 다른 회차 기사일 가능성이 큽니다.
+        if kind == "news":
+            if air_ts and doc.get("ts"):
+                gap_days = abs(doc["ts"] - air_ts) / 86400.0
+                if gap_days > NEWS_WINDOW_DAYS:
+                    weight *= 0.4      # 다른 회차 기사일 가능성이 큽니다.
+            # 교양 뉴스는 편성·출연·행사 소식뿐이라 상품이 거의 없습니다.
+            # 실제로 수집한 30건 모두 프로그램 홍보 기사였습니다.
+            if bucket == "교양":
+                weight *= 0.35
         if kind == "clip" and official.get("ppl"):
             weight += PPL_BONUS
         if kind == "youtube":
@@ -868,13 +895,17 @@ def extract_keywords(program, docs, official=None, top_n=18):
                 continue          # '통닭 변신 무죄' 같은 문장 토막은 버립니다.
             else:
                 score = score * 0.6 + PRODUCT_IN_BONUS
-        if len(toks) == 1 and phrase in PRODUCT_TERMS:
+        # 성분·재료 이름은 그 하나로 상품이 특정되므로 깎지 않습니다.
+        # 깎으면 '콜라겐' 보다 '촬영 콜라겐' 이 위로 올라옵니다.
+        if len(toks) == 1 and phrase in INGREDIENT_SET:
+            pass
+        elif len(toks) == 1 and phrase in PRODUCT_TERMS:
             score *= 0.55                            # '모자' 처럼 너무 넓은 말
         if all(t in title_tokens for t in toks):
             if not cat:
                 continue                             # 프로그램명·줄임말 그 자체
             score *= 0.3
-        if len(toks) >= 2:
+        if len(toks) >= 2 and not any(t in INGREDIENT_SET for t in toks):
             score += 1.0
 
         # 출연진 이름만 있는 말, 대사로 보이는 말은 제외합니다.
