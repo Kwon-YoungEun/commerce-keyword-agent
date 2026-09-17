@@ -445,9 +445,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609080700": {
    "id": "EA202609080700",
@@ -805,9 +805,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609090655": {
    "id": "EA202609090655",
@@ -829,9 +829,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609090800": {
    "id": "EA202609090800",
@@ -1381,9 +1381,9 @@
    "liveFlag": "본",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609102000": {
    "id": "EA202609102000",
@@ -1549,9 +1549,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609110550": {
    "id": "EA202609110550",
@@ -2389,9 +2389,9 @@
    "liveFlag": "본",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609131030": {
    "id": "EA202609131030",
@@ -2701,9 +2701,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609140600": {
    "id": "EA202609140600",
@@ -3397,9 +3397,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609152005": {
    "id": "EA202609152005",
@@ -3565,9 +3565,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609160550": {
    "id": "EA202609160550",
@@ -3589,9 +3589,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609160655": {
    "id": "EA202609160655",
@@ -3613,9 +3613,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609160800": {
    "id": "EA202609160800",
@@ -3997,9 +3997,9 @@
    "liveFlag": "재",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609170555": {
    "id": "EA202609170555",
@@ -4021,9 +4021,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609170700": {
    "id": "EA202609170700",
@@ -4237,9 +4237,9 @@
    "liveFlag": "본",
    "grade": "12세 이상",
    "catalogName": "",
-   "genre": "브랜디드",
+   "genre": "교양",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609171955": {
    "id": "EA202609171955",
@@ -4261,9 +4261,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609172045": {
    "id": "EA202609172045",
@@ -4861,9 +4861,9 @@
    "liveFlag": "재",
    "grade": "15세 이상",
    "catalogName": "",
-   "genre": "",
+   "genre": "예능",
    "subGenre": "",
-   "genreManual": false
+   "genreManual": true
   },
   "EA202609190910": {
    "id": "EA202609190910",

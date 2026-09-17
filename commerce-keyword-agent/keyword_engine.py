@@ -72,7 +72,8 @@ INGREDIENT_TERMS = """
     커큐민 카테킨 프로폴리스 보스웰리아 쏘팔메토 아스타잔틴 스피룰리나 클로렐라 모링가
     녹용 흑삼 아슈와간다 노니 아사이 구기자 복분자 아로니아
     파로 퀴노아 렌틸 렌틸콩 귀리 오트밀 치아씨드 아마씨 햄프씨드 병아리콩 통곡물 고대곡물
-    효소 소화효소 낫토 케피어 콤부차 발효액 식초 올리브유 아보카도오일 들깨 참깨
+    효소 소화효소 낫토 케피어 콤부차 발효액 식초 비니거 올리브유 아보카도오일 들깨 참깨
+    베리 블루베리 아사이베리 크랜베리 라즈베리 하스카프베리 빌베리 c3g 안토시아닌
     양파 배추 우엉 마늘 생강 강황 양배추 브로콜리 케일 시금치 토마토 당근 호박 연근 도토리
     주꾸미 성게 멍게 해삼 골뱅이 다슬기 미더덕 톳 파래 매생이 감태 함초
     차돌박이 우설 도가니 곱창 막창 등심 목살 항정살 갈매기살
@@ -541,11 +542,14 @@ def categorize(phrase):
         for word in SPLITTABLE_TERMS:
             if len(token) > len(word) and token.endswith(word):
                 return PRODUCT_TERMS[word]
+    # 글자 한가운데 우연히 들어간 말은 보지 않습니다. 한국어 합성어는 앞뒤로
+    # 붙지 가운데에 끼지 않습니다. '하스카프베리' 가 '스카프' 때문에 패션으로,
+    # '레드와인비니거' 가 '비니' 때문에 패션으로 잡히던 문제입니다.
     for token in tokens:
         if len(token) < 3:
             continue
         for word in SPLITTABLE_TERMS:
-            if len(word) >= 2 and word in token:
+            if len(word) >= 2 and token.startswith(word):
                 return PRODUCT_TERMS[word]
     return ""
 
