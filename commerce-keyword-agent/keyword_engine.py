@@ -618,12 +618,35 @@ def episode_number(episode):
     return int(m.group(1)) if m else None
 
 
+# 장르마다 화제 상품의 성격이 달라서 검색어도 달라야 합니다.
+#
+#   예능 — 먹거리·체험이 미리보기에 그대로 나옵니다.
+#   드라마 — 상품이 PPL(의상·소품)이고 블로그에 정리돼 있습니다.
+#            '나온 상품 구매' 로는 0건, '소품 협찬' 으로는 4/6 이 걸렸습니다.
+#   교양 — 방송에서 소개한 식품·성분입니다. '방송 식품' 이 가장 잘 맞습니다.
+GENRE_QUERIES = {
+    "드라마": ["{name} 소품 협찬", "{name} 착용 의상", "{name} 협찬 제품"],
+    "교양": ["{name} 방송 식품", "{name} 소개 제품"],
+}
+DRAMA_LIKE = ("드라마", "브랜디드")
+DOCUMENTARY_LIKE = ("교양", "시사", "다큐", "정보")
+
+
+def genre_bucket(genre):
+    text = genre or ""
+    if any(word in text for word in DRAMA_LIKE):
+        return "드라마"
+    if any(word in text for word in DOCUMENTARY_LIKE):
+        return "교양"
+    return ""
+
+
 def build_queries(program, official=None):
-    """소스마다 잘 맞는 검색어가 다릅니다.
+    """소스마다, 장르마다 잘 맞는 검색어가 다릅니다.
 
     뉴스   — 회차 번호를 쓰면 결과가 0건이라 프로그램명으로 찾고 방송일로 거릅니다.
     유튜브 — 회차별 클립이 올라와서 '프로그램명 + 회차' 가 가장 정확합니다.
-    검색광고 — '협찬·제품' 같은 말을 붙여야 커머스 광고가 걸립니다.
+    검색광고·웹문서 — 장르에 맞는 말을 붙여야 관련 글이 걸립니다.
     """
     official = official or {}
     name = short_title(program.get("programName") or program.get("title") or "")
@@ -647,10 +670,17 @@ def build_queries(program, official=None):
     if episode:
         autocomplete.append(f"{name} {episode}")
 
+    bucket = genre_bucket(program.get("genre"))
+    ad = [q.format(name=name) for q in
+          GENRE_QUERIES.get(bucket, ["{name} 협찬 제품", "{name} 나온 상품 구매"])]
+    # 교양은 회차별로 정리한 글이 있어 회차를 붙이면 잘 걸립니다.
+    if bucket == "교양" and episode:
+        ad.append(f"{name} {episode}")
+
     return {
         "news": news,
         "youtube": youtube,
-        "ad": [f"{name} 협찬 제품", f"{name} 나온 상품 구매"],
+        "ad": ad,
         "autocomplete": autocomplete,
     }
 
@@ -699,9 +729,20 @@ def collect_documents(program, official=None):
                                        max_age_days=max_age_days))
         except Exception as exc:
             errors.append("유튜브 검색 실패(%s): %s" % (query, exc))
+    # 웹문서는 검색어만 보고 아무 글이나 걸려 옵니다. 실제로 '슈퍼푸드의 힘
+    # 나온 상품 구매' 로는 6건 모두 무관한 글(코스트코 수분크림 등)이었습니다.
+    # 유튜브처럼 프로그램 이름이 들어간 글만 남깁니다. 웹문서는 시즌 번호를
+    # 빼고 쓰는 경우가 많아 번호를 뗀 이름도 함께 봅니다.
+    web_keys = {k for k in (match_key(name), match_key(re.sub(r"\d+$", "", name)))
+                if len(k) >= 3}
     for query in queries["ad"]:
         try:
-            docs.extend(search_daum(query))
+            for doc in search_daum(query):
+                if doc.get("kind") == "web":
+                    haystack = match_key(doc.get("title", "") + " " + doc.get("snippet", ""))
+                    if not any(k in haystack for k in web_keys):
+                        continue
+                docs.append(doc)
         except Exception as exc:
             errors.append("Daum 검색 실패(%s): %s" % (query, exc))
     for seed in queries["autocomplete"]:
