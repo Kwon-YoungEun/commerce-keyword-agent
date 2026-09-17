@@ -159,6 +159,9 @@ EMPHASIS_BONUS = 14.0   # 공식 자료에서 따옴표 등으로 강조된 말 
 PRODUCT_TAIL_BONUS = 8.0
 PRODUCT_IN_BONUS = 5.0
 NON_PRODUCT_PENALTY = 0.22   # 상품으로 볼 수 없는 말은 크게 낮춥니다.
+# 이 회차만의 자료. 나머지(뉴스·웹문서·자동완성)는 프로그램 단위라 회차가
+# 달라도 같은 문서가 들어옵니다.
+EPISODE_KINDS = {"preview", "clip", "youtube"}
 PPL_BONUS = 3.0
 NEWS_WINDOW_DAYS = 10   # 방송일에서 이만큼 떨어진 기사는 낮게 봅니다.
 
@@ -934,6 +937,14 @@ def extract_keywords(program, docs, official=None, top_n=18):
                 continue
         if any(t in cast_names for t in toks) and cat:
             score += 4.0                             # '염정아 모자' 같은 조합은 우대
+
+        # 뉴스·웹문서·자동완성은 프로그램명으로만 찾기 때문에 회차가 달라도
+        # 같은 문서가 들어옵니다. 실제로 6회와 7회의 뉴스가 100% 같았습니다.
+        # 회차를 가려 주는 자료(미리보기·클립·유튜브)에 없는 말은 낮춰서,
+        # 회차마다 다른 키워드가 위로 오게 합니다. 공식 자료가 아예 없는
+        # 프로그램은 모두 같은 배수를 받아 순서가 그대로입니다.
+        if not (kinds[phrase] & EPISODE_KINDS):
+            score *= 0.5
 
         # 상품으로 볼 수 없는 말은 크게 낮춥니다(사람·장소·일반어).
         if not cat:
