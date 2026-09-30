@@ -9,6 +9,7 @@ import calendar
 import json
 import os
 import re
+import ssl
 import sys
 import threading
 import time
@@ -47,6 +48,14 @@ SCHEDULE_TTL_SEC = 6 * 3600  # 6시간마다 tvN 편성표를 다시 읽습니�
 
 _store_lock = threading.Lock()
 
+# 사내망 보안 프로그램(SKBROADBAND)이 발급하는 재서명 인증서에는 Authority Key
+# Identifier 확장이 빠져 있어 OpenSSL 의 기본 엄격 검사(VERIFY_X509_STRICT)에
+# 걸립니다. 신뢰 체인·만료일·호스트명 검사는 그대로 두고 이 확장 하나만
+# 요구하지 않도록 완화합니다(사내망이 아닌 곳에서는 영향이 없습니다).
+_HTTPS_CONTEXT = ssl.create_default_context()
+if hasattr(ssl, "VERIFY_X509_STRICT"):
+    _HTTPS_CONTEXT.verify_flags &= ~ssl.VERIFY_X509_STRICT
+
 
 # ---------------------------------------------------------------- 저장소 유틸
 
@@ -72,7 +81,7 @@ def _write_json(path, obj):
 
 def _http_get(url, headers=None, timeout=20):
     req = urllib.request.Request(url, headers=headers or {"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as res:
+    with urllib.request.urlopen(req, timeout=timeout, context=_HTTPS_CONTEXT) as res:
         raw = res.read()
     charset = "utf-8"
     return raw.decode(charset, errors="replace")
@@ -574,7 +583,7 @@ def send_registration(payload):
     started = time.time()
     try:
         req = urllib.request.Request(url, data=raw, headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=20) as res:
+        with urllib.request.urlopen(req, timeout=20, context=_HTTPS_CONTEXT) as res:
             status, text = res.status, res.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as exc:
         status = exc.code
