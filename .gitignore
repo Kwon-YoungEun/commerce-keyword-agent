@@ -44,3 +44,4 @@ commerce-keyword-agent/data/airing_performance.json
 
 # 기록 백업 — 되돌릴 때만 쓰는 로컬 사본입니다.
 commerce-keyword-agent/data/backup/
+.tmp_check/
