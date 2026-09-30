@@ -1035,6 +1035,47 @@ async function sendToApi() {
   }
 }
 
+/* --------------------------------------------------- STB TEST 호출 (고정 요청) */
+
+async function callStbTest() {
+  const modal = document.getElementById("stbTestBackdrop");
+  const statusEl = document.getElementById("stbTestStatus");
+  const rawEl = document.getElementById("stbTestRaw");
+  statusEl.className = "muted body-status";
+  statusEl.textContent = "호출하는 중…";
+  rawEl.textContent = "";
+  modal.hidden = false;
+
+  try {
+    const res = await fetch("/api/stb-test-call", { method: "POST" });
+    const json = await res.json();
+    const missingNote = (json.missingHeaders && json.missingHeaders.length)
+      ? " · 설정에 없는 헤더: " + json.missingHeaders.join(", ")
+      : "";
+
+    if (json.error) {
+      statusEl.className = "body-status is-bad";
+      statusEl.textContent = json.error + missingNote;
+      return;
+    }
+
+    const label = json.statusText || (json.ok ? "성공" : "실패");
+    statusEl.className = "body-status " + (json.ok ? "is-ok" : "is-bad");
+    statusEl.textContent = `${label} · ${json.took}초 (응답코드 ${json.status})` + missingNote;
+
+    let pretty = json.response || "(본문 없음)";
+    try {
+      pretty = JSON.stringify(JSON.parse(json.response), null, 2);
+    } catch (err) {
+      /* JSON 이 아니면 원문 그대로 보여 줍니다. */
+    }
+    rawEl.textContent = pretty;
+  } catch (err) {
+    statusEl.className = "body-status is-bad";
+    statusEl.textContent = "호출하지 못했습니다: " + err.message;
+  }
+}
+
 /** 응답을 읽기 쉽게 풀어 보여 줍니다. JSON 이 아니면 원문을 그대로 둡니다. */
 function renderSendResult(json) {
   const box = document.getElementById("sendResult");
@@ -1745,7 +1786,9 @@ function openSettings() {
   document.getElementById("cfgRegisterUrl").value = c.registerApiUrl || "";
   // 값 자체는 서버에서 내려오지 않습니다. 비워 두면 기존 헤더를 그대로 씁니다.
   document.getElementById("cfgAuthHeaders").value = "";
+  document.getElementById("cfgStbHeaders").value = "";
   renderAuthState();
+  renderStbAuthState();
   document.getElementById("cfgProgramIds").value = Object.entries(state.programIds)
     .map(([name, id]) => name + "," + id)
     .join("\n");
@@ -1758,6 +1801,15 @@ function openSettings() {
 function renderAuthState() {
   const list = (state.config && state.config.authHeaders) || [];
   document.getElementById("cfgAuthState").textContent = list.length
+    ? "저장됨: " + list.map((h) => `${h.name} (${h.masked})`).join(" · ") +
+      " — 바꿀 때만 새로 넣으세요."
+    : "아직 넣지 않았어요.";
+}
+
+/** TEST 호출(request-live-products)용 인증 헤더 상태. */
+function renderStbAuthState() {
+  const list = (state.config && state.config.stbTestHeaders) || [];
+  document.getElementById("cfgStbHeaderState").textContent = list.length
     ? "저장됨: " + list.map((h) => `${h.name} (${h.masked})`).join(" · ") +
       " — 바꿀 때만 새로 넣으세요."
     : "아직 넣지 않았어요.";
@@ -1789,12 +1841,15 @@ async function saveSettings() {
         storeSearchUrl: document.getElementById("cfgStoreUrl").value.trim(),
         registerApiUrl: document.getElementById("cfgRegisterUrl").value.trim(),
         authHeadersText: document.getElementById("cfgAuthHeaders").value,
+        stbTestHeadersText: document.getElementById("cfgStbHeaders").value,
       }),
     });
     state.config = await cfgRes.json();
     // 저장했으면 입력칸을 비우고, 어떤 헤더가 들어갔는지만 보여 줍니다.
     document.getElementById("cfgAuthHeaders").value = "";
+    document.getElementById("cfgStbHeaders").value = "";
     renderAuthState();
+    renderStbAuthState();
 
     const map = parseProgramIdText(document.getElementById("cfgProgramIds").value);
     const idRes = await fetch("/api/program-ids", {
@@ -1886,6 +1941,18 @@ function bindEvents() {
     renderAuthState();
     showToast("인증 헤더를 지웠어요.", "ok");
   });
+  document.getElementById("cfgStbHeaderClear").addEventListener("click", async () => {
+    if (!(await askConfirm("저장된 TEST 호출 인증 헤더를 모두 지웁니다. 계속할까요?"))) return;
+    const res = await fetch("/api/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clearStbTestHeaders: true }),
+    });
+    state.config = await res.json();
+    document.getElementById("cfgStbHeaders").value = "";
+    renderStbAuthState();
+    showToast("TEST 호출 인증 헤더를 지웠어요.", "ok");
+  });
 
   document.getElementById("storeClose").addEventListener("click", closeStoreModal);
   document.getElementById("storeBackdrop").addEventListener("click", (e) => {
@@ -1950,6 +2017,13 @@ function bindEvents() {
   });
 
   document.getElementById("btnProgramList").addEventListener("click", openProgramList);
+  document.getElementById("btnStbTest").addEventListener("click", callStbTest);
+  document.getElementById("stbTestClose").addEventListener("click", () => {
+    document.getElementById("stbTestBackdrop").hidden = true;
+  });
+  document.getElementById("stbTestBackdrop").addEventListener("click", (e) => {
+    if (e.target.id === "stbTestBackdrop") e.target.hidden = true;
+  });
   window.addEventListener("resize", syncStickyOffset);
   // 장르 메뉴는 메뉴 바깥·태그 바깥을 눌렀을 때만 닫습니다.
   document.addEventListener("click", (e) => {
@@ -1977,7 +2051,7 @@ function bindEvents() {
       closeStoreModal();
       return;
     }
-    for (const id of ["historyBackdrop", "settingsBackdrop", "bodyBackdrop", "pidBackdrop"]) {
+    for (const id of ["historyBackdrop", "settingsBackdrop", "bodyBackdrop", "pidBackdrop", "stbTestBackdrop"]) {
       const el = document.getElementById(id);
       if (!el.hidden) {
         el.hidden = true;

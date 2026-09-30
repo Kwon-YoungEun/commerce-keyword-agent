@@ -39,6 +39,26 @@ PROGRAM_GENRE_STORE = os.path.join(DATA_DIR, "program_genres.json")
 
 TVN_SCHEDULE_URL = "https://tvn.cjenm.com/ko/tvn-schedule/"
 TVN_PROGRAM_URL = "https://tvn.cjenm.com/ko/program/"
+
+# STB(셋톱박스) TEST 호출 — 고객이 TV 앞에서 상품 조회를 눌렀을 때와 같은 요청을
+# 그대로 보내 실제 응답을 확인합니다. 값은 전부 고정입니다(요청받은 그대로).
+STB_TEST_URL = "https://agw.sk-iptv.com:8443/mcl/api/v2/stb/request-live-products"
+STB_TEST_FIXED_HEADERS = {
+    "Content-Type": "application/json;charset=utf-8",
+    "Accept": "application/json;charset=utf-8",
+    "Client_ID": "{00000000-0000-0000-0000-000000000000}",
+    "TimeStamp": "20251112009000",
+    "Trace": "MCL",
+    "UUID": "c5d9e2c8-3437-40e5-a5db-250108b01c12",
+}
+STB_TEST_BODY = {
+    "channelId": "872",
+    "channelName": "tvN",
+    "stbId": "skbtest",
+    "requestType": "0",
+    "voiceDuration": 0,
+    "productCategory": "[]",
+}
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
@@ -499,8 +519,13 @@ SECRETS_STORE = os.path.join(DATA_DIR, "secrets.json")
 
 def load_secrets():
     data = _read_json(SECRETS_STORE, {})
-    headers = data.get("authHeaders")
-    return {"authHeaders": headers if isinstance(headers, list) else []}
+
+    def as_list(key):
+        headers = data.get(key)
+        return headers if isinstance(headers, list) else []
+
+    return {"authHeaders": as_list("authHeaders"),
+            "stbTestHeaders": as_list("stbTestHeaders")}
 
 
 def parse_header_lines(text):
@@ -529,6 +554,12 @@ def save_secrets(patch):
             parsed = parse_header_lines(patch.get("authHeadersText"))
             if parsed:
                 data["authHeaders"] = parsed
+        if patch.get("clearStbTestHeaders"):
+            data["stbTestHeaders"] = []
+        else:
+            parsed = parse_header_lines(patch.get("stbTestHeadersText"))
+            if parsed:
+                data["stbTestHeaders"] = parsed
         _write_json(SECRETS_STORE, data)
         return data
 
@@ -545,10 +576,13 @@ def mask_secret(value):
 
 def public_secrets(data):
     """브라우저에는 값 대신 헤더 이름과 가린 문자열만 보냅니다."""
+    def masked_list(key):
+        return [{"name": h.get("name", ""), "masked": mask_secret(h.get("value"))}
+                for h in data.get(key, [])]
+
     return {
-        "authHeaders": [{"name": h.get("name", ""),
-                         "masked": mask_secret(h.get("value"))}
-                        for h in data.get("authHeaders", [])],
+        "authHeaders": masked_list("authHeaders"),
+        "stbTestHeaders": masked_list("stbTestHeaders"),
     }
 
 
@@ -630,6 +664,39 @@ def send_registration(payload):
             "statusText": status_text(status), "took": took,
             "at": record["at"],
             "response": text[:2000], "usedAuthHeaders": auth_names}
+
+
+def call_stb_test():
+    """실제 STB(셋톱박스)가 상품 조회를 요청할 때와 같은 호출을 그대로 보내 봅니다.
+
+    URL·헤더·body 는 전부 고정값입니다(전달받은 스펙 그대로). 인증 키
+    (Auth_Val·Api_Key·Client_IP)만 secrets.json 에서 채웁니다.
+    """
+    secrets = load_secrets()
+    headers = dict(STB_TEST_FIXED_HEADERS)
+    for item in secrets.get("stbTestHeaders", []):
+        name, value = (item.get("name") or "").strip(), (item.get("value") or "").strip()
+        if name and value:
+            headers[name] = value
+    missing = [name for name in ("Auth_Val", "Api_Key", "Client_IP") if not headers.get(name)]
+
+    raw = json.dumps(STB_TEST_BODY, ensure_ascii=False).encode("utf-8")
+    started = time.time()
+    try:
+        req = urllib.request.Request(STB_TEST_URL, data=raw, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=20, context=_HTTPS_CONTEXT) as res:
+            status, text = res.status, res.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as exc:
+        status = exc.code
+        text = exc.read().decode("utf-8", "replace") if exc.fp else str(exc)
+    except Exception as exc:
+        return {"ok": False, "error": "호출하지 못했습니다: %s" % exc, "missingHeaders": missing}
+
+    took = round(time.time() - started, 2)
+    return {"ok": 200 <= status < 300, "status": status,
+            "statusText": status_text(status), "took": took,
+            "at": int(time.time()), "response": text[:4000],
+            "missingHeaders": missing}
 
 
 # --------------------------------------------------- 등록 이력 · 실적 붙이기
@@ -1847,6 +1914,9 @@ class Handler(BaseHTTPRequestHandler):
 
             if parsed.path == "/api/send-registration":
                 return self._json(send_registration(self._body_json()))
+
+            if parsed.path == "/api/stb-test-call":
+                return self._json(call_stb_test())
 
             if parsed.path == "/api/performance":
                 body = self._body_json()

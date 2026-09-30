@@ -39,6 +39,7 @@
       <button id="btnProgramList" class="btn" type="button">편성 프로그램 리스트</button>
       <button id="btnHistory" class="btn" type="button">등록 이력</button>
     </div>
+    <button id="btnStbTest" class="btn btn-line" type="button">TEST 호출</button>
     <div class="legend">
       <span class="legend-item"><i class="swatch swatch-live"></i>본방송</span>
       <span class="legend-item"><i class="swatch swatch-rerun"></i>재방송</span>
@@ -145,6 +146,21 @@
   </div>
 </div>
 
+<!-- STB TEST 호출 결과 팝업 -->
+<div id="stbTestBackdrop" class="modal-backdrop" hidden>
+  <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="stbTestTitle">
+    <button id="stbTestClose" class="modal-close" type="button" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <h2 id="stbTestTitle">TEST 호출 — request-live-products</h2>
+      <p class="muted">고객이 TV 앞에서 서비스를 실행했을 때와 같은 요청을 그대로 보내 실제 응답을 확인합니다.</p>
+    </div>
+    <div class="modal-body">
+      <p id="stbTestStatus" class="muted body-status"></p>
+      <pre id="stbTestRaw" class="send-raw"></pre>
+    </div>
+  </div>
+</div>
+
 <!-- 편성 프로그램 리스트 팝업 -->
 <div id="pidBackdrop" class="modal-backdrop" hidden>
   <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="pidTitle">
@@ -197,6 +213,16 @@
         <small id="cfgAuthState" class="muted"></small>
         <span class="field-sub">
           <button id="cfgAuthClear" class="btn btn-ghost btn-sm" type="button">저장된 헤더 지우기</button>
+          <small class="muted">이 PC 에만 저장되고 깃에 올라가지 않습니다.</small>
+        </span>
+      </label>
+      <label class="field">
+        <span>TEST 호출 인증 헤더 <small class="muted">request-live-products · Auth_Val · Api_Key · Client_IP</small></span>
+        <textarea id="cfgStbHeaders" class="id-box" spellcheck="false" autocomplete="off"
+                  placeholder="Auth_Val: ...&#10;Api_Key: ...&#10;Client_IP: ..."></textarea>
+        <small id="cfgStbHeaderState" class="muted"></small>
+        <span class="field-sub">
+          <button id="cfgStbHeaderClear" class="btn btn-ghost btn-sm" type="button">저장된 헤더 지우기</button>
           <small class="muted">이 PC 에만 저장되고 깃에 올라가지 않습니다.</small>
         </span>
       </label>
